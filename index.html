@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memo Notepad Online — Free My Memo Notepad Web App | MemoNotepad</title>
+
+  <!-- SEO META -->
+  <meta name="description" content="Memo Notepad is a free online notepad and memo pads tool. Write, save, and organise your notes instantly in your browser. No account needed — just open and start writing." />
+  <meta name="keywords" content="memo notepad, memo notepad online, notepad online, memo pads online, my memo notepad, online notepad memo, the memo notepad" />
+  <meta name="author" content="MemoNotepad" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://memonotepad.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://memonotepad.github.io/" />
+  <meta property="og:title" content="Memo Notepad Online — Free Online Memo Notepad App" />
+  <meta property="og:description" content="Write and save memos instantly online. Free memo notepad with auto-save, colour labels, export, and more. No sign-up required." />
+  <meta property="og:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Memo Notepad Online — Free Online Memo Notepad App" />
+  <meta name="twitter:description" content="Free memo notepad for everyone. Write, save, and organise your memos online instantly." />
+  <meta name="twitter:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Memo Notepad Online",
+    "url": "https://memonotepad.github.io/",
+    "description": "A free online memo notepad web application. Write, save, and organise memos instantly in your browser with no sign-up required.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "featureList": [
+      "Auto-save to browser storage",
+      "Multiple memos management",
+      "Colour-coded memo labels",
+      "Export memo as text file",
+      "Copy memo to clipboard",
+      "Print memo",
+      "Search memos",
+      "Pin important memos",
+      "Word and character count",
+      "Keyboard shortcuts",
+      "Mobile responsive"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MemoNotepad",
+      "url": "https://memonotepad.github.io/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is the memo notepad online free to use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, Memo Notepad is completely free. No account, no subscription, no hidden fees." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are my memos saved?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Your memos are saved automatically in your browser's localStorage, so they stay on your device and are never sent to a server." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this online notepad on my phone?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Memo Notepad is fully mobile responsive and works on iOS and Android browsers." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I export my memo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Click the Export button in the editor toolbar to download your current memo as a .txt file." }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Memo Notepad App", "item": "https://memonotepad.github.io/#app" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge">Free forever — no sign-up required</span>
+    <h1 id="hero-title">
+      Your <em>Memo Notepad</em><br>
+      <span class="accent">Online.</span> Always Ready.
+    </h1>
+    <p class="hero-sub">
+      The cleanest, fastest memo notepad online. Write memos, save ideas, and organise your thoughts — all inside your browser. No account. No fuss.
+    </p>
+    <div class="hero-actions">
+      <a href="#app" class="btn-primary">📝 Open Memo Notepad</a>
+      <a href="#features" class="btn-secondary">Explore Features</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>100%</strong><span>Free &amp; Private</span></div>
+      <div class="hero-stat"><strong>⚡ 0ms</strong><span>Load Time</span></div>
+      <div class="hero-stat"><strong>∞</strong><span>Memos Stored</span></div>
+      <div class="hero-stat"><strong>📱</strong><span>Mobile Ready</span></div>
+    </div>
+    <div class="hero-visual">
+      <div class="notepad-preview" role="img" aria-label="Memo Notepad interface preview">
+        <div class="notepad-preview-header">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="preview-title">My Memo Notepad — Meeting Notes</span>
+        </div>
+        <div class="notepad-preview-body">
+          <div id="typedText"></div><span class="cursor"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ APP ══════════ -->
+<section id="app" aria-labelledby="app-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">Live App</span>
+      <h2 id="app-heading">The Online Memo Notepad</h2>
+      <p>Your personal memo pads, right here in the browser. Memos auto-save as you type.</p>
+    </div>
+
+    <div class="app-shell" data-animate data-animate-delay="1">
+      <!-- Title bar -->
+      <div class="app-titlebar">
+        <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <span>📝 Memo Notepad Online — memonotepad.github.io</span>
+        <button id="sidebarToggle" style="display:none;margin-left:auto;font-size:.85rem;font-family:var(--font-ui);padding:4px 10px;border:1.5px solid var(--border);border-radius:6px;background:var(--paper);" aria-label="Toggle sidebar">☰ Memos</button>
+      </div>
+
+      <!-- App Body -->
+      <div class="app-body">
+        <!-- Sidebar -->
+        <aside id="appSidebar" role="complementary" aria-label="Memo list">
+          <div class="sidebar-top">
+            <div class="sidebar-search">
+              <span>🔍</span>
+              <input type="search" id="searchInput" placeholder="Search memos…" aria-label="Search memos" />
+            </div>
+            <div class="sidebar-controls">
+              <select id="sortSelect" aria-label="Sort memos">
+                <option value="updated">Last updated</option>
+                <option value="created">Created</option>
+                <option value="alpha">A → Z</option>
+              </select>
+              <button class="btn-new-large" id="newMemoBtn" aria-label="New memo" style="padding:6px 12px;font-size:.82rem;border-radius:8px;white-space:nowrap;">+ New</button>
+            </div>
+          </div>
+          <span class="sidebar-meta" id="memoCount">0 memos</span>
+          <ul id="memoList" role="list" aria-label="Your memos">
+            <!-- rendered by JS -->
+          </ul>
+          <div id="emptyState" style="display:none;">
+            <div class="empty-icon">🗒️</div>
+            <span>No memos found</span>
+          </div>
+          <div class="sidebar-footer">
+            <button id="importBtn" title="Import memos">📥 Import</button>
+            <button id="exportAllBtn" title="Export all memos">📤 Export All</button>
+            <button id="clearAllBtn" title="Clear all memos" style="color:var(--coral);">🗑 Clear</button>
+          </div>
+          <input type="file" id="importFile" accept=".json" style="display:none;" />
+        </aside>
+
+        <!-- Editor / Welcome -->
+        <main id="editorPanel" style="display:none;" role="main" aria-label="Memo editor">
+          <!-- Top bar -->
+          <div class="editor-topbar">
+            <input type="text" id="memoTitle" placeholder="Memo title…" aria-label="Memo title" maxlength="120" />
+            <div class="editor-toolbar">
+              <div id="colorPicker" role="group" aria-label="Memo colour"></div>
+              <button class="toolbar-btn" id="copyBtn" title="Copy memo text">📋 Copy</button>
+              <button class="toolbar-btn" id="exportBtn" title="Export as .txt">💾 Save .txt</button>
+              <button class="toolbar-btn" id="printBtn" title="Print memo">🖨 Print</button>
+              <button class="toolbar-btn" id="wrapToggle" title="Toggle word wrap">↵ Wrap</button>
+              <button class="toolbar-btn" id="fontDecrease" title="Smaller font" aria-label="Decrease font size">A−</button>
+              <span id="fontSize" style="font-family:var(--font-ui);font-size:.78rem;color:var(--ink-muted);">15px</span>
+              <button class="toolbar-btn" id="fontIncrease" title="Larger font" aria-label="Increase font size">A+</button>
+              <button class="toolbar-btn" id="shortcutsBtn" title="Keyboard shortcuts">⌨</button>
+              <button class="toolbar-btn danger" id="deleteMemoBtn" title="Delete memo">🗑 Delete</button>
+            </div>
+            <div class="find-bar">
+              <input type="search" id="findInput" placeholder="Find in memo…" aria-label="Find in memo" />
+              <span id="findCount"></span>
+            </div>
+          </div>
+          <!-- Editor -->
+          <textarea id="memoEditor" placeholder="Start writing your memo here… Your notes auto-save as you type." spellcheck="true" aria-label="Memo content editor"></textarea>
+          <!-- Status bar -->
+          <div class="editor-statusbar" aria-live="polite">
+            <span>📝 <span id="wordCountEl">0 words</span></span>
+            <span>🔤 <span id="charCount">0 chars</span></span>
+            <span class="save-status saved" id="saveStatus">✅ Saved</span>
+          </div>
+        </main>
+
+        <!-- Welcome (no memo open) -->
+        <div id="welcomePanel">
+          <div class="welcome-icon">📄</div>
+          <h3>Select or Create a Memo</h3>
+          <p>Choose a memo from the list on the left, or create a new one to get started.</p>
+          <button class="btn-new-large" onclick="document.getElementById('newMemoBtn').click()">+ New Memo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FEATURES ══════════ -->
+<section id="features" aria-labelledby="features-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">Features</span>
+      <h2 id="features-heading">Everything You Need in a Memo Notepad</h2>
+      <p>Built for speed, privacy, and simplicity. The memo notepad online that just works.</p>
+    </div>
+    <div class="features-grid">
+
+      <article class="feature-card" data-animate data-animate-delay="1">
+        <div class="feature-icon" style="background:#e0f5f2;">💾</div>
+        <h3>Auto-Save as You Type</h3>
+        <p>Every keystroke is automatically saved to your browser. Never lose a note again — your memo notepad online remembers everything.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="2">
+        <div class="feature-icon" style="background:#fff7e0;">🎨</div>
+        <h3>Colour-Coded Memo Labels</h3>
+        <p>Organise your memo pads online with colour labels. Assign yellow for ideas, green for tasks, blue for research — your system, your rules.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="3">
+        <div class="feature-icon" style="background:#f3d9fa;">🔒</div>
+        <h3>100% Private — Stays on Your Device</h3>
+        <p>My memo notepad stores all data locally in your browser. Nothing is sent to any server. Your thoughts remain completely private.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="1">
+        <div class="feature-icon" style="background:#ffe8cc;">📤</div>
+        <h3>Export &amp; Import Memos</h3>
+        <p>Download any memo as a .txt file or back up all your memo pads as JSON. Import them back anytime on any device.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="2">
+        <div class="feature-icon" style="background:#ffc9c9;">🔍</div>
+        <h3>Instant Search Across Memos</h3>
+        <p>Find any memo in milliseconds. Search by title or content across all your online notepad memo entries.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="3">
+        <div class="feature-icon" style="background:#d0ebff;">📌</div>
+        <h3>Pin Important Memos</h3>
+        <p>Pin your most important memos to the top of the list so they're always within reach in your memo notepad.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="1">
+        <div class="feature-icon" style="background:#d3f9d8;">📊</div>
+        <h3>Word &amp; Character Count</h3>
+        <p>Real-time word and character count in the status bar. Perfect for keeping memo length in check.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="2">
+        <div class="feature-icon" style="background:#fff9db;">⌨️</div>
+        <h3>Keyboard Shortcuts</h3>
+        <p>Power-user shortcuts for creating, saving, and deleting memos. Navigate your online notepad memo collection at full speed.</p>
+      </article>
+
+      <article class="feature-card" data-animate data-animate-delay="3">
+        <div class="feature-icon" style="background:#e9ecef;">📱</div>
+        <h3>Mobile-Friendly Design</h3>
+        <p>The memo notepad online is fully responsive. Write, edit, and manage your memo pads on any phone or tablet.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section id="how-it-works" aria-labelledby="how-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">How It Works</span>
+      <h2 id="how-heading">Start Writing in Seconds</h2>
+      <p>No sign-up. No installation. Open the memo notepad online and start writing immediately.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card" data-animate data-animate-delay="1">
+        <div class="step-num">1</div>
+        <h3>Open the App</h3>
+        <p>Visit memonotepad.github.io in any browser. The app loads instantly — no account or download needed.</p>
+      </div>
+      <div class="step-card" data-animate data-animate-delay="2">
+        <div class="step-num">2</div>
+        <h3>Create a Memo</h3>
+        <p>Click "+ New" to create your first memo. Give it a title and start typing in the clean editor area.</p>
+      </div>
+      <div class="step-card" data-animate data-animate-delay="3">
+        <div class="step-num">3</div>
+        <h3>Write &amp; Organise</h3>
+        <p>Use colour labels, pinning, and search to organise your memo pads online exactly how you like.</p>
+      </div>
+      <div class="step-card" data-animate data-animate-delay="4">
+        <div class="step-num">4</div>
+        <h3>Access Anytime</h3>
+        <p>Come back anytime — your memos are saved locally in the browser and will be waiting for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ USE CASES ══════════ -->
+<section id="use-cases" aria-labelledby="usecases-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">Use Cases</span>
+      <h2 id="usecases-heading">Who Uses the Online Memo Notepad?</h2>
+      <p>From students to professionals, our memo notepad online fits every workflow.</p>
+    </div>
+    <div class="use-cases-grid">
+      <div class="use-case-card" data-animate data-animate-delay="1">
+        <div class="use-case-icon">🎓</div>
+        <h3>Students</h3>
+        <p>Jot down lecture notes, revision points, and assignment reminders in your personal online notepad memo.</p>
+      </div>
+      <div class="use-case-card" data-animate data-animate-delay="2">
+        <div class="use-case-icon">💼</div>
+        <h3>Professionals</h3>
+        <p>Capture meeting notes, action items, and quick thoughts without switching applications.</p>
+      </div>
+      <div class="use-case-card" data-animate data-animate-delay="3">
+        <div class="use-case-icon">✍️</div>
+        <h3>Writers</h3>
+        <p>Draft ideas, story snippets, and character notes in distraction-free memo pads online.</p>
+      </div>
+      <div class="use-case-card" data-animate data-animate-delay="4">
+        <div class="use-case-icon">🛒</div>
+        <h3>Everyday Planning</h3>
+        <p>Shopping lists, daily to-dos, and reminders — my memo notepad keeps everyday life organised.</p>
+      </div>
+      <div class="use-case-card" data-animate data-animate-delay="1">
+        <div class="use-case-icon">💡</div>
+        <h3>Idea Capture</h3>
+        <p>Never let a good idea slip away. Open the memo notepad online and capture thoughts before they vanish.</p>
+      </div>
+      <div class="use-case-card" data-animate data-animate-delay="2">
+        <div class="use-case-icon">🔧</div>
+        <h3>Developers</h3>
+        <p>Paste code snippets, API keys, and quick notes in a fast, always-accessible scratch pad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTENT SECTION — WHAT IS MEMO NOTEPAD ══════════ -->
+<section class="prose-section" aria-labelledby="about-heading">
+  <div class="section-inner" data-animate>
+    <span class="section-label">About</span>
+    <h2 id="about-heading">What Is a Memo Notepad Online?</h2>
+    <p>
+      A <strong>memo notepad</strong> is a simple, fast writing tool designed for capturing short-form notes, reminders, and ideas. Unlike heavy word processors, the memo notepad focuses on speed — you open it, you write, and it saves automatically.
+    </p>
+    <p>
+      The <strong>memo notepad online</strong> at memonotepad.github.io brings this simplicity to your browser. There's no software to install, no account to create, and no subscription to manage. It's the memo pad for the modern web: instant, private, and always accessible.
+    </p>
+    <p>Think of it as <em>my memo notepad</em> — personal, always available, and built around your workflow. Whether you call it a memo notepad, an online notepad memo, or memo pads online, the goal is the same: frictionless note-taking.</p>
+    <ul>
+      <li>Write memos without signing up or logging in</li>
+      <li>Notes auto-save locally — no server, no cloud required</li>
+      <li>Access the memo notepad online from any browser, on any device</li>
+      <li>Organise multiple memos with colours, pins, and titles</li>
+      <li>Export your memos as text files whenever you need them</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ TIPS SECTION ══════════ -->
+<section id="tips" aria-labelledby="tips-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">Pro Tips</span>
+      <h2 id="tips-heading">Get More from Your Memo Notepad</h2>
+      <p>Small habits that make your online notepad memo experience far more powerful.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card" data-animate data-animate-delay="1">
+        <div class="tip-badge">🎨</div>
+        <div>
+          <h4>Use Colours as Categories</h4>
+          <p>Assign a consistent colour system: yellow for ideas, green for completed tasks, red for urgent notes. Your memo pads online become visually organised at a glance.</p>
+        </div>
+      </div>
+      <div class="tip-card" data-animate data-animate-delay="2">
+        <div class="tip-badge">📌</div>
+        <div>
+          <h4>Pin Your Daily Memo</h4>
+          <p>Create one memo for today's priorities and pin it. It stays at the top of the list — your daily anchor in the memo notepad online.</p>
+        </div>
+      </div>
+      <div class="tip-card" data-animate data-animate-delay="3">
+        <div class="tip-badge">🔍</div>
+        <div>
+          <h4>Search Before Creating</h4>
+          <p>Before making a new memo, search for your topic. You may already have relevant notes in your online notepad memo collection.</p>
+        </div>
+      </div>
+      <div class="tip-card" data-animate data-animate-delay="4">
+        <div class="tip-badge">📤</div>
+        <div>
+          <h4>Back Up Weekly</h4>
+          <p>Use "Export All" once a week to download a JSON backup of all your memo pads online. Keep your notes safe across browser clears.</p>
+        </div>
+      </div>
+      <div class="tip-card" data-animate data-animate-delay="1">
+        <div class="tip-badge">⌨️</div>
+        <div>
+          <h4>Learn the Shortcuts</h4>
+          <p>Ctrl+S to save, Ctrl+N to create a new memo — mastering shortcuts makes the memo notepad feel like an extension of your keyboard.</p>
+        </div>
+      </div>
+      <div class="tip-card" data-animate data-animate-delay="2">
+        <div class="tip-badge">📝</div>
+        <div>
+          <h4>Descriptive Titles Win</h4>
+          <p>Name memos specifically: "Q3 Meeting 2025" beats "Notes". Good titles make searching your online notepad instant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ KEYBOARD SHORTCUTS ══════════ -->
+<section id="keyboard" aria-labelledby="keyboard-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">Shortcuts</span>
+      <h2 id="keyboard-heading">Keyboard Shortcuts</h2>
+      <p>Work faster in the memo notepad online with these power-user keyboard shortcuts.</p>
+    </div>
+    <div class="shortcuts-table" data-animate>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>S</kbd></div>
+        <span class="shortcut-desc">Save current memo immediately</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>N</kbd></div>
+        <span class="shortcut-desc">Create a new memo</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>D</kbd></div>
+        <span class="shortcut-desc">Delete the current memo</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>A</kbd></div>
+        <span class="shortcut-desc">Select all text in editor</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>Z</kbd></div>
+        <span class="shortcut-desc">Undo last change</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>C</kbd></div>
+        <span class="shortcut-desc">Copy selected text</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Tab</kbd></div>
+        <span class="shortcut-desc">Indent current line (in editor)</span>
+      </div>
+      <div class="shortcut-row">
+        <div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>P</kbd></div>
+        <span class="shortcut-desc">Print current memo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">FAQ</span>
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list" data-animate>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Is the memo notepad online completely free?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Yes, the entire memo notepad online is free to use with no limitations. There are no premium tiers, no ads, and no subscription fees. Write as many memos as you like.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do I need an account to use my memo notepad?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          No account is needed. Just open the app in your browser and start writing. Your memo notepad is ready immediately with zero sign-up friction.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Where are my online notepad memos stored?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          All your memos are stored in your browser's localStorage — entirely on your device. Nothing is uploaded to any server, keeping your notes completely private.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can I use memo pads online on my mobile phone?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Absolutely. The memo notepad is fully responsive and optimised for mobile use. Simply visit memonotepad.github.io in your mobile browser — no app download required.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What happens if I clear my browser data?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Clearing your browser's cache or localStorage will erase locally saved memos. We recommend using the "Export All" feature regularly to back up your memo pads online as a JSON file.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can I share memos from the online notepad?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          You can copy any memo to clipboard or export it as a .txt file, then share it via email, messaging apps, or any other channel you prefer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How many memos can I create?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          There's no hard limit imposed by the app itself. The practical limit depends on your browser's localStorage capacity, which is typically 5–10MB — enough for thousands of text memos.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Does the memo notepad work offline?
+          <span class="arrow">▼</span>
+        </button>
+        <div class="faq-a">
+          Once the page has loaded in your browser, the core memo notepad functionality works offline. Your memos are saved locally, so no internet connection is needed to write or read them.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section id="cta-section" aria-labelledby="cta-heading">
+  <div class="section-inner" data-animate style="text-align:center;">
+    <span class="section-label" style="color:var(--amber-light);background:rgba(255,255,255,.12);border-radius:50px;padding:4px 14px;display:inline-block;margin-bottom:16px;">Get Started</span>
+    <h2 id="cta-heading" style="color:#fff;">Your Memo Notepad Is Ready</h2>
+    <p>Open the online memo notepad now and start writing. Free, fast, and private — always.</p>
+    <a href="#app" class="btn-white">📝 Open My Memo Notepad</a>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+<!-- ══════════ SHORTCUTS MODAL ══════════ -->
+<div id="shortcutsModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <h3 id="modal-title">⌨️ Keyboard Shortcuts</h3>
+    <div class="shortcuts-table" style="border:1px solid var(--border);">
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>S</kbd></div><span class="shortcut-desc">Save memo</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>N</kbd></div><span class="shortcut-desc">New memo</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>Ctrl</kbd><kbd>⇧</kbd><kbd>D</kbd></div><span class="shortcut-desc">Delete memo</span></div>
+    </div>
+    <div class="modal-footer">
+      <button id="closeShortcuts">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/app.js"></script>
+<script>
+// ─── Typing animation in hero ───
+(function() {
+  const lines = [
+    '📋 Meeting Notes — 14 May 2025',
+    '',
+    '• Discuss Q2 roadmap with team',
+    '• Review memo notepad feature requests',
+    '• Schedule follow-up for Friday',
+    '',
+    '✅ Action: Share draft by EOD'
+  ];
+  const el = document.getElementById('typedText');
+  if (!el) return;
+  let lineIdx = 0, charIdx = 0, fullText = lines.join('\n');
+  function type() {
+    if (charIdx <= fullText.length) {
+      el.textContent = fullText.slice(0, charIdx);
+      charIdx++;
+      setTimeout(type, charIdx < 30 ? 60 : 28);
+    }
+  }
+  setTimeout(type, 800);
+})();
+
+// ─── FAQ accordion ───
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+});
+</script>
+</body>
+</html>
