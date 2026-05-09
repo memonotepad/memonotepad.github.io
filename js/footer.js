@@ -22,30 +22,31 @@
       </div>
 
       <div class="footer-links-group">
-        <h3>Product</h3>
+        <h3>MemoPad</h3>
         <ul>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#app">Open Notepad</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#use-cases">Use Cases</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#app">Open Notepad</a></li>
+          <li><a href="/#how-it-works">How It Works</a></li>
+          <li><a href="/#use-cases">Use Cases</a></li>
         </ul>
       </div>
 
       <div class="footer-links-group">
         <h3>Resources</h3>
         <ul>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#tips">Writing Tips</a></li>
-          <li><a href="#keyboard">Keyboard Shortcuts</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#tips">Writing Tips</a></li>
+          <li><a href="/#keyboard">Keyboard Shortcuts</a></li>
         </ul>
       </div>
 
       <div class="footer-links-group">
-        <h3>About</h3>
+        <h3>Pages</h3>
         <ul>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
-          <li><a href="/terms.html">Terms of Service</a></li>
-          <li><a href="/sitemap.xml">Sitemap</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Use</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
