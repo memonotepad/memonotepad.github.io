@@ -13,12 +13,12 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navMenu" role="list">
-        <li><a href="#features" class="nav-link">Features</a></li>
-        <li><a href="#app" class="nav-link">Open App</a></li>
-        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-        <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#app" class="nav-cta">Start Writing Free</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/diary" class="nav-link">Diary</a></li>
+        <li><a href="/case-converter" class="nav-link">Case Converter</a></li>
+        <li><a href="/decision-maker" class="nav-link">Choice Maker</a></li>
+        <li><a href="/random-text" class="nav-link">Random Text</a></li>
+        <li><a href="/about" class="nav-cta">About</a></li>
       </ul>
     </nav>
   `;
