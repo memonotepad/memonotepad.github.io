@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJH8KZG8Q3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NJH8KZG8Q3');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Online Word Shuffler — Shuffle Words, Sentences, Letters Randomly | MemoNotepad</title>
+  <meta name="description" content="Free online word shuffler tool. Randomly shuffle words, sentences, letters, or paragraphs. Create unique variations instantly. No ads, no sign-up required." />
+  <meta name="keywords" content="word shuffler, shuffle words online, random word shuffler, sentence shuffler, letter shuffler, text randomizer, word mixer" />
+  <meta name="author" content="MemoNotepad" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://memonotepad.github.io/word-shuffler" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://memonotepad.github.io/word-shuffler" />
+  <meta property="og:title" content="Online Word Shuffler — Shuffle Words, Sentences, Letters Randomly" />
+  <meta property="og:description" content="Shuffle words, sentences, letters, or paragraphs instantly. Free online randomizer tool for creative writing and brainstorming." />
+  <meta property="og:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Online Word Shuffler — Shuffle Words, Sentences, Letters Randomly" />
+  <meta name="twitter:description" content="Shuffle text instantly: words, sentences, letters, paragraphs. Free online tool." />
+  <meta name="twitter:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --cream: #fdfaf3;
+      --paper: #fffef9;
+      --ink: #2c2416;
+      --ink-light: #5a4f3e;
+      --ink-muted: #9e9080;
+      --amber: #f0a500;
+      --amber-light: #fcd270;
+      --amber-pale: #fff7e0;
+      --teal: #2a8f7f;
+      --teal-light: #4cbaa8;
+      --teal-pale: #e0f5f2;
+      --coral: #e05c3a;
+      --coral-light: #f07a5c;
+      --coral-pale: #ffe8e5;
+      --border: #e8dfc8;
+      --border-dark: #d0c4a8;
+      --shadow-sm: 0 2px 8px rgba(44,36,22,.07);
+      --shadow-md: 0 4px 20px rgba(44,36,22,.12);
+      --shadow-lg: 0 8px 40px rgba(44,36,22,.16);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', 'Georgia', serif;
+      --font-ui: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+      --header-h: 64px;
+      --transition: 200ms ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--amber-light); color: var(--ink); }
+    a { color: var(--teal); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--teal-light); }
+    button { cursor: pointer; font-family: var(--font-ui); border: none; background: none; }
+    ul { list-style: none; }
+
+    h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.2; font-weight: 700; color: var(--ink); }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(200,190,160,.1) 27px, rgba(200,190,160,.1) 28px),
+        radial-gradient(ellipse at 25% 75%, rgba(224,92,58,.05) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+    body > * { position: relative; z-index: 1; }
+
+    /* Header */
+    .shuffle-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: rgba(253,250,243,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex; align-items: center; padding: 0 20px;
+    }
+    .shuffle-header.scrolled { box-shadow: var(--shadow-md); }
+    .header-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-display); font-size: 1.2rem; color: var(--ink);
+    }
+    .header-logo strong { color: var(--teal); }
+    .header-nav { margin-left: auto; display: flex; gap: 8px; }
+    .header-nav a {
+      font-family: var(--font-ui); font-size: 0.9rem; padding: 6px 12px;
+      border-radius: 8px; color: var(--ink-light); transition: all var(--transition);
+    }
+    .header-nav a:hover { background: var(--amber-pale); color: var(--ink); }
+
+    section { padding: 60px 20px; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-ui); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--coral);
+      display: inline-block; margin-bottom: 12px;
+      padding: 4px 14px; background: var(--coral-pale); border-radius: 50px;
+    }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header p { max-width: 560px; margin: 12px auto 0; color: var(--ink-light); }
+
+    /* Shuffler shell */
+    .shuffle-shell {
+      background: var(--paper);
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .shuffle-titlebar {
+      background: var(--coral-pale);
+      border-bottom: 1.5px solid #f0c4b8;
+      padding: 10px 16px;
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-ui); font-size: 0.85rem; font-weight: 600;
+    }
+    .dots { display: flex; gap: 6px; }
+    .dot { width: 13px; height: 13px; border-radius: 50%; }
+    .dot-r { background: #ff6b6b; } .dot-y { background: var(--amber); } .dot-g { background: var(--teal); }
+
+    .shuffle-body {
+      display: flex; flex-direction: column;
+      padding: 20px;
+    }
+    .input-group {
+      display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;
+    }
+    .input-group label {
+      font-family: var(--font-ui); font-weight: 600; font-size: 0.9rem; color: var(--ink);
+    }
+    textarea {
+      width: 100%; height: 150px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+      background: var(--paper);
+      color: var(--ink);
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    textarea:focus { border-color: var(--coral); }
+
+    .mode-selector {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px;
+      align-items: center;
+    }
+    .mode-btn {
+      font-family: var(--font-ui); font-size: 0.85rem; font-weight: 600;
+      padding: 8px 16px; border-radius: 50px;
+      background: var(--paper);
+      border: 1.5px solid var(--border-dark);
+      color: var(--ink-light);
+      transition: all 0.2s;
+    }
+    .mode-btn.active {
+      background: var(--coral); color: white; border-color: var(--coral);
+    }
+    .shuffle-action-btn {
+      font-family: var(--font-ui); font-size: 0.95rem; font-weight: 600;
+      padding: 12px 28px; border-radius: 50px;
+      background: var(--coral); color: white;
+      border: none; transition: all 0.2s;
+      display: flex; align-items: center; gap: 8px;
+      margin-left: auto;
+    }
+    .shuffle-action-btn:hover { background: var(--coral-light); transform: translateY(-1px); }
+
+    .output-area {
+      background: #fafaf7;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      font-family: var(--font-body); font-size: 16px; line-height: 1.7;
+      min-height: 100px;
+      color: var(--ink);
+      word-wrap: break-word;
+    }
+    .action-row {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
+    }
+    .action-btn {
+      font-family: var(--font-ui); font-size: 0.85rem; padding: 8px 16px;
+      border-radius: 6px; border: 1px solid var(--border);
+      background: var(--paper); color: var(--ink-light);
+      transition: all 0.2s;
+    }
+    .action-btn:hover { background: var(--amber-pale); }
+    .stats-row {
+      margin-top: 10px; font-family: var(--font-ui); font-size: 0.8rem; color: var(--ink-muted);
+    }
+    .history-list {
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .history-item {
+      font-family: var(--font-ui); font-size: 0.85rem;
+      padding: 6px 10px; background: var(--cream); border-radius: 6px;
+      margin-bottom: 6px; display: flex; justify-content: space-between;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .history-item:hover { background: var(--amber-pale); }
+
+    /* Prose / FAQ */
+    .prose-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; margin-top: 24px;
+    }
+    .prose-card {
+      background: var(--paper); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+    }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      background: var(--paper); border: 1px solid var(--border);
+      border-radius: var(--radius); margin-bottom: 12px; overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left; padding: 16px 20px;
+      font-family: var(--font-ui); font-weight: 600; font-size: 0.95rem;
+      display: flex; justify-content: space-between; align-items: center;
+      background: transparent; transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--amber-pale); }
+    .faq-a {
+      max-height: 0; overflow: hidden; padding: 0 20px;
+      font-size: 0.95rem; color: var(--ink-light);
+      transition: max-height 0.3s ease, padding 0.3s;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 12px 20px; }
+    .faq-item.open .faq-q { background: var(--teal-pale); }
+    .arrow { transition: transform 0.2s; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+
+    @media (max-width: 600px) {
+      .mode-selector { justify-content: center; }
+      .shuffle-action-btn { margin-left: 0; width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
+
+<main style="padding-top: calc(var(--header-h) + 20px);">
+
+  <!-- Intro -->
+  <section style="padding-top: 30px;">
+    <div class="section-inner" style="text-align: center;">
+      <span class="section-label">Word Shuffler</span>
+      <h1>Shuffle <em style="color:var(--coral);">Words & Letters</em> Randomly</h1>
+      <p style="max-width: 600px; margin: 16px auto; font-size: 1.1rem;">
+        Mix up words, sentences, letters, or paragraphs. Great for creative writing, brainstorming, and generating fresh ideas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Shuffler Tool -->
+  <section id="shufflerApp">
+    <div class="section-inner">
+      <div class="shuffle-shell">
+        <div class="shuffle-titlebar">
+          <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+          <span>🔀 Word Shuffler — memonotepad.github.io</span>
+        </div>
+
+        <div class="shuffle-body">
+          <div class="input-group">
+            <label for="inputText">📥 Enter Text to Shuffle</label>
+            <textarea id="inputText" placeholder="Type or paste your text here..."></textarea>
+          </div>
+
+          <div class="mode-selector">
+            <button class="mode-btn active" data-mode="words">📝 Shuffle Words</button>
+            <button class="mode-btn" data-mode="sentences">📄 Shuffle Sentences</button>
+            <button class="mode-btn" data-mode="letters">🔤 Shuffle Letters</button>
+            <button class="mode-btn" data-mode="paragraphs">📑 Shuffle Paragraphs</button>
+            <button class="shuffle-action-btn" id="shuffleBtn">🎲 Shuffle Now</button>
+          </div>
+
+          <label style="font-family:var(--font-ui);font-weight:600;font-size:0.9rem;margin-bottom:6px;">📤 Shuffled Result</label>
+          <div class="output-area" id="outputArea">Your shuffled text will appear here...</div>
+
+          <div class="action-row">
+            <button class="action-btn" id="copyShuffleBtn">📋 Copy Result</button>
+            <button class="action-btn" id="clearShuffleBtn">🗑 Clear All</button>
+            <button class="action-btn" id="undoShuffleBtn">↩️ Undo Last</button>
+          </div>
+          <div class="stats-row">
+            <span id="shuffleStats">Ready to shuffle.</span>
+          </div>
+
+          <div class="history-list" id="historyContainer">
+            <h4 style="font-family:var(--font-ui); margin-bottom:8px;">🕒 Recent Shuffles</h4>
+            <div id="historyList"></div>
+            <p id="noHistoryMsg" style="color:var(--ink-muted); font-size:0.85rem;">No shuffles yet. Try it out!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Use / Description -->
+  <section style="background: var(--paper);">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">How to Use</span>
+        <h2>Shuffle Text in Different Ways</h2>
+        <p>Flexible shuffling modes for any kind of text.</p>
+      </div>
+      <div class="prose-grid">
+        <div class="prose-card">
+          <h3>📝 Shuffle Words</h3>
+          <p>Randomly reorders the words in your text while keeping sentence structure. Perfect for poetry or creative prompts.</p>
+        </div>
+        <div class="prose-card">
+          <h3>📄 Shuffle Sentences</h3>
+          <p>Reorders entire sentences randomly. Useful for restructuring paragraphs or generating alternative flows.</p>
+        </div>
+        <div class="prose-card">
+          <h3>🔤 Shuffle Letters</h3>
+          <p>Randomizes the order of letters within each word. Creates anagram-style puzzles or obfuscated text.</p>
+        </div>
+        <div class="prose-card">
+          <h3>📑 Shuffle Paragraphs</h3>
+          <p>Reorders paragraphs (separated by blank lines) to create new document structures instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--cream);">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2>Word Shuffler Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">What does "Shuffle Words" do? <span class="arrow">▼</span></button>
+          <div class="faq-a">It randomly reorders the words in your input text. Punctuation stays attached to the word it follows, and the overall word count remains the same.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How is "Shuffle Letters" different? <span class="arrow">▼</span></button>
+          <div class="faq-a">Shuffle Letters randomizes the characters within each individual word. The first and last letters can be kept in place if you prefer (advanced option), but by default all letters are shuffled.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I undo a shuffle? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes! Click "Undo Last" to revert to the previous text. The tool keeps a history of your last several shuffles during the session.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is my text stored anywhere? <span class="arrow">▼</span></button>
+          <div class="faq-a">No. All shuffling happens locally in your browser. Your text is never sent to any server or stored permanently.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Does it work on mobile? <span class="arrow">▼</span></button>
+          <div class="faq-a">Yes, the word shuffler is fully responsive and works smoothly on phones and tablets.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+  (function() {
+    const inputText = document.getElementById('inputText');
+    const outputArea = document.getElementById('outputArea');
+    const shuffleBtn = document.getElementById('shuffleBtn');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const copyBtn = document.getElementById('copyShuffleBtn');
+    const clearBtn = document.getElementById('clearShuffleBtn');
+    const undoBtn = document.getElementById('undoShuffleBtn');
+    const shuffleStats = document.getElementById('shuffleStats');
+    const historyListEl = document.getElementById('historyList');
+    const noHistoryMsg = document.getElementById('noHistoryMsg');
+
+    let currentMode = 'words';
+    let history = []; // store previous outputs
+
+    // Fisher-Yates shuffle
+    function shuffleArray(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function shuffleWords(text) {
+      const words = text.match(/[\w'-]+|[^\w\s]+|\s+/g) || [];
+      const wordTokens = [];
+      const others = [];
+      words.forEach(token => {
+        if (/[\w'-]+/.test(token)) wordTokens.push(token);
+        else others.push(token);
+      });
+      const shuffledWords = shuffleArray(wordTokens);
+      // Reconstruct: interleave back (simplified: replace word tokens in order)
+      let wi = 0;
+      return words.map(token => {
+        if (/[\w'-]+/.test(token)) {
+          return shuffledWords[wi++] || token;
+        }
+        return token;
+      }).join('');
+    }
+
+    function shuffleSentences(text) {
+      const sentences = text.match(/[^.!?\n]+[.!?]*(\n|$)/g) || [text];
+      return shuffleArray(sentences).join(' ').replace(/\s+/g, ' ').trim();
+    }
+
+    function shuffleLetters(text) {
+      return text.replace(/[a-zA-Z]+/g, (word) => {
+        if (word.length <= 2) return word;
+        const letters = word.split('');
+        const shuffled = shuffleArray(letters);
+        return shuffled.join('');
+      });
+    }
+
+    function shuffleParagraphs(text) {
+      const paragraphs = text.split(/\n\s*\n/);
+      return shuffleArray(paragraphs).join('\n\n');
+    }
+
+    function performShuffle() {
+      const text = inputText.value.trim();
+      if (!text) {
+        outputArea.textContent = 'Please enter some text to shuffle.';
+        updateStats(0,0);
+        return;
+      }
+
+      let result = '';
+      switch (currentMode) {
+        case 'words': result = shuffleWords(text); break;
+        case 'sentences': result = shuffleSentences(text); break;
+        case 'letters': result = shuffleLetters(text); break;
+        case 'paragraphs': result = shuffleParagraphs(text); break;
+        default: result = text;
+      }
+
+      // Save to history (keep last 8)
+      if (history.length === 0 || history[history.length-1] !== result) {
+        history.push(result);
+        if (history.length > 8) history.shift();
+      }
+
+      outputArea.textContent = result;
+      const wordCount = result.trim() ? result.trim().split(/\s+/).length : 0;
+      updateStats(result.length, wordCount);
+      renderHistory();
+    }
+
+    function updateStats(chars, words) {
+      shuffleStats.textContent = `📝 ${chars} characters · 🔤 ${words} words`;
+    }
+
+    function renderHistory() {
+      if (history.length === 0) {
+        historyListEl.innerHTML = '';
+        noHistoryMsg.style.display = 'block';
+        return;
+      }
+      noHistoryMsg.style.display = 'none';
+      historyListEl.innerHTML = history.map((entry, idx) => {
+        const preview = entry.length > 60 ? entry.slice(0,60)+'…' : entry;
+        return `<div class="history-item" data-index="${idx}">${escapeHtml(preview)} <span style="color:var(--ink-muted);">↩️</span></div>`;
+      }).reverse().join('');
+
+      document.querySelectorAll('.history-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const idx = parseInt(this.getAttribute('data-index'));
+          if (history[idx] !== undefined) {
+            outputArea.textContent = history[idx];
+            updateStats(history[idx].length, history[idx].trim().split(/\s+/).length);
+          }
+        });
+      });
+    }
+
+    function escapeHtml(text) {
+      return String(text).replace(/[&<>"]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        if (m === '"') return '&quot;';
+        return m;
+      });
+    }
+
+    // Mode switching
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentMode = btn.getAttribute('data-mode');
+      });
+    });
+
+    shuffleBtn.addEventListener('click', performShuffle);
+
+    copyBtn.addEventListener('click', () => {
+      if (!outputArea.textContent.trim() || outputArea.textContent.includes('will appear here')) {
+        alert('Shuffle some text first.');
+        return;
+      }
+      navigator.clipboard.writeText(outputArea.textContent).then(() => {
+        alert('Shuffled text copied!');
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      inputText.value = '';
+      outputArea.textContent = 'Your shuffled text will appear here...';
+      history = [];
+      updateStats(0,0);
+      renderHistory();
+    });
+
+    undoBtn.addEventListener('click', () => {
+      if (history.length > 1) {
+        history.pop(); // remove current
+        const prev = history[history.length-1];
+        outputArea.textContent = prev;
+        updateStats(prev.length, prev.trim().split(/\s+/).length);
+        renderHistory();
+      } else if (history.length === 1) {
+        history.pop();
+        outputArea.textContent = 'Your shuffled text will appear here...';
+        updateStats(0,0);
+        renderHistory();
+      } else {
+        alert('Nothing to undo.');
+      }
+    });
+
+    // Header scroll
+    window.addEventListener('scroll', () => {
+      const h = document.getElementById('shuffleHeader');
+      if (window.scrollY > 10) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+    });
+
+    // FAQ
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+
+    // Initial stats
+    updateStats(0,0);
+  })();
+</script>
+</body>
+</html>
