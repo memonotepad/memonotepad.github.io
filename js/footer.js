@@ -32,11 +32,12 @@
       </div>
 
       <div class="footer-links-group">
-        <h3>Resources</h3>
+        <h3>More Tools</h3>
         <ul>
-          <li><a href="/#faq">FAQ</a></li>
-          <li><a href="/#tips">Writing Tips</a></li>
-          <li><a href="/#keyboard">Keyboard Shortcuts</a></li>
+        <li><a href="/diary">Diary</a></li>
+        <li><a href="/case-converter"">Case Converter</a></li>
+        <li><a href="/decision-maker"">Choice Maker</a></li>
+        <li><a href="/random-text"">Random Text</a></li>
         </ul>
       </div>
 
