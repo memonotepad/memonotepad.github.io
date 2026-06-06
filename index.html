@@ -330,6 +330,203 @@
   </div>
 </section>
 
+<section class="video-tutorial-section" id="video-tutorial" aria-labelledby="video-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">📺 Video Tutorial</span>
+      <h2 id="video-heading">Watch How It Works</h2>
+      <p>See everything Memo Notepad Online can do — from creating memos to organising your thoughts in seconds.</p>
+    </div>
+
+    <div class="video-container" data-animate data-animate-delay="1">
+      <div class="video-card">
+        <!-- YouTube embed – replace VIDEO_ID with your actual YouTube video ID -->
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/VIDEO_ID" 
+            title="Memo Notepad Online Tutorial – Write, Save & Organize Ideas Instantly"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-caption">
+          <div class="video-badge">🎬 Step-by-step guide</div>
+          <h3>Your Memo Notepad Online. Always Ready.</h3>
+          <p>The cleanest, fastest memo notepad online. Write memos, save ideas, and organise your thoughts — all inside your browser. No account. No fuss.</p>
+          <div class="video-timestamps">
+            <span>⏱️ 0:00 – Intro</span>
+            <span>📝 1:20 – Creating your first memo</span>
+            <span>🎨 2:45 – Colour labels & pinning</span>
+            <span>🔍 4:10 – Search & export</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-cta" data-animate data-animate-delay="2">
+      <a href="/#app" class="btn-primary">🎬 Try it now →</a>
+      <a href="https://www.youtube.com/embed/sxH3Mf0-sRw?si=zGWbfgwCHyhdXKvo" target="_blank" rel="noopener noreferrer" class="btn-secondary">▶️ Watch on YouTube</a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ─── Video Tutorial Section Styles ─── */
+.video-tutorial-section {
+  background: var(--cream);
+  padding: 80px 24px;
+}
+
+.video-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: var(--ink);
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0px, rgba(255,255,255,.02) 2px, transparent 2px, transparent 8px);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-caption {
+  padding: 28px 32px;
+  text-align: left;
+}
+
+.video-badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--amber-pale);
+  color: var(--teal);
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.video-caption h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.video-caption p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-light);
+  margin-bottom: 20px;
+}
+
+.video-timestamps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1.5px solid var(--border);
+}
+
+.video-timestamps span {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  background: var(--cream);
+  padding: 6px 12px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.video-timestamps span::before {
+  content: "▸";
+  color: var(--teal);
+  font-size: 0.7rem;
+}
+
+.video-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .video-tutorial-section {
+    padding: 56px 16px;
+  }
+  
+  .video-caption {
+    padding: 20px;
+  }
+  
+  .video-caption h3 {
+    font-size: 1.25rem;
+  }
+  
+  .video-timestamps span {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+  
+  .video-cta {
+    gap: 12px;
+  }
+  
+  .video-cta .btn-primary,
+  .video-cta .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-timestamps {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .video-timestamps span {
+    width: fit-content;
+  }
+}
+</style>  
+
 <!-- ══════════ HOW IT WORKS ══════════ -->
 <section id="how-it-works" aria-labelledby="how-heading">
   <div class="section-inner">
