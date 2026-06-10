@@ -772,26 +772,7 @@
 <script src="js/app.js"></script>
 
   <script>
-    /* ── Inject header & footer from main site components ── */
-    (function () {
-      function loadComponent(url, placeholderId) {
-        fetch(url)
-          .then(function (r) { return r.text(); })
-          .then(function (html) {
-            var el = document.getElementById(placeholderId);
-            if (el) {
-              var tmp = document.createElement('div');
-              tmp.innerHTML = html;
-              el.replaceWith(tmp.firstElementChild || tmp);
-            }
-          })
-          .catch(function () {
-            /* silently fail — page is readable without injected component */
-          });
-      }
-      loadComponent('../header.html', 'site-header-placeholder');
-      loadComponent('../footer.html', 'site-footer-placeholder');
-    })();
+    
 
     /* ── Header scroll shadow ── */
     window.addEventListener('scroll', function () {
