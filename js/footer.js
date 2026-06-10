@@ -28,6 +28,7 @@
           <li><a href="/#app">Open Notepad</a></li>
           <li><a href="/#how-it-works">How It Works</a></li>
           <li><a href="/#use-cases">Use Cases</a></li>
+          <li><a href="/blog">Blog</a></li>
         </ul>
       </div>
 
