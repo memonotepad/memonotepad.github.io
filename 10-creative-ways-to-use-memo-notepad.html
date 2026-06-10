@@ -894,50 +894,7 @@
   <!-- ══════════ SCRIPTS ══════════ -->
 <script src="js/header.js"></script>
 <script src="js/footer.js"></script>
-
-
-  <script>   
-
-    /* ── Header scroll shadow ── */
-    window.addEventListener('scroll', function () {
-      var h = document.getElementById('site-header');
-      if (h) h.classList.toggle('scrolled', window.scrollY > 10);
-    });
-
-    /* ── Article FAQ accordion ── */
-    document.querySelectorAll('.article-faq-q').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item = this.closest('.article-faq-item');
-        var isOpen = item.classList.contains('open');
-        document.querySelectorAll('.article-faq-item').forEach(function (i) {
-          i.classList.remove('open');
-          i.querySelector('.article-faq-q').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-
-    /* ── Scroll-triggered animations ── */
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('animated');
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.uc-card').forEach(function (el) {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(16px)';
-        el.style.transition = 'opacity .5s ease, transform .5s ease';
-        observer.observe(el);
-      });
-    }
-  </script>
+  
 
 </body>
 </html>
