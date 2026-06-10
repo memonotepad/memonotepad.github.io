@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memo Notepad Blog — Privacy, Tips & Productivity</title>
+  
+  <!-- SEO Meta -->
+  <meta name="description" content="Explore the official Memo Notepad blog. Deep dives into privacy, productivity tips, keyboard shortcuts, and creative ways to use your online memo notepad." />
+  <meta name="keywords" content="memo notepad blog, online notepad tips, memo pads online, privacy notes, productivity memos" />
+  <meta name="author" content="MemoNotepad" />
+  <link rel="canonical" href="https://memonotepad.github.io/blog.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  
+  <!-- Google Fonts + Styles (reuse main style + blog additions) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* ─── reuse main design tokens & base from style.css (simplified blog version) ─── */
+    :root {
+      --cream: #fdfaf3;
+      --paper: #fffef9;
+      --ink: #2c2416;
+      --ink-light: #5a4f3e;
+      --ink-muted: #9e9080;
+      --amber: #f0a500;
+      --amber-light: #fcd270;
+      --amber-pale: #fff7e0;
+      --teal: #2a8f7f;
+      --teal-light: #4cbaa8;
+      --teal-pale: #e0f5f2;
+      --coral: #e05c3a;
+      --border: #e8dfc8;
+      --border-dark: #d0c4a8;
+      --shadow-sm: 0 2px 8px rgba(44,36,22,.07);
+      --shadow-md: 0 4px 20px rgba(44,36,22,.12);
+      --shadow-lg: 0 8px 40px rgba(44,36,22,.16);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', 'Georgia', serif;
+      --font-ui: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --header-h: 64px;
+      --transition: 200ms ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(200,190,160,.12) 27px, rgba(200,190,160,.12) 28px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    body > * { position: relative; z-index: 1; }
+    
+    /* header / footer */
+    #site-header, #site-footer {
+      position: relative;
+      z-index: 10;
+    }
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: rgba(253,250,243,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      height: var(--header-h);
+      padding: 0 24px;
+      display: flex; align-items: center; gap: 24px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+      margin-left: auto;
+    }
+    .nav-link {
+      font-family: var(--font-ui); font-size: .9rem;
+      padding: 6px 12px; border-radius: 8px;
+      color: var(--ink-light);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .nav-link:hover, .nav-link.active { background: var(--amber-pale); color: var(--ink); }
+    .nav-cta {
+      font-family: var(--font-ui); font-size: .9rem; font-weight: 600;
+      padding: 8px 18px; border-radius: 50px;
+      background: var(--teal); color: #fff;
+      transition: all var(--transition);
+    }
+    .nav-cta:hover { background: var(--teal-light); transform: translateY(-1px); }
+    .nav-toggle { display: none; }
+    
+    /* blog specific */
+    .blog-header {
+      padding: calc(var(--header-h) + 40px) 24px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--teal-pale) 0%, var(--amber-pale) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-header-inner { max-width: 800px; margin: 0 auto; }
+    .blog-badge {
+      display: inline-block;
+      font-family: var(--font-ui); font-size: .8rem; font-weight: 700;
+      background: var(--teal); color: white;
+      padding: 4px 14px; border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    .blog-header h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .blog-header p {
+      font-size: 1.2rem;
+      color: var(--ink-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* blog grid */
+    .blog-grid-section {
+      padding: 60px 24px 80px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+    }
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn {
+      font-family: var(--font-ui);
+      font-size: .85rem;
+      font-weight: 500;
+      padding: 6px 18px;
+      border-radius: 40px;
+      background: var(--paper);
+      border: 1.5px solid var(--border-dark);
+      color: var(--ink-light);
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .filter-btn.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+    }
+    .filter-btn:hover:not(.active) {
+      background: var(--amber-pale);
+      border-color: var(--amber);
+    }
+    .search-blog {
+      display: flex;
+      gap: 8px;
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 6px 16px;
+      align-items: center;
+    }
+    .search-blog input {
+      border: none;
+      background: transparent;
+      font-family: var(--font-ui);
+      font-size: .9rem;
+      width: 200px;
+      outline: none;
+    }
+    .blog-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .blog-card {
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--teal-light);
+    }
+    .card-badge {
+      height: 6px;
+      background: var(--teal);
+      width: 100%;
+    }
+    .card-content {
+      padding: 24px 24px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .topic-number {
+      font-family: var(--font-mono);
+      font-size: .7rem;
+      color: var(--teal);
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .blog-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    .blog-excerpt {
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+    .read-more {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: .85rem;
+      color: var(--teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap .2s;
+      margin-top: 8px;
+    }
+    .read-more:hover {
+      gap: 10px;
+      color: var(--teal-light);
+    }
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
+      font-family: var(--font-ui);
+      color: var(--ink-muted);
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 20px;
+      padding: 40px 24px 24px;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-copyright {
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: .8rem;
+      color: #aaa;
+    }
+    @media (max-width: 700px) {
+      .filter-bar { flex-direction: column; align-items: stretch; }
+      .search-blog input { width: 100%; }
+      .blog-cards-grid { gap: 20px; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .blog-card { animation: fadeUp 0.5s ease backwards; }
+    .blog-card:nth-child(1) { animation-delay: 0.05s; }
+    .blog-card:nth-child(2) { animation-delay: 0.1s; }
+    .blog-card:nth-child(3) { animation-delay: 0.15s; }
+    .blog-card:nth-child(4) { animation-delay: 0.2s; }
+    .blog-card:nth-child(5) { animation-delay: 0.25s; }
+    .blog-card:nth-child(6) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+  <header id="site-header" role="banner"></header>
+
+  <main>
+    <div class="blog-header">
+      <div class="blog-header-inner">
+        <span class="blog-badge">Memo Notepad Blog</span>
+        <h1>Insights & Ideas<br> for Smarter Note‑Taking</h1>
+        <p>Deep dives into privacy, productivity, color systems, shortcuts, and everything about your favorite online memo notepad.</p>
+      </div>
+    </div>
+
+    <div class="blog-grid-section">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter-buttons" id="filterButtons">
+            <button data-filter="all" class="filter-btn active">All Topics</button>
+            <button data-filter="privacy" class="filter-btn">🔒 Privacy</button>
+            <button data-filter="productivity" class="filter-btn">⚡ Productivity</button>
+            <button data-filter="tips" class="filter-btn">💡 Tips & Shortcuts</button>
+            <button data-filter="compare" class="filter-btn">📊 Comparisons</button>
+            <button data-filter="mobile" class="filter-btn">📱 Mobile</button>
+          </div>
+          <div class="search-blog">
+            <span>🔍</span>
+            <input type="text" id="blogSearchInput" placeholder="Search articles..." aria-label="Search blog posts">
+          </div>
+        </div>
+
+        <div id="blogCardsContainer" class="blog-cards-grid">
+          <!-- dynamic cards injected from topics data -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" role="contentinfo"></footer>
+
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+
+  <script>
+    // --------------------------------------------------------------
+    // TOPICS data from the provided topics.txt file (exactly 10 topics)
+    // each with title, excerpt, category, full-slug for potential details
+    // --------------------------------------------------------------
+    const BLOG_POSTS = [
+      {
+        id: 1,
+        title: "How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)",
+        excerpt: "Deep dive into localStorage, data privacy benefits, and why browser-based note-taking beats cloud apps for sensitive information.",
+        categories: ["privacy", "tips"],
+        slug: "private-notes-localstorage"
+      },
+      {
+        id: 2,
+        title: "10 Creative Ways to Use Memo Notepad for Everyday Productivity",
+        excerpt: "Cover use cases like students, professionals, writers, developers, shopping lists, idea capture, etc., with real-life examples.",
+        categories: ["productivity", "tips"],
+        slug: "creative-productivity-ways"
+      },
+      {
+        id: 3,
+        title: "Mastering Color-Coded Memos: Build a Visual Organization System",
+        excerpt: "Tips on creating color categories (ideas, tasks, urgent, etc.), pinning strategies, and turning your notepad into a visual dashboard.",
+        categories: ["productivity", "tips"],
+        slug: "color-coded-organization"
+      },
+      {
+        id: 4,
+        title: "Why Browser-Based Note-Taking Apps Are the Future (And How Memo Notepad Leads)",
+        excerpt: "Comparison with traditional apps, advantages of zero sign-up and instant loading, plus offline capabilities.",
+        categories: ["compare", "privacy"],
+        slug: "browser-note-future"
+      },
+      {
+        id: 5,
+        title: "Pro Tips & Keyboard Shortcuts to 10x Your Note-Taking Speed",
+        excerpt: "Highlight all shortcuts, auto-save habits, search techniques, and export/import workflows.",
+        categories: ["tips", "productivity"],
+        slug: "keyboard-shortcuts-pro-tips"
+      },
+      {
+        id: 6,
+        title: "How to Back Up and Restore Your Memos Across Devices and Browsers",
+        excerpt: "Step-by-step guide on JSON export/import, handling browser data clears, and maintaining access everywhere.",
+        categories: ["tips", "privacy"],
+        slug: "backup-restore-memos"
+      },
+      {
+        id: 7,
+        title: "Memo Notepad vs Popular Note Apps: Privacy, Speed, and Simplicity Showdown",
+        excerpt: "Honest comparison with tools like Notion, Evernote, Google Keep, or local alternatives — emphasizing no-account simplicity.",
+        categories: ["compare", "privacy"],
+        slug: "vs-popular-note-apps"
+      },
+      {
+        id: 8,
+        title: "Capture Ideas Instantly: Building a Second Brain with Memo Notepad",
+        excerpt: "Strategies for quick capture, daily journaling, meeting notes, and long-term organization using the app's features.",
+        categories: ["productivity", "tips"],
+        slug: "second-brain-capture"
+      },
+      {
+        id: 9,
+        title: "Mobile Note-Taking Done Right: Using Memo Notepad on Phones and Tablets",
+        excerpt: "Responsive design tips, mobile-specific workflows, and how it replaces native note apps.",
+        categories: ["mobile", "productivity"],
+        slug: "mobile-note-taking"
+      },
+      {
+        id: 10,
+        title: "From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos",
+        excerpt: "Best practices for titles, word counts, formatting, exporting to TXT, and integrating with other tools (writing, coding, planning).",
+        categories: ["tips", "productivity"],
+        slug: "polish-export-workflow"
+      }
+    ];
+
+    // helper: dynamic category mapping for filter buttons
+    function matchesFilter(post, activeFilter) {
+      if (activeFilter === 'all') return true;
+      return post.categories.includes(activeFilter);
+    }
+
+    function matchesSearch(post, searchTerm) {
+      if (!searchTerm) return true;
+      const term = searchTerm.toLowerCase();
+      return post.title.toLowerCase().includes(term) || post.excerpt.toLowerCase().includes(term);
+    }
+
+    function renderBlogCards(posts, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      if (posts.length === 0) {
+        container.innerHTML = `<div class="no-results">✨ No matching articles found. Try another keyword or browse all topics! ✨</div>`;
+        return;
+      }
+
+      container.innerHTML = posts.map(post => {
+        // assign a gradient/color accent based on first category
+        let categoryAccent = '#2a8f7f';
+        if (post.categories.includes('privacy')) categoryAccent = '#3a8fd4';
+        if (post.categories.includes('productivity')) categoryAccent = '#e05c3a';
+        if (post.categories.includes('tips')) categoryAccent = '#f0a500';
+        if (post.categories.includes('compare')) categoryAccent = '#9b6b9e';
+        if (post.categories.includes('mobile')) categoryAccent = '#2a8f7f';
+        
+        // create a nice readable badge for categories
+        const catLabels = post.categories.map(c => {
+          if (c === 'privacy') return '🔒 Privacy';
+          if (c === 'productivity') return '⚡ Productivity';
+          if (c === 'tips') return '💡 Tips';
+          if (c === 'compare') return '📊 Comparison';
+          if (c === 'mobile') return '📱 Mobile';
+          return c;
+        }).join(' · ');
+        
+        return `
+          <article class="blog-card">
+            <div class="card-badge" style="background: ${categoryAccent};"></div>
+            <div class="card-content">
+              <div class="topic-number">ARTICLE ${post.id} — ${catLabels}</div>
+              <h3>${escapeHtml(post.title)}</h3>
+              <p class="blog-excerpt">${escapeHtml(post.excerpt)}</p>
+              <a href="#" class="read-more" data-id="${post.id}" data-slug="${post.slug}">Read full story →</a>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      // attach event listeners to each "read more"
+      document.querySelectorAll('.read-more').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const slug = link.getAttribute('data-slug');
+          const postId = parseInt(link.getAttribute('data-id'));
+          const post = BLOG_POSTS.find(p => p.id === postId);
+          if (post) {
+            openBlogModal(post);
+          } else {
+            // fallback preview
+            alert(`📖 "${post?.title || 'Article'}" – Full reading experience coming soon! Stay tuned for deep insights.`);
+          }
+        });
+      });
+    }
+
+    // Simple modal / detail viewer (rich display)
+    function openBlogModal(post) {
+      // create modal overlay dynamically
+      const existingModal = document.getElementById('blogDetailModal');
+      if (existingModal) existingModal.remove();
+      
+      const modal = document.createElement('div');
+      modal.id = 'blogDetailModal';
+      modal.style.position = 'fixed';
+      modal.style.inset = '0';
+      modal.style.backgroundColor = 'rgba(44,36,22,.85)';
+      modal.style.backdropFilter = 'blur(8px)';
+      modal.style.zIndex = '2000';
+      modal.style.display = 'flex';
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+      modal.style.padding = '20px';
+      modal.style.fontFamily = 'var(--font-body)';
+      
+      const modalCard = document.createElement('div');
+      modalCard.style.maxWidth = '680px';
+      modalCard.style.width = '100%';
+      modalCard.style.backgroundColor = 'var(--paper)';
+      modalCard.style.borderRadius = '24px';
+      modalCard.style.border = '1.5px solid var(--border-dark)';
+      modalCard.style.boxShadow = 'var(--shadow-lg)';
+      modalCard.style.overflow = 'hidden';
+      modalCard.style.maxHeight = '85vh';
+      modalCard.style.display = 'flex';
+      modalCard.style.flexDirection = 'column';
+      
+      const modalHeader = document.createElement('div');
+      modalHeader.style.padding = '24px 28px 12px 28px';
+      modalHeader.style.borderBottom = '1.5px solid var(--border)';
+      modalHeader.style.display = 'flex';
+      modalHeader.style.justifyContent = 'space-between';
+      modalHeader.style.alignItems = 'center';
+      modalHeader.style.flexWrap = 'wrap';
+      modalHeader.innerHTML = `
+        <div>
+          <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--teal); letter-spacing:1px;">MEMO NOTEPAD BLOG</span>
+          <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-top:6px; color:var(--ink);">${escapeHtml(post.title)}</h2>
+        </div>
+        <button id="closeModalBtn" style="background:var(--amber-pale); border:none; font-size:1.5rem; cursor:pointer; width:36px; height:36px; border-radius:50%;">✕</button>
+      `;
+      
+      const modalBody = document.createElement('div');
+      modalBody.style.padding = '24px 28px 32px';
+      modalBody.style.overflowY = 'auto';
+      modalBody.style.flex = '1';
+      modalBody.style.lineHeight = '1.65';
+      
+      // generate enriched preview content (simulate intro + tips)
+      const categoryIcons = post.categories.map(c => {
+        if(c==='privacy') return '🔒';
+        if(c==='productivity') return '⚡';
+        if(c==='tips') return '💡';
+        if(c==='compare') return '📊';
+        return '📝';
+      }).join(' ');
+      
+      modalBody.innerHTML = `
+        <div style="margin-bottom:20px; display:flex; gap:8px; flex-wrap:wrap;">
+          ${post.categories.map(c => `<span style="background:var(--teal-pale); padding:4px 12px; border-radius:50px; font-size:.75rem; font-family:var(--font-ui);">${c}</span>`).join('')}
+        </div>
+        <p style="font-size:1.05rem; margin-bottom:24px; color:var(--ink-light);">${escapeHtml(post.excerpt)}</p>
+        <div style="background: var(--cream); border-left: 4px solid var(--teal); padding: 18px 20px; border-radius: 16px; margin: 24px 0;">
+          <strong style="font-family:var(--font-ui);">✨ Why this matters ✨</strong>
+          <p style="margin-top:8px;">In our full blog post, we explore ${post.title.toLowerCase()}. From real-world examples to advanced workflows, Memo Notepad gives you total control — no cloud, no accounts, just pure writing.</p>
+        </div>
+        <p><strong>Key takeaways:</strong> Whether you're a student, developer, or creator, this guide helps you unlock the full potential of browser-based note-taking. Stay tuned for the complete deep dive coming soon. In the meantime, try the free memo notepad online right now!</p>
+        <div style="margin-top: 32px; text-align:center;">
+          <a href="index.html#app" style="background:var(--teal); color:white; padding:10px 20px; border-radius:40px; text-decoration:none; font-family:var(--font-ui); font-weight:600; display:inline-block;">📝 Open My Memo Notepad →</a>
+        </div>
+      `;
+      
+      modalCard.appendChild(modalHeader);
+      modalCard.appendChild(modalBody);
+      modal.appendChild(modalCard);
+      document.body.appendChild(modal);
+      
+      const closeBtn = document.getElementById('closeModalBtn');
+      const closeModal = () => modal.remove();
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+    }
+    
+    function escapeHtml(str) {
+      return str.replace(/[&<>]/g, function(m) {
+        if(m === '&') return '&amp;';
+        if(m === '<') return '&lt;';
+        if(m === '>') return '&gt;';
+        return m;
+      }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+        return c;
+      });
+    }
+    
+    // filter + search state
+    let currentFilter = 'all';
+    let currentSearch = '';
+    
+    function updateBlogDisplay() {
+      let filtered = BLOG_POSTS.filter(post => matchesFilter(post, currentFilter));
+      if (currentSearch.trim() !== '') {
+        filtered = filtered.filter(post => matchesSearch(post, currentSearch));
+      }
+      renderBlogCards(filtered, 'blogCardsContainer');
+    }
+    
+    // setup filter buttons & search
+    function initBlogInteractions() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.getAttribute('data-filter');
+          updateBlogDisplay();
+        });
+      });
+      
+      const searchInput = document.getElementById('blogSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentSearch = e.target.value;
+          updateBlogDisplay();
+        });
+      }
+    }
+    
+    // header mobile toggle
+    function initMobileHeader() {
+      const toggleBtn = document.getElementById('navToggleBtn');
+      const navLinks = document.getElementById('navLinks');
+      if (toggleBtn && navLinks) {
+        toggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+          if (navLinks.classList.contains('open')) {
+            navLinks.style.display = 'flex';
+          } else {
+            navLinks.style.display = '';
+          }
+        });
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 700) {
+            navLinks.style.display = '';
+            navLinks.classList.remove('open');
+          }
+        });
+      }
+    }
+    
+    // initial render
+    renderBlogCards(BLOG_POSTS, 'blogCardsContainer');
+    initBlogInteractions();
+    initMobileHeader();
+    
+    // adjust header scroll shadow effect (optional)
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('site-header');
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+  <style>
+    #site-header.scrolled { box-shadow: var(--shadow-md); background: rgba(253,250,243,.98); }
+    @media (max-width: 700px) {
+      .nav-links { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 20px; gap: 12px; z-index: 999; border-bottom: 1px solid var(--border); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; background: none; font-size: 1.6rem; border: none; margin-left: auto; cursor: pointer; }
+    }
+  </style>
+</body>
+</html>
