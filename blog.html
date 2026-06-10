@@ -502,15 +502,7 @@
         
         // navigation to a dedicated article page with URL parameter
         return `
-          <article class="blog-card">
-            <div class="card-badge" style="background: ${categoryAccent};"></div>
-            <div class="card-content">
-              <div class="topic-number">ARTICLE ${post.id} — ${catLabels}</div>
-              <h3>${escapeHtml(post.title)}</h3>
-              <p class="blog-excerpt">${escapeHtml(post.excerpt)}</p>
-              <a href="blog-post?id=${post.id}" class="read-more">Read full story →</a>
-            </div>
-          </article>
+          
         `;
       }).join('');
     }
