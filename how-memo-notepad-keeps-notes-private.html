@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)</title>
+  <meta name="description" content="Discover how Memo Notepad uses localStorage to keep your notes completely private. No servers, no tracking, no accounts — your data never leaves your browser." />
+  <meta name="keywords" content="memo notepad privacy, private note taking, localStorage notepad, no tracking notes, browser note app, memo notepad online, secure notepad" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Memo Notepad" />
+  <link rel="canonical" href="https://memonotepad.github.io/how-memo-notepad-keeps-notes-private" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)" />
+  <meta property="og:description" content="A deep dive into localStorage, data privacy benefits, and why browser-based note-taking beats cloud apps for sensitive information." />
+  <meta property="og:url" content="https://memonotepad.github.io/how-memo-notepad-keeps-notes-private" />
+  <meta property="og:image" content="https://memonotepad.github.io/og-image.png" />
+  <meta property="og:site_name" content="Memo Notepad Online" />
+  <meta property="article:published_time" content="2025-06-10" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How Memo Notepad Keeps Your Notes 100% Private" />
+  <meta name="twitter:description" content="No servers, no tracking. Here's exactly how Memo Notepad protects your notes using your own browser." />
+  <meta name="twitter:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)",
+    "description": "A deep dive into localStorage, data privacy benefits, and why browser-based note-taking beats cloud apps for sensitive information.",
+    "url": "https://memonotepad.github.io/how-memo-notepad-keeps-notes-private",
+    "image": "https://memonotepad.github.io/og-image.png",
+    "datePublished": "2025-06-10",
+    "dateModified": "2025-06-10",
+    "author": {
+      "@type": "Organization",
+      "name": "Memo Notepad",
+      "url": "https://memonotepad.github.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Memo Notepad",
+      "url": "https://memonotepad.github.io/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://memonotepad.github.io/how-memo-notepad-keeps-notes-private"
+    }
+  }
+  </script>
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 3, "name": "Privacy Deep Dive", "item": "https://memonotepad.github.io/how-memo-notepad-keeps-notes-private" }
+    ]
+  }
+  </script>
+
+  <!-- FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Memo Notepad send my notes to a server?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Every note you write stays inside your own browser's localStorage. No data is ever transmitted to any server." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is localStorage and why is it private?",
+        "acceptedAnswer": { "@type": "Answer", "text": "localStorage is a browser API that stores key-value data on your device. It is sandboxed per origin, meaning no other website or server can read it." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Memo Notepad track my typing or reading habits?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Memo Notepad does not send any telemetry, analytics, or behavioural data. There are no tracking scripts in the app." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── BLOG LAYOUT ── */
+    .blog-wrap {
+      padding-top: calc(var(--header-h) + 48px);
+      padding-bottom: 80px;
+    }
+    .blog-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--ink-muted);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--teal); }
+    .breadcrumb a:hover { color: var(--teal-light); }
+    .breadcrumb span { color: var(--ink-muted); }
+
+    /* Post header */
+    .post-header { margin-bottom: 36px; }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-pale);
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .post-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-ui);
+      font-size: .84rem;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+    }
+    .post-meta-item { display: flex; align-items: center; gap: 5px; }
+
+    /* Featured image */
+    .featured-image-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, #e0f5f2 0%, #fff7e0 60%, #fce4ec 100%);
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .featured-image-inner {
+      text-align: center;
+      padding: 48px 32px;
+    }
+    .featured-icon-big {
+      font-size: 5rem;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(42,143,127,.2));
+    }
+    .featured-title-overlay {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      color: var(--ink);
+      max-width: 500px;
+      line-height: 1.3;
+    }
+    .featured-title-overlay em {
+      font-style: normal;
+      color: var(--teal);
+    }
+    .featured-badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .img-badge {
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border-dark);
+      color: var(--ink-light);
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Article body */
+    .post-body { font-family: var(--font-body); }
+    .post-body p {
+      font-size: 1.06rem;
+      color: var(--ink-light);
+      line-height: 1.78;
+      margin-bottom: 20px;
+    }
+    .post-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--ink);
+      margin: 44px 0 14px;
+      padding-top: 8px;
+      border-top: 2px solid var(--border);
+    }
+    .post-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--ink);
+      margin: 28px 0 10px;
+    }
+    .post-body a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-decoration-color: var(--teal-light);
+      text-underline-offset: 3px;
+    }
+    .post-body a:hover { color: var(--teal-light); }
+    .post-body strong { color: var(--ink); font-weight: 600; }
+
+    /* Callout boxes */
+    .callout {
+      background: var(--teal-pale);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .callout.amber {
+      background: var(--amber-pale);
+      border-color: var(--amber);
+    }
+    .callout-label {
+      font-family: var(--font-ui);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .callout.amber .callout-label { color: var(--amber); }
+
+    /* Code / key-value display */
+    .code-block {
+      background: var(--ink);
+      color: #e8dfc8;
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      font-family: var(--font-mono);
+      font-size: .88rem;
+      line-height: 1.7;
+      margin: 24px 0;
+      overflow-x: auto;
+    }
+    .code-block .comment { color: #7a9e7e; }
+    .code-block .key { color: var(--amber-light); }
+    .code-block .val { color: #87d7f0; }
+
+    /* Comparison table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      font-family: var(--font-ui);
+      font-size: .9rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+    }
+    .compare-table thead tr {
+      background: var(--teal);
+      color: #fff;
+    }
+    .compare-table thead th {
+      padding: 12px 18px;
+      text-align: left;
+      font-weight: 600;
+    }
+    .compare-table tbody tr:nth-child(even) { background: var(--cream); }
+    .compare-table tbody tr:nth-child(odd) { background: var(--paper); }
+    .compare-table tbody td { padding: 11px 18px; color: var(--ink-light); border-bottom: 1px solid var(--border); }
+    .compare-table tbody td:first-child { color: var(--ink); font-weight: 500; }
+    .tick { color: var(--teal); font-weight: 700; }
+    .cross { color: var(--coral); font-weight: 700; }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      margin: 16px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+    .checklist li::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      color: var(--teal);
+      font-style: italic;
+      text-align: center;
+      border-top: 2px solid var(--teal-light);
+      border-bottom: 2px solid var(--teal-light);
+      padding: 22px 24px;
+      margin: 36px 0;
+      line-height: 1.45;
+    }
+
+    /* FAQ inside article */
+    .article-faq { margin: 36px 0; }
+    .article-faq-item {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .article-faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      font-family: var(--font-ui);
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: background var(--transition);
+    }
+    .article-faq-q:hover { background: var(--amber-pale); }
+    .article-faq-q .arrow { font-size: .78rem; transition: transform .3s; color: var(--ink-muted); }
+    .article-faq-item.open .article-faq-q { background: var(--teal-pale); }
+    .article-faq-item.open .arrow { transform: rotate(180deg); }
+    .article-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .35s;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--ink-light);
+      padding: 0 20px;
+      line-height: 1.7;
+    }
+    .article-faq-item.open .article-faq-a { max-height: 260px; padding: 14px 20px; }
+
+    /* Tags */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 40px 0 0;
+    }
+    .post-tag {
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 50px;
+      background: var(--cream);
+      border: 1.5px solid var(--border-dark);
+      color: var(--ink-muted);
+      transition: all var(--transition);
+    }
+    .post-tag:hover { background: var(--teal-pale); border-color: var(--teal-light); color: var(--teal); }
+
+    /* Divider */
+    .post-divider {
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), var(--amber));
+      border: none;
+      border-radius: 2px;
+      margin: 52px 0;
+    }
+
+    /* Related posts */
+    .related-section { margin-top: 0; }
+    .related-label {
+      font-family: var(--font-ui);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 14px;
+      background: var(--teal-pale);
+      border-radius: 50px;
+    }
+    .related-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .related-card {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      transition: all .3s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal-light);
+      text-decoration: none;
+    }
+    .related-card-icon {
+      font-size: 2rem;
+    }
+    .related-card-cat {
+      font-family: var(--font-ui);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .related-card-desc {
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .related-card-arrow {
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* CTA strip */
+    .post-cta {
+      background: linear-gradient(135deg, var(--teal) 0%, #1a6e5f 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      margin: 52px 0;
+      color: #fff;
+    }
+    .post-cta h3 { color: #fff; font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 10px; }
+    .post-cta p { color: rgba(255,255,255,.85); font-size: .96rem; margin-bottom: 24px; }
+    .post-cta .btn-white {
+      font-family: var(--font-ui); font-size: .95rem; font-weight: 700;
+      padding: 12px 30px; border-radius: 50px;
+      background: #fff; color: var(--teal);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all .25s;
+    }
+    .post-cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); color: var(--teal); }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .blog-container { padding: 0 16px; }
+      .compare-table { font-size: .8rem; }
+      .compare-table thead th, .compare-table tbody td { padding: 9px 12px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .post-cta { padding: 28px 20px; }
+      .featured-image-wrap { min-height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header injected by JS -->
+  <div id="site-header-placeholder"></div>
+
+  <main class="blog-wrap">
+    <div class="blog-container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://memonotepad.github.io/">Home</a>
+        <span>›</span>
+        <a href="https://memonotepad.github.io/blog">Blog</a>
+        <span>›</span>
+        <span>Privacy Deep Dive</span>
+      </nav>
+
+      <!-- Post header -->
+      <header class="post-header">
+        <div class="post-category">🔒 Privacy &amp; Security</div>
+        <h1 class="post-title">How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)</h1>
+        <div class="post-meta">
+          <span class="post-meta-item">📅 June 10, 2025</span>
+          <span class="post-meta-item">⏱ 7 min read</span>
+          <span class="post-meta-item">✍️ Memo Notepad Team</span>
+        </div>
+      </header>
+
+      <!-- Featured image (SVG illustration) -->
+      <figure class="featured-image-wrap" aria-label="Privacy illustration showing data stored locally in browser">
+        <div class="featured-image-inner">
+          <span class="featured-icon-big">🔒</span>
+          <p class="featured-title-overlay">Your notes stay <em>on your device</em>. Always.</p>
+          <div class="featured-badge-row">
+            <span class="img-badge">🖥 localStorage Only</span>
+            <span class="img-badge">📡 Zero Network Requests</span>
+            <span class="img-badge">👤 No Account Needed</span>
+          </div>
+        </div>
+      </figure>
+
+      <!-- Article body -->
+      <article class="post-body" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="headline" content="How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)" />
+        <meta itemprop="datePublished" content="2025-06-10" />
+
+        <p>Every time you open a cloud note-taking app, something invisible happens: your words travel across the internet to a server you don't own, get stored in a database you can't inspect, and become subject to privacy policies that can change overnight. <strong>Memo Notepad works differently</strong> — and the difference matters more than most people realise.</p>
+
+        <p>This post explains exactly how Memo Notepad's privacy model works, why browser-based localStorage is a genuinely strong privacy choice, and what that means for anyone who writes sensitive ideas, private thoughts, or confidential work notes.</p>
+
+        <h2>What Is localStorage and Why Does It Matter?</h2>
+
+        <p><strong>localStorage</strong> is a built-in browser API that lets websites store key-value data directly on your device. Think of it as a small, private filing cabinet that lives inside your browser — completely separate from the internet.</p>
+
+        <div class="code-block">
+          <span class="comment">// How Memo Notepad saves your notes — nothing more</span><br />
+          <span class="key">localStorage</span>.setItem(<span class="val">'memo_001'</span>, <span class="val">'"Meeting with client — Q3 targets discussed"'</span>);<br /><br />
+          <span class="comment">// When you reopen the app, it reads back from your own device</span><br />
+          <span class="key">const</span> note = <span class="key">localStorage</span>.getItem(<span class="val">'memo_001'</span>);
+        </div>
+
+        <p>Critically, localStorage is <strong>sandboxed by origin</strong>. That means only the exact domain that stored the data — <code>memonotepad.github.io</code> — can ever read it. No other website, no browser extension running on a different domain, and no remote server can access it. The data simply never leaves your machine.</p>
+
+        <h2>The Privacy Comparison: Cloud vs. Browser-Local</h2>
+
+        <p>To understand what's at stake, compare Memo Notepad against a typical cloud note app:</p>
+
+        <table class="compare-table" aria-label="Privacy comparison between Memo Notepad and cloud note apps">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Memo Notepad</th>
+              <th>Typical Cloud App</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Data sent to server</td><td class="tick">✓ Never</td><td class="cross">✗ Always</td></tr>
+            <tr><td>Account required</td><td class="tick">✓ No</td><td class="cross">✗ Yes</td></tr>
+            <tr><td>Data breach risk</td><td class="tick">✓ Zero (no server)</td><td class="cross">✗ Real risk</td></tr>
+            <tr><td>Subpoena / legal access</td><td class="tick">✓ Not possible</td><td class="cross">✗ Possible</td></tr>
+            <tr><td>AI training on your notes</td><td class="tick">✓ Never</td><td class="cross">✗ Often opt-in default</td></tr>
+            <tr><td>Behavioural tracking</td><td class="tick">✓ None</td><td class="cross">✗ Common</td></tr>
+            <tr><td>Works offline</td><td class="tick">✓ Yes</td><td class="cross">✗ Limited</td></tr>
+          </tbody>
+        </table>
+
+        <h2>No Tracking. No Analytics on Your Content.</h2>
+
+        <p>Many apps embed analytics SDKs that silently watch every keystroke, every page view, and every action you take. Memo Notepad deliberately excludes all content-tracking scripts. There are no third-party SDKs watching what you type. Your writing habits are yours alone.</p>
+
+        <div class="callout">
+          <span class="callout-label">🔍 How to verify this yourself</span>
+          Open Memo Notepad in Chrome, press <strong>F12</strong> to open DevTools, click the <strong>Network</strong> tab, and start writing a note. You'll see zero outgoing requests carrying your content. The only requests are for the page's own static assets (HTML, CSS, fonts) — never your note data.
+        </div>
+
+        <h2>Why This Makes a Real Difference for Sensitive Notes</h2>
+
+        <p>Consider the kinds of things people actually write in quick notes: medical appointment reminders, financial figures, HR-sensitive thoughts, personal journal entries, private business ideas. None of these belong on a company's server.</p>
+
+        <p>With Memo Notepad, these notes exist only in one place: <strong>your browser's localStorage on your device</strong>. If you close the laptop, the notes are there when you return. If you never open that browser again, no one else ever sees them. There is no breach to worry about because there is no server to breach.</p>
+
+        <ul class="checklist">
+          <li>Medical or health reminders stay on your device, not a startup's database</li>
+          <li>Business strategy notes can't be exposed in a data leak</li>
+          <li>Personal journal entries are never subject to a company's privacy policy changes</li>
+          <li>Nothing you write can be used to train AI models without your knowledge</li>
+        </ul>
+
+        <div class="pull-quote">"The most private database is one that never exists on someone else's computer."</div>
+
+        <h2>What About Backing Up Your Notes?</h2>
+
+        <p>Privacy through local storage does come with a trade-off: if your browser data is cleared, or you switch devices, your notes don't automatically follow you. Memo Notepad solves this with a deliberate, transparent backup system.</p>
+
+        <p>You can export all your memos as a single JSON file and import them into any browser, on any device. You control when this happens and where that backup file lives. Learn the full process in our guide on <a href="how-to-backup-restore-memos.html">backing up and restoring memos across devices</a>.</p>
+
+        <div class="callout amber">
+          <span class="callout-label">💡 Best practice</span>
+          Export your memos weekly using the "Export All" button. Store the JSON file in a private folder on your computer — not in a cloud drive if you care about privacy. That single file is your complete, portable, private memo archive.
+        </div>
+
+        <h2>localStorage vs. Other Private Storage Options</h2>
+
+        <p>Developers sometimes wonder whether localStorage is the right storage primitive for a privacy-focused app. Here's how it compares to alternatives:</p>
+
+        <p><strong>IndexedDB</strong> offers larger storage and structured queries but is more complex. For text-based notes, localStorage's simplicity is a feature — less code means fewer potential vulnerabilities. <strong>Cookies</strong> can be transmitted to servers with every request, making them inappropriate for private data. <strong>SessionStorage</strong> is wiped when the tab closes, so it can't persist notes. localStorage hits the right balance: persistent, local, and simple.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="article-faq">
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Does Memo Notepad send my notes to a server? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">No. Every note is saved entirely in your browser's localStorage. No data is transmitted over the network. You can verify this in your browser's DevTools Network tab — there are zero content-carrying outgoing requests when you type.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Can Memo Notepad be forced to hand over my notes to third parties? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">No. Since no data is stored on any server, there is nothing to hand over. The notes exist only on your device. Not even the developers of Memo Notepad have access to your notes.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">What happens if I clear my browser cache? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Clearing your browser's localStorage will erase your saved notes. This is a trade-off of local storage. To protect against this, use the Export All feature regularly. See our full guide on <a href="how-to-backup-restore-memos.html">backing up memos</a> to keep your notes safe.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Is Memo Notepad open source? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">The codebase is hosted on GitHub Pages, which means the HTML, CSS, and JavaScript are publicly inspectable. You can view the source code in your browser at any time to verify that no hidden data collection is taking place.</div>
+          </div>
+        </div>
+
+        <h2>Start Writing Privately Today</h2>
+
+        <p>Privacy in software is not usually a feature — it's an absence of bad features. Memo Notepad's privacy comes from what it <em>doesn't</em> do: no accounts, no servers, no trackers, no AI training on your words. That makes it one of the genuinely private note-taking tools on the web.</p>
+
+        <p>Once you're comfortable with the privacy model, explore how to get even more from the app: the <a href="10-creative-ways-to-use-memo-notepad.html">10 creative use cases</a> guide shows students, writers, and professionals how to build real workflows, and the <a href="mastering-color-coded-memos.html">colour-coding system guide</a> shows how to turn your private notepad into a visual dashboard.</p>
+
+        <!-- Tags -->
+        <div class="post-tags" aria-label="Article tags">
+          <span class="post-tag">#Privacy</span>
+          <span class="post-tag">#localStorage</span>
+          <span class="post-tag">#NoTracking</span>
+          <span class="post-tag">#BrowserNotes</span>
+          <span class="post-tag">#DataSecurity</span>
+          <span class="post-tag">#MemoNotepad</span>
+        </div>
+      </article>
+
+      <!-- CTA -->
+      <div class="post-cta" role="complementary" aria-label="Try Memo Notepad">
+        <h3>🔒 Your Notes. Your Device. Always.</h3>
+        <p>Open Memo Notepad right now — no account, no sign-up, 100% private. Your first note is one click away.</p>
+        <a href="https://memonotepad.github.io/#app" class="btn-white">📝 Open Memo Notepad</a>
+      </div>
+
+      <hr class="post-divider" />
+
+      <!-- Related posts -->
+      <section class="related-section" aria-labelledby="related-heading">
+        <div class="related-label">📚 Read Next</div>
+        <h2 class="related-title" id="related-heading">You Might Also Like</h2>
+        <div class="related-grid">
+          <a class="related-card" href="10-creative-ways-to-use-memo-notepad.html">
+            <span class="related-card-icon">💡</span>
+            <span class="related-card-cat">Productivity</span>
+            <span class="related-card-title">10 Creative Ways to Use Memo Notepad for Everyday Productivity</span>
+            <span class="related-card-desc">Students, writers, developers — real workflows you can adopt today.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="mastering-color-coded-memos.html">
+            <span class="related-card-icon">🎨</span>
+            <span class="related-card-cat">Organisation</span>
+            <span class="related-card-title">Mastering Color-Coded Memos: Build a Visual Organisation System</span>
+            <span class="related-card-desc">Turn your notepad into a colour-driven dashboard of ideas and tasks.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="how-to-backup-restore-memos.html">
+            <span class="related-card-icon">💾</span>
+            <span class="related-card-cat">Backup</span>
+            <span class="related-card-title">How to Back Up and Restore Your Memos Across Devices</span>
+            <span class="related-card-desc">JSON export, browser clears, and keeping your notes safe everywhere.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="browser-based-note-taking-future.html">
+            <span class="related-card-icon">🌐</span>
+            <span class="related-card-cat">Deep Dive</span>
+            <span class="related-card-title">Why Browser-Based Note-Taking Apps Are the Future</span>
+            <span class="related-card-desc">Zero sign-up, instant load, offline capable — the case for local-first.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer injected by JS -->
+  <div id="site-footer-placeholder"></div>
+
+  <script>
+    /* ── Inject header & footer from main site components ── */
+    (function () {
+      function loadComponent(url, placeholderId) {
+        fetch(url)
+          .then(function (r) { return r.text(); })
+          .then(function (html) {
+            var el = document.getElementById(placeholderId);
+            if (el) {
+              var tmp = document.createElement('div');
+              tmp.innerHTML = html;
+              el.replaceWith(tmp.firstElementChild || tmp);
+            }
+          })
+          .catch(function () {
+            /* silently fail — page is readable without injected component */
+          });
+      }
+      loadComponent('../header.html', 'site-header-placeholder');
+      loadComponent('../footer.html', 'site-footer-placeholder');
+    })();
+
+    /* ── Header scroll shadow ── */
+    window.addEventListener('scroll', function () {
+      var h = document.getElementById('site-header');
+      if (h) h.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    /* ── Article FAQ accordion ── */
+    document.querySelectorAll('.article-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.article-faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.article-faq-item').forEach(function (i) {
+          i.classList.remove('open');
+          i.querySelector('.article-faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ── Scroll-triggered animations ── */
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('animated');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('[data-animate]').forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+  </script>
+
+</body>
+</html>
