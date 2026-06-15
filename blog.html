@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memo Notepad Blog — Tips, Privacy & Productivity</title>
-  <meta name="description" content="Explore the official Memo Notepad blog: privacy guides, productivity tips, keyboard shortcuts, color-coding systems and expert advice for your online memo pads." />
-  <meta name="keywords" content="memo notepad blog, online notepad tips, memo pads online, privacy notepad, productivity memo" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Memo Notepad Blog | Articles & Tips for Digital Note-Taking</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="Explore the official Memo Notepad blog: privacy guides, productivity hacks, color-coding systems, and expert tips for your online memo notepad." />
+  <meta name="keywords" content="memo notepad blog, online notepad tips, memo pads online, note taking productivity, private memo app, Memo Notepad articles" />
   <meta name="author" content="MemoNotepad" />
+  <link rel="canonical" href="https://memonotepad.github.io/blog" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://memonotepad.github.io/blog.html" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-
-  <!-- Fonts (matching main style) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Memo Notepad Blog — Write Smarter with Private Notes" />
+  <meta property="og:description" content="Master your memo notepad: privacy, shortcuts, creative workflows, and expert organization strategies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://memonotepad.github.io/blog" />
+  <meta property="og:image" content="https://memonotepad.github.io/og-blog.png" />
+  
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-    /* ─── reuse design tokens from style (4).css ─── */
+    /* ===== GLOBAL DESIGN TOKENS (matching main site) ===== */
     :root {
       --cream: #fdfaf3;
       --paper: #fffef9;
@@ -34,16 +42,14 @@
       --border: #e8dfc8;
       --border-dark: #d0c4a8;
       --shadow-sm: 0 2px 8px rgba(44,36,22,.07);
-      --shadow-md: 0 4px 20px rgba(44,36,22,.12);
-      --shadow-lg: 0 8px 40px rgba(44,36,22,.16);
+      --shadow-md: 0 6px 24px rgba(44,36,22,.12);
+      --shadow-lg: 0 12px 40px rgba(44,36,22,.16);
       --radius: 12px;
-      --radius-sm: 8px;
       --radius-lg: 20px;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Source Serif 4', 'Georgia', serif;
       --font-ui: 'DM Sans', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-      --header-h: 64px;
+      --header-h: 68px;
       --transition: 200ms ease;
     }
 
@@ -54,161 +60,218 @@
     }
 
     body {
-      font-family: var(--font-body);
       background: var(--cream);
+      font-family: var(--font-body);
       color: var(--ink);
-      line-height: 1.65;
-      min-height: 100vh;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
+    /* paper texture overlay */
     body::before {
       content: '';
-      position: fixed; inset: 0;
-      background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(200,190,160,.12) 27px, rgba(200,190,160,.12) 28px),
-                        radial-gradient(ellipse at 20% 10%, rgba(240,165,0,.06) 0%, transparent 60%),
-                        radial-gradient(ellipse at 80% 80%, rgba(42,143,127,.05) 0%, transparent 60%);
-      pointer-events: none; z-index: 0;
+      position: fixed;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(200,190,160,.12) 27px, rgba(200,190,160,.12) 28px);
+      pointer-events: none;
+      z-index: 0;
     }
     body > * { position: relative; z-index: 1; }
 
-    /* Header & footer same as main site */
-    #site-header, #site-footer { background: rgba(253,250,243,.96); backdrop-filter: blur(8px); }
-    #site-header { position: sticky; top: 0; left: 0; right: 0; height: var(--header-h); border-bottom: 1px solid var(--border); z-index: 1000; background: rgba(253,250,243,.96); }
-    .nav-container { max-width: 1200px; margin: 0 auto; height: var(--header-h); padding: 0 24px; display: flex; align-items: center; gap: 24px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); text-decoration: none; }
-    .logo-icon { font-size: 1.5rem; }
-    .logo-text strong { color: var(--teal); }
-    .nav-links { display: flex; align-items: center; gap: 6px; margin-left: auto; flex-wrap: wrap; }
-    .nav-link { font-family: var(--font-ui); font-size: .9rem; padding: 6px 12px; border-radius: 8px; color: var(--ink-light); transition: all var(--transition); text-decoration: none; }
-    .nav-link:hover, .nav-link.active { background: var(--amber-pale); color: var(--ink); }
-    .nav-cta { font-family: var(--font-ui); font-size: .9rem; font-weight: 600; padding: 8px 18px; border-radius: 50px; background: var(--teal); color: #fff; transition: all var(--transition); text-decoration: none; }
-    .nav-cta:hover { background: var(--teal-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(42,143,127,.3); }
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; width: 32px; margin-left: auto; background: none; border: none; cursor: pointer; }
-    .nav-toggle span { display: block; height: 2px; background: var(--ink); border-radius: 2px; transition: all .25s; }
-
-    /* Blog Hero */
-    .blog-hero {
-      padding: 80px 24px 48px;
-      text-align: center;
-      background: linear-gradient(145deg, var(--cream) 0%, var(--teal-pale) 100%);
-      border-bottom: 2px solid var(--border);
-    }
-    .blog-hero .hero-content { max-width: 800px; margin: 0 auto; }
-    .blog-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-ui); font-size: .85rem; font-weight: 600;
-      background: var(--amber-pale); color: var(--amber);
-      border: 1.5px solid var(--amber-light);
-      padding: 6px 16px; border-radius: 50px; margin-bottom: 20px;
-    }
-    .blog-hero h1 {
-      font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem);
-      color: var(--ink); margin-bottom: 16px;
-    }
-    .blog-hero h1 span { color: var(--teal); }
-    .blog-sub {
-      font-size: 1.1rem; color: var(--ink-light); max-width: 620px; margin: 0 auto 24px;
+    ::selection {
+      background: var(--amber-light);
+      color: var(--ink);
     }
 
-    /* articles grid */
-    .articles-section {
-      padding: 60px 24px 90px;
+    /* HEADER (replica from main site) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: rgba(253,250,243,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      transition: box-shadow var(--transition);
+    }
+    .nav-container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 24px;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-    .section-header .section-label {
-      font-family: var(--font-ui);
-      font-size: .8rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--teal);
-      background: var(--teal-pale);
-      padding: 5px 16px;
-      border-radius: 50px;
-      display: inline-block;
-      margin-bottom: 12px;
-    }
-    .section-header h2 {
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .logo-icon { font-size: 1.6rem; }
+    .logo-text strong { color: var(--teal); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+    .nav-link {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 40px;
+      color: var(--ink-light);
+      transition: all var(--transition);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: var(--amber-pale);
+      color: var(--ink);
+    }
+    .nav-cta {
+      background: var(--teal);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+    }
+    .nav-cta:hover {
+      background: var(--teal-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(42,143,127,.3);
+      color: white;
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      margin-left: auto;
     }
 
-    .blog-grid {
+    /* BLOG HERO */
+    .blog-hero {
+      background: linear-gradient(145deg, var(--teal-pale) 0%, var(--paper) 100%);
+      padding: 64px 24px 56px;
+      text-align: center;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .blog-hero .hero-badge {
+      display: inline-block;
+      background: var(--amber-pale);
+      color: var(--teal);
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      margin-bottom: 16px;
+    }
+    .blog-hero p {
+      font-size: 1.2rem;
+      color: var(--ink-light);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* MAIN GRID (ARTICLES) */
+    .blog-main {
+      max-width: 1280px;
+      margin: 60px auto;
+      padding: 0 28px;
+    }
+    .articles-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 32px;
     }
-    .blog-card {
+    .article-card {
       background: var(--paper);
-      border: 1.5px solid var(--border);
       border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border);
       overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.3s ease;
-      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
       display: flex;
       flex-direction: column;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
     }
-    .blog-card:hover {
+    .article-card:hover {
       transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--teal-light);
+      box-shadow: var(--shadow-md);
+      border-color: var(--amber-light);
     }
-    .card-badge {
-      background: var(--amber-pale);
-      padding: 6px 12px;
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: var(--teal);
-      border-bottom: 1px solid var(--border);
-      display: inline-block;
-      width: fit-content;
-      margin: 0 0 0 20px;
-      margin-top: 20px;
-      border-radius: 30px;
-    }
-    .blog-card-content {
-      padding: 24px 24px 28px;
+    .card-content {
+      padding: 28px 26px 24px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-    .blog-card h3 {
+    .article-number {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--teal);
+      background: var(--teal-pale);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 30px;
+      width: fit-content;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+    .article-title {
       font-family: var(--font-display);
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       line-height: 1.3;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-weight: 700;
       color: var(--ink);
     }
-    .blog-card p {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
+    .article-description {
       color: var(--ink-light);
+      font-size: 1rem;
+      line-height: 1.6;
       margin-bottom: 24px;
-      line-height: 1.5;
       flex: 1;
     }
     .read-link {
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: transparent;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 50px;
+      padding: 8px 20px;
       color: var(--teal);
       text-decoration: none;
-      border-bottom: 1.5px dotted var(--teal-light);
+      transition: all 0.2s;
       width: fit-content;
-      transition: gap 0.2s;
+      margin-top: 8px;
     }
     .read-link:hover {
-      gap: 12px;
-      color: var(--teal-light);
-      border-bottom-color: var(--teal);
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+      transform: translateX(4px);
+      box-shadow: var(--shadow-sm);
     }
     .read-link::after {
       content: "→";
@@ -218,253 +281,350 @@
       transform: translateX(4px);
     }
 
-    /* Empty / note */
-    .empty-message {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--paper);
-      border-radius: var(--radius-lg);
-      border: 1.5px dashed var(--border-dark);
+    /* SIDEBAR / EXTRA INFO */
+    .blog-sidebar-note {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      background: var(--amber-pale);
+      border-radius: var(--radius);
+      padding: 24px 32px;
+      border-left: 5px solid var(--amber);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .sidebar-text p {
       font-family: var(--font-ui);
-      color: var(--ink-muted);
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .btn-small {
+      background: var(--teal);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-small:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
     }
 
-    /* Footer minimal */
-    #site-footer {
+    /* PAGINATION (simple) */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 56px 0 40px;
+    }
+    .page-btn {
+      font-family: var(--font-ui);
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      padding: 8px 20px;
+      border-radius: 60px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all var(--transition);
+    }
+    .page-btn.active-page {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+    }
+    .page-btn:hover:not(.disabled) {
+      background: var(--amber-pale);
+      border-color: var(--amber);
+    }
+    .page-btn.disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    /* FOOTER */
+    .site-footer {
       background: var(--ink);
       color: #ccc;
-      padding: 40px 24px 24px;
+      padding: 48px 24px 24px;
       margin-top: 40px;
     }
     .footer-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 24px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      padding-bottom: 32px;
-    }
-    .footer-copyright {
+      align-items: center;
       text-align: center;
-      font-family: var(--font-ui);
-      font-size: 0.8rem;
-      color: #aaa;
-      margin-top: 20px;
     }
     .footer-logo {
-      color: #fff;
       font-family: var(--font-display);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 1.2rem;
+      color: white;
     }
     .footer-logo strong { color: var(--amber); }
-
-    @media (max-width: 700px) {
-      .nav-links { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 20px; gap: 8px; z-index: 999; border-bottom: 2px solid var(--border); }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: flex; }
-      .blog-hero { padding: 60px 20px 40px; }
-      .blog-grid { gap: 24px; }
+    .footer-copy {
+      font-size: 0.85rem;
+      font-family: var(--font-ui);
     }
-    @media (max-width: 480px) {
-      .blog-card-content { padding: 20px; }
-      .blog-card h3 { font-size: 1.2rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 780px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      .blog-hero {
+        padding: 48px 20px 40px;
+      }
+      .blog-main {
+        padding: 0 20px;
+      }
+    }
+    @media (max-width: 550px) {
+      .card-content {
+        padding: 22px;
+      }
+      .article-title {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- ══════ HEADER (replica from original) ══════ -->
-<header id="site-header" role="banner">
+<!-- ========== HEADER ========== -->
+<header class="site-header">
   <div class="nav-container">
-    <a href="./" class="nav-logo">
+    <a href="/" class="nav-logo">
       <span class="logo-icon">📝</span>
-      <span class="logo-text"><strong>Memo</strong> Notepad</span>
+      <span class="logo-text"><strong>Memo</strong>Notepad</span>
     </a>
-    <button class="nav-toggle" id="mobileToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
     <div class="nav-links" id="navLinks">
-      <a href="./" class="nav-link">🏠 Home</a>
-      <a href="./#app" class="nav-link">📝 App</a>
-      <a href="./#features" class="nav-link">✨ Features</a>
-      <a href="./#faq" class="nav-link">❓ FAQ</a>
-      <a href="blog.html" class="nav-link active">📖 Blog</a>
-      <a href="./#app" class="nav-cta">Open Notepad →</a>
+      <a href="/" class="nav-link">Home</a>
+      <a href="/#app" class="nav-link">App</a>
+      <a href="/blog" class="nav-link active">Blog</a>
+      <a href="/#features" class="nav-link">Features</a>
+      <a href="/#faq" class="nav-link">FAQ</a>
+      <a href="/#app" class="nav-link nav-cta">Open Memo Pad →</a>
     </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
   </div>
 </header>
 
-<!-- ══════ BLOG HERO ══════ -->
+<!-- ========== BLOG HERO ========== -->
 <section class="blog-hero">
-  <div class="hero-content">
-    <div class="blog-badge">📚 Official Blog</div>
-    <h1>Memo Notepad <span>Insights & Ideas</span></h1>
-    <p class="blog-sub">Deep dives on privacy, productivity hacks, color-coded organisation and expert tips — crafted for memo lovers.</p>
-  </div>
+  <div class="hero-badge">✨ Insights & tutorials</div>
+  <h1>Memo Notepad <span style="color: var(--teal);">Blog</span></h1>
+  <p>Deep dives into private note-taking, productivity hacks, and smart workflows — straight from the team behind the web's favorite memo pad.</p>
 </section>
 
-<!-- ══════ ARTICLES GRID (based on topics.txt) ══════ -->
-<section class="articles-section">
-  <div class="section-header">
-    <span class="section-label">Latest articles</span>
-    <h2>Explore the full memo library</h2>
-    <p style="color: var(--ink-muted); max-width: 540px; margin: 10px auto 0;">Every topic from our memo notepad knowledge base — click and read in-depth guides.</p>
+<!-- ========== ARTICLES SECTION ========== -->
+<main class="blog-main">
+  <div class="blog-sidebar-note">
+    <div class="sidebar-text">
+      <p>📚 10+ expert-written guides • Privacy-first • Boost your daily efficiency</p>
+    </div>
+    <a href="/#app" class="btn-small">✨ Try Memo Notepad Now</a>
   </div>
 
-  <div id="articlesGrid" class="blog-grid">
-    <!-- dynamic cards injected from JS -->
+  <div id="articlesContainer" class="articles-grid">
+    <!-- dynamic articles injected via JS from Topics.txt data -->
   </div>
-</section>
 
-<!-- ══════ FOOTER ══════ -->
-<footer id="site-footer" role="contentinfo">
+  <!-- simple pagination controls (optional, but makes navigation nice) -->
+  <div class="pagination" id="paginationControls">
+    <!-- prev, next rendered via js -->
+  </div>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
   <div class="footer-inner">
-    <div>
-      <div class="footer-logo">
-        <span>📝</span> <span><strong>Memo</strong> Notepad</span>
-      </div>
-      <p style="font-size:0.85rem; margin-top:8px;">Free online notepad • Zero tracking • Always private</p>
-    </div>
-    <div>
-      <p style="font-family:var(--font-ui); font-size:0.8rem;">© 2025 MemoNotepad — write freely.</p>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <span>📌 100% local storage · No servers · Your notes, your control</span>
+    <div class="footer-logo">📝 <strong>Memo</strong>Notepad — Write Freely, Stay Private</div>
+    <div class="footer-copy">© 2025 Memo Notepad Online | No tracking, no servers, just your notes.</div>
   </div>
 </footer>
 
 <script>
-  // --------------------------------------------------------------
-  // ARTICLES DATA — extracted from "Memo notepad Topics.txt" content.
-  // Each entry: title, short description (excerpt), and a placeholder link
-  // that leads to a future detailed article (just "#" but with meaningful path).
-  // We preserve the exact topics order from the text file.
-  // --------------------------------------------------------------
+  // ========== ARTICLE DATASET (extracted from Memo notepad Topics.txt given in prompt) ==========
+  // Titles + descriptions + article URLs (realistic permalinks for the blog)
   const articlesData = [
     {
       id: 1,
       title: "How Memo Notepad Keeps Your Notes 100% Private (No Servers, No Tracking)",
-      description: "Discover why your memos never leave your device — browser storage, zero data collection and complete privacy by design.",
-      link: "#article-private-notes"
+      description: "Discover why local-first storage matters: your memos never leave your browser. No accounts, no cloud vulnerabilities — complete privacy by design.",
+      url: "/private-memo-notepad-no-servers"
     },
     {
       id: 2,
       title: "10 Creative Ways to Use Memo Notepad for Everyday Productivity",
-      description: "From daily journaling to task management and rapid capture — unlock ten powerful ways to get more done with a simple memo pad.",
-      link: "#article-creative-ways"
+      description: "From lightning-fast daily logs to project brainstorming, habit trackers and recipe vaults — unlock the full potential of your online memo pads.",
+      url: "/creative-memo-productivity"
     },
     {
       id: 3,
       title: "Mastering Color-Coded Memos: Build a Visual Organization System",
-      description: "Turn your memo list into a visual dashboard. Learn how to assign meaning to colours and instantly spot priorities.",
-      link: "#article-color-coded"
+      description: "Transform your memo list into a vibrant dashboard: use color labels for urgency, context, and priority. Level up your visual workflow.",
+      url: "/color-coded-memos-guide"
     },
     {
       id: 4,
       title: "Why Browser-Based Note-Taking Apps Are the Future (And How Memo Notepad Leads)",
-      description: "Cloud fatigue? Browser-first apps offer speed, privacy and simplicity. See why memo notepad sets the standard.",
-      link: "#article-browser-future"
+      description: "Cross-platform, zero-install, always up-to-date. Explore the rise of PWA-style notepads and why Memo Notepad sets the standard.",
+      url: "/browser-note-taking-future"
     },
     {
       id: 5,
       title: "Pro Tips & Keyboard Shortcuts to 10x Your Note-Taking Speed",
-      description: "Master essential shortcuts: new memo, save, delete, search and more — level up your memo workflow.",
-      link: "#article-shortcuts"
+      description: "Master Ctrl+N, Ctrl+S, find-in-page, and advanced navigation tricks. Become a power user of your memo notepad online.",
+      url: "/shortcuts-speed-tips"
     },
     {
       id: 6,
       title: "How to Back Up and Restore Your Memos Across Devices and Browsers",
-      description: "Step-by-step guide to export all memos as JSON and restore them safely across different browsers or computers.",
-      link: "#article-backup-restore"
+      description: "Step-by-step guide: export JSON, import on another device, sync manually and keep your memo collection safe forever.",
+      url: "/backup-restore-memos"
     },
     {
       id: 7,
       title: "Memo Notepad vs Popular Note Apps: Privacy, Speed, and Simplicity Showdown",
-      description: "Compare Memo Notepad with Evernote, Notion, and Google Keep — see where local-first notepad wins.",
-      link: "#article-showdown"
+      description: "Comparing Evernote, Google Keep, and Apple Notes — why a lightweight memo pad wins for instant capture and zero distractions.",
+      url: "/memo-notepad-vs-others"
     },
     {
       id: 8,
       title: "Capture Ideas Instantly: Building a Second Brain with Memo Notepad",
-      description: "Use memo pads as your external brain. Capture fleeting thoughts, meeting insights, and creative sparks.",
-      link: "#article-second-brain"
+      description: "Use the PARA method inside your memo notepad: organize projects, areas, resources, and archives using simple tags and pinning.",
+      url: "/second-brain-memo-method"
     },
     {
       id: 9,
       title: "Mobile Note-Taking Done Right: Using Memo Notepad on Phones and Tablets",
-      description: "Optimised for touch: how to write, edit and manage memos on iPhone, iPad, and Android browsers.",
-      link: "#article-mobile-note"
+      description: "Optimized touch controls, responsive layout, and offline capabilities — perfect for notes on the go without heavy apps.",
+      url: "/mobile-note-taking-memo"
     },
     {
       id: 10,
       title: "From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos",
-      description: "Learn advanced formatting, export as .txt, copy to clipboard, and turn rough drafts into refined notes.",
-      link: "#article-polish-memos"
+      description: "Learn to craft clean memos, use the built-in word counter, export polished text, and format notes like a pro.",
+      url: "/writing-editing-exporting"
     }
   ];
 
-  // Helper: generate a consistent readable slug style (optional but just for link styling)
-  function getFakeLink(title) {
-    return "#" + title.toLowerCase().replace(/[^a-z0-9]+/g, '-').substring(0, 60);
-  }
+  // Pagination variables
+  let currentPage = 1;
+  const itemsPerPage = 6;   // show 6 articles per page for balanced layout
 
-  // Render blog cards
   function renderArticles() {
-    const gridContainer = document.getElementById('articlesGrid');
-    if (!gridContainer) return;
-
-    if (!articlesData.length) {
-      gridContainer.innerHTML = `<div class="empty-message">📭 No articles found. Check back soon for memo wisdom!</div>`;
-      return;
+    const container = document.getElementById('articlesContainer');
+    if (!container) return;
+    
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageArticles = articlesData.slice(startIndex, endIndex);
+    
+    if (pageArticles.length === 0 && currentPage > 1) {
+      // edge: if last page empty, go to previous page
+      currentPage = Math.max(1, Math.ceil(articlesData.length / itemsPerPage));
+      return renderArticles();
     }
-
-    let cardsHTML = '';
-    for (const article of articlesData) {
-      // Use provided link else generate fallback
-      const articleLink = article.link && article.link !== "#" ? article.link : getFakeLink(article.title);
-      cardsHTML += `
-        <div class="blog-card">
-          <div class="card-badge">📄 memo insights</div>
-          <div class="blog-card-content">
-            <h3>${escapeHtml(article.title)}</h3>
-            <p>${escapeHtml(article.description)}</p>
-            <a href="${articleLink}" class="read-link" data-article-id="${article.id}">Read full article</a>
-          </div>
+    
+    container.innerHTML = '';
+    
+    pageArticles.forEach((article, idx) => {
+      const card = document.createElement('article');
+      card.className = 'article-card';
+      card.setAttribute('data-id', article.id);
+      
+      // subtle fade-in animation
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(16px)';
+      card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      
+      const globalIndex = startIndex + idx;
+      const articleNumber = (globalIndex + 1).toString().padStart(2, '0');
+      
+      card.innerHTML = `
+        <div class="card-content">
+          <span class="article-number">📄 Article ${articleNumber}</span>
+          <h2 class="article-title">${escapeHtml(article.title)}</h2>
+          <p class="article-description">${escapeHtml(article.description)}</p>
+          <a href="${article.url}" class="read-link" target="_blank" rel="noopener noreferrer">Read full article</a>
         </div>
       `;
-    }
-    gridContainer.innerHTML = cardsHTML;
-
-    // Optional: Add click interceptor to show a friendly demo toast (since actual article pages not built)
-    // but we keep consistent: just alert that in demo it's placeholder. But we want to simulate "read more" style.
-    // To improve UX, we attach event listeners that show a small toast/modal simulation? But the spec says:
-    // "show articles with their clickable links Read. Do not write content on topics just clickable cards with titles"
-    // Since we don't have article content pages, we open a modal or info message explaining that full articles are coming.
-    // However the requirement is simply to have clickable cards. For professionalism, we add a lightbox style or just an alert? 
-    // I'll make a subtle in-app toast: no actual navigation to avoid broken pages. But for real site, they'd link to dynamic pages.
-    // But per user instruction: "Donot write content on topics just clickable cards with titles". 
-    // But in real scenario, blog should link to future pages, but I'll implement a demo-friendly modal that shows excerpt without leaving,
-    // while still preserving link-like behavior. That's a polished experience.
-    const allReadLinks = document.querySelectorAll('.read-link');
-    allReadLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const card = link.closest('.blog-card');
-        const titleElem = card?.querySelector('h3')?.innerText || 'Article';
-        const descElem = card?.querySelector('p')?.innerText || '';
-        showDemoModal(titleElem, descElem);
+      container.appendChild(card);
+      
+      // trigger animation after dom insertion
+      requestAnimationFrame(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
       });
     });
+    
+    // if no articles show empty state (should not happen)
+    if (pageArticles.length === 0) {
+      container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding: 80px; background: var(--paper); border-radius: var(--radius);">
+        <span class="empty-icon">📭</span><p>No articles found. Check back soon!</p>
+      </div>`;
+    }
+    
+    renderPaginationControls();
   }
-
-  // small helper to escape HTML to avoid injection
+  
+  function renderPaginationControls() {
+    const paginationDiv = document.getElementById('paginationControls');
+    if (!paginationDiv) return;
+    
+    const totalPages = Math.ceil(articlesData.length / itemsPerPage);
+    if (totalPages <= 1) {
+      paginationDiv.innerHTML = '';
+      return;
+    }
+    
+    const prevDisabled = currentPage === 1 ? 'disabled' : '';
+    const nextDisabled = currentPage === totalPages ? 'disabled' : '';
+    
+    paginationDiv.innerHTML = `
+      <button class="page-btn ${prevDisabled}" id="prevPageBtn" ${prevDisabled ? 'disabled' : ''}>← Previous</button>
+      <span style="font-family: var(--font-ui); color: var(--ink-muted); align-self:center;">Page ${currentPage} of ${totalPages}</span>
+      <button class="page-btn ${nextDisabled}" id="nextPageBtn" ${nextDisabled ? 'disabled' : ''}>Next →</button>
+    `;
+    
+    const prevBtn = document.getElementById('prevPageBtn');
+    const nextBtn = document.getElementById('nextPageBtn');
+    if (prevBtn && !prevBtn.disabled) {
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderArticles();
+          window.scrollTo({ top: 380, behavior: 'smooth' });
+        }
+      });
+    }
+    if (nextBtn && !nextBtn.disabled) {
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderArticles();
+          window.scrollTo({ top: 380, behavior: 'smooth' });
+        }
+      });
+    }
+  }
+  
+  // simple XSS protection
   function escapeHtml(str) {
-    if (!str) return '';
     return str.replace(/[&<>]/g, function(m) {
       if (m === '&') return '&amp;';
       if (m === '<') return '&lt;';
@@ -474,123 +634,101 @@
       return c;
     });
   }
-
-  // Lightweight modal for article preview (since no content pages, but interactive)
-  // This respects the "clickable cards" concept but provides placeholder info.
-  function showDemoModal(title, description) {
-    // if modal already exists, remove then add fresh
-    let existingModal = document.getElementById('articlePreviewModal');
-    if (existingModal) existingModal.remove();
-    
-    const modalOverlay = document.createElement('div');
-    modalOverlay.id = 'articlePreviewModal';
-    modalOverlay.style.position = 'fixed';
-    modalOverlay.style.inset = '0';
-    modalOverlay.style.background = 'rgba(44,36,22,0.7)';
-    modalOverlay.style.backdropFilter = 'blur(6px)';
-    modalOverlay.style.zIndex = '3000';
-    modalOverlay.style.display = 'flex';
-    modalOverlay.style.alignItems = 'center';
-    modalOverlay.style.justifyContent = 'center';
-    modalOverlay.style.padding = '20px';
-    
-    const modalCard = document.createElement('div');
-    modalCard.style.maxWidth = '500px';
-    modalCard.style.width = '100%';
-    modalCard.style.background = 'var(--paper)';
-    modalCard.style.borderRadius = 'var(--radius-lg)';
-    modalCard.style.border = '2px solid var(--border-dark)';
-    modalCard.style.boxShadow = 'var(--shadow-lg)';
-    modalCard.style.padding = '28px 28px 32px';
-    modalCard.style.fontFamily = 'var(--font-body)';
-    
-    modalCard.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <span style="background:var(--teal-pale); padding:4px 14px; border-radius:40px; font-family:var(--font-ui); font-size:0.7rem; font-weight:600; color:var(--teal);">📖 full article</span>
-        <button id="closeModalBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink-muted);">&times;</button>
-      </div>
-      <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:12px; color:var(--ink);">${escapeHtml(title)}</h3>
-      <p style="color:var(--ink-light); margin-bottom:20px; line-height:1.5;">${escapeHtml(description)}</p>
-      <div style="background:var(--cream); border-left:4px solid var(--teal); padding:14px 16px; border-radius:12px; margin-bottom:20px;">
-        <span style="font-family:var(--font-ui); font-size:0.85rem; font-weight:600;">✨ Complete guide available</span>
-        <p style="font-size:0.9rem; margin-top:6px;">This in-depth article will be published soon. Meanwhile, explore the memo notepad app and start organizing your notes.</p>
-      </div>
-      <div style="display:flex; gap:12px; justify-content:flex-end;">
-        <a href="./#app" class="btn-primary" style="background:var(--teal); color:#fff; padding:8px 18px; border-radius:40px; text-decoration:none; font-family:var(--font-ui); font-weight:600;">📝 Open Memo Notepad</a>
-        <button id="closeModalBtn2" style="background:transparent; border:1.5px solid var(--border); border-radius:40px; padding:8px 16px; font-family:var(--font-ui); cursor:pointer;">Close</button>
-      </div>
-    `;
-    
-    modalOverlay.appendChild(modalCard);
-    document.body.appendChild(modalOverlay);
-    document.body.style.overflow = 'hidden';
-    
-    const closeModal = () => {
-      if (modalOverlay) modalOverlay.remove();
-      document.body.style.overflow = '';
-    };
-    const closeBtn = modalCard.querySelector('#closeModalBtn');
-    const closeBtn2 = modalCard.querySelector('#closeModalBtn2');
-    closeBtn?.addEventListener('click', closeModal);
-    closeBtn2?.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeModal();
-    });
-  }
-
+  
   // Mobile menu toggle
   function initMobileMenu() {
-    const toggle = document.getElementById('mobileToggle');
+    const toggleBtn = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
-    if (toggle && navLinks) {
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-        const spans = toggle.querySelectorAll('span');
-        if (navLinks.classList.contains('open')) {
-          spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-          spans[1].style.opacity = '0';
-          spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    if (toggleBtn && navLinks) {
+      toggleBtn.addEventListener('click', () => {
+        if (navLinks.style.display === 'flex') {
+          navLinks.style.display = 'none';
         } else {
-          spans[0].style.transform = 'none';
-          spans[1].style.opacity = '1';
-          spans[2].style.transform = 'none';
+          navLinks.style.display = 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = 'var(--header-h)';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.backgroundColor = 'var(--cream)';
+          navLinks.style.padding = '20px';
+          navLinks.style.borderBottom = '2px solid var(--border)';
+          navLinks.style.gap = '12px';
+          navLinks.style.zIndex = '999';
+        }
+      });
+      
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 780 && navLinks.style.display === 'flex') {
+          navLinks.style.display = '';
+          navLinks.style.position = '';
+          navLinks.style.backgroundColor = '';
+          navLinks.style.padding = '';
+          navLinks.style.flexDirection = '';
         }
       });
     }
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 700 && navLinks?.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        const spans = toggle?.querySelectorAll('span');
-        if (spans) {
-          spans[0].style.transform = 'none';
-          spans[1].style.opacity = '1';
-          spans[2].style.transform = 'none';
-        }
+  }
+  
+  // optional: additional search/filter but we stick to clean blog listing
+  // also dynamic URL reading to highlight active menu
+  
+  // Helper: highlight current active nav based on url
+  function setActiveNav() {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === '/blog' && currentPath.includes('blog')) {
+        link.classList.add('active');
+      } else if (href === '/' && (currentPath === '/' || currentPath === '/index')) {
+        link.classList.add('active');
+      } else if (!currentPath.includes('blog') && href !== '/blog' && href !== '/' && currentPath !== '/') {
+        // optional keep default
+      } else if (href === '/blog' && !currentPath.includes('blog')) {
+        link.classList.remove('active');
       }
     });
   }
-
-  // tiny dynamic header scroll style (optional)
-  function initHeaderScroll() {
-    const header = document.getElementById('site-header');
-    if (!header) return;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    });
+  
+  // SEARCH/READ MORE TRACKING (no extra needed)
+  function attachGlobalReadEvents() {
+    // dynamic because container re-renders, but we use event delegation on container
+    const container = document.getElementById('articlesContainer');
+    if (container) {
+      container.addEventListener('click', (e) => {
+        const readLink = e.target.closest('.read-link');
+        if (readLink && readLink.href) {
+          // optional analytics or just let default behavior happen (new tab)
+          // we don't prevent default
+          console.log(`Blog article clicked: ${readLink.href}`);
+        }
+      });
+    }
   }
   
-  // add a small scrolled style if needed (we already have class)
-  const style = document.createElement('style');
-  style.textContent = `#site-header.scrolled { box-shadow: var(--shadow-md); background: rgba(253,250,243,.98); }`;
-  document.head.appendChild(style);
-  
-  // Initialize everything
+  // initial page load
   document.addEventListener('DOMContentLoaded', () => {
     renderArticles();
     initMobileMenu();
-    initHeaderScroll();
+    setActiveNav();
+    attachGlobalReadEvents();
+    
+    // Also adjust any active state for the header (if any extra)
+    const headerScrolled = () => {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 20) {
+        header.style.boxShadow = 'var(--shadow-sm)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    };
+    window.addEventListener('scroll', headerScrolled);
+    headerScrolled();
   });
+  
+  // optional: manual friendly fallback for external article urls (they are dummy urls but consistent with the blog architecture)
+  // all read links open in new tab, user friendly
 </script>
 
 </body>
