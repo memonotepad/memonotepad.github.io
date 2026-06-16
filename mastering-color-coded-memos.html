@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mastering Color-Coded Memos: Build a Visual Organization System</title>
+  <meta name="description" content="Learn how to use color-coded memos in Memo Notepad to build a visual organization system. Tips on color categories, pinning strategies, and turning your notepad into a visual dashboard." />
+  <meta name="keywords" content="color coded notes, memo notepad color labels, visual note organization, color categories notepad, memo notepad online, organized notepad, color system notes" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Memo Notepad" />
+  <link rel="canonical" href="https://memonotepad.github.io/mastering-color-coded-memos" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Mastering Color-Coded Memos: Build a Visual Organization System" />
+  <meta property="og:description" content="Tips on creating color categories, pinning strategies, and turning your Memo Notepad into a visual dashboard you can navigate at a glance." />
+  <meta property="og:url" content="https://memonotepad.github.io/mastering-color-coded-memos" />
+  <meta property="og:image" content="https://memonotepad.github.io/og-image.png" />
+  <meta property="og:site_name" content="Memo Notepad Online" />
+  <meta property="article:published_time" content="2026-06-10" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mastering Color-Coded Memos: Build a Visual Organization System" />
+  <meta name="twitter:description" content="Turn your Memo Notepad into a colour-coded visual dashboard. Here's exactly how to build the system." />
+  <meta name="twitter:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <!-- JSON-LD: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Mastering Color-Coded Memos: Build a Visual Organization System",
+    "description": "Tips on creating color categories, pinning strategies, and turning your Memo Notepad into a visual dashboard.",
+    "url": "https://memonotepad.github.io/mastering-color-coded-memos",
+    "image": "https://memonotepad.github.io/og-image.png",
+    "datePublished": "2026-06-16",
+    "dateModified": "2026-06-16",
+    "author": {
+      "@type": "Organization",
+      "name": "Memo Notepad",
+      "url": "https://memonotepad.github.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Memo Notepad",
+      "url": "https://memonotepad.github.io/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://memonotepad.github.io/mastering-color-coded-memos"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 3, "name": "Color-Coded Memos Guide", "item": "https://memonotepad.github.io/mastering-color-coded-memos" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many color labels does Memo Notepad support?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Memo Notepad offers a set of distinct colour options you can assign to any memo. Most users find 4–6 colours sufficient to cover all their categories without the system becoming overwhelming." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change the color of a memo after creating it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open any memo and use the colour picker in the editor toolbar to reassign its label at any time. The change saves instantly." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best color system for work and personal notes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A popular system is: amber/yellow for ideas, teal/green for active tasks, red/coral for urgent items, blue for reference or research, and a neutral or pink for personal notes. Keep unused colours unassigned rather than stretching your system too thin." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does sorting by color work in Memo Notepad?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The sidebar lets you sort memos by date or title. For colour grouping, use the pinning feature to bring priority memos to the top, and rely on the colour stripe in each memo card for instant visual recognition while scrolling." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── BLOG LAYOUT ── */
+    .blog-wrap {
+      padding-top: calc(var(--header-h) + 48px);
+      padding-bottom: 80px;
+    }
+    .blog-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--ink-muted);
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--teal); }
+    .breadcrumb a:hover { color: var(--teal-light); }
+    .breadcrumb span { color: var(--ink-muted); }
+
+    /* Post header */
+    .post-header { margin-bottom: 36px; }
+    .post-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: #c47a00;
+      background: var(--amber-pale);
+      border: 1.5px solid var(--amber-light);
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .post-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-ui);
+      font-size: .84rem;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+    }
+    .post-meta-item { display: flex; align-items: center; gap: 5px; }
+
+    /* ── FEATURED IMAGE ── */
+    .featured-image-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 40px;
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-md);
+      background: var(--paper);
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Faux notepad sidebar with colour-coded memos */
+    .feat-notepad {
+      width: 100%;
+      max-width: 560px;
+      margin: 32px auto;
+      background: var(--paper);
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      font-family: var(--font-ui);
+    }
+    .feat-titlebar {
+      background: var(--amber-pale);
+      border-bottom: 1.5px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .feat-dot { width: 12px; height: 12px; border-radius: 50%; }
+    .feat-dot-r { background: #ff6b6b; }
+    .feat-dot-y { background: var(--amber); }
+    .feat-dot-g { background: var(--teal); }
+    .feat-memo-list { padding: 10px 10px; display: flex; flex-direction: column; gap: 6px; }
+    .feat-memo-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      background: var(--cream);
+    }
+    .feat-color-bar { width: 6px; flex-shrink: 0; height: 48px; }
+    .feat-memo-body { padding: 8px 12px; flex: 1; }
+    .feat-memo-title { font-size: .83rem; font-weight: 600; color: var(--ink); }
+    .feat-memo-sub { font-size: .73rem; color: var(--ink-muted); margin-top: 2px; }
+    .feat-color-pill {
+      margin-right: 10px;
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: 2px 9px;
+      border-radius: 50px;
+    }
+    .feat-caption {
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      color: var(--ink-muted);
+      padding: 10px 16px 18px;
+    }
+
+    /* Article body */
+    .post-body { font-family: var(--font-body); }
+    .post-body p {
+      font-size: 1.06rem;
+      color: var(--ink-light);
+      line-height: 1.78;
+      margin-bottom: 20px;
+    }
+    .post-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--ink);
+      margin: 48px 0 14px;
+      padding-top: 8px;
+      border-top: 2px solid var(--border);
+    }
+    .post-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: var(--ink);
+      margin: 28px 0 8px;
+    }
+    .post-body a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-decoration-color: var(--teal-light);
+      text-underline-offset: 3px;
+    }
+    .post-body a:hover { color: var(--teal-light); }
+    .post-body strong { color: var(--ink); font-weight: 600; }
+
+    /* ── COLOUR SYSTEM CARDS — signature element ── */
+    .color-system-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .cs-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      transition: all .3s;
+    }
+    .cs-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .cs-header {
+      padding: 16px 18px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cs-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+    .cs-label-wrap { flex: 1; }
+    .cs-color-name {
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    .cs-category {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+    .cs-body {
+      padding: 0 18px 16px;
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--ink-muted);
+      line-height: 1.55;
+    }
+    .cs-examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .cs-example-tag {
+      font-family: var(--font-ui);
+      font-size: .7rem;
+      padding: 2px 8px;
+      border-radius: 50px;
+      border: 1px solid rgba(0,0,0,.08);
+      color: var(--ink-light);
+      background: rgba(255,255,255,.6);
+    }
+
+    /* ── PINNING STRATEGY STEPS ── */
+    .pin-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 24px 0;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .pin-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      background: var(--paper);
+      transition: background var(--transition);
+    }
+    .pin-step:last-child { border-bottom: none; }
+    .pin-step:hover { background: var(--amber-pale); }
+    .pin-step-num {
+      min-width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: .95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .pin-step-text { flex: 1; }
+    .pin-step-title {
+      font-family: var(--font-ui);
+      font-size: .93rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .pin-step-desc {
+      font-family: var(--font-body);
+      font-size: .9rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Callout boxes */
+    .callout {
+      background: var(--teal-pale);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .callout.amber {
+      background: var(--amber-pale);
+      border-color: var(--amber);
+    }
+    .callout.coral {
+      background: #fce4ec;
+      border-color: var(--coral);
+    }
+    .callout-label {
+      font-family: var(--font-ui);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .callout.amber .callout-label { color: #c47a00; }
+    .callout.coral .callout-label { color: var(--coral); }
+
+    /* Pull quote */
+    .pull-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      color: var(--teal);
+      font-style: italic;
+      text-align: center;
+      border-top: 2px solid var(--teal-light);
+      border-bottom: 2px solid var(--teal-light);
+      padding: 24px;
+      margin: 36px 0;
+      line-height: 1.45;
+    }
+
+    /* Dashboard preview strip */
+    .dashboard-preview {
+      background: var(--cream);
+      border: 1.5px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 20px 20px 16px;
+      margin: 28px 0;
+    }
+    .dashboard-preview-label {
+      font-family: var(--font-ui);
+      font-size: .74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--ink-muted);
+      margin-bottom: 14px;
+    }
+    .dash-rows { display: flex; flex-direction: column; gap: 7px; }
+    .dash-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: var(--font-ui);
+      font-size: .82rem;
+    }
+    .dash-stripe {
+      width: 5px;
+      height: 32px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .dash-title { font-weight: 600; color: var(--ink); flex: 1; }
+    .dash-meta { color: var(--ink-muted); font-size: .72rem; }
+    .dash-pin { font-size: .85rem; }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      margin: 16px 0 24px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+    .checklist li::before {
+      content: '✓';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Article FAQ */
+    .article-faq { margin: 36px 0; }
+    .article-faq-item {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .article-faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      font-family: var(--font-ui);
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: background var(--transition);
+    }
+    .article-faq-q:hover { background: var(--amber-pale); }
+    .article-faq-q .arrow { font-size: .78rem; transition: transform .3s; color: var(--ink-muted); flex-shrink: 0; }
+    .article-faq-item.open .article-faq-q { background: var(--teal-pale); }
+    .article-faq-item.open .arrow { transform: rotate(180deg); }
+    .article-faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .35s;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      color: var(--ink-light);
+      padding: 0 20px;
+      line-height: 1.7;
+    }
+    .article-faq-item.open .article-faq-a { max-height: 280px; padding: 14px 20px; }
+
+    /* Tags */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 40px 0 0;
+    }
+    .post-tag {
+      font-family: var(--font-ui);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 50px;
+      background: var(--cream);
+      border: 1.5px solid var(--border-dark);
+      color: var(--ink-muted);
+      transition: all var(--transition);
+    }
+    .post-tag:hover { background: var(--amber-pale); border-color: var(--amber-light); color: #c47a00; }
+
+    /* Divider */
+    .post-divider {
+      height: 2px;
+      background: linear-gradient(90deg, var(--amber), var(--teal));
+      border: none;
+      border-radius: 2px;
+      margin: 52px 0;
+    }
+
+    /* Related posts */
+    .related-section { margin-top: 0; }
+    .related-label {
+      font-family: var(--font-ui);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 14px;
+      background: var(--teal-pale);
+      border-radius: 50px;
+    }
+    .related-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .related-card {
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      transition: all .3s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal-light);
+      text-decoration: none;
+    }
+    .related-card-icon { font-size: 2rem; }
+    .related-card-cat {
+      font-family: var(--font-ui);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .related-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+    .related-card-desc {
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .related-card-arrow {
+      font-family: var(--font-ui);
+      font-size: .82rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* CTA strip */
+    .post-cta {
+      background: linear-gradient(135deg, var(--teal) 0%, #1a6e5f 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      margin: 52px 0;
+      color: #fff;
+    }
+    .post-cta h3 { color: #fff; font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 10px; }
+    .post-cta p { color: rgba(255,255,255,.85); font-size: .96rem; margin-bottom: 24px; }
+    .post-cta .btn-white {
+      font-family: var(--font-ui); font-size: .95rem; font-weight: 700;
+      padding: 12px 30px; border-radius: 50px;
+      background: #fff; color: var(--teal);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: all .25s;
+    }
+    .post-cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); color: var(--teal); }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .blog-container { padding: 0 16px; }
+      .color-system-grid { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .post-cta { padding: 28px 20px; }
+      .feat-notepad { margin: 16px; }
+      .dash-meta { display: none; }
+    }
+    @media (max-width: 420px) {
+      .color-system-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header injected by JS -->
+  <div id="site-header-placeholder"></div>
+
+  <main class="blog-wrap">
+    <div class="blog-container">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://memonotepad.github.io/">Home</a>
+        <span>›</span>
+        <a href="https://memonotepad.github.io/blog">Blog</a>
+        <span>›</span>
+        <span>Color-Coded Memos Guide</span>
+      </nav>
+
+      <!-- Post header -->
+      <header class="post-header">
+        <div class="post-category">🎨 Organisation</div>
+        <h1 class="post-title">Mastering Color-Coded Memos: Build a Visual Organization System</h1>
+        <div class="post-meta">
+          <span class="post-meta-item">📅 June 16, 2026</span>
+          <span class="post-meta-item">⏱ 7 min read</span>
+          <span class="post-meta-item">✍️ Memo Notepad Team</span>
+        </div>
+      </header>
+
+      <!-- Featured image — rendered notepad preview -->
+      <figure class="featured-image-wrap" aria-label="Preview of a colour-coded memo list acting as a visual dashboard">
+        <div style="width:100%; padding: 24px 20px;">
+          <div class="feat-notepad">
+            <div class="feat-titlebar">
+              <div style="display:flex;gap:6px;">
+                <div class="feat-dot feat-dot-r"></div>
+                <div class="feat-dot feat-dot-y"></div>
+                <div class="feat-dot feat-dot-g"></div>
+              </div>
+              <span style="margin-left:8px;">📝 My Memo Notepad — Colour Dashboard</span>
+            </div>
+            <div class="feat-memo-list">
+              <div class="feat-memo-row">
+                <div class="feat-color-bar" style="background:#f0a500;"></div>
+                <div class="feat-memo-body">
+                  <div class="feat-memo-title">💡 Product Idea — Onboarding Flow</div>
+                  <div class="feat-memo-sub">Ideas · 3 mins ago</div>
+                </div>
+                <div class="feat-color-pill" style="background:#fff7e0;color:#c47a00;border:1px solid #fcd270;">Amber · Ideas</div>
+              </div>
+              <div class="feat-memo-row">
+                <div class="feat-color-bar" style="background:#2a8f7f;"></div>
+                <div class="feat-memo-body">
+                  <div class="feat-memo-title">✅ Q3 Sprint — Action Items</div>
+                  <div class="feat-memo-sub">Tasks · Today</div>
+                </div>
+                <div class="feat-color-pill" style="background:#e0f5f2;color:#2a8f7f;border:1px solid #4cbaa8;">Teal · Tasks</div>
+              </div>
+              <div class="feat-memo-row">
+                <div class="feat-color-bar" style="background:#e05c3a;"></div>
+                <div class="feat-memo-body">
+                  <div class="feat-memo-title">🚨 Client Deadline — Friday 5pm</div>
+                  <div class="feat-memo-sub">Urgent · Yesterday</div>
+                </div>
+                <div class="feat-color-pill" style="background:#fce4ec;color:#e05c3a;border:1px solid #f07a5c;">Coral · Urgent</div>
+              </div>
+              <div class="feat-memo-row">
+                <div class="feat-color-bar" style="background:#3a8fd4;"></div>
+                <div class="feat-memo-body">
+                  <div class="feat-memo-title">📚 Research — Competitor Analysis</div>
+                  <div class="feat-memo-sub">Reference · 2 days ago</div>
+                </div>
+                <div class="feat-color-pill" style="background:#e5f2fc;color:#3a8fd4;border:1px solid #7ab8e8;">Sky · Reference</div>
+              </div>
+              <div class="feat-memo-row">
+                <div class="feat-color-bar" style="background:#9c6fbf;"></div>
+                <div class="feat-memo-body">
+                  <div class="feat-memo-title">🌅 2026-06-10 — Daily Journal</div>
+                  <div class="feat-memo-sub">Personal · Tonight</div>
+                </div>
+                <div class="feat-color-pill" style="background:#ede7f6;color:#7c4dff;border:1px solid #ce93d8;">Purple · Personal</div>
+              </div>
+            </div>
+            <div class="feat-caption">Every category visible at a glance — no searching, no mental overhead.</div>
+          </div>
+        </div>
+      </figure>
+
+      <!-- Article body -->
+      <article class="post-body" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="headline" content="Mastering Color-Coded Memos: Build a Visual Organization System" />
+        <meta itemprop="datePublished" content="2026-06-10" />
+
+        <p>Opening a long list of memos titled "Notes", "Ideas", "Stuff", and "Misc" is a small daily frustration that compounds over time. You know what you wrote — you just can't find it without reading every title. Colour labels solve this instantly: the right colour system turns your memo list into a visual dashboard where every category is recognisable before you've read a single word.</p>
+
+        <p>This guide walks you through building that system from scratch — which colours to assign, how to use pinning to reinforce it, and how to keep the whole thing from collapsing under its own complexity. If you haven't explored <a href="10-creative-ways-to-use-memo-notepad.html">the full range of things Memo Notepad can do</a>, start there first — colour-coding is most powerful when you already have a few distinct use cases in mind.</p>
+
+        <h2>Why Visual Organisation Works Better Than Search Alone</h2>
+
+        <p>Search is powerful, but it requires you to remember a keyword. Colour recognition is instant and requires nothing — your brain processes a colour stripe on a memo card before you've consciously read the title. Research in visual cognition consistently shows that humans can distinguish and locate colour markers in a list roughly four times faster than scanning text alone.</p>
+
+        <p>A well-designed colour system means that when you open Memo Notepad, you can answer "where is my urgent client deadline?" in under two seconds without typing anything. That small saving, repeated dozens of times a day, adds up to something real.</p>
+
+        <div class="callout amber">
+          <span class="callout-label">📌 The golden rule of colour systems</span>
+          Use <strong>fewer colours than you think you need.</strong> Five well-chosen categories beat twelve vague ones every time. If a new memo doesn't clearly fit one of your existing colours, it probably belongs in an existing category — don't create a new colour just to avoid deciding.
+        </div>
+
+        <h2>The Core 5-Colour System</h2>
+
+        <p>This system works for students, professionals, writers, and everyday users. Each colour maps to a distinct mode of thinking, so there's rarely ambiguity about where a memo belongs.</p>
+
+        <div class="color-system-grid" aria-label="Recommended 5-colour memo system">
+
+          <div class="cs-card">
+            <div class="cs-header" style="background:#fff7e0;">
+              <div class="cs-swatch" style="background:#f0a500;"></div>
+              <div class="cs-label-wrap">
+                <div class="cs-color-name" style="color:#c47a00;">Amber</div>
+                <div class="cs-category">Ideas &amp; Inspiration</div>
+              </div>
+            </div>
+            <div class="cs-body">
+              Raw thoughts, unfiltered brainstorms, creative sparks. Anything you captured quickly without deciding if it's good yet.
+              <div class="cs-examples">
+                <span class="cs-example-tag">Product ideas</span>
+                <span class="cs-example-tag">Story concepts</span>
+                <span class="cs-example-tag">Random thoughts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-card">
+            <div class="cs-header" style="background:#e0f5f2;">
+              <div class="cs-swatch" style="background:#2a8f7f;"></div>
+              <div class="cs-label-wrap">
+                <div class="cs-color-name" style="color:#2a8f7f;">Teal</div>
+                <div class="cs-category">Active Tasks</div>
+              </div>
+            </div>
+            <div class="cs-body">
+              Things you are actively working on right now. These are in motion — not archived, not someday. Teal = in progress.
+              <div class="cs-examples">
+                <span class="cs-example-tag">Sprint items</span>
+                <span class="cs-example-tag">Project notes</span>
+                <span class="cs-example-tag">Weekly goals</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-card">
+            <div class="cs-header" style="background:#fce4ec;">
+              <div class="cs-swatch" style="background:#e05c3a;"></div>
+              <div class="cs-label-wrap">
+                <div class="cs-color-name" style="color:#e05c3a;">Coral</div>
+                <div class="cs-category">Urgent &amp; Deadlines</div>
+              </div>
+            </div>
+            <div class="cs-body">
+              Time-sensitive items that need action today or this week. If you see coral in your list, it demands attention before anything else.
+              <div class="cs-examples">
+                <span class="cs-example-tag">Client deadlines</span>
+                <span class="cs-example-tag">Overdue tasks</span>
+                <span class="cs-example-tag">Time-critical info</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-card">
+            <div class="cs-header" style="background:#e5f2fc;">
+              <div class="cs-swatch" style="background:#3a8fd4;"></div>
+              <div class="cs-label-wrap">
+                <div class="cs-color-name" style="color:#3a8fd4;">Sky Blue</div>
+                <div class="cs-category">Reference &amp; Research</div>
+              </div>
+            </div>
+            <div class="cs-body">
+              Notes you'll look up repeatedly but aren't actively working on. Stable information that supports your work.
+              <div class="cs-examples">
+                <span class="cs-example-tag">Meeting notes</span>
+                <span class="cs-example-tag">Research findings</span>
+                <span class="cs-example-tag">How-to reminders</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-card">
+            <div class="cs-header" style="background:#ede7f6;">
+              <div class="cs-swatch" style="background:#9c6fbf;"></div>
+              <div class="cs-label-wrap">
+                <div class="cs-color-name" style="color:#7c4dff;">Purple</div>
+                <div class="cs-category">Personal &amp; Private</div>
+              </div>
+            </div>
+            <div class="cs-body">
+              Journal entries, personal reflections, health notes. These are the most private memos — fitting that they have their own distinct colour.
+              <div class="cs-examples">
+                <span class="cs-example-tag">Daily journal</span>
+                <span class="cs-example-tag">Health reminders</span>
+                <span class="cs-example-tag">Personal goals</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="callout">
+          <span class="callout-label">✏️ How to assign a colour</span>
+          Open any memo, then look for the colour dot picker in the editor toolbar at the top. Click your chosen colour and it saves instantly. The colour stripe appears on the left edge of the memo card in your sidebar list.
+        </div>
+
+        <h2>What Your Dashboard Looks Like After Setup</h2>
+
+        <p>Once all your existing memos are labelled, your sidebar stops being a plain list and becomes a scannable dashboard. Here's what a typical working day looks like at a glance:</p>
+
+        <div class="dashboard-preview" aria-label="Example of a colour-coded memo dashboard">
+          <div class="dashboard-preview-label">📋 Your memo list at 9:00 AM</div>
+          <div class="dash-rows">
+            <div class="dash-row">
+              <div class="dash-stripe" style="background:#e05c3a;"></div>
+              <span class="dash-pin">📌</span>
+              <span class="dash-title">🚨 Proposal — Due Friday</span>
+              <span class="dash-meta">Coral · Urgent · Pinned</span>
+            </div>
+            <div class="dash-row">
+              <div class="dash-stripe" style="background:#2a8f7f;"></div>
+              <span class="dash-pin">📌</span>
+              <span class="dash-title">✅ Today — Tasks &amp; Focus</span>
+              <span class="dash-meta">Teal · Active · Pinned</span>
+            </div>
+            <div class="dash-row">
+              <div class="dash-stripe" style="background:#3a8fd4;"></div>
+              <span class="dash-title">📚 Client Brief — Background</span>
+              <span class="dash-meta">Sky · Reference</span>
+            </div>
+            <div class="dash-row">
+              <div class="dash-stripe" style="background:#f0a500;"></div>
+              <span class="dash-title">💡 New Feature — Raw Ideas</span>
+              <span class="dash-meta">Amber · Ideas</span>
+            </div>
+            <div class="dash-row">
+              <div class="dash-stripe" style="background:#9c6fbf;"></div>
+              <span class="dash-title">🌅 2026-06-09 — Daily Journal</span>
+              <span class="dash-meta">Purple · Personal</span>
+            </div>
+          </div>
+        </div>
+
+        <p>Your two most important memos are pinned at the top. Below them, the colour stripes tell you exactly what each remaining memo contains — no reading required. This is the notepad equivalent of a well-organised desk.</p>
+
+        <h2>Pinning Strategy: Making Your Dashboard Actionable</h2>
+
+        <p>Colour labels handle recognition. <strong>Pinning handles priority</strong>. Together they form a complete organisational system. Here's the pinning strategy that works best with the 5-colour system above:</p>
+
+        <div class="pin-steps" aria-label="Pinning strategy steps">
+          <div class="pin-step">
+            <div class="pin-step-num">1</div>
+            <div class="pin-step-text">
+              <p class="pin-step-title">Pin your most urgent coral memo</p>
+              <p class="pin-step-desc">Any memo carrying a deadline or urgent task should be pinned until it's resolved. Seeing coral at the very top of your list every time you open the app is a gentle but persistent reminder.</p>
+            </div>
+          </div>
+          <div class="pin-step">
+            <div class="pin-step-num">2</div>
+            <div class="pin-step-text">
+              <p class="pin-step-title">Pin your daily "Today" teal memo</p>
+              <p class="pin-step-desc">Create one teal memo each morning titled with today's date and your three priorities. Pin it. This becomes your anchor for the day — always visible, always relevant, unpinned and archived each evening.</p>
+            </div>
+          </div>
+          <div class="pin-step">
+            <div class="pin-step-num">3</div>
+            <div class="pin-step-text">
+              <p class="pin-step-title">Pin at most three memos at once</p>
+              <p class="pin-step-desc">Pinning loses its meaning if everything is pinned. Treat the pinned area as premium real estate — only the two or three memos that genuinely need to be top-of-mind right now earn a spot there.</p>
+            </div>
+          </div>
+          <div class="pin-step">
+            <div class="pin-step-num">4</div>
+            <div class="pin-step-text">
+              <p class="pin-step-title">Unpin completed memos the same day</p>
+              <p class="pin-step-desc">A completed task staying pinned creates clutter and dilutes the signal. Make a small ritual of unpinning finished items — it also doubles as a satisfying moment of closure.</p>
+            </div>
+          </div>
+          <div class="pin-step">
+            <div class="pin-step-num">5</div>
+            <div class="pin-step-text">
+              <p class="pin-step-title">Let reference and idea memos float unpinned</p>
+              <p class="pin-step-desc">Blue reference and amber idea memos rarely need to be pinned. Their colour stripe is enough for quick visual recognition when scrolling. Save your pins for things that require action.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pull-quote">"A colour system you forget to use is no system at all. Keep it simple enough that assigning a colour takes less than one second."</div>
+
+        <h2>Keeping the System Alive: Common Pitfalls</h2>
+
+        <p>Most colour systems collapse for one of three reasons. Here's how to avoid each:</p>
+
+        <h3>Pitfall 1: Too many colours</h3>
+        <p>Adding a new colour for every slightly different situation is tempting. Resist it. When you have ten colours, none of them carry meaning anymore — your brain stops processing them as categories and starts ignoring them as decoration. Five is plenty. If you genuinely need a sixth, retire one first.</p>
+
+        <h3>Pitfall 2: Inconsistent titles</h3>
+        <p>Colour gets you to the right region of your list; the title gets you to the exact memo. Both need to work together. Use descriptive, specific titles: "2026-06 Client Meeting — Action Items" beats "Meeting" every single time. Good titles make <a href="pro-tips-keyboard-shortcuts.html">the search feature</a> dramatically more useful — two typed words should be enough to find anything.</p>
+
+        <h3>Pitfall 3: Not reviewing old memos</h3>
+        <p>A colour system degrades when resolved tasks stay teal or stale ideas stay amber. Build a brief weekly review into your routine: scan for teal memos that are finished (archive or delete), amber memos that went nowhere (delete), and coral memos that are no longer urgent (reclassify). The whole review takes five minutes and keeps your dashboard clean. You can also <a href="how-to-backup-restore-memos.html">export your full memo archive</a> as a JSON backup before a big cleanup session — good insurance against accidentally deleting something useful.</p>
+
+        <ul class="checklist">
+          <li>Assign colours at the moment of creation, not later — the habit only sticks if it's immediate</li>
+          <li>Decide your colour meanings once and write them down somewhere permanent</li>
+          <li>Review and reclassify memos every Sunday evening (takes under five minutes)</li>
+          <li>Delete freely — you can always export before a cleanup as a safety net</li>
+        </ul>
+
+        <h2>Advanced: Adapting the System for Specific Workflows</h2>
+
+        <p>The core 5-colour system is a starting point. Here are three common adaptations:</p>
+
+        <p><strong>For students:</strong> Replace "Personal" purple with a subject-specific colour — one colour per course. Use amber for assignment drafts, teal for lecture notes that need review, and coral for upcoming exam deadlines.</p>
+
+        <p><strong>For developers:</strong> Sky blue works well for code snippets and API references, teal for active feature work, and amber for architectural ideas worth exploring. The <a href="how-memo-notepad-keeps-notes-private.html">local-only storage</a> means sensitive config memos stay genuinely private regardless of their colour.</p>
+
+        <p><strong>For writers:</strong> Amber for raw ideas and first-draft fragments, teal for pieces actively in revision, sky blue for research, and purple for personal journal entries that feed your writing. This mirrors a typical writing pipeline and lets you see at a glance how much material you have at each stage.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="article-faq">
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">How many colour labels does Memo Notepad support? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Memo Notepad offers a set of distinct colour options for memo labels. Most users find 4–6 colours sufficient. Using all available colours without a clear system actually slows you down — the value comes from consistent meaning, not variety.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Can I change a memo's colour after creating it? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Yes. Open the memo and click the colour dot in the editor toolbar at the top of the editor panel. The change applies instantly and saves automatically. You can reclassify memos as often as needed — for instance, moving a memo from amber (idea) to teal (active task) when you decide to act on it.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">What's the best colour system for someone who uses Memo Notepad for both work and personal notes? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">The 5-colour system in this article handles this well: amber for ideas, teal for active work tasks, coral for deadlines, sky blue for reference material, and purple for personal notes. The purple category acts as a clean boundary between professional and personal content, which many people find psychologically useful as well as practical.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Does sorting by colour work in the sidebar? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">The sidebar sort options are by date (last updated or created) and by title (A→Z). For visual colour grouping, combine the colour stripe recognition with the pinning feature: pin your most critical memos to the top, and rely on the coloured stripe on each card for instant scanning while scrolling the rest of the list.</div>
+          </div>
+        </div>
+
+        <h2>Start Your Colour System Today</h2>
+
+        <p>The best time to set up a colour system is when you're starting with a blank memo list. The second best time is right now. Open Memo Notepad, go through your existing memos, and spend five minutes assigning a colour to each one using the five categories above. You'll immediately see your list transform from a wall of text into a scannable visual dashboard.</p>
+
+        <p>Once your system is in place, pair it with <a href="pro-tips-keyboard-shortcuts.html">keyboard shortcuts for faster navigation</a>, and make sure you've set up a regular <a href="how-to-backup-restore-memos.html">backup routine</a> so your organised collection is safe across browser clears and device switches.</p>
+
+        <!-- Tags -->
+        <div class="post-tags" aria-label="Article tags">
+          <span class="post-tag">#Organisation</span>
+          <span class="post-tag">#ColorCoding</span>
+          <span class="post-tag">#Productivity</span>
+          <span class="post-tag">#VisualSystem</span>
+          <span class="post-tag">#MemoNotepad</span>
+          <span class="post-tag">#NoteTaking</span>
+        </div>
+      </article>
+
+      <!-- CTA -->
+      <div class="post-cta" role="complementary" aria-label="Try Memo Notepad">
+        <h3>🎨 Build Your Colour Dashboard Now</h3>
+        <p>Open Memo Notepad, assign your first five colours, and watch your list become a visual command centre in minutes.</p>
+        <a href="https://memonotepad.github.io/#app" class="btn-white">📝 Open Memo Notepad</a>
+      </div>
+
+      <hr class="post-divider" />
+
+      <!-- Related posts -->
+      <section class="related-section" aria-labelledby="related-heading">
+        <div class="related-label">📚 Read Next</div>
+        <h2 class="related-title" id="related-heading">Keep Going</h2>
+        <div class="related-grid">
+          <a class="related-card" href="10-creative-ways-to-use-memo-notepad.html">
+            <span class="related-card-icon">💡</span>
+            <span class="related-card-cat">Productivity</span>
+            <span class="related-card-title">10 Creative Ways to Use Memo Notepad for Everyday Productivity</span>
+            <span class="related-card-desc">Students, writers, developers — real workflows to adopt today.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="pro-tips-keyboard-shortcuts.html">
+            <span class="related-card-icon">⌨️</span>
+            <span class="related-card-cat">Power User</span>
+            <span class="related-card-title">Pro Tips &amp; Keyboard Shortcuts to 10x Your Speed</span>
+            <span class="related-card-desc">All shortcuts, search tricks, and export workflows in one place.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="how-to-backup-restore-memos.html">
+            <span class="related-card-icon">💾</span>
+            <span class="related-card-cat">Backup</span>
+            <span class="related-card-title">How to Back Up and Restore Your Memos Across Devices</span>
+            <span class="related-card-desc">Keep your organised collection safe with JSON export and import.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="how-memo-notepad-keeps-notes-private.html">
+            <span class="related-card-icon">🔒</span>
+            <span class="related-card-cat">Privacy</span>
+            <span class="related-card-title">How Memo Notepad Keeps Your Notes 100% Private</span>
+            <span class="related-card-desc">Why local storage beats the cloud for sensitive memos.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer injected by JS -->
+  <div id="site-footer-placeholder"></div>
+
+  <script>
+    /* ── Inject header & footer ── */
+    (function () {
+      function loadComponent(url, placeholderId) {
+        fetch(url)
+          .then(function (r) { return r.text(); })
+          .then(function (html) {
+            var el = document.getElementById(placeholderId);
+            if (el) {
+              var tmp = document.createElement('div');
+              tmp.innerHTML = html;
+              el.replaceWith(tmp.firstElementChild || tmp);
+            }
+          })
+          .catch(function () {});
+      }
+      loadComponent('../header.html', 'site-header-placeholder');
+      loadComponent('../footer.html', 'site-footer-placeholder');
+    })();
+
+    /* ── Header scroll shadow ── */
+    window.addEventListener('scroll', function () {
+      var h = document.getElementById('site-header');
+      if (h) h.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.article-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.article-faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.article-faq-item').forEach(function (i) {
+          i.classList.remove('open');
+          i.querySelector('.article-faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ── Scroll-reveal for colour cards ── */
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.cs-card, .pin-step').forEach(function (el, i) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .45s ease ' + (i * 0.07) + 's, transform .45s ease ' + (i * 0.07) + 's';
+        io.observe(el);
+      });
+    }
+  </script>
+
+</body>
+</html>
