@@ -21,6 +21,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Memo Notepad" />
   <link rel="canonical" href="https://memonotepad.github.io/mastering-color-coded-memos" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
@@ -29,7 +30,7 @@
   <meta property="og:url" content="https://memonotepad.github.io/mastering-color-coded-memos" />
   <meta property="og:image" content="https://memonotepad.github.io/og-image.png" />
   <meta property="og:site_name" content="Memo Notepad Online" />
-  <meta property="article:published_time" content="2026-06-10" />
+  <meta property="article:published_time" content="2026-06-16" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -697,11 +698,12 @@
       .color-system-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- Header injected by JS -->
-  <div id="site-header-placeholder"></div>
+   <!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
 
   <main class="blog-wrap">
     <div class="blog-container">
@@ -1107,8 +1109,12 @@
     </div>
   </main>
 
-  <!-- Footer injected by JS -->
-  <div id="site-footer-placeholder"></div>
+  <!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+  <!-- ══════════ SCRIPTS ══════════ -->
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
 
   <script>
     /* ── Inject header & footer ── */
