@@ -404,24 +404,9 @@
 </head>
 <body>
 
-<!-- ========== HEADER ========== -->
-<header class="site-header">
-  <div class="nav-container">
-    <a href="/" class="nav-logo">
-      <span class="logo-icon">📝</span>
-      <span class="logo-text"><strong>Memo</strong>Notepad</span>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/#app" class="nav-link">App</a>
-      <a href="/blog" class="nav-link active">Blog</a>
-      <a href="/#features" class="nav-link">Features</a>
-      <a href="/#faq" class="nav-link">FAQ</a>
-      <a href="/#app" class="nav-link nav-cta">Open Memo Pad →</a>
-    </div>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
-  </div>
-</header>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
 
 <!-- ========== BLOG HERO ========== -->
 <section class="blog-hero">
@@ -449,13 +434,12 @@
   </div>
 </main>
 
-<!-- ========== FOOTER ========== -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-logo">📝 <strong>Memo</strong>Notepad — Write Freely, Stay Private</div>
-    <div class="footer-copy">© 2025 Memo Notepad Online | No tracking, no servers, just your notes.</div>
-  </div>
-</footer>
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+  <!-- ══════════ SCRIPTS ══════════ -->
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
 
 <script>
   // ========== ARTICLE DATASET (extracted from Memo notepad Topics.txt given in prompt) ==========
