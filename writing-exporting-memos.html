@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos</title>
+  <meta name="description" content="Best practices for titles, word counts, formatting, and exporting Memo Notepad memos to TXT — and integrating them with your writing, coding, and planning tools." />
+  <meta name="keywords" content="memo notepad writing tips, editing notes, export memo to txt, memo notepad formatting, writing workflow notepad, memo notepad online, polish your notes" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Memo Notepad" />
+  <link rel="canonical" href="https://memonotepad.github.io/writing-exporting-memos" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos" />
+  <meta property="og:description" content="Best practices for titles, word counts, formatting, exporting to TXT, and integrating with other tools." />
+  <meta property="og:url" content="https://memonotepad.github.io/writing-exporting-memos" />
+  <meta property="og:image" content="https://memonotepad.github.io/images/perfect-memos.webp" />
+  <meta property="og:site_name" content="Memo Notepad Online" />
+  <meta property="article:published_time" content="2026-06-17" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos" />
+  <meta name="twitter:description" content="Titles, formatting, word counts, and export workflows — turn rough notes into polished output." />
+  <meta name="twitter:image" content="https://memonotepad.github.io/images/perfect-memos.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos",
+    "description": "Best practices for titles, word counts, formatting, exporting to TXT, and integrating with other tools.",
+    "url": "https://memonotepad.github.io/writing-exporting-memos",
+    "image": "https://memonotepad.github.io/images/perfect-memos.webp",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Organization", "name": "Memo Notepad", "url": "https://memonotepad.github.io/" },
+    "publisher": { "@type": "Organization", "name": "Memo Notepad", "url": "https://memonotepad.github.io/" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://memonotepad.github.io/writing-exporting-memos" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 3, "name": "Scratch to Polish Guide", "item": "https://memonotepad.github.io/writing-exporting-memos" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Memo Notepad show a word count?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Memo Notepad displays a live word count in the status area as you type, which is useful for tracking progress toward writing goals." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I export a memo as a plain text file?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the export option to save the current memo as a .txt file, which can then be opened in any word processor, code editor, or shared directly via email." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best way to title a memo for easy searching later?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use specific, descriptive titles that include unique keywords, such as a date, project name, or topic, rather than generic titles like 'Notes' or 'Untitled'. This makes the title and content both easy to find later via search." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    .blog-wrap { padding-top: calc(var(--header-h) + 48px); padding-bottom: 80px; }
+    .blog-container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: .82rem; color: var(--ink-muted); margin-bottom: 32px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--teal); }
+    .breadcrumb a:hover { color: var(--teal-light); }
+
+    .post-header { margin-bottom: 36px; }
+    .post-category { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: .78rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--coral); background: #fce4ec; border: 1.5px solid #f07a5c; padding: 4px 14px; border-radius: 50px; margin-bottom: 16px; }
+    .post-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.18; color: var(--ink); margin-bottom: 16px; }
+    .post-meta { display: flex; align-items: center; gap: 16px; font-family: var(--font-ui); font-size: .84rem; color: var(--ink-muted); flex-wrap: wrap; }
+
+    /* Featured image — draft-to-polish progression illustration */
+    .featured-image-wrap { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px; border: 1.5px solid var(--border); box-shadow: var(--shadow-md); background: linear-gradient(135deg, #fce4ec 0%, #fff7e0 50%, #e0f5f2 100%); min-height: 340px; display: flex; align-items: center; justify-content: center; }
+    .feat-inner { text-align: center; padding: 40px 28px; }
+    .feat-progress-row { display: flex; justify-content: center; align-items: center; gap: 0; margin-bottom: 22px; flex-wrap: wrap; }
+    .feat-progress-node { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .feat-progress-icon { font-size: 2.2rem; background: rgba(255,255,255,.75); backdrop-filter: blur(4px); border: 2px solid rgba(255,255,255,.9); border-radius: 16px; width: 62px; height: 62px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 12px rgba(0,0,0,.08); }
+    .feat-progress-label { font-family: var(--font-ui); font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); }
+    .feat-progress-arrow { font-size: 1.3rem; color: var(--coral); margin: 0 10px; padding-bottom: 24px; }
+    .feat-title-overlay { font-family: var(--font-display); font-size: clamp(1.2rem, 2.8vw, 1.65rem); color: var(--ink); line-height: 1.3; max-width: 480px; margin: 0 auto; }
+    .feat-title-overlay em { font-style: normal; color: var(--coral); }
+
+    .post-body { font-family: var(--font-body); }
+    .post-body p { font-size: 1.06rem; color: var(--ink-light); line-height: 1.78; margin-bottom: 20px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--ink); margin: 48px 0 14px; padding-top: 8px; border-top: 2px solid var(--border); }
+    .post-body h3 { font-family: var(--font-display); font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink); margin: 26px 0 8px; }
+    .post-body a { color: var(--teal); text-decoration: underline; text-decoration-color: var(--teal-light); text-underline-offset: 3px; }
+    .post-body a:hover { color: var(--teal-light); }
+    .post-body strong { color: var(--ink); font-weight: 600; }
+
+    /* Before/after title examples — signature element */
+    .title-compare { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+    .title-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .title-box { border-radius: var(--radius-sm); padding: 14px 16px; border: 1.5px solid var(--border); }
+    .title-box.bad { background: #fce4ec; border-color: #f07a5c; }
+    .title-box.good { background: var(--teal-pale); border-color: var(--teal-light); }
+    .title-label { font-family: var(--font-ui); font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
+    .title-box.bad .title-label { color: var(--coral); }
+    .title-box.good .title-label { color: var(--teal); }
+    .title-text { font-family: var(--font-mono); font-size: .85rem; color: var(--ink); }
+
+    /* Stages of writing — three column */
+    .stage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 28px 0; }
+    .stage-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .stage-header { padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
+    .stage-icon { font-size: 1.5rem; }
+    .stage-name { font-family: var(--font-display); font-size: 1.02rem; color: var(--ink); }
+    .stage-body { padding: 0 18px 16px; font-family: var(--font-ui); font-size: .84rem; color: var(--ink-muted); line-height: 1.6; }
+
+    /* Callouts */
+    .callout { background: var(--teal-pale); border-left: 4px solid var(--teal); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 28px 0; font-family: var(--font-body); font-size: 1rem; color: var(--ink); line-height: 1.65; }
+    .callout.amber { background: var(--amber-pale); border-color: var(--amber); }
+    .callout.coral { background: #fce4ec; border-color: var(--coral); }
+    .callout-label { font-family: var(--font-ui); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; display: block; }
+    .callout.amber .callout-label { color: #c47a00; }
+    .callout.coral .callout-label { color: var(--coral); }
+
+    /* Integration grid */
+    .integration-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 28px 0; }
+    .integration-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 18px 16px; text-align: center; }
+    .integration-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+    .integration-title { font-family: var(--font-display); font-size: .95rem; color: var(--ink); margin-bottom: 6px; }
+    .integration-body { font-family: var(--font-ui); font-size: .78rem; color: var(--ink-muted); line-height: 1.5; }
+
+    .checklist { list-style: none; margin: 16px 0 24px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-body); font-size: 1rem; color: var(--ink-light); line-height: 1.6; }
+    .checklist li::before { content: '✓'; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; border-radius: 50%; background: var(--coral); color: #fff; font-size: .72rem; font-weight: 700; margin-top: 2px; flex-shrink: 0; }
+
+    .pull-quote { font-family: var(--font-display); font-size: clamp(1.2rem, 2.5vw, 1.55rem); color: var(--coral); font-style: italic; text-align: center; border-top: 2px solid #f07a5c; border-bottom: 2px solid #f07a5c; padding: 24px; margin: 36px 0; line-height: 1.45; }
+
+    .article-faq { margin: 36px 0; }
+    .article-faq-item { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; }
+    .article-faq-q { width: 100%; text-align: left; padding: 15px 20px; font-family: var(--font-ui); font-size: .95rem; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; background: none; border: none; transition: background var(--transition); }
+    .article-faq-q:hover { background: #fce4ec; }
+    .article-faq-q .arrow { font-size: .78rem; transition: transform .3s; color: var(--ink-muted); flex-shrink: 0; }
+    .article-faq-item.open .article-faq-q { background: #fce4ec; }
+    .article-faq-item.open .arrow { transform: rotate(180deg); }
+    .article-faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; font-family: var(--font-body); font-size: .95rem; color: var(--ink-light); padding: 0 20px; line-height: 1.7; }
+    .article-faq-item.open .article-faq-a { max-height: 280px; padding: 14px 20px; }
+
+    .post-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0 0; }
+    .post-tag { font-family: var(--font-ui); font-size: .78rem; font-weight: 600; padding: 5px 14px; border-radius: 50px; background: var(--cream); border: 1.5px solid var(--border-dark); color: var(--ink-muted); transition: all var(--transition); }
+    .post-tag:hover { background: #fce4ec; border-color: #f07a5c; color: var(--coral); }
+
+    .post-divider { height: 2px; background: linear-gradient(90deg, var(--coral), var(--amber)); border: none; border-radius: 2px; margin: 52px 0; }
+
+    .related-label { font-family: var(--font-ui); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); display: inline-block; margin-bottom: 8px; padding: 4px 14px; background: var(--teal-pale); border-radius: 50px; }
+    .related-title { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.8rem); color: var(--ink); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .related-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; transition: all .3s; text-decoration: none; display: flex; flex-direction: column; gap: 10px; }
+    .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--teal-light); text-decoration: none; }
+    .related-card-icon { font-size: 2rem; }
+    .related-card-cat { font-family: var(--font-ui); font-size: .73rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+    .related-card-title { font-family: var(--font-display); font-size: 1rem; color: var(--ink); line-height: 1.35; }
+    .related-card-desc { font-family: var(--font-ui); font-size: .82rem; color: var(--ink-muted); line-height: 1.5; flex: 1; }
+    .related-card-arrow { font-family: var(--font-ui); font-size: .82rem; color: var(--teal); font-weight: 600; }
+
+    .post-cta { background: linear-gradient(135deg, var(--coral) 0%, #b5402a 100%); border-radius: var(--radius-lg); padding: 40px 32px; text-align: center; margin: 52px 0; color: #fff; }
+    .post-cta h3 { color: #fff; font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 10px; }
+    .post-cta p { color: rgba(255,255,255,.88); font-size: .96rem; margin-bottom: 24px; }
+    .post-cta .btn-white { font-family: var(--font-ui); font-size: .95rem; font-weight: 700; padding: 12px 30px; border-radius: 50px; background: #fff; color: var(--coral); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all .25s; }
+    .post-cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); color: var(--coral); }
+
+    @media (max-width: 600px) {
+      .blog-container { padding: 0 16px; }
+      .title-pair { grid-template-columns: 1fr; }
+      .stage-grid { grid-template-columns: 1fr; }
+      .integration-grid { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .post-cta { padding: 28px 20px; }
+      .feat-progress-icon { width: 48px; height: 48px; font-size: 1.7rem; }
+      .feat-progress-arrow { margin: 0 5px; }
+    }
+    @media (max-width: 420px) {
+      .integration-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+   <!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
+
+  <main class="blog-wrap">
+    <div class="blog-container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://memonotepad.github.io/">Home</a>
+        <span>›</span>
+        <a href="https://memonotepad.github.io/blog">Blog</a>
+        <span>›</span>
+        <span>Scratch to Polish Guide</span>
+      </nav>
+
+      <header class="post-header">
+        <div class="post-category">✍️ Writing Craft</div>
+        <h1 class="post-title">From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos</h1>
+        <div class="post-meta">
+          <span>📅 June 17, 2026</span>
+          <span>⏱ 7 min read</span>
+          <span>✍️ Memo Notepad Team</span>
+        </div>
+      </header>
+
+      <figure class="featured-image-wrap">
+  <img 
+    src="/images/perfect-memos.webp" 
+    alt="Illustration showing diverse use cases for Memo Notepad, including students, professionals, and developers" 
+    class="featured-image-inner"
+    loading="lazy"
+  >
+</figure>
+
+      
+      <article class="post-body" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="headline" content="From Scratch to Polish: Writing, Editing, and Exporting Perfect Memos" />
+        <meta itemprop="datePublished" content="2026-06-17" />
+
+        <p>Every great piece of writing — an email, a report, a short story, a piece of documentation — starts as a rough, imperfect first draft somewhere. Memo Notepad is built for exactly that early, messy stage: a blank page with no formatting pressure and no judgment. But getting from a rough capture to something genuinely polished and ready to share takes a deliberate process.</p>
+
+        <p>This guide walks through that full journey — titling, drafting, editing, formatting within a plain-text editor, and exporting cleanly — so your memos go from scratch to genuinely finished. It pairs well with the habits in <a href="pro-tips-keyboard-shortcuts">our keyboard shortcuts guide</a> and the categorisation system in <a href="mastering-color-coded-memos">our colour guide</a>.</p>
+
+        <h2>Start With a Title That Pulls Its Weight</h2>
+
+        <p>A memo's title does two jobs: it helps you find the note later through search, and it forces you to clarify what the memo is actually about before you've written a word. Vague titles fail at both.</p>
+
+        <div class="title-compare" aria-label="Examples of weak versus strong memo titles">
+          <div class="title-pair">
+            <div class="title-box bad">
+              <div class="title-label">✗ Weak</div>
+              <div class="title-text">"Notes"</div>
+            </div>
+            <div class="title-box good">
+              <div class="title-label">✓ Strong</div>
+              <div class="title-text">"2026-06-17 — Client Onboarding Call"</div>
+            </div>
+          </div>
+          <div class="title-pair">
+            <div class="title-box bad">
+              <div class="title-label">✗ Weak</div>
+              <div class="title-text">"Ideas"</div>
+            </div>
+            <div class="title-box good">
+              <div class="title-label">✓ Strong</div>
+              <div class="title-text">"Blog Post Idea — Local-First Software"</div>
+            </div>
+          </div>
+          <div class="title-pair">
+            <div class="title-box bad">
+              <div class="title-label">✗ Weak</div>
+              <div class="title-text">"Stuff to do"</div>
+            </div>
+            <div class="title-box good">
+              <div class="title-label">✓ Strong</div>
+              <div class="title-text">"Q3 Launch — Action Items"</div>
+            </div>
+          </div>
+        </div>
+
+        <p>Notice the strong titles all include a unique, specific anchor — a date, a project name, a topic. This is exactly what makes <a href="pro-tips-keyboard-shortcuts">search effective later</a>, and it's a habit that pays compounding dividends the longer you use Memo Notepad.</p>
+
+        <h2>The Three Stages of a Polished Memo</h2>
+
+        <div class="stage-grid" aria-label="The three stages of writing a polished memo">
+          <div class="stage-card">
+            <div class="stage-header" style="background: #fce4ec;">
+              <span class="stage-icon">✏️</span>
+              <span class="stage-name">1. Draft</span>
+            </div>
+            <div class="stage-body">Write without editing. Get every thought down, even badly phrased ones. Don't fix typos, don't restructure, don't second-guess word choice. The only goal is getting the full idea onto the page.</div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-header" style="background: var(--amber-pale);">
+              <span class="stage-icon">🔍</span>
+              <span class="stage-name">2. Edit</span>
+            </div>
+            <div class="stage-body">Re-read for structure and clarity, not polish. Cut sentences that repeat the same point. Reorder paragraphs so the logic flows. This pass is about the bones, not the prose.</div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-header" style="background: var(--teal-pale);">
+              <span class="stage-icon">✨</span>
+              <span class="stage-name">3. Polish</span>
+            </div>
+            <div class="stage-body">Fix grammar, tighten phrasing, and read it once aloud (silently counts) to catch anything that stumbles. This is the final pass before the memo is ready to export or share.</div>
+          </div>
+        </div>
+
+        <div class="callout amber">
+          <span class="callout-label">⚠️ The mistake most people make</span>
+          Editing while drafting is the single biggest cause of unfinished writing. The internal critic that catches typos is not the same part of your brain that generates ideas — running both at once slows down both processes. Keep the three stages separate, even if you do all three in the same sitting.
+        </div>
+
+        <h2>Formatting Inside a Plain-Text Editor</h2>
+
+        <p>Memo Notepad is intentionally plain text — no bold, italics, or embedded images. This is a feature, not a limitation: plain text exports cleanly to literally anywhere, never breaks formatting when pasted elsewhere, and keeps you focused on the words rather than the styling. A few conventions make plain text surprisingly expressive:</p>
+
+        <ul class="checklist">
+          <li>Use a blank line between paragraphs for visual breathing room, just like this article</li>
+          <li>Use simple dashes ( — ) or hyphens for sub-points instead of trying to fake bullet formatting</li>
+          <li>Use ALL CAPS sparingly for a single emphasised word, never a full sentence</li>
+          <li>Use a short line of equals signs or dashes as a section divider in longer memos</li>
+        </ul>
+
+        <h2>Tracking Word Count as a Writing Tool</h2>
+
+        <p>Memo Notepad shows a live word count as you type. Beyond satisfying curiosity, this is a genuinely useful writing tool: setting a target — say, 300 words for a journal entry, or 800 for a blog draft — gives your drafting stage a concrete finish line, which helps overcome the blank-page hesitation that stalls a lot of writing before it starts.</p>
+
+        <div class="callout">
+          <span class="callout-label">📊 A simple word-count habit</span>
+          When drafting, don't stop to check the count more than once or twice. Constant checking pulls you out of the writing flow. Glance at it at natural pauses — end of a paragraph, end of a section — rather than after every sentence.
+        </div>
+
+        <h2>Exporting Cleanly: From Memo to Finished File</h2>
+
+        <p>Once a memo reaches the polish stage, exporting it as a .txt file (covered in more technical depth in <a href="how-to-backup-restore-memos">our backup and restore guide</a>) turns it into something portable — ready to paste into an email, a CMS, a script, or a more advanced word processor for final formatting.</p>
+
+        <p>A clean export workflow looks like this: finish the polish pass inside Memo Notepad, export as .txt, then open that file in whatever destination tool needs the content. Because the source was always plain text, there's no formatting cleanup required on the other end — no stray HTML tags, no inconsistent fonts, no broken bullet lists.</p>
+
+        <div class="pull-quote">"Plain text is the most portable format in computing — write in it, and you can take your words anywhere."</div>
+
+        <h2>Integrating Memo Notepad Into a Larger Workflow</h2>
+
+        <p>A polished memo rarely lives only inside Memo Notepad forever — it usually becomes the seed for something else. Here's how that handoff typically works across different kinds of work:</p>
+
+        <div class="integration-grid" aria-label="Ways to integrate exported memos into other tools">
+          <div class="integration-card">
+            <span class="integration-icon">✍️</span>
+            <div class="integration-title">Writing</div>
+            <div class="integration-body">Export the polished draft, paste into your blogging platform or manuscript tool for final layout.</div>
+          </div>
+          <div class="integration-card">
+            <span class="integration-icon">💻</span>
+            <div class="integration-title">Coding</div>
+            <div class="integration-body">Export a memo of notes or pseudocode directly into your code editor as a starting comment block or README draft.</div>
+          </div>
+          <div class="integration-card">
+            <span class="integration-icon">📋</span>
+            <div class="integration-title">Planning</div>
+            <div class="integration-body">Export meeting notes and paste action items directly into your task manager or project board.</div>
+          </div>
+          <div class="integration-card">
+            <span class="integration-icon">📧</span>
+            <div class="integration-title">Sharing</div>
+            <div class="integration-body">Export as .txt and attach to an email, or paste the content directly into the message body.</div>
+          </div>
+        </div>
+
+        <p>This handoff pattern — draft and refine privately in Memo Notepad, then export to wherever the finished piece needs to live — combines the speed and privacy benefits covered in <a href="how-memo-notepad-keeps-notes-private">our privacy deep dive</a> with the eventual need to share or publish polished work elsewhere.</p>
+
+        <h2>A Simple Pre-Export Checklist</h2>
+
+        <ul class="checklist">
+          <li>Title is specific and dated, not generic</li>
+          <li>Draft pass is complete — full idea captured, no major gaps</li>
+          <li>Edit pass is done — structure flows logically, redundant points removed</li>
+          <li>Polish pass is done — typos fixed, awkward phrasing smoothed</li>
+          <li>Word count matches the intended length for its destination (email, post, report)</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="article-faq">
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Does Memo Notepad show a word count? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Yes. Memo Notepad displays a live word count in the status area as you type, which is useful for tracking progress toward writing goals like a target length for a blog post or report.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Can I export a memo as a plain text file? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Yes. Use the export option to save the current memo as a .txt file, which can then be opened in any word processor, code editor, or shared directly via email without any formatting cleanup required.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">What is the best way to title a memo for easy searching later? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Use specific, descriptive titles that include a unique keyword — such as a date, project name, or topic — rather than generic titles like "Notes" or "Untitled." This makes both the title and the content easy to find later through search.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Should I edit while I'm still drafting a memo? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">It's generally more effective to separate drafting from editing. Write the full idea first without stopping to fix phrasing, then go back for a dedicated editing pass. Running both processes simultaneously tends to slow down — and sometimes stall — the writing altogether.</div>
+          </div>
+        </div>
+
+        <div class="post-tags">
+          <span class="post-tag">#Writing</span>
+          <span class="post-tag">#Editing</span>
+          <span class="post-tag">#ExportWorkflow</span>
+          <span class="post-tag">#PlainText</span>
+          <span class="post-tag">#MemoNotepad</span>
+          <span class="post-tag">#Productivity</span>
+        </div>
+      </article>
+
+      <div class="post-cta" role="complementary">
+        <h3>✍️ Draft Something Today</h3>
+        <p>Open Memo Notepad and write your next rough draft — no formatting pressure, just words.</p>
+        <a href="https://memonotepad.github.io/#app" class="btn-white">📝 Open Memo Notepad</a>
+      </div>
+
+      <hr class="post-divider" />
+
+      <section class="related-section" aria-labelledby="related-heading">
+        <div class="related-label">📚 Read Next</div>
+        <h2 class="related-title" id="related-heading">Continue Exploring</h2>
+        <div class="related-grid">
+          <a class="related-card" href="how-to-backup-restore-memos">
+            <span class="related-card-icon">💾</span>
+            <span class="related-card-cat">Backup</span>
+            <span class="related-card-title">How to Back Up and Restore Your Memos</span>
+            <span class="related-card-desc">The full JSON and TXT export mechanics in detail.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="pro-tips-keyboard-shortcuts">
+            <span class="related-card-icon">⌨️</span>
+            <span class="related-card-cat">Power User</span>
+            <span class="related-card-title">Pro Tips &amp; Keyboard Shortcuts to 10x Your Speed</span>
+            <span class="related-card-desc">Shortcuts that make the draft-edit-polish cycle faster.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="building-second-brain-memo-notepad">
+            <span class="related-card-icon">🧠</span>
+            <span class="related-card-cat">Strategy</span>
+            <span class="related-card-title">Building a Second Brain with Memo Notepad</span>
+            <span class="related-card-desc">Where polished memos fit into a larger capture system.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="mastering-color-coded-memos">
+            <span class="related-card-icon">🎨</span>
+            <span class="related-card-cat">Organisation</span>
+            <span class="related-card-title">Mastering Color-Coded Memos</span>
+            <span class="related-card-desc">Track drafts-in-progress versus polished, ready-to-export memos.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+  <!-- ══════════ SCRIPTS ══════════ -->
+<script src="/js/header.js"></script>
+<script src="/js/footer.js"></script>
+
+  <script>
+    (function () {
+      function loadComponent(url, id) {
+        fetch(url).then(function(r){return r.text();}).then(function(html){
+          var el = document.getElementById(id);
+          if (el) { var t = document.createElement('div'); t.innerHTML = html; el.replaceWith(t.firstElementChild || t); }
+        }).catch(function(){});
+      }
+      loadComponent('../header', 'site-header-placeholder');
+      loadComponent('../footer', 'site-footer-placeholder');
+    })();
+
+    window.addEventListener('scroll', function () {
+      var h = document.getElementById('site-header');
+      if (h) h.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    document.querySelectorAll('.article-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.article-faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.article-faq-item').forEach(function(i){ i.classList.remove('open'); i.querySelector('.article-faq-q').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } }); }, { threshold: 0.1 });
+      document.querySelectorAll('.stage-card, .integration-card').forEach(function(el, i){ el.style.opacity='0'; el.style.transform='translateY(14px)'; el.style.transition='opacity .42s ease '+(i*0.06)+'s, transform .42s ease '+(i*0.06)+'s'; io.observe(el); });
+    }
+  </script>
+</body>
+</html>
