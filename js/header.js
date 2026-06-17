@@ -18,6 +18,7 @@
         <li><a href="/case-converter" class="nav-link">Case Converter</a></li>
         <li><a href="/decision-maker" class="nav-link">Choice Maker</a></li>
         <li><a href="/random-text" class="nav-link">Random Text</a></li>
+        <li><a href="/blog" class="nav-link">Blog</a></li>
         <li><a href="/about" class="nav-cta">About</a></li>
       </ul>
     </nav>
