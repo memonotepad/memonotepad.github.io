@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Back Up and Restore Your Memos Across Devices and Browsers</title>
+  <meta name="description" content="A step-by-step guide to exporting and importing your Memo Notepad memos as JSON. Protect your notes against browser data clears and move them between devices." />
+  <meta name="keywords" content="memo notepad backup, export import notepad, backup browser notes, memo notepad json export, restore notes browser, memo notepad online" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Memo Notepad" />
+  <link rel="canonical" href="https://memonotepad.github.io/how-to-backup-restore-memos" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Back Up and Restore Your Memos Across Devices and Browsers" />
+  <meta property="og:description" content="Step-by-step guide on JSON export/import, handling browser data clears, and maintaining access to your memos everywhere." />
+  <meta property="og:url" content="https://memonotepad.github.io/how-to-backup-restore-memos" />
+  <meta property="og:image" content="https://memonotepad.github.io/og-image.png" />
+  <meta property="og:site_name" content="Memo Notepad Online" />
+  <meta property="article:published_time" content="2026-06-17" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Back Up and Restore Your Memos Across Devices" />
+  <meta name="twitter:description" content="JSON export, browser clears, multi-device access — the complete backup guide." />
+  <meta name="twitter:image" content="https://memonotepad.github.io/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Back Up and Restore Your Memos Across Devices and Browsers",
+    "description": "Step-by-step guide on JSON export/import, handling browser data clears, and maintaining access to your memos everywhere.",
+    "url": "https://memonotepad.github.io/how-to-backup-restore-memos",
+    "image": "https://memonotepad.github.io/og-image.png",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Organization", "name": "Memo Notepad", "url": "https://memonotepad.github.io/" },
+    "publisher": { "@type": "Organization", "name": "Memo Notepad", "url": "https://memonotepad.github.io/" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://memonotepad.github.io/how-to-backup-restore-memos" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://memonotepad.github.io/" },
+      { "@type": "ListItem", "position": 3, "name": "Backup & Restore Guide", "item": "https://memonotepad.github.io/how-to-backup-restore-memos" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Back Up and Restore Memo Notepad Memos",
+    "description": "Step-by-step process to export your memos as JSON and import them on another device or browser.",
+    "step": [
+      { "@type": "HowToStep", "name": "Open the export dialog", "text": "Click the export icon or press Ctrl+E inside Memo Notepad." },
+      { "@type": "HowToStep", "name": "Choose Export All as JSON", "text": "Select the option to export your entire memo collection as a single JSON file." },
+      { "@type": "HowToStep", "name": "Save the file safely", "text": "Save the downloaded .json file to a clearly labelled folder on your device." },
+      { "@type": "HowToStep", "name": "Open Memo Notepad on the new device", "text": "Navigate to the Memo Notepad website on the browser or device you want to restore to." },
+      { "@type": "HowToStep", "name": "Import the JSON file", "text": "Click Import, select your saved .json file, and confirm. All memos, colours, and pins are restored." }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What file format does Memo Notepad use for backups?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Memo Notepad exports your full memo collection as a single JSON file, which preserves titles, body content, colour labels, pin status, and timestamps." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I lose my notes if I clear my browser cache?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, clearing your browser's site data or localStorage will erase your memos. Regularly exporting a JSON backup is the only way to protect against this." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I move my memos from one browser to another?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Export your memos as a JSON file from the original browser, then use the Import function in the new browser to restore them, including all colours and pins." }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    .blog-wrap { padding-top: calc(var(--header-h) + 48px); padding-bottom: 80px; }
+    .blog-container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: .82rem; color: var(--ink-muted); margin-bottom: 32px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--teal); }
+    .breadcrumb a:hover { color: var(--teal-light); }
+
+    .post-header { margin-bottom: 36px; }
+    .post-category { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: .78rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #3a8fd4; background: var(--sky-pale); border: 1.5px solid #7ab8e8; padding: 4px 14px; border-radius: 50px; margin-bottom: 16px; }
+    .post-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4.5vw, 2.9rem); line-height: 1.18; color: var(--ink); margin-bottom: 16px; }
+    .post-meta { display: flex; align-items: center; gap: 16px; font-family: var(--font-ui); font-size: .84rem; color: var(--ink-muted); flex-wrap: wrap; }
+
+    /* Featured image — backup/sync illustration */
+    .featured-image-wrap { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px; border: 1.5px solid var(--border); box-shadow: var(--shadow-md); background: linear-gradient(135deg, #e5f2fc 0%, #e0f5f2 60%, #fff7e0 100%); min-height: 340px; display: flex; align-items: center; justify-content: center; }
+    .feat-inner { text-align: center; padding: 44px 28px; }
+    .feat-device-row { display: flex; justify-content: center; align-items: center; gap: 0; margin-bottom: 22px; }
+    .feat-device { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .feat-device-icon { font-size: 2.4rem; background: rgba(255,255,255,.75); backdrop-filter: blur(4px); border: 2px solid rgba(255,255,255,.9); border-radius: 16px; width: 66px; height: 66px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 12px rgba(0,0,0,.08); }
+    .feat-device-label { font-family: var(--font-ui); font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); }
+    .feat-sync-icon { font-size: 1.5rem; color: #3a8fd4; margin: 0 14px; padding-bottom: 26px; }
+    .feat-title-overlay { font-family: var(--font-display); font-size: clamp(1.2rem, 2.8vw, 1.65rem); color: var(--ink); line-height: 1.3; max-width: 480px; margin: 0 auto; }
+    .feat-title-overlay em { font-style: normal; color: #3a8fd4; }
+
+    .post-body { font-family: var(--font-body); }
+    .post-body p { font-size: 1.06rem; color: var(--ink-light); line-height: 1.78; margin-bottom: 20px; }
+    .post-body h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--ink); margin: 48px 0 14px; padding-top: 8px; border-top: 2px solid var(--border); }
+    .post-body h3 { font-family: var(--font-display); font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--ink); margin: 26px 0 8px; }
+    .post-body a { color: var(--teal); text-decoration: underline; text-decoration-color: var(--teal-light); text-underline-offset: 3px; }
+    .post-body a:hover { color: var(--teal-light); }
+    .post-body strong { color: var(--ink); font-weight: 600; }
+
+    /* Numbered step cards — signature element, HowTo schema aligned */
+    .howto-steps { display: flex; flex-direction: column; gap: 16px; margin: 28px 0; }
+    .howto-step { display: grid; grid-template-columns: 56px 1fr; gap: 0; background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all .3s; }
+    .howto-step:hover { box-shadow: var(--shadow-sm); border-color: #7ab8e8; }
+    .howto-num-col { background: var(--sky-pale); display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border); }
+    .howto-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #3a8fd4; }
+    .howto-content { padding: 18px 20px; }
+    .howto-title { font-family: var(--font-ui); font-size: .98rem; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .howto-desc { font-family: var(--font-body); font-size: .93rem; color: var(--ink-light); line-height: 1.65; margin: 0; }
+    .howto-icon { font-size: 1.1rem; margin-right: 6px; }
+
+    /* Code block for JSON structure */
+    .code-block { background: var(--ink); color: #e8dfc8; border-radius: var(--radius-sm); padding: 20px 24px; font-family: var(--font-mono); font-size: .85rem; line-height: 1.7; margin: 24px 0; overflow-x: auto; }
+    .code-block .key { color: #87d7f0; }
+    .code-block .val { color: var(--amber-light); }
+    .code-block .punct { color: #7a9e7e; }
+
+    /* Callouts */
+    .callout { background: var(--sky-pale); border-left: 4px solid #3a8fd4; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin: 28px 0; font-family: var(--font-body); font-size: 1rem; color: var(--ink); line-height: 1.65; }
+    .callout.amber { background: var(--amber-pale); border-color: var(--amber); }
+    .callout.coral { background: #fce4ec; border-color: var(--coral); }
+    .callout-label { font-family: var(--font-ui); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #3a8fd4; margin-bottom: 6px; display: block; }
+    .callout.amber .callout-label { color: #c47a00; }
+    .callout.coral .callout-label { color: var(--coral); }
+
+    /* Scenario cards */
+    .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 28px 0; }
+    .scenario-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 20px 18px; }
+    .scenario-icon { font-size: 1.6rem; margin-bottom: 8px; display: block; }
+    .scenario-title { font-family: var(--font-display); font-size: 1rem; color: var(--ink); margin-bottom: 6px; }
+    .scenario-body { font-family: var(--font-ui); font-size: .83rem; color: var(--ink-muted); line-height: 1.6; }
+
+    .checklist { list-style: none; margin: 16px 0 24px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-body); font-size: 1rem; color: var(--ink-light); line-height: 1.6; }
+    .checklist li::before { content: '✓'; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; border-radius: 50%; background: #3a8fd4; color: #fff; font-size: .72rem; font-weight: 700; margin-top: 2px; flex-shrink: 0; }
+
+    .pull-quote { font-family: var(--font-display); font-size: clamp(1.2rem, 2.5vw, 1.55rem); color: #3a8fd4; font-style: italic; text-align: center; border-top: 2px solid #7ab8e8; border-bottom: 2px solid #7ab8e8; padding: 24px; margin: 36px 0; line-height: 1.45; }
+
+    .article-faq { margin: 36px 0; }
+    .article-faq-item { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; }
+    .article-faq-q { width: 100%; text-align: left; padding: 15px 20px; font-family: var(--font-ui); font-size: .95rem; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; background: none; border: none; transition: background var(--transition); }
+    .article-faq-q:hover { background: var(--sky-pale); }
+    .article-faq-q .arrow { font-size: .78rem; transition: transform .3s; color: var(--ink-muted); flex-shrink: 0; }
+    .article-faq-item.open .article-faq-q { background: var(--sky-pale); }
+    .article-faq-item.open .arrow { transform: rotate(180deg); }
+    .article-faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; font-family: var(--font-body); font-size: .95rem; color: var(--ink-light); padding: 0 20px; line-height: 1.7; }
+    .article-faq-item.open .article-faq-a { max-height: 280px; padding: 14px 20px; }
+
+    .post-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0 0; }
+    .post-tag { font-family: var(--font-ui); font-size: .78rem; font-weight: 600; padding: 5px 14px; border-radius: 50px; background: var(--cream); border: 1.5px solid var(--border-dark); color: var(--ink-muted); transition: all var(--transition); }
+    .post-tag:hover { background: var(--sky-pale); border-color: #7ab8e8; color: #3a8fd4; }
+
+    .post-divider { height: 2px; background: linear-gradient(90deg, #3a8fd4, var(--teal)); border: none; border-radius: 2px; margin: 52px 0; }
+
+    .related-label { font-family: var(--font-ui); font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); display: inline-block; margin-bottom: 8px; padding: 4px 14px; background: var(--teal-pale); border-radius: 50px; }
+    .related-title { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 1.8rem); color: var(--ink); margin-bottom: 28px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .related-card { background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 22px 20px; transition: all .3s; text-decoration: none; display: flex; flex-direction: column; gap: 10px; }
+    .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--teal-light); text-decoration: none; }
+    .related-card-icon { font-size: 2rem; }
+    .related-card-cat { font-family: var(--font-ui); font-size: .73rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+    .related-card-title { font-family: var(--font-display); font-size: 1rem; color: var(--ink); line-height: 1.35; }
+    .related-card-desc { font-family: var(--font-ui); font-size: .82rem; color: var(--ink-muted); line-height: 1.5; flex: 1; }
+    .related-card-arrow { font-family: var(--font-ui); font-size: .82rem; color: var(--teal); font-weight: 600; }
+
+    .post-cta { background: linear-gradient(135deg, #3a8fd4 0%, #1d5f96 100%); border-radius: var(--radius-lg); padding: 40px 32px; text-align: center; margin: 52px 0; color: #fff; }
+    .post-cta h3 { color: #fff; font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 10px; }
+    .post-cta p { color: rgba(255,255,255,.88); font-size: .96rem; margin-bottom: 24px; }
+    .post-cta .btn-white { font-family: var(--font-ui); font-size: .95rem; font-weight: 700; padding: 12px 30px; border-radius: 50px; background: #fff; color: #3a8fd4; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all .25s; }
+    .post-cta .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); color: #3a8fd4; }
+
+    @media (max-width: 600px) {
+      .blog-container { padding: 0 16px; }
+      .scenario-grid { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .post-cta { padding: 28px 20px; }
+      .feat-sync-icon { margin: 0 8px; }
+      .feat-device-icon { width: 52px; height: 52px; font-size: 1.9rem; }
+    }
+    @media (max-width: 420px) {
+      .scenario-grid { grid-template-columns: 1fr; }
+      .howto-step { grid-template-columns: 44px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-header-placeholder"></div>
+
+  <main class="blog-wrap">
+    <div class="blog-container">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="https://memonotepad.github.io/">Home</a>
+        <span>›</span>
+        <a href="https://memonotepad.github.io/blog">Blog</a>
+        <span>›</span>
+        <span>Backup &amp; Restore Guide</span>
+      </nav>
+
+      <header class="post-header">
+        <div class="post-category">💾 Backup</div>
+        <h1 class="post-title">How to Back Up and Restore Your Memos Across Devices and Browsers</h1>
+        <div class="post-meta">
+          <span>📅 June 17, 2026</span>
+          <span>⏱ 6 min read</span>
+          <span>✍️ Memo Notepad Team</span>
+        </div>
+      </header>
+
+      <figure class="featured-image-wrap" aria-label="Illustration of syncing memo backups across multiple devices">
+        <div class="feat-inner">
+          <div class="feat-device-row" aria-hidden="true">
+            <div class="feat-device">
+              <div class="feat-device-icon">💻</div>
+              <span class="feat-device-label">Laptop</span>
+            </div>
+            <span class="feat-sync-icon">⇄</span>
+            <div class="feat-device">
+              <div class="feat-device-icon">📄</div>
+              <span class="feat-device-label">JSON File</span>
+            </div>
+            <span class="feat-sync-icon">⇄</span>
+            <div class="feat-device">
+              <div class="feat-device-icon">📱</div>
+              <span class="feat-device-label">Phone</span>
+            </div>
+          </div>
+          <p class="feat-title-overlay">Your notes, <em>everywhere you go</em> — one file at a time.</p>
+        </div>
+      </figure>
+
+      <article class="post-body" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="headline" content="How to Back Up and Restore Your Memos Across Devices and Browsers" />
+        <meta itemprop="datePublished" content="2026-06-10" />
+
+        <p>Memo Notepad's <a href="how-memo-notepad-keeps-notes-private">privacy model</a> is built on a deliberate trade-off: your notes live only in your browser's localStorage, which means they're genuinely private — but they also don't automatically follow you to a new device or survive a browser data clear. The good news is that the export and import system solves this completely, and it takes less time than making a cup of coffee.</p>
+
+        <p>This guide walks through the full backup workflow, what's actually inside the export file, and how to handle the specific scenarios that trip people up — clearing browser data, switching computers, and moving between browsers on the same machine.</p>
+
+        <h2>Why Backups Matter With Local-First Storage</h2>
+
+        <p>localStorage is sandboxed to a specific browser profile on a specific device. That's the source of its privacy — but it also means three common events can affect your notes:</p>
+
+        <div class="scenario-grid" aria-label="Scenarios where backup matters">
+          <div class="scenario-card">
+            <span class="scenario-icon">🧹</span>
+            <div class="scenario-title">Clearing browser data</div>
+            <div class="scenario-body">"Clear browsing data" in your browser settings wipes localStorage along with cookies and cache, unless you specifically exclude it.</div>
+          </div>
+          <div class="scenario-card">
+            <span class="scenario-icon">💻</span>
+            <div class="scenario-title">Switching computers</div>
+            <div class="scenario-body">A new laptop or desktop has its own empty localStorage. Notes don't transfer automatically — they need to be exported and imported.</div>
+          </div>
+          <div class="scenario-card">
+            <span class="scenario-icon">🌐</span>
+            <div class="scenario-title">Switching browsers</div>
+            <div class="scenario-body">Chrome and Firefox on the same computer have completely separate localStorage. Moving from one to the other requires the same export/import step.</div>
+          </div>
+        </div>
+
+        <div class="callout amber">
+          <span class="callout-label">⚠️ The single most important habit</span>
+          None of the scenarios above are a problem <strong>if</strong> you export regularly. They become a real loss only when there's no recent backup. Make exporting a fixed weekly habit, covered in our <a href="pro-tips-keyboard-shortcuts">keyboard shortcuts guide</a>, and this entire risk disappears.
+        </div>
+
+        <h2>Step-by-Step: Exporting Your Memos</h2>
+
+        <div class="howto-steps" aria-label="Step by step export and import instructions">
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">1</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">📤</span>Open the export dialog</div>
+              <p class="howto-desc">Click the export icon in the toolbar, or press <kbd>Ctrl</kbd>+<kbd>E</kbd>. You'll see options to export the current memo only, or your entire collection.</p>
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">2</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">🗂️</span>Choose "Export All as JSON"</div>
+              <p class="howto-desc">This bundles every memo — including titles, body text, colour labels, pin status, and timestamps — into a single structured file.</p>
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">3</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">💾</span>Save the file with a clear name</div>
+              <p class="howto-desc">Your browser will download a .json file. Rename it something like "memo-backup-2026-06-10.json" and store it in a dedicated backups folder.</p>
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">4</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">🔁</span>(Optional) Sync the file via your own cloud storage</div>
+              <p class="howto-desc">If you want the backup itself accessible across devices, drop the .json file in your own Google Drive, Dropbox, or similar. This is your choice to make — Memo Notepad never does this automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>What's Actually Inside the Backup File</h2>
+
+        <p>The JSON export is human-readable and portable. Here's a simplified look at its structure:</p>
+
+        <div class="code-block">
+          {<br />
+          &nbsp;&nbsp;<span class="key">"memos"</span><span class="punct">:</span> [<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"id"</span><span class="punct">:</span> <span class="val">"memo_001"</span><span class="punct">,</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"title"</span><span class="punct">:</span> <span class="val">"Client Call Notes"</span><span class="punct">,</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"content"</span><span class="punct">:</span> <span class="val">"Discussed Q3 targets..."</span><span class="punct">,</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"color"</span><span class="punct">:</span> <span class="val">"teal"</span><span class="punct">,</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"pinned"</span><span class="punct">:</span> <span class="val">true</span><span class="punct">,</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"updatedAt"</span><span class="punct">:</span> <span class="val">"2026-06-10T09:14:00Z"</span><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+          &nbsp;&nbsp;]<br />
+          }
+        </div>
+
+        <p>Because the file is plain JSON, it's also future-proof — you can open it in any text editor, parse it with a script, or migrate it to another tool entirely if you ever needed to. Nothing about the format locks you in.</p>
+
+        <h2>Step-by-Step: Restoring Your Memos</h2>
+
+        <div class="howto-steps" aria-label="Restore instructions">
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">1</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">🌐</span>Open Memo Notepad on the target device</div>
+              <p class="howto-desc">Navigate to the site on the new browser, new computer, or after a fresh cache clear. You'll see an empty memo list — that's expected.</p>
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">2</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">📥</span>Click "Import" and select your file</div>
+              <p class="howto-desc">Choose the .json backup file from wherever you saved it. Memo Notepad will read and validate the structure before importing.</p>
+            </div>
+          </div>
+          <div class="howto-step">
+            <div class="howto-num-col"><div class="howto-num">3</div></div>
+            <div class="howto-content">
+              <div class="howto-title"><span class="howto-icon">✅</span>Confirm and verify</div>
+              <p class="howto-desc">All memos appear in the list exactly as they were, including colour labels and pinned status. Spot-check a couple of memos to confirm the content matches.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout coral">
+          <span class="callout-label">⚠️ Merge behaviour to know</span>
+          If you import into a browser that already has existing memos, the import adds the backup's memos alongside the existing ones rather than replacing them. If you intend to fully restore a clean state, clear the existing memos first or be ready to remove duplicates afterward.
+        </div>
+
+        <div class="pull-quote">"The privacy of local storage and the safety of a backup aren't in conflict — they're two halves of the same good habit."</div>
+
+        <h2>Building a Backup Routine That Actually Sticks</h2>
+
+        <ul class="checklist">
+          <li>Pick one fixed day per week (Sunday evening is popular) and export every time, no exceptions</li>
+          <li>Name files with the date so you can identify the most recent backup at a glance</li>
+          <li>Keep at least two recent backups rather than overwriting the same file each time</li>
+          <li>Store backups in a location you'd actually remember to check — a dedicated folder, not "Downloads"</li>
+        </ul>
+
+        <p>Pair this with the colour and pinning system from <a href="mastering-color-coded-memos">our visual organisation guide</a> and the shortcut habits in <a href="pro-tips-keyboard-shortcuts">our pro tips article</a>, and your entire Memo Notepad workflow becomes both fast and resilient — private by architecture, and safe by habit.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="article-faq">
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">What file format does Memo Notepad use for backups? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Memo Notepad exports your full memo collection as a single JSON file. This preserves titles, body content, colour labels, pin status, and timestamps in a structured, human-readable format.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Will I lose my notes if I clear my browser cache? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Yes — clearing your browser's site data or localStorage will erase your memos, since that's exactly where they're stored. Regularly exporting a JSON backup is the only way to protect against this, since there is no server-side copy.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Can I move my memos from one browser to another? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Yes. Export your memos as a JSON file from the original browser, then use the Import function in the new browser to restore them. All colours, pins, and content transfer over exactly as they were.</div>
+          </div>
+          <div class="article-faq-item">
+            <button class="article-faq-q" aria-expanded="false">Does importing replace my existing memos or add to them? <span class="arrow">▼</span></button>
+            <div class="article-faq-a">Importing adds the backup's memos alongside any memos already present in that browser, rather than replacing them. If you want a clean restore, clear existing memos first or remove duplicates after importing.</div>
+          </div>
+        </div>
+
+        <div class="post-tags">
+          <span class="post-tag">#Backup</span>
+          <span class="post-tag">#JSONExport</span>
+          <span class="post-tag">#DataSafety</span>
+          <span class="post-tag">#MultiDevice</span>
+          <span class="post-tag">#MemoNotepad</span>
+          <span class="post-tag">#BrowserNotes</span>
+        </div>
+      </article>
+
+      <div class="post-cta" role="complementary">
+        <h3>💾 Don't Wait for a Cache Clear to Care</h3>
+        <p>Open Memo Notepad and export your first backup right now — it takes less than ten seconds.</p>
+        <a href="https://memonotepad.github.io/#app" class="btn-white">📝 Open Memo Notepad</a>
+      </div>
+
+      <hr class="post-divider" />
+
+      <section class="related-section" aria-labelledby="related-heading">
+        <div class="related-label">📚 Read Next</div>
+        <h2 class="related-title" id="related-heading">Continue Exploring</h2>
+        <div class="related-grid">
+          <a class="related-card" href="pro-tips-keyboard-shortcuts">
+            <span class="related-card-icon">⌨️</span>
+            <span class="related-card-cat">Power User</span>
+            <span class="related-card-title">Pro Tips &amp; Keyboard Shortcuts to 10x Your Speed</span>
+            <span class="related-card-desc">The export shortcut and habits that make backups effortless.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="how-memo-notepad-keeps-notes-private">
+            <span class="related-card-icon">🔒</span>
+            <span class="related-card-cat">Privacy</span>
+            <span class="related-card-title">How Memo Notepad Keeps Your Notes 100% Private</span>
+            <span class="related-card-desc">Why local-only storage is the source of both privacy and this trade-off.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="mastering-color-coded-memos">
+            <span class="related-card-icon">🎨</span>
+            <span class="related-card-cat">Organisation</span>
+            <span class="related-card-title">Mastering Color-Coded Memos</span>
+            <span class="related-card-desc">A visual system that survives every backup and restore.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+          <a class="related-card" href="browser-based-note-taking-future">
+            <span class="related-card-icon">🌐</span>
+            <span class="related-card-cat">Deep Dive</span>
+            <span class="related-card-title">Why Browser-Based Note-Taking Apps Are the Future</span>
+            <span class="related-card-desc">The local-first philosophy behind why backups work this way.</span>
+            <span class="related-card-arrow">Read more →</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer-placeholder"></div>
+
+  <script>
+    (function () {
+      function loadComponent(url, id) {
+        fetch(url).then(function(r){return r.text();}).then(function(html){
+          var el = document.getElementById(id);
+          if (el) { var t = document.createElement('div'); t.innerHTML = html; el.replaceWith(t.firstElementChild || t); }
+        }).catch(function(){});
+      }
+      loadComponent('../header', 'site-header-placeholder');
+      loadComponent('../footer', 'site-footer-placeholder');
+    })();
+
+    window.addEventListener('scroll', function () {
+      var h = document.getElementById('site-header');
+      if (h) h.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    document.querySelectorAll('.article-faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = this.closest('.article-faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.article-faq-item').forEach(function(i){ i.classList.remove('open'); i.querySelector('.article-faq-q').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; io.unobserve(e.target); } }); }, { threshold: 0.1 });
+      document.querySelectorAll('.howto-step, .scenario-card').forEach(function(el, i){ el.style.opacity='0'; el.style.transform='translateY(14px)'; el.style.transition='opacity .42s ease '+(i*0.06)+'s, transform .42s ease '+(i*0.06)+'s'; io.observe(el); });
+    }
+  </script>
+</body>
+</html>
