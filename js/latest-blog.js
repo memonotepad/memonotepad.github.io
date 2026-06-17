@@ -1,7 +1,7 @@
 /**
  * Latest Blog Posts Component for Homepage
  * Format: Vanilla JS Dynamic Component
- * Shows the 4 most recent post cards with Title, Description, and Article link.
+ * Shows the 4 most recent post cards with Outlines and Rounded Borders.
  */
 
 (function() {
@@ -67,16 +67,16 @@
         <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;">
     `;
 
-    // Map content items onto markup grid
+    // Map content items onto markup grid with explicit outlines and rounded borders
     latestArticles.forEach((article, idx) => {
       const articleNumber = (idx + 1).toString().padStart(2, '0');
       htmlContent += `
-        <article class="article-card" data-id="${article.id}">
-          <div class="card-content">
-            <span class="article-number">📄 Article ${articleNumber}</span>
-            <h3 class="article-title" style="font-size: 1.3rem;">${escapeHtml(article.title)}</h3>
-            <p class="article-description">${escapeHtml(article.description)}</p>
-            <a href="${article.url}" class="read-link">Read article</a>
+        <article class="article-card" data-id="${article.id}" style="background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);">
+          <div class="card-content" style="padding: 28px 26px 24px; display: flex; flex-direction: column; height: 100%;">
+            <span class="article-number" style="font-family: var(--font-ui); font-size: 0.75rem; font-weight: 600; color: var(--teal); background: var(--teal-pale); display: inline-block; padding: 4px 12px; border-radius: 30px; width: fit-content; margin-bottom: 16px; letter-spacing: 0.3px;">📄 Article ${articleNumber}</span>
+            <h3 class="article-title" style="font-family: var(--font-display); font-size: 1.3rem; line-height: 1.3; margin-bottom: 14px; font-weight: 700; color: var(--ink);">${escapeHtml(article.title)}</h3>
+            <p class="article-description" style="color: var(--ink-light); font-size: 1rem; line-height: 1.6; margin-bottom: 24px; flex: 1;">${escapeHtml(article.description)}</p>
+            <a href="${article.url}" class="read-link" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-ui); font-weight: 600; font-size: 0.9rem; background: transparent; border: 1.5px solid var(--border-dark); border-radius: 50px; padding: 8px 20px; color: var(--teal); text-decoration: none; transition: all 0.2s; width: fit-content;">Read article</a>
           </div>
         </article>
       `;
