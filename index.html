@@ -604,6 +604,221 @@
   </div>
 </section>
 
+
+<section class="web-apps-section" id="web-apps" aria-labelledby="webapps-heading">
+  <div class="section-inner">
+    <div class="section-header" data-animate>
+      <span class="section-label">✨ Web Apps</span>
+      <h2 id="webapps-heading">Tools for Every Day</h2>
+      <p>More than a memo notepad — explore our suite of free, browser‑based utilities.</p>
+    </div>
+
+    <div class="webapps-grid" data-animate>
+      <!-- Card 1: Diary -->
+      <a href="https://memonotepad.github.io/diary" class="webapp-card" target="_blank" rel="noopener noreferrer">
+        <div class="webapp-icon" style="background:#fce8e6;">📖</div>
+        <h3>Diary</h3>
+        <p>Private, password‑protected diary for your daily thoughts. Entries are saved locally.</p>
+        <span class="webapp-link">Open Diary →</span>
+      </a>
+
+      <!-- Card 2: Case Converter -->
+      <a href="https://memonotepad.github.io/case-converter" class="webapp-card" target="_blank" rel="noopener noreferrer">
+        <div class="webapp-icon" style="background:#e3f0f8;">🔤</div>
+        <h3>Case Converter</h3>
+        <p>Instantly switch text between UPPER, lower, Title, Sentence, and aLtErNaTiNg cases.</p>
+        <span class="webapp-link">Convert text →</span>
+      </a>
+
+      <!-- Card 3: Choice Maker -->
+      <a href="https://memonotepad.github.io/choice-maker" class="webapp-card" target="_blank" rel="noopener noreferrer">
+        <div class="webapp-icon" style="background:#e6f2d9;">🎲</div>
+        <h3>Choice Maker</h3>
+        <p>Enter a list of options and let the wheel decide. Perfect for decisions, games, or fun.</p>
+        <span class="webapp-link">Spin the wheel →</span>
+      </a>
+
+      <!-- Card 4: Random Text -->
+      <a href="https://memonotepad.github.io/random-text" class="webapp-card" target="_blank" rel="noopener noreferrer">
+        <div class="webapp-icon" style="background:#fef3d7;">🔀</div>
+        <h3>Random Text</h3>
+        <p>Generate lorem ipsum, random words, or custom text snippets for your projects.</p>
+        <span class="webapp-link">Generate now →</span>
+      </a>
+
+      <!-- Card 5: Dream Journal -->
+      <a href="https://memonotepad.github.io/dream-journal" class="webapp-card" target="_blank" rel="noopener noreferrer">
+        <div class="webapp-icon" style="background:#f0e6ff;">🌙</div>
+        <h3>Dream Journal</h3>
+        <p>Log your dreams with tags, mood, and search. Uncover patterns and remember more.</p>
+        <span class="webapp-link">Start dreaming →</span>
+      </a>
+
+      <!-- Card 6: List Maker -->
+      <a href="https://memonotepad.github.io/list-maker" class="webapp-card" target="_blank" rel="noopener noreferrer">
+        <div class="webapp-icon" style="background:#d9e8f5;">📋</div>
+        <h3>List Maker</h3>
+        <p>Create checklists, shopping lists, to‑do lists — with reorder, check, and export.</p>
+        <span class="webapp-link">Make a list →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ─── Web Apps Section Styles ─── */
+.web-apps-section {
+  background: var(--paper);
+  padding: 80px 24px;
+}
+
+.webapps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.webapp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px 22px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.webapp-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--amber));
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.webapp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal-light);
+}
+
+.webapp-card:hover::after {
+  opacity: 1;
+}
+
+.webapp-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
+}
+
+.webapp-card:hover .webapp-icon {
+  transform: scale(1.05);
+}
+
+.webapp-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.webapp-card p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-light);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.webapp-link {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+  margin-top: 4px;
+}
+
+.webapp-link::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.webapp-card:hover .webapp-link {
+  color: var(--teal-light);
+}
+
+.webapp-card:hover .webapp-link::after {
+  transform: translateX(4px);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 700px) {
+  .web-apps-section {
+    padding: 56px 16px;
+  }
+  
+  .webapps-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .webapp-card {
+    padding: 20px 16px 18px;
+  }
+  
+  .webapp-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+  
+  .webapp-card h3 {
+    font-size: 1rem;
+  }
+  
+  .webapp-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .webapps-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .webapp-card {
+    padding: 18px 14px 16px;
+  }
+}
+</style>
+     
+
 <!-- ══════════ Latest Post ══════════ -->
 
 <div id="latestBlogSection"></div>
