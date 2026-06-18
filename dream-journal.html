@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9759808041159779"
+     crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJH8KZG8Q3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NJH8KZG8Q3');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dream Journal Online — Free Dream Diary & Dream Log App</title>
+
+<!-- SEO META -->
+<meta name="description" content="Record, analyse and explore your dreams with our free online dream journal. Log dream types, emotions, symbols, lucidity and recurring themes. Private, no sign-up required." />
+<meta name="keywords" content="dream journal, dream diary, dream journal online, online dream journal, dream log, lucid dream journal, dream journal app, record dreams, dream tracker, nightmare journal" />
+<meta name="author" content="MemoNotepad" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://memonotepad.github.io/dream-journal" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://memonotepad.github.io/dream-journal" />
+<meta property="og:title" content="Dream Journal Online — Free Dream Diary App" />
+<meta property="og:description" content="Keep a free online dream journal. Log, tag and explore your dreams and nightmares. Private, auto-save, no account needed." />
+<meta property="og:image" content="https://memonotepad.github.io/images/og-image.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dream Journal Online — Free Dream Diary App" />
+<meta name="twitter:description" content="Record and explore your dreams for free. Private online dream diary with tags, moods, lucidity tracking and more." />
+<meta name="twitter:image" content="https://memonotepad.github.io/images/og-image.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="/css/style.css" />
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Dream Journal Online",
+  "url": "https://memonotepad.github.io/dream-journal",
+  "description": "A free online dream journal and diary app. Record dreams, log emotions, track lucidity, tag symbols, and explore recurring themes — all privately in your browser.",
+  "image": "/images/og-image.png",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Write and save dream entries",
+    "Tag dream type (normal, lucid, nightmare, recurring, prophetic)",
+    "Rate dream vividness and lucidity level",
+    "Log mood and emotions on waking",
+    "Add dream symbols and themes",
+    "Search and filter dream entries",
+    "View dream statistics dashboard",
+    "Export journal as text file",
+    "Auto-save to browser localStorage",
+    "Mobile responsive design"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MemoNotepad",
+    "url": "https://memonotepad.github.io/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this online dream journal free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the dream journal is completely free. No account, no subscription, and no ads in the app — just open and start recording your dreams." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are my dream entries stored?",
+      "acceptedAnswer": { "@type": "Answer", "text": "All your dream entries are saved automatically in your browser's localStorage. They stay private on your device and are never sent to any server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I track lucid dreams?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each dream entry lets you set a lucidity level from 0 to 5, log the dream type as Lucid, and add notes about your awareness within the dream." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I search my dream diary?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The dream journal includes a search bar that searches through your dream titles, descriptions, symbols, and tags instantly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the dream journal work on mobile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. The dream journal is fully mobile-responsive and works on any phone or tablet browser. No app download required." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Dream Journal", "item": "https://memonotepad.github.io/dream-journal" }
+  ]
+}
+</script>
+
+<style>
+/* ════════════════════════════════════════════
+   DREAM JOURNAL — Page Styles
+   Night / Celestial / Warm-Ink palette
+   ════════════════════════════════════════════ */
+
+/* ── Dream-specific tokens ── */
+:root {
+  --dream-purple:    #6c4fc7;
+  --dream-purple-l:  #9b7fe8;
+  --dream-purple-p:  #f0eaff;
+  --dream-navy:      #1e1b3a;
+  --dream-navy-l:    #2d2860;
+  --dream-gold:      #f0c060;
+  --dream-gold-p:    #fffae8;
+  --dream-rose:      #e05878;
+  --dream-rose-p:    #fff0f4;
+  --dream-teal:      #2a8f7f;
+  --dream-teal-p:    #e0f5f2;
+  --dream-mist:      #f5f0ff;
+}
+
+/* ── Base layout ── */
+section { padding: 72px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-label {
+  display: inline-block; font-family: var(--font-ui); font-size: .78rem;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--dream-purple); background: var(--dream-purple-p);
+  padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
+}
+.section-header h2 { margin-bottom: 10px; }
+.section-header p { color: var(--ink-light); max-width: 580px; margin: 0 auto; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 85vh;
+  padding: calc(var(--header-h) + 60px) 24px 60px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden; position: relative;
+  background: linear-gradient(160deg, #0d0b1e 0%, #1e1b3a 40%, #2d1b4e 70%, #1a0e2e 100%);
+}
+/* Starfield */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 65% 30%, rgba(255,255,255,.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 60%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 50%, rgba(255,255,255,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 70%, rgba(255,255,255,.5) 0%, transparent 100%),
+    radial-gradient(2px 2px at 10% 80%, rgba(240,192,96,.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 80% 85%, rgba(240,192,96,.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 90%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 55%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 45% 70%, rgba(155,127,232,.8) 0%, transparent 100%);
+  pointer-events: none; z-index: 0;
+  animation: starsTwinkle 6s ease-in-out infinite alternate;
+}
+@keyframes starsTwinkle {
+  0%   { opacity: .7; }
+  100% { opacity: 1; }
+}
+.hero-bg {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;
+}
+.hero-bg .moon {
+  position: absolute;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 38%, #fffae0, #f0c060 60%, #c8902a 100%);
+  box-shadow: 0 0 60px 20px rgba(240,192,96,.3), 0 0 120px 40px rgba(240,192,96,.1);
+  top: 8%; right: 12%;
+  animation: moonGlow 4s ease-in-out infinite alternate;
+}
+@keyframes moonGlow {
+  0%   { box-shadow: 0 0 60px 20px rgba(240,192,96,.3), 0 0 120px 40px rgba(240,192,96,.1); }
+  100% { box-shadow: 0 0 80px 30px rgba(240,192,96,.45), 0 0 160px 60px rgba(240,192,96,.15); }
+}
+.hero-bg .cloud {
+  position: absolute; border-radius: 50%; opacity: .08; filter: blur(40px);
+  animation: cloudDrift 12s ease-in-out infinite alternate;
+}
+.hero-bg .cloud-1 { width:400px;height:200px;background:#9b7fe8;top:20%;left:-5%; }
+.hero-bg .cloud-2 { width:300px;height:150px;background:#6c4fc7;bottom:15%;right:-5%;animation-delay:-6s; }
+@keyframes cloudDrift {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(30px); }
+}
+.hero-content { position: relative; z-index: 2; max-width: 800px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-ui); font-size: .85rem; font-weight: 600;
+  background: rgba(108,79,199,.3); color: var(--dream-gold);
+  border: 1.5px solid rgba(240,192,96,.35);
+  padding: 6px 18px; border-radius: 50px; margin-bottom: 26px;
+  animation: fadeSlideDown .6s ease both;
+  backdrop-filter: blur(8px);
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  color: #fff; margin-bottom: 20px;
+  animation: fadeSlideDown .7s .1s ease both;
+  text-shadow: 0 2px 30px rgba(108,79,199,.5);
+}
+.hero h1 em { font-style: normal; color: var(--dream-gold); }
+.hero h1 .accent { color: var(--dream-purple-l); }
+.hero-sub {
+  font-size: 1.15rem; color: rgba(255,255,255,.78);
+  max-width: 560px; margin: 0 auto 36px;
+  animation: fadeSlideDown .7s .2s ease both;
+}
+.hero-actions {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  animation: fadeSlideDown .7s .3s ease both;
+}
+.btn-primary {
+  font-family: var(--font-ui); font-size: 1rem; font-weight: 600;
+  padding: 14px 32px; border-radius: 50px;
+  background: var(--dream-purple); color: #fff;
+  box-shadow: 0 4px 24px rgba(108,79,199,.45);
+  transition: all .25s; display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(108,79,199,.55); background: var(--dream-purple-l); color: #fff; }
+.btn-secondary {
+  font-family: var(--font-ui); font-size: 1rem; font-weight: 600;
+  padding: 14px 32px; border-radius: 50px;
+  background: rgba(255,255,255,.1); color: #fff;
+  border: 2px solid rgba(255,255,255,.3);
+  transition: all .25s; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  backdrop-filter: blur(8px);
+}
+.btn-secondary:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.5); transform: translateY(-2px); color: #fff; }
+.hero-stats {
+  display: flex; justify-content: center; gap: 40px; margin-top: 48px; flex-wrap: wrap;
+  animation: fadeSlideDown .7s .4s ease both;
+}
+.hero-stat { text-align: center; }
+.hero-stat strong { display: block; font-family: var(--font-display); font-size: 2rem; color: var(--dream-gold); line-height: 1; }
+.hero-stat span { font-family: var(--font-ui); font-size: .82rem; color: rgba(255,255,255,.55); margin-top: 4px; display: block; }
+@keyframes fadeSlideDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── BUTTONS (light sections) ── */
+.btn-purple {
+  font-family: var(--font-ui); font-size: .9rem; font-weight: 700;
+  padding: 10px 24px; border-radius: 50px;
+  background: var(--dream-purple); color: #fff; border: none; cursor: pointer;
+  transition: all .25s; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-purple:hover { background: var(--dream-purple-l); transform: translateY(-2px); }
+.btn-ghost {
+  font-family: var(--font-ui); font-size: .88rem; font-weight: 600;
+  padding: 9px 20px; border-radius: 50px;
+  background: transparent; color: var(--dream-purple);
+  border: 2px solid var(--dream-purple); cursor: pointer;
+  transition: all .25s; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-ghost:hover { background: var(--dream-purple-p); }
+
+/* ══════════════════════════════════════
+   APP SHELL
+══════════════════════════════════════ */
+#app { background: var(--dream-mist); }
+
+.app-shell {
+  background: var(--paper);
+  border: 1.5px solid #ddd6f0;
+  border-radius: 20px;
+  box-shadow: 0 8px 48px rgba(108,79,199,.15);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  min-height: 680px;
+}
+.app-titlebar {
+  background: linear-gradient(90deg, var(--dream-navy) 0%, var(--dream-navy-l) 100%);
+  padding: 10px 18px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-ui); font-size: .85rem; color: rgba(255,255,255,.6);
+}
+.app-titlebar .dots { display: flex; gap: 6px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot-r { background: #ff5f57; }
+.dot-y { background: #ffbd2e; }
+.dot-g { background: #28c840; }
+.titlebar-label { color: rgba(255,255,255,.7); font-size: .82rem; }
+.sidebar-mobile-toggle {
+  display: none; background: none;
+  border: 1.5px solid rgba(255,255,255,.3);
+  border-radius: 8px; padding: 4px 12px;
+  font-family: var(--font-ui); font-size: .8rem;
+  color: rgba(255,255,255,.8); cursor: pointer;
+  margin-left: auto;
+}
+
+.app-body { display: flex; flex: 1; overflow: hidden; position: relative; }
+
+/* ── SIDEBAR ── */
+.dj-sidebar {
+  width: 270px; min-width: 240px; max-width: 290px;
+  border-right: 1.5px solid #e8e0f8;
+  background: var(--dream-mist);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.sidebar-head {
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid #e0d8f5;
+}
+.sidebar-head h3 {
+  font-family: var(--font-ui); font-size: .75rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--dream-purple); margin-bottom: 10px;
+}
+.btn-new-entry {
+  width: 100%; background: var(--dream-purple); color: #fff;
+  font-family: var(--font-ui); font-size: .88rem; font-weight: 600;
+  border: none; border-radius: var(--radius-sm);
+  padding: 9px 14px; cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  transition: background var(--transition);
+}
+.btn-new-entry:hover { background: var(--dream-purple-l); }
+.sidebar-search {
+  margin-top: 8px;
+  display: flex; align-items: center; gap: 6px;
+  background: var(--paper); border: 1.5px solid #e0d8f5;
+  border-radius: var(--radius-sm); padding: 6px 10px;
+}
+.sidebar-search input {
+  flex: 1; border: none; background: transparent;
+  font-family: var(--font-ui); font-size: .85rem; color: var(--ink);
+  outline: none;
+}
+.sidebar-filter {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0d8f5;
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.filter-chip {
+  font-family: var(--font-ui); font-size: .72rem; font-weight: 600;
+  padding: 4px 10px; border-radius: 50px;
+  border: 1.5px solid #e0d8f5; background: var(--paper);
+  color: var(--ink-muted); cursor: pointer;
+  transition: all var(--transition);
+}
+.filter-chip.active, .filter-chip:hover { background: var(--dream-purple); color: #fff; border-color: var(--dream-purple); }
+.entry-list { flex: 1; overflow-y: auto; padding: 8px 8px; }
+.entry-card {
+  padding: 10px 12px; border-radius: 10px;
+  border: 1.5px solid transparent;
+  cursor: pointer; margin-bottom: 6px;
+  background: var(--paper);
+  transition: all var(--transition);
+}
+.entry-card:hover { border-color: var(--dream-purple-l); box-shadow: 0 2px 10px rgba(108,79,199,.1); }
+.entry-card.active { background: var(--dream-purple-p); border-color: var(--dream-purple); }
+.entry-card-date {
+  font-family: var(--font-ui); font-size: .7rem; color: var(--ink-muted);
+  margin-bottom: 3px; display: flex; align-items: center; gap: 6px;
+}
+.entry-card-title {
+  font-family: var(--font-ui); font-size: .88rem; font-weight: 600;
+  color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.entry-card-preview {
+  font-family: var(--font-ui); font-size: .78rem; color: var(--ink-muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.entry-card-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
+.entry-tag {
+  font-family: var(--font-ui); font-size: .65rem; font-weight: 700;
+  padding: 2px 7px; border-radius: 50px;
+}
+.tag-lucid    { background: #e8d9ff; color: #5a2db5; }
+.tag-normal   { background: var(--dream-teal-p); color: var(--dream-teal); }
+.tag-nightmare{ background: #fde; color: #c42; }
+.tag-recurring{ background: #fff3cd; color: #8a6000; }
+.tag-prophetic{ background: #d3f9d8; color: #1a7a38; }
+.tag-vivid    { background: var(--dream-dream-gold-p,#fffae8); color: #8a6000; }
+.sidebar-foot {
+  border-top: 1px solid #e0d8f5;
+  padding: 10px 12px; display: flex; gap: 6px;
+}
+.sidebar-foot button {
+  flex: 1; font-family: var(--font-ui); font-size: .75rem; font-weight: 600;
+  padding: 7px 8px; border-radius: 8px;
+  background: var(--paper); border: 1.5px solid #e0d8f5;
+  color: var(--ink-light); cursor: pointer;
+  transition: all var(--transition); white-space: nowrap;
+}
+.sidebar-foot button:hover { background: var(--dream-purple-p); color: var(--dream-purple); }
+
+/* ── MAIN EDITOR ── */
+.dj-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
+
+/* Welcome */
+.dj-welcome {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 48px; text-align: center; gap: 14px;
+}
+.dj-welcome .w-moon { font-size: 4rem; margin-bottom: 6px; animation: floatMoon 3s ease-in-out infinite alternate; }
+@keyframes floatMoon { 0%{transform:translateY(0)} 100%{transform:translateY(-8px)} }
+.dj-welcome h3 { font-family: var(--font-display); font-size: 1.5rem; }
+.dj-welcome p { color: var(--ink-muted); font-family: var(--font-ui); max-width: 340px; }
+
+/* Entry form */
+.dj-form { flex: 1; overflow-y: auto; padding: 20px 24px 0; display: flex; flex-direction: column; gap: 14px; }
+
+.form-row { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+.form-group { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 160px; }
+.form-label {
+  font-family: var(--font-ui); font-size: .75rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--dream-purple);
+}
+.form-input, .form-select, .form-textarea {
+  font-family: var(--font-ui); font-size: .92rem; color: var(--ink);
+  border: 1.5px solid #e0d8f5; border-radius: var(--radius-sm);
+  padding: 9px 12px; background: var(--cream); outline: none;
+  transition: border-color var(--transition), background var(--transition);
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--dream-purple); background: var(--paper);
+}
+.form-textarea {
+  resize: vertical; min-height: 150px; max-height: 340px;
+  font-family: var(--font-body); font-size: .97rem; line-height: 1.7;
+}
+.form-title-input {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  border: none; border-bottom: 2px solid #e0d8f5;
+  border-radius: 0; background: transparent; padding: 6px 0;
+}
+.form-title-input:focus { border-bottom-color: var(--dream-purple); background: transparent; }
+.form-title-input::placeholder { font-weight: 400; color: var(--ink-muted); }
+
+/* Star / rating row */
+.rating-row { display: flex; gap: 6px; align-items: center; }
+.star-btn {
+  font-size: 1.3rem; background: none; border: none; cursor: pointer;
+  transition: transform .15s; line-height: 1; padding: 0;
+  filter: grayscale(1) opacity(.4);
+}
+.star-btn.lit { filter: none; transform: scale(1.1); }
+.star-btn:hover { transform: scale(1.2); filter: none; }
+
+/* Symbol chips */
+.symbols-wrap {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+}
+.symbol-chip {
+  font-family: var(--font-ui); font-size: .78rem; font-weight: 600;
+  padding: 4px 10px; border-radius: 50px;
+  background: var(--dream-purple-p); color: var(--dream-purple);
+  border: 1.5px solid rgba(108,79,199,.25);
+  display: flex; align-items: center; gap: 5px;
+}
+.symbol-chip button {
+  background: none; border: none; cursor: pointer;
+  font-size: .7rem; color: var(--dream-purple); padding: 0; line-height: 1;
+}
+.symbol-add-row { display: flex; gap: 6px; align-items: center; margin-top: 4px; }
+.symbol-input {
+  font-family: var(--font-ui); font-size: .85rem;
+  border: 1.5px solid #e0d8f5; border-radius: var(--radius-sm);
+  padding: 6px 10px; background: var(--cream); outline: none;
+  transition: border-color var(--transition); flex: 1; min-width: 100px;
+}
+.symbol-input:focus { border-color: var(--dream-purple); background: var(--paper); }
+.btn-add-symbol {
+  font-family: var(--font-ui); font-size: .8rem; font-weight: 700;
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  background: var(--dream-purple); color: #fff; border: none; cursor: pointer;
+  transition: background var(--transition); white-space: nowrap;
+}
+.btn-add-symbol:hover { background: var(--dream-purple-l); }
+
+/* Mood picker */
+.mood-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.mood-btn {
+  font-size: 1.4rem; background: var(--paper); border: 2px solid #e0d8f5;
+  border-radius: 10px; padding: 6px 10px; cursor: pointer;
+  transition: all .2s; line-height: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+}
+.mood-btn span { font-family: var(--font-ui); font-size: .6rem; color: var(--ink-muted); font-weight: 600; }
+.mood-btn.selected { border-color: var(--dream-purple); background: var(--dream-purple-p); }
+.mood-btn:hover { transform: scale(1.1); }
+
+/* Type selector */
+.type-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.type-btn {
+  font-family: var(--font-ui); font-size: .78rem; font-weight: 700;
+  padding: 6px 12px; border-radius: 50px;
+  border: 2px solid #e0d8f5; background: var(--paper);
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; gap: 5px;
+}
+.type-btn.selected { border-color: var(--dream-purple); background: var(--dream-purple-p); color: var(--dream-purple); }
+.type-btn:hover { border-color: var(--dream-purple-l); }
+
+/* Entry topbar */
+.dj-topbar {
+  padding: 12px 20px;
+  border-bottom: 1.5px solid #e8e0f8;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: var(--paper);
+}
+.dj-topbar-btns { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.tb-btn {
+  font-family: var(--font-ui); font-size: .78rem; font-weight: 600;
+  padding: 6px 12px; border-radius: 8px;
+  background: var(--paper); border: 1.5px solid #e0d8f5;
+  color: var(--ink-light); cursor: pointer;
+  transition: all var(--transition); display: flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+.tb-btn:hover { background: var(--dream-purple-p); color: var(--dream-purple); border-color: var(--dream-purple-l); }
+.tb-btn.danger:hover { background: #fde; color: var(--coral,#e05c3a); border-color: #e05c3a; }
+.tb-btn.save-btn { background: var(--dream-purple); color: #fff; border-color: var(--dream-purple); }
+.tb-btn.save-btn:hover { background: var(--dream-purple-l); }
+
+/* Entry view (read mode) */
+.dj-view { flex: 1; overflow-y: auto; padding: 22px 26px; }
+.view-header { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid #e8e0f8; }
+.view-meta { font-family: var(--font-ui); font-size: .8rem; color: var(--ink-muted); margin-bottom: 6px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.view-title { font-family: var(--font-display); font-size: 1.7rem; color: var(--ink); margin-bottom: 8px; }
+.view-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.view-body { font-family: var(--font-body); font-size: 1rem; line-height: 1.8; color: var(--ink-light); white-space: pre-wrap; margin-bottom: 20px; }
+.view-symbols { margin-top: 16px; }
+.view-symbols h4 { font-family: var(--font-ui); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--dream-purple); margin-bottom: 8px; }
+.view-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 16px; }
+.view-stat { background: var(--dream-mist); border-radius: var(--radius-sm); padding: 10px 14px; }
+.view-stat .vs-label { font-family: var(--font-ui); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--dream-purple); margin-bottom: 3px; }
+.view-stat .vs-val { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+
+/* Status bar */
+.dj-statusbar {
+  border-top: 1.5px solid #e8e0f8;
+  padding: 8px 20px;
+  background: var(--dream-mist);
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+  font-family: var(--font-ui); font-size: .78rem; color: var(--ink-muted);
+}
+.save-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dream-purple); display: inline-block; margin-right: 3px; animation: pulse 2.5s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+/* ── STATS DASHBOARD ── */
+#stats-section { background: var(--paper); }
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-bottom: 32px; }
+.stat-card {
+  background: var(--dream-mist); border: 1.5px solid #e0d8f5;
+  border-radius: var(--radius); padding: 20px 18px; text-align: center;
+  transition: all .3s;
+}
+.stat-card:hover { box-shadow: 0 4px 20px rgba(108,79,199,.12); transform: translateY(-2px); }
+.stat-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--dream-purple); line-height: 1; }
+.stat-label { font-family: var(--font-ui); font-size: .8rem; color: var(--ink-muted); margin-top: 4px; }
+.type-breakdown { display: flex; flex-direction: column; gap: 8px; }
+.type-bar-row { display: flex; align-items: center; gap: 10px; font-family: var(--font-ui); font-size: .85rem; }
+.type-bar-label { min-width: 90px; color: var(--ink-light); }
+.type-bar-track { flex: 1; height: 10px; background: #e8e0f8; border-radius: 50px; overflow: hidden; }
+.type-bar-fill { height: 100%; border-radius: 50px; background: var(--dream-purple); transition: width .6s ease; }
+.type-bar-count { min-width: 24px; text-align: right; color: var(--ink-muted); font-size: .78rem; }
+
+/* ── FEATURES GRID ── */
+#features { background: var(--dream-mist); }
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.feature-card {
+  background: var(--paper); border: 1.5px solid #e0d8f5;
+  border-radius: var(--radius); padding: 26px 22px; transition: all .3s;
+}
+.feature-card:hover { box-shadow: 0 6px 24px rgba(108,79,199,.12); transform: translateY(-3px); }
+.feature-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 14px;
+}
+.feature-card h3 { font-size: 1rem; margin-bottom: 7px; }
+.feature-card p { font-size: .9rem; margin: 0; }
+
+/* ── HOW IT WORKS ── */
+#how-it-works { background: var(--paper); }
+.steps-row {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
+  position: relative;
+}
+.steps-row::before {
+  content: '';
+  position: absolute; top: 28px; left: 12%; right: 12%;
+  height: 2px; background: linear-gradient(90deg, var(--dream-purple), var(--dream-purple-l));
+  opacity: .25; z-index: 0;
+}
+.step-card { text-align: center; position: relative; z-index: 1; }
+.step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--dream-purple), var(--dream-purple-l));
+  color: #fff; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px; box-shadow: 0 4px 16px rgba(108,79,199,.35);
+}
+.step-card h3 { font-size: 1rem; margin-bottom: 6px; }
+.step-card p { font-size: .88rem; color: var(--ink-muted); }
+
+/* ── BENEFITS ── */
+#benefits { background: var(--dream-mist); }
+.benefits-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+.benefit-card {
+  background: var(--paper); border: 1.5px solid #e0d8f5;
+  border-radius: var(--radius); padding: 24px 22px;
+  display: flex; gap: 16px; align-items: flex-start; transition: all .3s;
+}
+.benefit-card:hover { box-shadow: 0 4px 18px rgba(108,79,199,.1); transform: translateY(-2px); }
+.benefit-icon {
+  font-size: 1.8rem; min-width: 48px; width: 48px; height: 48px;
+  background: var(--dream-purple-p); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.benefit-card h3 { font-size: .98rem; margin-bottom: 5px; }
+.benefit-card p { font-size: .88rem; margin: 0; }
+
+/* ── TIPS ── */
+#tips { background: var(--paper); }
+.tips-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.tip-card {
+  background: var(--dream-mist); border-radius: var(--radius);
+  padding: 20px 18px; border: 1.5px solid #e8e0f8;
+  display: flex; gap: 14px; align-items: flex-start; transition: all .3s;
+}
+.tip-card:hover { box-shadow: 0 3px 14px rgba(108,79,199,.1); transform: translateY(-2px); }
+.tip-badge {
+  min-width: 36px; height: 36px; border-radius: 10px;
+  background: var(--dream-purple); color: #fff; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.tip-card h4 { font-size: .92rem; margin-bottom: 4px; font-family: var(--font-ui); font-weight: 600; }
+.tip-card p { font-size: .85rem; margin: 0; }
+
+/* ── SYMBOL GUIDE ── */
+#symbols { background: var(--dream-mist); }
+.symbols-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.symbol-card {
+  background: var(--paper); border: 1.5px solid #e0d8f5;
+  border-radius: var(--radius-sm); padding: 16px 14px; text-align: center; transition: all .3s;
+}
+.symbol-card:hover { border-color: var(--dream-purple-l); box-shadow: 0 3px 14px rgba(108,79,199,.1); }
+.symbol-card .sym-emoji { font-size: 2rem; margin-bottom: 6px; }
+.symbol-card h4 { font-family: var(--font-ui); font-size: .82rem; font-weight: 700; margin-bottom: 4px; }
+.symbol-card p { font-size: .75rem; color: var(--ink-muted); margin: 0; }
+
+/* ── PROSE ── */
+.prose-section { background: var(--paper); }
+.prose-section .section-inner { max-width: 820px; }
+.prose-section h2 { margin-bottom: 18px; }
+.prose-section p { margin-bottom: 14px; font-size: 1.02rem; }
+.prose-section ul { list-style: none; margin: 14px 0; display: flex; flex-direction: column; gap: 9px; }
+.prose-section ul li { padding-left: 28px; position: relative; font-family: var(--font-body); font-size: 1rem; color: var(--ink-light); }
+.prose-section ul li::before { content: '✦'; position: absolute; left: 0; color: var(--dream-purple); font-weight: 700; font-size: .8rem; top: 3px; }
+
+/* ── FAQ ── */
+#faq { background: var(--dream-mist); }
+.faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: var(--paper); border: 1.5px solid #e0d8f5; border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; text-align: left; padding: 18px 22px; font-family: var(--font-ui); font-size: .97rem; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background var(--transition); }
+.faq-q:hover { background: var(--dream-purple-p); }
+.faq-q .arrow { font-size: .8rem; transition: transform .3s; flex-shrink: 0; color: var(--dream-purple); }
+.faq-item.open .faq-q { background: var(--dream-purple-p); }
+.faq-item.open .arrow { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; font-family: var(--font-body); font-size: .95rem; color: var(--ink-light); padding: 0 22px; }
+.faq-item.open .faq-a { max-height: 300px; padding: 16px 22px; }
+
+/* ── CTA ── */
+#cta-section { background: linear-gradient(135deg, var(--dream-navy) 0%, var(--dream-navy-l) 60%, #3d1a6e 100%); text-align: center; padding: 80px 24px; color: #fff; position: relative; overflow: hidden; }
+#cta-section::before { content:'🌙'; position:absolute; font-size:12rem; opacity:.04; top:-20px; right:5%; line-height:1; pointer-events:none; }
+#cta-section h2 { color: #fff; }
+#cta-section p { color: rgba(255,255,255,.78); max-width: 480px; margin: 12px auto 32px; }
+.btn-cta-white { font-family: var(--font-ui); font-size: 1rem; font-weight: 700; padding: 14px 36px; border-radius: 50px; background: #fff; color: var(--dream-purple); box-shadow: 0 4px 24px rgba(0,0,0,.2); transition: all .25s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,.25); color: var(--dream-purple); }
+
+/* ── RELATED TOOLS ── */
+#related-tools { background: var(--paper); }
+.tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 860px; margin: 0 auto; }
+.tool-card { background: var(--dream-mist); border: 1.5px solid #e0d8f5; border-radius: var(--radius); padding: 20px 18px; text-align: center; transition: all .3s; text-decoration: none; display: block; }
+.tool-card:hover { box-shadow: 0 6px 24px rgba(108,79,199,.12); transform: translateY(-3px); border-color: var(--dream-purple-l); }
+.tool-card .tool-emoji { font-size: 2rem; margin-bottom: 8px; }
+.tool-card h3 { font-size: .95rem; color: var(--ink); margin-bottom: 4px; }
+.tool-card p { font-size: .82rem; color: var(--ink-muted); margin: 0; }
+
+/* ── TOAST ── */
+#toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--dream-navy); color: #fff; font-family: var(--font-ui); font-size: .9rem; padding: 10px 24px; border-radius: 50px; box-shadow: 0 8px 32px rgba(30,27,58,.4); z-index: 9999; opacity: 0; transition: all .3s; pointer-events: none; }
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .features-grid { grid-template-columns: repeat(2,1fr); }
+  .symbols-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 700px) {
+  .dj-sidebar { position: absolute; left: -100%; top: 0; bottom: 0; z-index: 100; box-shadow: var(--shadow-lg); transition: left .3s ease; width: 82%; max-width: 280px; }
+  .dj-sidebar.mobile-open { left: 0; }
+  .sidebar-mobile-toggle { display: flex; }
+  .features-grid { grid-template-columns: 1fr; }
+  .symbols-grid { grid-template-columns: repeat(2,1fr); }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .steps-row { grid-template-columns: 1fr 1fr; }
+  .steps-row::before { display: none; }
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stats { gap: 22px; }
+  section { padding: 56px 16px; }
+  .view-grid { grid-template-columns: 1fr; }
+  .form-row { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .steps-row { grid-template-columns: 1fr; }
+  .symbols-grid { grid-template-columns: repeat(2,1fr); }
+  .tools-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
+  .type-row { gap: 5px; }
+  .mood-row { gap: 5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-bg">
+    <div class="moon" role="img" aria-hidden="true"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge">🌙 Free forever — no sign-up required</span>
+    <h1 id="hero-title">
+      Your <em>Dream Journal</em><br>
+      <span class="accent">Online.</span> Record Every Dream.
+    </h1>
+    <p class="hero-sub">
+      The most thoughtful online dream diary. Log your dreams, track lucidity, tag symbols and explore the patterns in your sleeping mind. Private, free, always ready.
+    </p>
+    <div class="hero-actions">
+      <a href="#app" class="btn-primary">🌙 Open Dream Journal</a>
+      <a href="#features" class="btn-secondary">Explore Features</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>100%</strong><span>Free & Private</span></div>
+      <div class="hero-stat"><strong>🌙</strong><span>Lucid Tracking</span></div>
+      <div class="hero-stat"><strong>∞</strong><span>Dreams Logged</span></div>
+      <div class="hero-stat"><strong>📱</strong><span>Mobile Ready</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ APP ══════════ -->
+<section id="app" aria-labelledby="app-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Live App</span>
+      <h2 id="app-heading">Dream Journal &amp; Diary Online</h2>
+      <p>Record dreams the moment you wake up. All entries auto-save privately in your browser.</p>
+    </div>
+
+    <div class="app-shell">
+      <!-- Titlebar -->
+      <div class="app-titlebar">
+        <div class="dots">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+        </div>
+        <span class="titlebar-label">🌙 Dream Journal Online — memonotepad.github.io/dream-journal</span>
+        <button class="sidebar-mobile-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰ Entries</button>
+      </div>
+
+      <!-- App Body -->
+      <div class="app-body">
+
+        <!-- Sidebar -->
+        <aside class="dj-sidebar" id="djSidebar" role="complementary" aria-label="Dream entries">
+          <div class="sidebar-head">
+            <h3>My Dream Diary</h3>
+            <button class="btn-new-entry" id="newEntryBtn">✦ New Dream Entry</button>
+            <div class="sidebar-search">
+              <span style="font-size:.85rem;">🔍</span>
+              <input type="search" id="searchInput" placeholder="Search dreams…" aria-label="Search dream entries" />
+            </div>
+          </div>
+          <div class="sidebar-filter" id="filterBar" role="group" aria-label="Filter by type">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="normal">Normal</button>
+            <button class="filter-chip" data-filter="lucid">Lucid</button>
+            <button class="filter-chip" data-filter="nightmare">Nightmare</button>
+            <button class="filter-chip" data-filter="recurring">Recurring</button>
+          </div>
+          <div class="entry-list" id="entryList" role="list" aria-label="Dream entries"></div>
+          <div class="sidebar-foot">
+            <button id="exportBtn" title="Export journal as text">📤 Export</button>
+            <button id="statsBtn" title="View stats">📊 Stats</button>
+            <button id="clearAllBtn" title="Clear all entries" style="color:#e05c3a;">🗑 Clear</button>
+          </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <div class="dj-main" id="djMain">
+
+          <!-- Welcome -->
+          <div class="dj-welcome" id="djWelcome">
+            <div class="w-moon">🌙</div>
+            <h3>Your Dream Diary Awaits</h3>
+            <p>Tap <strong>New Dream Entry</strong> to record your first dream — or select an existing entry from the list.</p>
+            <button class="btn-purple" onclick="document.getElementById('newEntryBtn').click()" style="margin-top:4px;">✦ Record a Dream</button>
+          </div>
+
+          <!-- Entry Topbar (shown when editing/viewing) -->
+          <div class="dj-topbar" id="djTopbar" style="display:none;">
+            <span id="topbarTitle" style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;"></span>
+            <div class="dj-topbar-btns">
+              <button class="tb-btn" id="editBtn">✏️ Edit</button>
+              <button class="tb-btn save-btn" id="saveBtn" style="display:none;">💾 Save</button>
+              <button class="tb-btn" id="copyEntryBtn">📋 Copy</button>
+              <button class="tb-btn" id="exportEntryBtn">💾 .txt</button>
+              <button class="tb-btn danger" id="deleteEntryBtn">🗑 Delete</button>
+            </div>
+          </div>
+
+          <!-- Entry Form (edit mode) -->
+          <div class="dj-form" id="djForm" style="display:none;">
+
+            <div class="form-group">
+              <input type="text" class="form-input form-title-input" id="fTitle" placeholder="Give your dream a title…" maxlength="100" aria-label="Dream title" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" style="min-width:140px;max-width:200px;">
+                <label class="form-label" for="fDate">Date &amp; Time</label>
+                <input type="datetime-local" class="form-input" id="fDate" aria-label="Dream date and time" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Dream Type</label>
+                <div class="type-row" id="fType" role="group" aria-label="Dream type">
+                  <button class="type-btn selected" data-type="normal">😴 Normal</button>
+                  <button class="type-btn" data-type="lucid">✨ Lucid</button>
+                  <button class="type-btn" data-type="nightmare">😱 Nightmare</button>
+                  <button class="type-btn" data-type="recurring">🔁 Recurring</button>
+                  <button class="type-btn" data-type="prophetic">🔮 Prophetic</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fDescription">Dream Description</label>
+              <textarea class="form-textarea" id="fDescription" placeholder="Describe your dream in as much detail as you can remember — setting, characters, events, colours, feelings…" aria-label="Dream description"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">How did you feel on waking?</label>
+                <div class="mood-row" id="fMood" role="group" aria-label="Mood on waking">
+                  <button class="mood-btn" data-mood="amazing"><span>🤩</span><span>Amazing</span></button>
+                  <button class="mood-btn" data-mood="happy"><span>😊</span><span>Happy</span></button>
+                  <button class="mood-btn" data-mood="calm"><span>😌</span><span>Calm</span></button>
+                  <button class="mood-btn" data-mood="confused"><span>😕</span><span>Confused</span></button>
+                  <button class="mood-btn" data-mood="anxious"><span>😰</span><span>Anxious</span></button>
+                  <button class="mood-btn" data-mood="scared"><span>😱</span><span>Scared</span></button>
+                  <button class="mood-btn" data-mood="sad"><span>😢</span><span>Sad</span></button>
+                  <button class="mood-btn" data-mood="neutral"><span>😐</span><span>Neutral</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" style="min-width:180px;">
+                <label class="form-label">Vividness</label>
+                <div class="rating-row" id="fVividness" role="group" aria-label="Vividness rating">
+                  <button class="star-btn" data-val="1" aria-label="1 star">⭐</button>
+                  <button class="star-btn" data-val="2" aria-label="2 stars">⭐</button>
+                  <button class="star-btn" data-val="3" aria-label="3 stars">⭐</button>
+                  <button class="star-btn" data-val="4" aria-label="4 stars">⭐</button>
+                  <button class="star-btn" data-val="5" aria-label="5 stars">⭐</button>
+                  <span style="font-family:var(--font-ui);font-size:.78rem;color:var(--ink-muted);margin-left:4px;" id="vividLabel">Not rated</span>
+                </div>
+              </div>
+              <div class="form-group" style="min-width:180px;">
+                <label class="form-label">Lucidity Level</label>
+                <div class="rating-row" id="fLucidity" role="group" aria-label="Lucidity level">
+                  <button class="star-btn" data-val="1" aria-label="Level 1" style="font-size:1.2rem;">🌙</button>
+                  <button class="star-btn" data-val="2" aria-label="Level 2" style="font-size:1.2rem;">🌙</button>
+                  <button class="star-btn" data-val="3" aria-label="Level 3" style="font-size:1.2rem;">🌙</button>
+                  <button class="star-btn" data-val="4" aria-label="Level 4" style="font-size:1.2rem;">🌙</button>
+                  <button class="star-btn" data-val="5" aria-label="Level 5" style="font-size:1.2rem;">🌙</button>
+                  <span style="font-family:var(--font-ui);font-size:.78rem;color:var(--ink-muted);margin-left:4px;" id="lucidLabel">None</span>
+                </div>
+              </div>
+              <div class="form-group" style="min-width:120px;max-width:160px;">
+                <label class="form-label" for="fSleepHours">Sleep Hours</label>
+                <input type="number" class="form-input" id="fSleepHours" min="0" max="24" step=".5" placeholder="e.g. 7.5" aria-label="Hours of sleep" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Dream Symbols &amp; Themes</label>
+              <div class="symbols-wrap" id="symbolsWrap"></div>
+              <div class="symbol-add-row">
+                <input type="text" class="symbol-input" id="symbolInput" placeholder="Add a symbol, person, place…" maxlength="40" aria-label="Symbol to add" />
+                <button class="btn-add-symbol" id="addSymbolBtn">+ Add</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="fNotes">Personal Interpretation &amp; Notes</label>
+              <textarea class="form-input" id="fNotes" rows="3" placeholder="What do you think this dream means? Any waking life connections?" style="resize:vertical;min-height:70px;font-family:var(--font-body);font-size:.92rem;" aria-label="Dream interpretation notes"></textarea>
+            </div>
+
+            <div style="padding-bottom:24px;display:flex;gap:10px;flex-wrap:wrap;">
+              <button class="btn-purple" id="saveEntryBtn">💾 Save Dream Entry</button>
+              <button class="btn-ghost" id="cancelEditBtn">Cancel</button>
+            </div>
+          </div>
+
+          <!-- Entry View (read mode) -->
+          <div class="dj-view" id="djView" style="display:none;">
+            <div class="view-header">
+              <div class="view-meta" id="viewMeta"></div>
+              <div class="view-title" id="viewTitle"></div>
+              <div class="view-chips" id="viewChips"></div>
+            </div>
+            <div class="view-body" id="viewBody"></div>
+            <div class="view-grid" id="viewGrid"></div>
+            <div class="view-symbols" id="viewSymbols"></div>
+            <div id="viewNotes" style="margin-top:20px;padding-top:16px;border-top:1.5px solid #e8e0f8;display:none;">
+              <div style="font-family:var(--font-ui);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--dream-purple);margin-bottom:6px;">My Interpretation</div>
+              <p id="viewNotesText" style="font-family:var(--font-body);font-size:.95rem;color:var(--ink-light);white-space:pre-wrap;"></p>
+            </div>
+          </div>
+
+          <!-- Status bar -->
+          <div class="dj-statusbar" id="djStatusbar">
+            <span><span class="save-dot"></span>Auto-saved</span>
+            <span id="statusCount">0 entries</span>
+            <span id="statusMode" style="color:var(--dream-purple);font-weight:600;"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ STATS DASHBOARD ══════════ -->
+<section id="stats-section" aria-labelledby="stats-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Dream Stats</span>
+      <h2 id="stats-heading">Your Dream Dashboard</h2>
+      <p>Explore patterns, track lucidity trends, and understand your dream life at a glance.</p>
+    </div>
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Total Dreams Logged</div></div>
+      <div class="stat-card"><div class="stat-num" id="statLucid">0</div><div class="stat-label">Lucid Dreams</div></div>
+      <div class="stat-card"><div class="stat-num" id="statStreak">0</div><div class="stat-label">Day Streak 🔥</div></div>
+      <div class="stat-card"><div class="stat-num" id="statAvgVivid">—</div><div class="stat-label">Avg. Vividness ⭐</div></div>
+    </div>
+    <div style="background:var(--dream-mist);border:1.5px solid #e0d8f5;border-radius:var(--radius);padding:24px 28px;">
+      <h3 style="font-family:var(--font-display);font-size:1.1rem;margin-bottom:18px;">Dream Types Breakdown</h3>
+      <div class="type-breakdown" id="typeBreakdown"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FEATURES ══════════ -->
+<section id="features" aria-labelledby="features-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Features</span>
+      <h2 id="features-heading">Everything in Your Online Dream Journal</h2>
+      <p>Built for dreamers. Every detail of your nightly adventures deserves to be captured.</p>
+    </div>
+    <div class="features-grid">
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#ede8ff;">🌙</div>
+        <h3>Dream Type Tagging</h3>
+        <p>Classify every entry as Normal, Lucid, Nightmare, Recurring, or Prophetic. Filter your journal by type to spot trends.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fff7e0;">⭐</div>
+        <h3>Vividness & Lucidity Ratings</h3>
+        <p>Rate each dream's vividness from 1–5 stars and your lucidity level from 0–5. Track your progress as a lucid dreamer.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fce4f5;">😌</div>
+        <h3>Mood & Emotion Log</h3>
+        <p>Record how you felt on waking — Amazing, Happy, Calm, Confused, Anxious, Scared. Understand your emotional dream patterns.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#e0f5f2;">🔮</div>
+        <h3>Dream Symbols & Themes</h3>
+        <p>Tag recurring symbols, people, places and themes. Build your personal dream symbol dictionary over time.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fff0f4;">📊</div>
+        <h3>Dream Statistics Dashboard</h3>
+        <p>See your total entries, lucid dream count, logging streak, average vividness and type breakdown — all updated live.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#e8f4ff;">🔒</div>
+        <h3>100% Private & Secure</h3>
+        <p>Everything stays in your browser's localStorage. No server, no account, no cloud. Your inner world stays yours.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#d3f9d8;">💾</div>
+        <h3>Auto-Save as You Write</h3>
+        <p>Your entries save automatically the moment you hit Save. Never lose a vivid dream description again.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fff3cd;">📤</div>
+        <h3>Export Your Dream Journal</h3>
+        <p>Download your entire dream diary as a formatted text file. Back up your entries and keep them forever.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#f3e8ff;">📱</div>
+        <h3>Mobile-First Design</h3>
+        <p>Record dreams the moment you wake up — on your phone, no app needed. The dream journal works perfectly on all devices.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section id="how-it-works" aria-labelledby="how-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2 id="how-heading">Start Your Dream Diary in Seconds</h2>
+      <p>No sign-up, no app download. Open the dream journal and start logging right away.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Open the Journal</h3>
+        <p>Visit the page in any browser on any device — phone, tablet or desktop. Loads instantly.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Create an Entry</h3>
+        <p>Click <strong>New Dream Entry</strong>. Give your dream a title and start describing it while it's fresh.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Add Details</h3>
+        <p>Set the dream type, mood, vividness, lucidity level, sleep hours and any recurring symbols.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Explore Patterns</h3>
+        <p>Return daily. Your dream dashboard reveals themes, streaks, and insight into your dream world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BENEFITS ══════════ -->
+<section id="benefits" aria-labelledby="benefits-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Why Journal?</span>
+      <h2 id="benefits-heading">Benefits of Keeping a Dream Journal</h2>
+      <p>Journalling your dreams is one of the most powerful tools for self-discovery and mental wellbeing.</p>
+    </div>
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🧠</div>
+        <div>
+          <h3>Improves Dream Recall</h3>
+          <p>The act of writing dreams immediately on waking trains your brain to remember them more vividly and consistently. Most people recall 3–5x more dreams within two weeks of daily journalling.</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">✨</div>
+        <div>
+          <h3>Unlocks Lucid Dreaming</h3>
+          <p>Dream journalling is the #1 technique recommended for developing lucid dreaming ability. Recognising recurring signs and patterns in your recorded dreams helps you become aware you're dreaming.</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">💡</div>
+        <div>
+          <h3>Boosts Creativity & Problem-Solving</h3>
+          <p>Dreams access subconscious connections your waking mind misses. Many artists, scientists and writers have found creative breakthroughs by mining their dream journals for ideas.</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🧘</div>
+        <div>
+          <h3>Supports Emotional Processing</h3>
+          <p>Dreams help the brain process emotions and difficult experiences. Recording and reflecting on them can provide clarity, reduce anxiety, and improve your understanding of your own emotional state.</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🔁</div>
+        <div>
+          <h3>Reveals Recurring Patterns</h3>
+          <p>A dream journal makes recurring dreams, symbols and themes visible over time. These patterns often point to unresolved feelings or important themes in your waking life.</p>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🌱</div>
+        <div>
+          <h3>Supports Personal Growth</h3>
+          <p>Reading back through months of dream entries is like reading a private autobiography of your inner life. It reveals how you've changed, what you fear, what you desire, and who you're becoming.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SYMBOL GUIDE ══════════ -->
+<section id="symbols" aria-labelledby="symbols-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Dream Symbols</span>
+      <h2 id="symbols-heading">Common Dream Symbol Guide</h2>
+      <p>Recurring symbols in dreams often carry meaningful associations. Add them as tags in your dream entries.</p>
+    </div>
+    <div class="symbols-grid">
+      <div class="symbol-card"><div class="sym-emoji">🌊</div><h4>Water</h4><p>Emotions, the unconscious, flow of life or feeling overwhelmed</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🪂</div><h4>Flying</h4><p>Freedom, ambition, escape from constraints or desire for control</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🦷</div><h4>Falling Teeth</h4><p>Anxiety, fear of loss, concerns about appearance or communication</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🏃</div><h4>Being Chased</h4><p>Avoiding a problem, unresolved stress, or feeling threatened</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🏠</div><h4>House</h4><p>The self or psyche — different rooms symbolise different aspects of your mind</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🐍</div><h4>Snake</h4><p>Transformation, hidden fears, healing or a threatening situation</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🌙</div><h4>Moon</h4><p>Intuition, the unconscious, feminine energy, cycles and change</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🔑</div><h4>Key</h4><p>Access to hidden knowledge, solving problems, new opportunities</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🌲</div><h4>Forest</h4><p>The unknown, the unconscious, complexity or feeling lost</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🔥</div><h4>Fire</h4><p>Passion, transformation, destruction or purification</p></div>
+      <div class="symbol-card"><div class="sym-emoji">👁️</div><h4>Eyes</h4><p>Awareness, being watched, perception or spiritual insight</p></div>
+      <div class="symbol-card"><div class="sym-emoji">🪞</div><h4>Mirror</h4><p>Self-reflection, identity, how others perceive you</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TIPS ══════════ -->
+<section id="tips" aria-labelledby="tips-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Pro Tips</span>
+      <h2 id="tips-heading">Dream Journalling Tips for Better Recall</h2>
+      <p>Expert habits that dramatically improve how much you remember and record from your dreams.</p>
+    </div>
+    <div class="tips-grid">
+
+      <div class="tip-card">
+        <div class="tip-badge">⏰</div>
+        <div>
+          <h4>Write Within 60 Seconds of Waking</h4>
+          <p>Dreams fade exponentially fast. Keep your phone or device next to your bed and open the dream journal the moment you wake — even before getting up.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🙈</div>
+        <div>
+          <h4>Keep Your Eyes Closed First</h4>
+          <p>Before reaching for your device, stay still with eyes closed for 30 seconds and replay the dream. Let the images consolidate before writing.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">📝</div>
+        <div>
+          <h4>Write in Present Tense</h4>
+          <p>Describe your dream as "I am running…" not "I was running…". Present tense re-engages the experience and helps you recall more details as you write.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🎨</div>
+        <div>
+          <h4>Note Colours, Sounds & Feelings</h4>
+          <p>Don't just log events — note the colours you saw, sounds you heard, and physical sensations you felt. These sensory details are rich sources of meaning.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🔁</div>
+        <div>
+          <h4>Look for Recurring Elements</h4>
+          <p>Use the symbol tagging feature to track recurring people, places and objects. When the same symbol appears multiple times it becomes a personal dream sign — key to lucid dreaming.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🌙</div>
+        <div>
+          <h4>Set a Dreaming Intention</h4>
+          <p>Before sleep, tell yourself: "I will remember my dreams tonight." This simple mental intention significantly increases recall — and is step one toward lucid dreaming.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">📊</div>
+        <div>
+          <h4>Review Your Stats Weekly</h4>
+          <p>Check the Dream Dashboard each week. Your streak, average vividness and type breakdown show your progress and keep you motivated to log consistently.</p>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">💾</div>
+        <div>
+          <h4>Export Before Clearing Cache</h4>
+          <p>Your dream diary lives in your browser. Use the Export button to download a backup text file — especially before clearing browser data or switching devices.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROSE ══════════ -->
+<section class="prose-section" id="about" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:left;">
+      <span class="section-label">About</span>
+      <h2 id="about-heading">What Is an Online Dream Journal?</h2>
+    </div>
+    <p>A <strong>dream journal</strong> is a dedicated diary for recording your dreams as soon as you wake up. Unlike a regular journal, a dream diary focuses on the details of your sleeping mind — the settings, characters, emotions, symbols and narratives that unfold while you sleep.</p>
+    <p>An <strong>online dream journal</strong> gives you the speed and convenience needed for dream capture. The most important window for recording a dream is in the first few minutes after waking — before the details dissolve. Having a dream diary instantly accessible in your browser means you can start writing in seconds, from any device, any time.</p>
+    <p>Our free dream journal online includes everything you need to build a meaningful dream practice:</p>
+    <ul>
+      <li>Record unlimited dream entries with rich detail fields</li>
+      <li>Classify dreams by type: Normal, Lucid, Nightmare, Recurring, or Prophetic</li>
+      <li>Rate vividness (1–5 stars) and lucidity level (0–5 moons)</li>
+      <li>Log your mood and emotion on waking</li>
+      <li>Tag recurring symbols, people, and places</li>
+      <li>Write your personal interpretation and waking connections</li>
+      <li>Track your stats and logging streak on the Dream Dashboard</li>
+      <li>Search and filter your entire dream diary instantly</li>
+      <li>Export your journal as a text file for permanent backup</li>
+    </ul>
+    <p>Whether you're a beginner curious about your dreams, someone working toward lucid dreaming, or someone exploring the psychological dimensions of their sleep — this free online dream journal is the perfect companion.</p>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">FAQ</span>
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is this online dream journal completely free? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes, entirely free. No account, no subscription, no hidden fees. Log as many dreams as you like with all features included.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Where are my dream entries stored? <span class="arrow">▼</span></button>
+        <div class="faq-a">All entries are saved automatically in your browser's localStorage. Your data is private, stays on your device, and is never sent to any server.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I use this dream diary on my phone? <span class="arrow">▼</span></button>
+        <div class="faq-a">Absolutely. The dream journal is fully mobile-responsive. Open it in your phone browser the moment you wake up — no app download required. You can even add it to your home screen for instant access.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I track lucid dreams? <span class="arrow">▼</span></button>
+        <div class="faq-a">When creating an entry, set the Dream Type to "Lucid" and use the Lucidity Level rating (1–5 moons) to record how aware you were within the dream. Your lucid dream count appears in the Dream Dashboard.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I search my dream diary? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes. The search bar in the sidebar searches through all your dream titles, descriptions, and symbols instantly. You can also filter entries by dream type.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What happens if I clear my browser? <span class="arrow">▼</span></button>
+        <div class="faq-a">Clearing your browser's localStorage will delete your saved dream entries. Use the Export button to download a text backup of your entire journal before clearing browser data.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How many dreams can I log? <span class="arrow">▼</span></button>
+        <div class="faq-a">There's no limit set by the app. The practical limit is your browser's localStorage capacity — typically 5–10 MB, which is enough for thousands of detailed dream entries.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does dream journalling really help with lucid dreaming? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes — keeping a dream journal is consistently cited as the most important first step toward lucid dreaming. By recording your dreams daily, you improve recall, learn to recognise your personal dream signs, and train your brain to become more aware during sleep.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RELATED TOOLS ══════════ -->
+<section id="related-tools" aria-labelledby="related-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Related Tools</span>
+      <h2 id="related-heading">More Free Online Tools</h2>
+      <p>Explore our other free browser-based writing and productivity tools.</p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-card" href="https://memonotepad.github.io/">
+        <div class="tool-emoji">📝</div>
+        <h3>Memo Notepad</h3>
+        <p>Write and save memos instantly in your browser. Free private notepad, no sign-up.</p>
+      </a>
+      <a class="tool-card" href="https://memonotepad.github.io/list-maker">
+        <div class="tool-emoji">📋</div>
+        <h3>List Maker</h3>
+        <p>Create checklists, to-do lists, shopping lists & more. Free online list creator.</p>
+      </a>
+      <a class="tool-card" href="https://randomwheel.github.io/">
+        <div class="tool-emoji">🎡</div>
+        <h3>Random Wheel</h3>
+        <p>Spin the wheel to make random decisions. Free online picker spinner tool.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section id="cta-section" aria-labelledby="cta-heading">
+  <div class="section-inner" style="text-align:center;position:relative;z-index:1;">
+    <span class="section-label" style="color:var(--dream-gold);background:rgba(255,255,255,.1);border-radius:50px;padding:4px 14px;display:inline-block;margin-bottom:16px;">Start Tonight</span>
+    <h2 id="cta-heading">Your Dream Journal Is Ready</h2>
+    <p>Open the free online dream diary now. Record tonight's dreams the moment you wake — before they fade.</p>
+    <a href="#app" class="btn-cta-white">🌙 Open My Dream Journal</a>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+<!-- ══════════ TOAST ══════════ -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script src="/js/header.js"></script>
+<script src="/js/footer.js"></script>
+
+<script>
+/* ════════════════════════════════════════════════════
+   DREAM JOURNAL APP — Fully self-contained
+════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  /* ── Storage key & state ── */
+  const SK = 'dreamjournal_entries_v1';
+  let entries  = [];
+  let activeId = null;
+  let mode     = 'welcome'; // welcome | edit | view
+  let editIsNew= false;
+
+  /* Temp form state */
+  let fVividness = 0;
+  let fLucidity  = 0;
+  let fMood      = '';
+  let fType      = 'normal';
+  let fSymbols   = [];
+
+  /* ── DOM refs ── */
+  const entryList      = document.getElementById('entryList');
+  const searchInput    = document.getElementById('searchInput');
+  const djWelcome      = document.getElementById('djWelcome');
+  const djTopbar       = document.getElementById('djTopbar');
+  const djForm         = document.getElementById('djForm');
+  const djView         = document.getElementById('djView');
+  const topbarTitle    = document.getElementById('topbarTitle');
+  const statusCount    = document.getElementById('statusCount');
+  const statusMode     = document.getElementById('statusMode');
+  const editBtn        = document.getElementById('editBtn');
+  const saveBtn        = document.getElementById('saveBtn');
+  const toast          = document.getElementById('toast');
+  const symbolsWrap    = document.getElementById('symbolsWrap');
+  const symbolInput    = document.getElementById('symbolInput');
+  const vividLabel     = document.getElementById('vividLabel');
+  const lucidLabel     = document.getElementById('lucidLabel');
+  let   activeFilter   = 'all';
+
+  /* ── Persist ── */
+  function save() { try { localStorage.setItem(SK, JSON.stringify(entries)); } catch(e){} }
+  function load() { try { const r = localStorage.getItem(SK); if (r) entries = JSON.parse(r); } catch(e){ entries=[]; } }
+
+  /* ── Toast ── */
+  let tTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(tTimer);
+    tTimer = setTimeout(() => toast.classList.remove('show'), 2700);
+  }
+
+  /* ── Utils ── */
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+  function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  const TYPE_MAP = {
+    normal:    { label: 'Normal',    emoji: '😴', cls: 'tag-normal' },
+    lucid:     { label: 'Lucid',     emoji: '✨', cls: 'tag-lucid' },
+    nightmare: { label: 'Nightmare', emoji: '😱', cls: 'tag-nightmare' },
+    recurring: { label: 'Recurring', emoji: '🔁', cls: 'tag-recurring' },
+    prophetic: { label: 'Prophetic', emoji: '🔮', cls: 'tag-prophetic' },
+  };
+
+  const MOOD_MAP = {
+    amazing:'🤩', happy:'😊', calm:'😌', confused:'😕',
+    anxious:'😰', scared:'😱', sad:'😢', neutral:'😐'
+  };
+
+  const VIVID_LABELS = ['','Hazy','Faint','Clear','Vivid','Crystal Clear'];
+  const LUCID_LABELS = ['None','Barely','Slight','Moderate','Strong','Full Lucidity'];
+
+  function fmtDate(iso) {
+    if (!iso) return '';
+    try {
+      return new Date(iso).toLocaleDateString('en-US', {weekday:'short',year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+    } catch(e) { return iso; }
+  }
+
+  function getFiltered(q) {
+    let arr = entries.slice();
+    if (activeFilter !== 'all') arr = arr.filter(e => e.type === activeFilter);
+    if (q) {
+      const lq = q.toLowerCase();
+      arr = arr.filter(e =>
+        (e.title||'').toLowerCase().includes(lq) ||
+        (e.description||'').toLowerCase().includes(lq) ||
+        (e.symbols||[]).some(s => s.toLowerCase().includes(lq))
+      );
+    }
+    return arr;
+  }
+
+  /* ── Sidebar render ── */
+  function renderSidebar() {
+    const q = searchInput.value.trim();
+    const list = getFiltered(q);
+    entryList.innerHTML = '';
+
+    if (!list.length) {
+      entryList.innerHTML = '<div style="padding:20px;text-align:center;font-family:var(--font-ui);font-size:.82rem;color:var(--ink-muted);">' + (entries.length ? 'No matching dreams found.' : 'No dreams yet. Record your first!') + '</div>';
+    } else {
+      list.forEach(entry => {
+        const tm = TYPE_MAP[entry.type] || TYPE_MAP.normal;
+        const div = document.createElement('div');
+        div.className = 'entry-card' + (entry.id === activeId ? ' active' : '');
+        div.setAttribute('role', 'listitem');
+        div.setAttribute('tabindex', '0');
+        div.setAttribute('aria-label', 'Dream entry: ' + (entry.title||'Untitled'));
+        div.innerHTML = `
+          <div class="entry-card-date">${tm.emoji} ${fmtDate(entry.date)}</div>
+          <div class="entry-card-title">${esc(entry.title || 'Untitled Dream')}</div>
+          <div class="entry-card-preview">${esc((entry.description||'').slice(0,60))}${(entry.description||'').length>60?'…':''}</div>
+          <div class="entry-card-tags">
+            <span class="entry-tag ${tm.cls}">${tm.label}</span>
+            ${entry.vividness ? `<span class="entry-tag" style="background:#fff3cd;color:#8a6000;">⭐ ${entry.vividness}/5</span>` : ''}
+            ${entry.mood ? `<span class="entry-tag" style="background:#f5f0ff;color:var(--dream-purple);">${MOOD_MAP[entry.mood]||''} ${entry.mood}</span>` : ''}
+          </div>`;
+        div.addEventListener('click', () => openEntry(entry.id));
+        div.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); openEntry(entry.id); } });
+        entryList.appendChild(div);
+      });
+    }
+    statusCount.textContent = entries.length + ' entr' + (entries.length===1?'y':'ies');
+    updateStats();
+  }
+
+  /* ── Open / view entry ── */
+  function openEntry(id) {
+    activeId = id;
+    const entry = entries.find(e => e.id === id);
+    if (!entry) return;
+    mode = 'view';
+    showView(entry);
+    renderSidebar();
+    document.getElementById('djSidebar').classList.remove('mobile-open');
+  }
+
+  function showView(entry) {
+    djWelcome.style.display = 'none';
+    djForm.style.display = 'none';
+    djView.style.display = 'block';
+    djTopbar.style.display = 'flex';
+    saveBtn.style.display = 'none';
+    editBtn.style.display = '';
+
+    const tm = TYPE_MAP[entry.type] || TYPE_MAP.normal;
+    topbarTitle.textContent = entry.title || 'Untitled Dream';
+    statusMode.textContent = '👁 Viewing';
+
+    document.getElementById('viewMeta').innerHTML =
+      `<span>${fmtDate(entry.date)}</span>` +
+      (entry.sleepHours ? `<span>💤 ${entry.sleepHours}h sleep</span>` : '') +
+      (entry.mood ? `<span>${MOOD_MAP[entry.mood]||''} ${entry.mood} on waking</span>` : '');
+
+    document.getElementById('viewTitle').textContent = entry.title || 'Untitled Dream';
+
+    const chips = document.getElementById('viewChips');
+    chips.innerHTML =
+      `<span class="entry-tag ${tm.cls}" style="font-size:.8rem;padding:4px 10px;">${tm.emoji} ${tm.label}</span>` +
+      (entry.vividness ? `<span class="entry-tag" style="background:#fff3cd;color:#8a6000;font-size:.8rem;padding:4px 10px;">⭐ Vividness ${entry.vividness}/5</span>` : '') +
+      (entry.lucidity  ? `<span class="entry-tag" style="background:#ede8ff;color:var(--dream-purple);font-size:.8rem;padding:4px 10px;">🌙 Lucidity ${entry.lucidity}/5</span>` : '');
+
+    document.getElementById('viewBody').textContent = entry.description || '(No description recorded.)';
+
+    const grid = document.getElementById('viewGrid');
+    grid.innerHTML = '';
+    const gridItems = [
+      entry.vividness  ? {l:'Vividness', v: '⭐'.repeat(entry.vividness) + ' ' + (VIVID_LABELS[entry.vividness]||'')} : null,
+      entry.lucidity   ? {l:'Lucidity',  v: '🌙'.repeat(entry.lucidity)  + ' ' + (LUCID_LABELS[entry.lucidity]||'')} : null,
+      entry.mood       ? {l:'Mood on Waking', v: (MOOD_MAP[entry.mood]||'') + ' ' + entry.mood} : null,
+      entry.sleepHours ? {l:'Sleep Hours', v: entry.sleepHours + 'h'} : null,
+    ].filter(Boolean);
+    gridItems.forEach(gi => {
+      grid.innerHTML += `<div class="view-stat"><div class="vs-label">${gi.l}</div><div class="vs-val">${gi.v}</div></div>`;
+    });
+
+    const syms = document.getElementById('viewSymbols');
+    if (entry.symbols && entry.symbols.length) {
+      syms.innerHTML = `<h4>Symbols & Themes</h4><div class="entry-card-tags" style="flex-wrap:wrap;gap:6px;">` +
+        entry.symbols.map(s => `<span class="symbol-chip">${esc(s)}</span>`).join('') + `</div>`;
+    } else { syms.innerHTML = ''; }
+
+    const notesEl = document.getElementById('viewNotes');
+    if (entry.notes) {
+      notesEl.style.display = '';
+      document.getElementById('viewNotesText').textContent = entry.notes;
+    } else { notesEl.style.display = 'none'; }
+  }
+
+  /* ── New entry ── */
+  document.getElementById('newEntryBtn').addEventListener('click', () => {
+    activeId = null;
+    editIsNew = true;
+    openForm(null);
+  });
+
+  /* ── Edit button ── */
+  editBtn.addEventListener('click', () => {
+    const entry = entries.find(e => e.id === activeId);
+    if (entry) { editIsNew = false; openForm(entry); }
+  });
+
+  /* ── Open form ── */
+  function openForm(entry) {
+    mode = 'edit';
+    djWelcome.style.display = 'none';
+    djView.style.display = 'none';
+    djForm.style.display = 'flex';
+    djTopbar.style.display = 'flex';
+    saveBtn.style.display = '';
+    editBtn.style.display = 'none';
+    statusMode.textContent = '✏️ ' + (editIsNew ? 'New Entry' : 'Editing');
+
+    // Reset form
+    const now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    document.getElementById('fDate').value = entry ? entry.date : now.toISOString().slice(0,16);
+    document.getElementById('fTitle').value = entry ? (entry.title||'') : '';
+    document.getElementById('fDescription').value = entry ? (entry.description||'') : '';
+    document.getElementById('fNotes').value = entry ? (entry.notes||'') : '';
+    document.getElementById('fSleepHours').value = entry ? (entry.sleepHours||'') : '';
+
+    fType = entry ? (entry.type||'normal') : 'normal';
+    fVividness = entry ? (entry.vividness||0) : 0;
+    fLucidity  = entry ? (entry.lucidity||0) : 0;
+    fMood      = entry ? (entry.mood||'') : '';
+    fSymbols   = entry ? [...(entry.symbols||[])] : [];
+
+    renderTypeButtons();
+    renderMoodButtons();
+    renderStars('fVividness', fVividness, vividLabel, VIVID_LABELS);
+    renderStars('fLucidity',  fLucidity,  lucidLabel, LUCID_LABELS);
+    renderSymbols();
+
+    topbarTitle.textContent = entry ? (entry.title||'New Dream') : 'New Dream Entry';
+    document.getElementById('fTitle').focus();
+    djForm.scrollTop = 0;
+  }
+
+  /* ── Cancel edit ── */
+  document.getElementById('cancelEditBtn').addEventListener('click', () => {
+    if (activeId) {
+      const entry = entries.find(e => e.id === activeId);
+      if (entry) { openEntry(entry.id); return; }
+    }
+    showWelcome();
+  });
+
+  function showWelcome() {
+    mode = 'welcome'; activeId = null;
+    djWelcome.style.display = 'flex';
+    djTopbar.style.display = 'none';
+    djForm.style.display = 'none';
+    djView.style.display = 'none';
+    statusMode.textContent = '';
+    renderSidebar();
+  }
+
+  /* ── Save entry ── */
+  function saveEntry() {
+    const title = document.getElementById('fTitle').value.trim();
+    const desc  = document.getElementById('fDescription').value.trim();
+    if (!desc && !title) { showToast('⚠️ Please write something first!'); return; }
+
+    const dateVal = document.getElementById('fDate').value;
+    const now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+
+    const data = {
+      title:       title || 'Untitled Dream',
+      date:        dateVal || now.toISOString().slice(0,16),
+      type:        fType,
+      description: desc,
+      vividness:   fVividness,
+      lucidity:    fLucidity,
+      mood:        fMood,
+      sleepHours:  parseFloat(document.getElementById('fSleepHours').value)||0,
+      symbols:     fSymbols.slice(),
+      notes:       document.getElementById('fNotes').value.trim(),
+      updated:     Date.now(),
+    };
+
+    if (editIsNew || !activeId) {
+      data.id = uid();
+      data.created = Date.now();
+      entries.unshift(data);
+      activeId = data.id;
+    } else {
+      const idx = entries.findIndex(e => e.id === activeId);
+      if (idx > -1) { entries[idx] = { ...entries[idx], ...data }; }
+    }
+    save();
+    renderSidebar();
+    openEntry(activeId);
+    showToast('🌙 Dream entry saved!');
+  }
+
+  document.getElementById('saveEntryBtn').addEventListener('click', saveEntry);
+  saveBtn.addEventListener('click', saveEntry);
+
+  /* ── Type buttons ── */
+  function renderTypeButtons() {
+    document.querySelectorAll('#fType .type-btn').forEach(btn => {
+      btn.classList.toggle('selected', btn.dataset.type === fType);
+    });
+  }
+  document.getElementById('fType').addEventListener('click', e => {
+    const btn = e.target.closest('.type-btn');
+    if (!btn) return;
+    fType = btn.dataset.type;
+    renderTypeButtons();
+  });
+
+  /* ── Mood buttons ── */
+  function renderMoodButtons() {
+    document.querySelectorAll('#fMood .mood-btn').forEach(btn => {
+      btn.classList.toggle('selected', btn.dataset.mood === fMood);
+    });
+  }
+  document.getElementById('fMood').addEventListener('click', e => {
+    const btn = e.target.closest('.mood-btn');
+    if (!btn) return;
+    fMood = btn.dataset.mood === fMood ? '' : btn.dataset.mood;
+    renderMoodButtons();
+  });
+
+  /* ── Star ratings ── */
+  function renderStars(wrapperId, val, labelEl, labels) {
+    const wrap = document.getElementById(wrapperId);
+    wrap.querySelectorAll('.star-btn').forEach((btn, i) => {
+      btn.classList.toggle('lit', (i+1) <= val);
+    });
+    labelEl.textContent = labels[val] || 'None';
+  }
+  function initStarGroup(wrapperId, getVal, setVal, labelEl, labels) {
+    const wrap = document.getElementById(wrapperId);
+    wrap.querySelectorAll('.star-btn').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        const clicked = i + 1;
+        setVal(getVal() === clicked ? 0 : clicked);
+        renderStars(wrapperId, getVal(), labelEl, labels);
+      });
+      btn.addEventListener('mouseenter', () => {
+        wrap.querySelectorAll('.star-btn').forEach((b,j) => b.classList.toggle('lit', j<=i));
+      });
+      btn.addEventListener('mouseleave', () => {
+        renderStars(wrapperId, getVal(), labelEl, labels);
+      });
+    });
+  }
+  initStarGroup('fVividness', ()=>fVividness, v=>{fVividness=v;}, vividLabel, VIVID_LABELS);
+  initStarGroup('fLucidity',  ()=>fLucidity,  v=>{fLucidity=v;},  lucidLabel, LUCID_LABELS);
+
+  /* ── Symbol chips ── */
+  function renderSymbols() {
+    symbolsWrap.innerHTML = fSymbols.map((s,i) =>
+      `<span class="symbol-chip">${esc(s)}<button aria-label="Remove ${esc(s)}" data-i="${i}">✕</button></span>`
+    ).join('');
+    symbolsWrap.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        fSymbols.splice(parseInt(btn.dataset.i), 1);
+        renderSymbols();
+      });
+    });
+  }
+  function addSymbol() {
+    const v = symbolInput.value.trim();
+    if (!v || fSymbols.includes(v)) { symbolInput.value=''; return; }
+    fSymbols.push(v);
+    symbolInput.value = '';
+    renderSymbols();
+  }
+  document.getElementById('addSymbolBtn').addEventListener('click', addSymbol);
+  symbolInput.addEventListener('keydown', e => { if (e.key==='Enter') { e.preventDefault(); addSymbol(); } });
+
+  /* ── Search & filter ── */
+  searchInput.addEventListener('input', renderSidebar);
+  document.getElementById('filterBar').addEventListener('click', e => {
+    const chip = e.target.closest('.filter-chip');
+    if (!chip) return;
+    activeFilter = chip.dataset.filter;
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', c===chip));
+    renderSidebar();
+  });
+
+  /* ── Copy entry ── */
+  document.getElementById('copyEntryBtn').addEventListener('click', () => {
+    const entry = entries.find(e => e.id === activeId);
+    if (!entry) return;
+    const text = formatEntry(entry);
+    navigator.clipboard.writeText(text)
+      .then(()=>showToast('📋 Entry copied to clipboard!'))
+      .catch(()=>{
+        const ta=document.createElement('textarea');
+        ta.value=text; document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta);
+        showToast('📋 Copied!');
+      });
+  });
+
+  /* ── Export single entry ── */
+  document.getElementById('exportEntryBtn').addEventListener('click', () => {
+    const entry = entries.find(e => e.id === activeId);
+    if (!entry) return;
+    download((entry.title||'dream').replace(/[^a-z0-9]/gi,'_')+'.txt', formatEntry(entry));
+    showToast('💾 Entry exported!');
+  });
+
+  /* ── Export all ── */
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    if (!entries.length) { showToast('No entries to export.'); return; }
+    const text = entries.map(e => formatEntry(e)).join('\n\n'+'═'.repeat(50)+'\n\n');
+    download('dream_journal.txt', text);
+    showToast('📤 Journal exported!');
+  });
+
+  /* ── Delete entry ── */
+  document.getElementById('deleteEntryBtn').addEventListener('click', () => {
+    if (!activeId) return;
+    if (!confirm('Delete this dream entry? This cannot be undone.')) return;
+    entries = entries.filter(e => e.id !== activeId);
+    save(); activeId = null; showWelcome();
+    showToast('🗑 Entry deleted.');
+  });
+
+  /* ── Stats button ── */
+  document.getElementById('statsBtn').addEventListener('click', () => {
+    document.getElementById('stats-section').scrollIntoView({behavior:'smooth'});
+  });
+
+  /* ── Clear all ── */
+  document.getElementById('clearAllBtn').addEventListener('click', () => {
+    if (!entries.length) return;
+    if (!confirm('Delete ALL dream entries? This cannot be undone.')) return;
+    entries = []; save(); activeId = null; showWelcome();
+    showToast('🗑 All entries cleared.');
+  });
+
+  /* ── Mobile sidebar toggle ── */
+  document.getElementById('sidebarToggle').addEventListener('click', () => {
+    document.getElementById('djSidebar').classList.toggle('mobile-open');
+  });
+
+  /* ── Format entry as text ── */
+  function formatEntry(e) {
+    const tm = TYPE_MAP[e.type]||TYPE_MAP.normal;
+    const lines = [
+      '🌙 DREAM JOURNAL ENTRY',
+      '═'.repeat(40),
+      `Title:       ${e.title||'Untitled Dream'}`,
+      `Date:        ${fmtDate(e.date)}`,
+      `Type:        ${tm.emoji} ${tm.label}`,
+      e.vividness  ? `Vividness:   ${'⭐'.repeat(e.vividness)} (${e.vividness}/5 — ${VIVID_LABELS[e.vividness]||''})` : '',
+      e.lucidity   ? `Lucidity:    ${'🌙'.repeat(e.lucidity)} (${e.lucidity}/5 — ${LUCID_LABELS[e.lucidity]||''})` : '',
+      e.mood       ? `Mood:        ${MOOD_MAP[e.mood]||''} ${e.mood}` : '',
+      e.sleepHours ? `Sleep:       ${e.sleepHours}h` : '',
+      '',
+      '─── DREAM ─────────────────────────────',
+      e.description||'(No description.)',
+      '',
+      e.symbols&&e.symbols.length ? '─── SYMBOLS ────────────────────────────\n' + e.symbols.join(', ') : '',
+      e.notes ? '\n─── INTERPRETATION ─────────────────────\n' + e.notes : '',
+    ].filter(s => s !== undefined);
+    return lines.join('\n');
+  }
+
+  function download(name, text) {
+    const blob = new Blob([text], {type:'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href=url; a.download=name; a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  /* ── Stats dashboard ── */
+  function updateStats() {
+    document.getElementById('statTotal').textContent = entries.length;
+    document.getElementById('statLucid').textContent = entries.filter(e=>e.type==='lucid').length;
+
+    // streak
+    const dates = [...new Set(entries.map(e => e.date ? e.date.slice(0,10) : ''))].filter(Boolean).sort().reverse();
+    let streak = 0;
+    if (dates.length) {
+      const today = new Date().toISOString().slice(0,10);
+      let cur = dates[0] === today ? new Date() : null;
+      if (cur) {
+        streak = 1;
+        for (let i=1; i<dates.length; i++) {
+          const prev = new Date(cur); prev.setDate(prev.getDate()-1);
+          if (dates[i] === prev.toISOString().slice(0,10)) { streak++; cur=prev; } else break;
+        }
+      }
+    }
+    document.getElementById('statStreak').textContent = streak;
+
+    const vivids = entries.filter(e=>e.vividness).map(e=>e.vividness);
+    document.getElementById('statAvgVivid').textContent = vivids.length
+      ? (vivids.reduce((a,b)=>a+b,0)/vivids.length).toFixed(1)
+      : '—';
+
+    // type breakdown
+    const breakdown = document.getElementById('typeBreakdown');
+    const types = ['normal','lucid','nightmare','recurring','prophetic'];
+    const total = entries.length || 1;
+    breakdown.innerHTML = types.map(t => {
+      const tm = TYPE_MAP[t];
+      const count = entries.filter(e=>e.type===t).length;
+      const pct = Math.round((count/total)*100);
+      return `<div class="type-bar-row">
+        <span class="type-bar-label">${tm.emoji} ${tm.label}</span>
+        <div class="type-bar-track"><div class="type-bar-fill" style="width:${pct}%;background:${t==='nightmare'?'#e05878':t==='lucid'?'#6c4fc7':t==='recurring'?'#f0a500':t==='prophetic'?'#2a8f7f':'#6c4fc7'};"></div></div>
+        <span class="type-bar-count">${count}</span>
+      </div>`;
+    }).join('');
+  }
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
+
+  /* ── Header scroll ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 20);
+  }, {passive:true});
+
+  /* ── Init ── */
+  load();
+  renderSidebar();
+  updateStats();
+
+})();
+</script>
+
+</body>
+</html>
