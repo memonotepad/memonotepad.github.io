@@ -36,9 +36,11 @@
         <h3>More Tools</h3>
         <ul>
         <li><a href="/diary">Diary</a></li>
-        <li><a href="/case-converter"">Case Converter</a></li>
-        <li><a href="/decision-maker"">Choice Maker</a></li>
-        <li><a href="/random-text"">Random Text</a></li>
+        <li><a href="/case-converter">Case Converter</a></li>
+        <li><a href="/decision-maker">Choice Maker</a></li>
+        <li><a href="/random-text">Random Text</a></li>
+        <li><a href="/dream-journal">Dream Journal</a></li>
+        <li><a href="/list-maker">Make A List</a></li>
         </ul>
       </div>
 
