@@ -39,6 +39,7 @@
         <li><a href="/case-converter">Case Converter</a></li>
         <li><a href="/decision-maker">Choice Maker</a></li>
         <li><a href="/random-text">Random Text</a></li>
+        <li><a href="/word-shuffler">Word Shuffle</a></li>
         <li><a href="/dream-journal">Dream Journal</a></li>
         <li><a href="/list-maker">Make A List</a></li>
         </ul>
