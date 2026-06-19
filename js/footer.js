@@ -57,8 +57,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; ${year} <a href="https://memonotepad.github.io">MemoNotepad.github.io</a> — Free Online Memo Notepad. All rights reserved.</p>
-      <p class="footer-keywords">memo notepad · online notepad · memo pads online · my memo notepad</p>
+      <p>&copy; ${year} <a href="https://memonotepad.github.io">MemoNotepad.github.io</a> — Free Online Memo Notepad. All rights reserved.</p>      
     </div>
   `;
 })();
