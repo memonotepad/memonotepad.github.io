@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9759808041159779"
+     crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NJH8KZG8Q3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NJH8KZG8Q3');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Focus Timer Online — Free Pomodoro Timer & Productivity App</title>
+
+<!-- SEO META -->
+<meta name="description" content="Free online focus timer using the Pomodoro Technique. Customize work and break intervals, track sessions, and stay productive. No sign-up, no install, works on any device." />
+<meta name="keywords" content="focus timer, pomodoro timer, pomodoro technique, online timer, study timer, work timer, productivity timer, focus timer online, pomodoro app, time management tool" />
+<meta name="author" content="MemoNotepad" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://memonotepad.github.io/focus-timer" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://memonotepad.github.io/focus-timer" />
+<meta property="og:title" content="Focus Timer Online — Free Pomodoro Timer" />
+<meta property="og:description" content="Stay focused and productive with a free online Pomodoro timer. Customizable work/break intervals, session tracking, and zero distractions." />
+<meta property="og:image" content="https://memonotepad.github.io/images/og-image.png" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Focus Timer Online — Free Pomodoro Timer" />
+<meta name="twitter:description" content="Free online Pomodoro focus timer. Customize intervals, track sessions, beat distractions." />
+<meta name="twitter:image" content="https://memonotepad.github.io/images/og-image.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@400;600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="/css/style.css" />
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Focus Timer Online (Pomodoro Timer)",
+  "url": "https://memonotepad.github.io/focus-timer",
+  "description": "A free online focus timer built on the Pomodoro Technique. Customize work and break intervals, track completed sessions, and stay productive with audio alerts and a distraction-free interface.",
+  "image": "/images/og-image.png",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "featureList": [
+    "Customizable Pomodoro work and break intervals",
+    "Short break and long break cycles",
+    "Auto-start next session option",
+    "Session and task tracking",
+    "Daily and total focus statistics",
+    "Audio alert on session completion",
+    "Browser tab title countdown",
+    "Multiple ambient timer themes",
+    "Task list with pomodoro count per task",
+    "Keyboard shortcuts",
+    "Mobile responsive design",
+    "100% client-side, no account required"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MemoNotepad",
+    "url": "https://memonotepad.github.io/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this focus timer free to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, the focus timer is completely free. No account, no subscription, and no limits on how many sessions you can run." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Pomodoro Technique?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Pomodoro Technique is a time management method that breaks work into focused 25-minute intervals called pomodoros, separated by short 5-minute breaks, with a longer break after every four pomodoros." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customize the timer intervals?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can set custom durations for focus sessions, short breaks, and long breaks, as well as how many sessions occur before a long break." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the timer keep running if I switch tabs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The timer continues running in the background even if you switch browser tabs, and the countdown is also shown live in the browser tab title." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my session data saved?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your completed sessions, tasks, and statistics are saved automatically in your browser's localStorage so your progress persists between visits." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://memonotepad.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Focus Timer", "item": "https://memonotepad.github.io/focus-timer" }
+  ]
+}
+</script>
+
+<style>
+/* ════════════════════════════════════════════
+   FOCUS TIMER — Page Styles
+   Warm-Focus / Tomato-Red palette
+   ════════════════════════════════════════════ */
+
+:root {
+  --ft-red:     #e0573f;
+  --ft-red-l:   #ed7a64;
+  --ft-red-p:   #fdece8;
+  --ft-green:   #2a9d6f;
+  --ft-green-p: #e3f7ee;
+  --ft-blue:    #4a7fd6;
+  --ft-blue-p:  #eaf1ff;
+  --ft-amber:   #e8a93b;
+  --ft-amber-p: #fff6e0;
+  --ft-navy:    #1c2333;
+  --ft-navy-l:  #2a3349;
+  --ft-mist:    #fdf6f3;
+}
+
+/* ── Base layout ── */
+section { padding: 72px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-label {
+  display: inline-block; font-family: var(--font-ui); font-size: .78rem;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ft-red); background: var(--ft-red-p);
+  padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
+}
+.section-header h2 { margin-bottom: 10px; }
+.section-header p { color: var(--ink-light); max-width: 580px; margin: 0 auto; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 78vh;
+  padding: calc(var(--header-h) + 60px) 24px 60px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden; position: relative;
+  background: linear-gradient(160deg, #fff6f3 0%, #fdece8 45%, #fff0e8 100%);
+}
+.hero-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.hero-bg .blob { position: absolute; border-radius: 50%; opacity: .3; filter: blur(60px); animation: blobFloat 8s ease-in-out infinite alternate; }
+.hero-bg .blob-1 { width: 480px; height: 480px; background: var(--ft-red-l); top: -12%; left: -10%; }
+.hero-bg .blob-2 { width: 380px; height: 380px; background: var(--ft-green-p); top: 25%; right: -8%; animation-delay: -3s; }
+.hero-bg .blob-3 { width: 280px; height: 280px; background: var(--ft-amber-p); bottom: 0%; left: 35%; animation-delay: -5s; }
+@keyframes blobFloat { 0%{transform:translate(0,0) scale(1)} 100%{transform:translate(20px,28px) scale(1.07)} }
+.hero-content { position: relative; max-width: 780px; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-ui); font-size: .85rem; font-weight: 600;
+  background: var(--paper); color: var(--ft-red);
+  border: 1.5px solid var(--ft-red-p);
+  padding: 6px 18px; border-radius: 50px; margin-bottom: 24px;
+  animation: fadeSlideDown .6s ease both; box-shadow: var(--shadow-sm);
+}
+.hero h1 { margin-bottom: 18px; animation: fadeSlideDown .7s .1s ease both; }
+.hero h1 em { font-style: normal; color: var(--ft-red); }
+.hero h1 .accent { color: var(--ft-green); }
+.hero-sub { font-size: 1.18rem; max-width: 560px; margin: 0 auto 34px; animation: fadeSlideDown .7s .2s ease both; }
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeSlideDown .7s .3s ease both; }
+.btn-primary {
+  font-family: var(--font-ui); font-size: 1rem; font-weight: 600;
+  padding: 14px 32px; border-radius: 50px;
+  background: var(--ft-red); color: #fff;
+  box-shadow: 0 4px 22px rgba(224,87,63,.4);
+  transition: all .25s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(224,87,63,.5); background: var(--ft-red-l); color: #fff; }
+.btn-secondary {
+  font-family: var(--font-ui); font-size: 1rem; font-weight: 600;
+  padding: 14px 32px; border-radius: 50px;
+  background: var(--paper); color: var(--ink);
+  border: 2px solid var(--border-dark);
+  transition: all .25s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-secondary:hover { background: var(--ft-red-p); border-color: var(--ft-red); transform: translateY(-2px); color: var(--ink); }
+.hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 46px; flex-wrap: wrap; animation: fadeSlideDown .7s .4s ease both; }
+.hero-stat { text-align: center; }
+.hero-stat strong { display: block; font-family: var(--font-display); font-size: 2rem; color: var(--ft-red); line-height: 1; }
+.hero-stat span { font-family: var(--font-ui); font-size: .82rem; color: var(--ink-muted); margin-top: 4px; display: block; }
+@keyframes fadeSlideDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+
+.btn-red {
+  font-family: var(--font-ui); font-size: .9rem; font-weight: 700;
+  padding: 10px 24px; border-radius: 50px;
+  background: var(--ft-red); color: #fff; border: none; cursor: pointer;
+  transition: all .25s; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-red:hover { background: var(--ft-red-l); transform: translateY(-2px); }
+.btn-ghost-red {
+  font-family: var(--font-ui); font-size: .88rem; font-weight: 600;
+  padding: 9px 20px; border-radius: 50px;
+  background: transparent; color: var(--ft-red);
+  border: 2px solid var(--ft-red); cursor: pointer;
+  transition: all .25s;
+}
+.btn-ghost-red:hover { background: var(--ft-red-p); }
+
+/* ══════════════════════════════════════
+   APP SHELL
+══════════════════════════════════════ */
+#app { background: var(--ft-mist); }
+
+.app-shell {
+  background: var(--paper);
+  border: 1.5px solid #f5dcd6;
+  border-radius: 20px;
+  box-shadow: 0 8px 48px rgba(224,87,63,.12);
+  overflow: hidden;
+}
+.app-titlebar {
+  background: linear-gradient(90deg, var(--ft-navy) 0%, var(--ft-navy-l) 100%);
+  padding: 10px 18px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-ui); font-size: .85rem; color: rgba(255,255,255,.6);
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot-r { background: #ff5f57; } .dot-y { background: #ffbd2e; } .dot-g { background: #28c840; }
+.app-titlebar .dots { display: flex; gap: 6px; }
+
+.app-body {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 0;
+}
+
+/* ── TIMER PANEL ── */
+.timer-panel {
+  padding: 40px 36px;
+  background: var(--ft-navy);
+  display: flex; flex-direction: column; align-items: center;
+  position: relative; overflow: hidden;
+  transition: background .6s ease;
+}
+.timer-panel.mode-focus  { background: var(--ft-navy); }
+.timer-panel.mode-short  { background: #1c3328; }
+.timer-panel.mode-long   { background: #1c2940; }
+
+/* Session mode tabs */
+.session-tabs { display: flex; gap: 8px; margin-bottom: 28px; background: rgba(255,255,255,.07); padding: 5px; border-radius: 50px; }
+.session-tab {
+  font-family: var(--font-ui); font-size: .82rem; font-weight: 600;
+  padding: 8px 18px; border-radius: 50px; background: transparent; border: none;
+  color: rgba(255,255,255,.6); cursor: pointer; transition: all .25s; white-space: nowrap;
+}
+.session-tab.active { background: rgba(255,255,255,.16); color: #fff; }
+
+/* Circular progress */
+.timer-circle-wrap { position: relative; width: 280px; height: 280px; margin-bottom: 30px; }
+.timer-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.timer-track { fill: none; stroke: rgba(255,255,255,.1); stroke-width: 10; }
+.timer-progress { fill: none; stroke: var(--ft-red-l); stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1s linear, stroke .4s; }
+.mode-short .timer-progress { stroke: #4dd8a0; }
+.mode-long .timer-progress { stroke: #6fa3f5; }
+.timer-center {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 4px;
+}
+.timer-display {
+  font-family: var(--font-mono); font-size: 3.4rem; font-weight: 700;
+  color: #fff; letter-spacing: .02em; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.timer-mode-label { font-family: var(--font-ui); font-size: .85rem; font-weight: 600; color: rgba(255,255,255,.65); text-transform: uppercase; letter-spacing: .08em; }
+.timer-task-label { font-family: var(--font-ui); font-size: .85rem; color: rgba(255,255,255,.85); margin-top: 6px; max-width: 200px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Controls */
+.timer-controls { display: flex; gap: 14px; align-items: center; margin-bottom: 24px; }
+.tc-btn-main {
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--ft-red); color: #fff; border: none; cursor: pointer;
+  font-size: 1.7rem; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(224,87,63,.5); transition: all .25s;
+}
+.tc-btn-main:hover { transform: scale(1.06); box-shadow: 0 8px 30px rgba(224,87,63,.6); }
+.tc-btn-main.paused { background: var(--ft-green); box-shadow: 0 6px 24px rgba(42,157,111,.5); }
+.tc-btn-sub {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(255,255,255,.1); color: #fff; border: 1.5px solid rgba(255,255,255,.2);
+  cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.tc-btn-sub:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+
+/* Round dots */
+.round-dots { display: flex; gap: 8px; margin-bottom: 6px; }
+.round-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.2); transition: all .3s; }
+.round-dot.done { background: var(--ft-red-l); }
+.round-dot.current { background: #fff; transform: scale(1.3); }
+
+.timer-stat-line { font-family: var(--font-ui); font-size: .78rem; color: rgba(255,255,255,.5); }
+
+/* ── SIDE PANEL: Tasks + Settings ── */
+.side-panel { padding: 24px 26px; display: flex; flex-direction: column; gap: 22px; background: var(--paper); }
+.side-tabs { display: flex; gap: 6px; background: var(--cream); padding: 4px; border-radius: 10px; }
+.side-tab {
+  flex: 1; font-family: var(--font-ui); font-size: .82rem; font-weight: 600;
+  padding: 8px 10px; border-radius: 8px; background: transparent; border: none;
+  color: var(--ink-muted); cursor: pointer; transition: all .2s;
+}
+.side-tab.active { background: var(--paper); color: var(--ft-red); box-shadow: var(--shadow-sm); }
+
+/* Task list */
+.task-panel { display: none; flex-direction: column; gap: 12px; }
+.task-panel.active { display: flex; }
+.task-add-row { display: flex; gap: 8px; }
+.task-input {
+  flex: 1; font-family: var(--font-ui); font-size: .9rem;
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  padding: 9px 12px; background: var(--cream); outline: none;
+  transition: border-color var(--transition);
+}
+.task-input:focus { border-color: var(--ft-red); background: var(--paper); }
+.btn-add-task { font-family: var(--font-ui); font-size: .85rem; font-weight: 700; padding: 9px 16px; border-radius: var(--radius-sm); background: var(--ft-red); color: #fff; border: none; cursor: pointer; transition: background var(--transition); white-space: nowrap; }
+.btn-add-task:hover { background: var(--ft-red-l); }
+.task-list { display: flex; flex-direction: column; gap: 6px; max-height: 280px; overflow-y: auto; }
+.task-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: var(--cream); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); transition: all .2s; cursor: pointer;
+}
+.task-item:hover { border-color: var(--ft-red-p); }
+.task-item.active-task { border-color: var(--ft-red); background: var(--ft-red-p); }
+.task-item.done .task-text { text-decoration: line-through; color: var(--ink-muted); }
+.task-check { width: 17px; height: 17px; accent-color: var(--ft-red); cursor: pointer; flex-shrink: 0; }
+.task-text { flex: 1; font-family: var(--font-ui); font-size: .88rem; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.task-pomo-count { font-family: var(--font-mono); font-size: .72rem; color: var(--ft-red); background: var(--ft-red-p); padding: 2px 7px; border-radius: 50px; white-space: nowrap; }
+.task-del { background: none; border: none; cursor: pointer; font-size: .8rem; color: var(--ink-muted); opacity: 0; padding: 2px 5px; }
+.task-item:hover .task-del { opacity: 1; }
+.task-del:hover { color: var(--ft-red); }
+.task-empty { text-align: center; padding: 24px; font-family: var(--font-ui); font-size: .85rem; color: var(--ink-muted); }
+
+/* Settings panel */
+.settings-panel { display: none; flex-direction: column; gap: 16px; }
+.settings-panel.active { display: flex; }
+.settings-group { display: flex; flex-direction: column; gap: 10px; }
+.settings-group h4 { font-family: var(--font-ui); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--ft-red); }
+.settings-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.settings-row label { font-family: var(--font-ui); font-size: .88rem; color: var(--ink); }
+.settings-input {
+  width: 70px; font-family: var(--font-mono); font-size: .9rem; text-align: center;
+  border: 1.5px solid var(--border); border-radius: 8px; padding: 6px 8px;
+  background: var(--cream); outline: none; transition: border-color var(--transition);
+}
+.settings-input:focus { border-color: var(--ft-red); background: var(--paper); }
+.switch { position: relative; width: 42px; height: 23px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider-track { position: absolute; cursor: pointer; inset: 0; background: #ddd; border-radius: 50px; transition: .25s; }
+.slider-track::before { content: ''; position: absolute; height: 17px; width: 17px; left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: .25s; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
+.switch input:checked + .slider-track { background: var(--ft-red); }
+.switch input:checked + .slider-track::before { transform: translateX(19px); }
+
+/* Sound theme pills */
+.sound-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+.sound-pill {
+  font-family: var(--font-ui); font-size: .78rem; font-weight: 600;
+  padding: 6px 12px; border-radius: 50px; border: 1.5px solid var(--border);
+  background: var(--cream); color: var(--ink-light); cursor: pointer; transition: all .2s;
+}
+.sound-pill.active { background: var(--ft-red); color: #fff; border-color: var(--ft-red); }
+
+.btn-save-settings { font-family: var(--font-ui); font-size: .88rem; font-weight: 700; padding: 10px; border-radius: var(--radius-sm); background: var(--ft-red); color: #fff; border: none; cursor: pointer; transition: background var(--transition); }
+.btn-save-settings:hover { background: var(--ft-red-l); }
+
+/* Stats mini */
+.mini-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+.mini-stat { background: var(--cream); border-radius: var(--radius-sm); padding: 12px 14px; text-align: center; }
+.mini-stat strong { display: block; font-family: var(--font-display); font-size: 1.5rem; color: var(--ft-red); }
+.mini-stat span { font-family: var(--font-ui); font-size: .72rem; color: var(--ink-muted); }
+
+/* ── STATS DASHBOARD ── */
+#stats-section { background: var(--paper); }
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-bottom: 32px; }
+.stat-card { background: var(--ft-mist); border: 1.5px solid #f5dcd6; border-radius: var(--radius); padding: 20px 18px; text-align: center; transition: all .3s; }
+.stat-card:hover { box-shadow: 0 4px 20px rgba(224,87,63,.12); transform: translateY(-2px); }
+.stat-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--ft-red); line-height: 1; }
+.stat-label { font-family: var(--font-ui); font-size: .8rem; color: var(--ink-muted); margin-top: 4px; }
+
+/* Weekly bar chart */
+.week-chart { background: var(--ft-mist); border: 1.5px solid #f5dcd6; border-radius: var(--radius); padding: 26px 28px; }
+.week-chart h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 20px; }
+.week-bars { display: flex; align-items: flex-end; gap: 12px; height: 140px; }
+.week-bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 8px; }
+.week-bar { width: 100%; max-width: 36px; background: linear-gradient(180deg, var(--ft-red-l), var(--ft-red)); border-radius: 6px 6px 0 0; transition: height .6s ease; min-height: 3px; }
+.week-bar-label { font-family: var(--font-ui); font-size: .72rem; color: var(--ink-muted); }
+.week-bar-count { font-family: var(--font-mono); font-size: .7rem; color: var(--ft-red); font-weight: 700; }
+
+/* ── FEATURES ── */
+#features { background: var(--ft-mist); }
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.feature-card { background: var(--paper); border: 1.5px solid #f5dcd6; border-radius: var(--radius); padding: 26px 22px; transition: all .3s; }
+.feature-card:hover { box-shadow: 0 6px 24px rgba(224,87,63,.1); transform: translateY(-3px); }
+.feature-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 14px; }
+.feature-card h3 { font-size: 1rem; margin-bottom: 7px; }
+.feature-card p { font-size: .9rem; margin: 0; }
+
+/* ── HOW IT WORKS ── */
+#how-it-works { background: var(--paper); }
+.steps-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; position: relative; }
+.steps-row::before { content:''; position:absolute; top:28px; left:12%; right:12%; height:2px; background: linear-gradient(90deg, var(--ft-red), var(--ft-green)); opacity:.25; z-index:0; }
+.step-card { text-align: center; position: relative; z-index: 1; }
+.step-num { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--ft-red), var(--ft-red-l)); color: #fff; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; box-shadow: 0 4px 16px rgba(224,87,63,.35); }
+.step-card h3 { font-size: 1rem; margin-bottom: 6px; }
+.step-card p { font-size: .88rem; color: var(--ink-muted); }
+
+/* ── PRESETS ── */
+#presets { background: var(--ft-mist); }
+.presets-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.preset-card { background: var(--paper); border: 1.5px solid #f5dcd6; border-radius: var(--radius); padding: 22px 18px; text-align: center; transition: all .3s; cursor: pointer; }
+.preset-card:hover { box-shadow: 0 6px 24px rgba(224,87,63,.12); transform: translateY(-3px); border-color: var(--ft-red-l); }
+.preset-card .preset-emoji { font-size: 2rem; margin-bottom: 10px; }
+.preset-card h3 { font-size: .95rem; margin-bottom: 6px; }
+.preset-card p { font-size: .8rem; color: var(--ink-muted); margin: 0 0 10px; }
+.preset-times { font-family: var(--font-mono); font-size: .78rem; color: var(--ft-red); font-weight: 700; background: var(--ft-red-p); padding: 4px 10px; border-radius: 50px; display: inline-block; }
+
+/* ── USE CASES ── */
+#use-cases { background: var(--paper); }
+.use-cases-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+.use-case-card { background: var(--ft-mist); border: 1.5px solid #f5dcd6; border-radius: var(--radius); padding: 24px 22px; display: flex; gap: 16px; align-items: flex-start; transition: all .3s; }
+.use-case-card:hover { box-shadow: 0 4px 18px rgba(224,87,63,.1); transform: translateY(-2px); }
+.use-case-icon { font-size: 1.8rem; min-width: 48px; width: 48px; height: 48px; background: var(--ft-red-p); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.use-case-card h3 { font-size: .98rem; margin-bottom: 5px; }
+.use-case-card p { font-size: .88rem; margin: 0; }
+
+/* ── TIPS ── */
+#tips { background: var(--ft-mist); }
+.tips-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.tip-card { background: var(--paper); border-radius: var(--radius); padding: 20px 18px; border: 1.5px solid #f5dcd6; display: flex; gap: 14px; align-items: flex-start; transition: all .3s; }
+.tip-card:hover { box-shadow: 0 3px 14px rgba(224,87,63,.1); transform: translateY(-2px); }
+.tip-badge { min-width: 36px; height: 36px; border-radius: 10px; background: var(--ft-red); color: #fff; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tip-card h4 { font-size: .92rem; margin-bottom: 4px; font-family: var(--font-ui); font-weight: 600; }
+.tip-card p { font-size: .85rem; margin: 0; }
+
+/* ── KEYBOARD SHORTCUTS ── */
+#keyboard { background: var(--paper); }
+.shortcuts-table { max-width: 600px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.shortcut-row { display: flex; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+.shortcut-row:last-child { border-bottom: none; }
+.shortcut-row:nth-child(even) { background: var(--ft-mist); }
+.shortcut-keys { display: flex; gap: 4px; min-width: 130px; }
+kbd { font-family: var(--font-mono); font-size: .78rem; background: var(--ink); color: #fff; padding: 3px 8px; border-radius: 5px; box-shadow: 0 2px 0 rgba(0,0,0,.2); }
+.shortcut-desc { font-family: var(--font-ui); font-size: .9rem; color: var(--ink-light); }
+
+/* ── PROSE ── */
+.prose-section { background: var(--ft-mist); }
+.prose-section .section-inner { max-width: 820px; }
+.prose-section h2 { margin-bottom: 18px; }
+.prose-section p { margin-bottom: 14px; font-size: 1.02rem; }
+.prose-section ul { list-style: none; margin: 14px 0; display: flex; flex-direction: column; gap: 9px; }
+.prose-section ul li { padding-left: 28px; position: relative; font-family: var(--font-body); font-size: 1rem; color: var(--ink-light); }
+.prose-section ul li::before { content: '🍅'; position: absolute; left: 0; font-size: .8rem; top: 2px; }
+
+/* ── FAQ ── */
+#faq { background: var(--paper); }
+.faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: var(--ft-mist); border: 1.5px solid #f5dcd6; border-radius: var(--radius); overflow: hidden; }
+.faq-q { width: 100%; text-align: left; padding: 18px 22px; font-family: var(--font-ui); font-size: .97rem; font-weight: 600; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background var(--transition); }
+.faq-q:hover { background: var(--ft-red-p); }
+.faq-q .arrow { font-size: .8rem; transition: transform .3s; flex-shrink: 0; color: var(--ft-red); }
+.faq-item.open .faq-q { background: var(--ft-red-p); }
+.faq-item.open .arrow { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; font-family: var(--font-body); font-size: .95rem; color: var(--ink-light); padding: 0 22px; }
+.faq-item.open .faq-a { max-height: 300px; padding: 16px 22px; }
+
+/* ── CTA ── */
+#cta-section { background: linear-gradient(135deg, var(--ft-navy) 0%, var(--ft-navy-l) 60%, #3a2030 100%); text-align: center; padding: 80px 24px; color: #fff; position: relative; overflow: hidden; }
+#cta-section::before { content:'🍅'; position:absolute; font-size:11rem; opacity:.05; top:-15px; right:5%; line-height:1; pointer-events:none; }
+#cta-section h2 { color: #fff; }
+#cta-section p { color: rgba(255,255,255,.78); max-width: 480px; margin: 12px auto 32px; }
+.btn-cta-white { font-family: var(--font-ui); font-size: 1rem; font-weight: 700; padding: 14px 36px; border-radius: 50px; background: #fff; color: var(--ft-red); box-shadow: 0 4px 24px rgba(0,0,0,.2); transition: all .25s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,.25); color: var(--ft-red); }
+
+/* ── RELATED TOOLS ── */
+#related-tools { background: var(--ft-mist); }
+.tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 860px; margin: 0 auto; }
+.tool-card { background: var(--paper); border: 1.5px solid #f5dcd6; border-radius: var(--radius); padding: 20px 18px; text-align: center; transition: all .3s; text-decoration: none; display: block; }
+.tool-card:hover { box-shadow: 0 6px 24px rgba(224,87,63,.12); transform: translateY(-3px); border-color: var(--ft-red-l); }
+.tool-card .tool-emoji { font-size: 2rem; margin-bottom: 8px; }
+.tool-card h3 { font-size: .95rem; color: var(--ink); margin-bottom: 4px; }
+.tool-card p { font-size: .82rem; color: var(--ink-muted); margin: 0; }
+
+/* ── TOAST ── */
+#toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--ft-navy); color: #fff; font-family: var(--font-ui); font-size: .9rem; padding: 10px 24px; border-radius: 50px; box-shadow: 0 8px 32px rgba(28,35,51,.4); z-index: 9999; opacity: 0; transition: all .3s; pointer-events: none; }
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .app-body { grid-template-columns: 1fr; }
+  .timer-panel { padding: 36px 24px; }
+  .features-grid { grid-template-columns: repeat(2,1fr); }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .presets-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 700px) {
+  .timer-circle-wrap { width: 230px; height: 230px; }
+  .timer-display { font-size: 2.6rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .use-cases-grid { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .steps-row { grid-template-columns: 1fr 1fr; }
+  .steps-row::before { display: none; }
+  .tools-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stats { gap: 22px; }
+  section { padding: 56px 16px; }
+  .week-bars { gap: 6px; }
+  .shortcut-row { flex-wrap: wrap; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .steps-row { grid-template-columns: 1fr; }
+  .presets-grid { grid-template-columns: 1fr 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
+  .timer-circle-wrap { width: 200px; height: 200px; }
+  .timer-display { font-size: 2.2rem; }
+  .tc-btn-main { width: 64px; height: 64px; font-size: 1.4rem; }
+  .session-tabs { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="site-header" role="banner"></header>
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge">🍅 Free forever — built on the Pomodoro Technique</span>
+    <h1 id="hero-title">
+      The <em>Focus Timer</em><br>
+      <span class="accent">Online.</span> Work Deeply. Rest Well.
+    </h1>
+    <p class="hero-sub">
+      A free Pomodoro timer for deep focus. Customize your work and break intervals, track every session, and finally beat distraction.
+    </p>
+    <div class="hero-actions">
+      <a href="#app" class="btn-primary">🍅 Start Focusing Now</a>
+      <a href="#presets" class="btn-secondary">Explore Presets</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>25/5</strong><span>Classic Pomodoro</span></div>
+      <div class="hero-stat"><strong>∞</strong><span>Custom Intervals</span></div>
+      <div class="hero-stat"><strong>📊</strong><span>Session Tracking</span></div>
+      <div class="hero-stat"><strong>📱</strong><span>Mobile Ready</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ APP ══════════ -->
+<section id="app" aria-labelledby="app-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Live App</span>
+      <h2 id="app-heading">Your Online Focus Timer</h2>
+      <p>Set your work session, hit start, and stay locked in. Progress auto-saves in your browser.</p>
+    </div>
+
+    <div class="app-shell">
+      <div class="app-titlebar">
+        <div class="dots"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+        <span>🍅 Focus Timer — memonotepad.github.io/focus-timer</span>
+      </div>
+
+      <div class="app-body">
+
+        <!-- TIMER PANEL -->
+        <div class="timer-panel mode-focus" id="timerPanel">
+
+          <div class="session-tabs" id="sessionTabs" role="tablist" aria-label="Session type">
+            <button class="session-tab active" data-session="focus">Focus</button>
+            <button class="session-tab" data-session="short">Short Break</button>
+            <button class="session-tab" data-session="long">Long Break</button>
+          </div>
+
+          <div class="timer-circle-wrap">
+            <svg class="timer-svg" viewBox="0 0 200 200">
+              <circle class="timer-track" cx="100" cy="100" r="90"></circle>
+              <circle class="timer-progress" id="progressCircle" cx="100" cy="100" r="90" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+            </svg>
+            <div class="timer-center">
+              <div class="timer-display" id="timerDisplay">25:00</div>
+              <div class="timer-mode-label" id="timerModeLabel">Focus Session</div>
+              <div class="timer-task-label" id="timerTaskLabel"></div>
+            </div>
+          </div>
+
+          <div class="round-dots" id="roundDots"></div>
+
+          <div class="timer-controls">
+            <button class="tc-btn-sub" id="resetBtn" title="Reset timer" aria-label="Reset timer">↺</button>
+            <button class="tc-btn-main" id="startPauseBtn" title="Start" aria-label="Start or pause timer">▶</button>
+            <button class="tc-btn-sub" id="skipBtn" title="Skip to next session" aria-label="Skip session">⏭</button>
+          </div>
+
+          <div class="timer-stat-line" id="timerStatLine">Session 1 of 4 — Today: 0 pomodoros</div>
+        </div>
+
+        <!-- SIDE PANEL -->
+        <div class="side-panel">
+          <div class="side-tabs">
+            <button class="side-tab active" data-panel="tasks">📋 Tasks</button>
+            <button class="side-tab" data-panel="settings">⚙️ Settings</button>
+          </div>
+
+          <!-- Tasks panel -->
+          <div class="task-panel active" id="tasksPanelTab">
+            <div class="task-add-row">
+              <input type="text" class="task-input" id="taskInput" placeholder="What are you working on?" maxlength="100" aria-label="New task" />
+              <button class="btn-add-task" id="addTaskBtn">+ Add</button>
+            </div>
+            <div class="task-list" id="taskList"></div>
+            <div class="mini-stats">
+              <div class="mini-stat"><strong id="miniToday">0</strong><span>Today</span></div>
+              <div class="mini-stat"><strong id="miniTotal">0</strong><span>All Time</span></div>
+            </div>
+          </div>
+
+          <!-- Settings panel -->
+          <div class="settings-panel" id="settingsPanelTab">
+            <div class="settings-group">
+              <h4>Timer Durations (minutes)</h4>
+              <div class="settings-row"><label for="setFocus">Focus session</label><input type="number" class="settings-input" id="setFocus" min="1" max="180" value="25" /></div>
+              <div class="settings-row"><label for="setShort">Short break</label><input type="number" class="settings-input" id="setShort" min="1" max="60" value="5" /></div>
+              <div class="settings-row"><label for="setLong">Long break</label><input type="number" class="settings-input" id="setLong" min="1" max="90" value="15" /></div>
+              <div class="settings-row"><label for="setRounds">Sessions before long break</label><input type="number" class="settings-input" id="setRounds" min="2" max="8" value="4" /></div>
+            </div>
+            <div class="settings-group">
+              <h4>Automation</h4>
+              <div class="settings-row"><label for="setAutoBreak">Auto-start breaks</label><label class="switch"><input type="checkbox" id="setAutoBreak" checked><span class="slider-track"></span></label></div>
+              <div class="settings-row"><label for="setAutoFocus">Auto-start next focus</label><label class="switch"><input type="checkbox" id="setAutoFocus"><span class="slider-track"></span></label></div>
+              <div class="settings-row"><label for="setSound">Sound alerts</label><label class="switch"><input type="checkbox" id="setSound" checked><span class="slider-track"></span></label></div>
+              <div class="settings-row"><label for="setTickTitle">Show countdown in tab title</label><label class="switch"><input type="checkbox" id="setTickTitle" checked><span class="slider-track"></span></label></div>
+            </div>
+            <div class="settings-group">
+              <h4>Alert Sound</h4>
+              <div class="sound-pills" id="soundPills">
+                <button class="sound-pill active" data-sound="bell">🔔 Bell</button>
+                <button class="sound-pill" data-sound="chime">🎵 Chime</button>
+                <button class="sound-pill" data-sound="digital">📟 Digital</button>
+              </div>
+            </div>
+            <button class="btn-save-settings" id="saveSettingsBtn">💾 Save Settings</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ STATS DASHBOARD ══════════ -->
+<section id="stats-section" aria-labelledby="stats-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Your Progress</span>
+      <h2 id="stats-heading">Focus Statistics Dashboard</h2>
+      <p>Track your productivity trends and build a consistent focus habit over time.</p>
+    </div>
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card"><div class="stat-num" id="statToday">0</div><div class="stat-label">Sessions Today</div></div>
+      <div class="stat-card"><div class="stat-num" id="statWeek">0</div><div class="stat-label">Sessions This Week</div></div>
+      <div class="stat-card"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Total Sessions</div></div>
+      <div class="stat-card"><div class="stat-num" id="statHours">0h</div><div class="stat-label">Total Focus Time</div></div>
+    </div>
+    <div class="week-chart">
+      <h3>Last 7 Days</h3>
+      <div class="week-bars" id="weekBars"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FEATURES ══════════ -->
+<section id="features" aria-labelledby="features-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Features</span>
+      <h2 id="features-heading">Everything in Your Focus Timer</h2>
+      <p>A complete Pomodoro system built for real focus — not just a countdown clock.</p>
+    </div>
+    <div class="features-grid">
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fdece8;">🍅</div>
+        <h3>Classic Pomodoro Cycle</h3>
+        <p>25-minute focus sessions with 5-minute short breaks and a 15-minute long break every 4 rounds — fully customizable.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#e3f7ee;">📋</div>
+        <h3>Built-In Task List</h3>
+        <p>Add tasks you're working on and link them to your active session. See how many pomodoros each task took.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#eaf1ff;">📊</div>
+        <h3>Session Statistics</h3>
+        <p>Track sessions completed today, this week, and all-time. Visualize your last 7 days with a focus history chart.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fff6e0;">🔔</div>
+        <h3>Audio Alerts</h3>
+        <p>Choose from three alert sounds — Bell, Chime, or Digital — to know exactly when a session ends, even with the tab unfocused.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fdece8;">🔄</div>
+        <h3>Auto-Start Options</h3>
+        <p>Let breaks start automatically after focus sessions, or auto-start your next focus block — minimize clicks, maximize flow.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#e3f7ee;">🏷️</div>
+        <h3>Live Tab Title Countdown</h3>
+        <p>See your remaining time directly in the browser tab — no need to switch back to check your progress.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#eaf1ff;">⚙️</div>
+        <h3>Fully Customizable Intervals</h3>
+        <p>Set any focus, short break, and long break duration. Choose how many sessions occur before a long break.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fff6e0;">⌨️</div>
+        <h3>Keyboard Shortcuts</h3>
+        <p>Start, pause, reset and skip sessions without touching your mouse — stay in flow with full keyboard control.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon" style="background:#fdece8;">🔒</div>
+        <h3>100% Private</h3>
+        <p>All tasks, sessions and stats save locally in your browser. No account, no server, no tracking of your focus data.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section id="how-it-works" aria-labelledby="how-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2 id="how-heading">Start Focusing in Seconds</h2>
+      <p>No sign-up, no installation. Open the focus timer and start your first pomodoro right away.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Add a Task</h3>
+        <p>Type what you're about to work on into the task list so you can track focused time per task.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Press Start</h3>
+        <p>Hit the play button to begin a 25-minute (or custom) focus session. The countdown begins immediately.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Work Without Distraction</h3>
+        <p>Stay on task until the alert sounds. The circular progress ring shows exactly how much time remains.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Take Your Break</h3>
+        <p>Step away during the short break, then dive back in. After 4 rounds, enjoy a longer recovery break.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PRESETS ══════════ -->
+<section id="presets" aria-labelledby="presets-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Quick Presets</span>
+      <h2 id="presets-heading">Popular Focus Timer Presets</h2>
+      <p>Jump straight into a proven interval system. Click any preset to apply it instantly.</p>
+    </div>
+    <div class="presets-grid">
+
+      <div class="preset-card" onclick="applyPreset(25,5,15,4)" role="button" tabindex="0">
+        <div class="preset-emoji">🍅</div>
+        <h3>Classic Pomodoro</h3>
+        <p>The original technique by Francesco Cirillo. Great all-purpose default.</p>
+        <span class="preset-times">25 / 5 / 15</span>
+      </div>
+
+      <div class="preset-card" onclick="applyPreset(50,10,20,3)" role="button" tabindex="0">
+        <div class="preset-emoji">📚</div>
+        <h3>Deep Work</h3>
+        <p>Longer sessions for deep, uninterrupted concentration on complex tasks.</p>
+        <span class="preset-times">50 / 10 / 20</span>
+      </div>
+
+      <div class="preset-card" onclick="applyPreset(15,3,10,4)" role="button" tabindex="0">
+        <div class="preset-emoji">⚡</div>
+        <h3>Quick Sprints</h3>
+        <p>Short bursts ideal for ADHD-friendly focus or tackling small tasks fast.</p>
+        <span class="preset-times">15 / 3 / 10</span>
+      </div>
+
+      <div class="preset-card" onclick="applyPreset(90,20,30,2)" role="button" tabindex="0">
+        <div class="preset-emoji">🧠</div>
+        <h3>Ultradian Rhythm</h3>
+        <p>Aligned with the body's natural 90-minute energy cycles for peak performance.</p>
+        <span class="preset-times">90 / 20 / 30</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ USE CASES ══════════ -->
+<section id="use-cases" aria-labelledby="use-cases-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Use Cases</span>
+      <h2 id="use-cases-heading">Who Uses a Focus Timer?</h2>
+      <p>From students to remote workers, the Pomodoro Technique helps anyone fighting distraction.</p>
+    </div>
+    <div class="use-cases-grid">
+
+      <div class="use-case-card">
+        <div class="use-case-icon">🎓</div>
+        <div><h3>Students</h3><p>Break study sessions into manageable chunks. Power through exam revision and assignments without burning out.</p></div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">💼</div>
+        <div><h3>Remote Workers</h3><p>Structure your work-from-home day with clear focus blocks and breaks, avoiding the always-on trap.</p></div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">✍️</div>
+        <div><h3>Writers & Creatives</h3><p>Beat writer's block by committing to short, distraction-free writing sprints instead of staring at a blank page.</p></div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">👨‍💻</div>
+        <div><h3>Developers</h3><p>Maintain deep focus during coding sessions, then take regular breaks to avoid burnout and mental fatigue.</p></div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">🧘</div>
+        <div><h3>ADHD & Focus Challenges</h3><p>Short, structured intervals with built-in breaks make starting tasks easier and reduce overwhelm.</p></div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">📈</div>
+        <div><h3>Freelancers & Founders</h3><p>Track focused hours across projects and clients, and build a measurable record of deep work output.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TIPS ══════════ -->
+<section id="tips" aria-labelledby="tips-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Pro Tips</span>
+      <h2 id="tips-heading">Get the Most from Your Focus Timer</h2>
+      <p>Small adjustments that make a huge difference in how effective your pomodoro sessions feel.</p>
+    </div>
+    <div class="tips-grid">
+
+      <div class="tip-card">
+        <div class="tip-badge">📵</div>
+        <div><h4>Silence Notifications</h4><p>Turn on Do Not Disturb mode on your phone and computer during focus sessions. One notification can break 20 minutes of flow.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🎯</div>
+        <div><h4>One Task Per Session</h4><p>Pick a single task before pressing start. Multitasking during a pomodoro defeats the purpose of focused, single-threaded work.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🚶</div>
+        <div><h4>Actually Take Your Breaks</h4><p>Stand up, stretch, or look away from the screen during breaks. Skipping breaks leads to faster burnout, not more output.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">📝</div>
+        <div><h4>Log What You Worked On</h4><p>Use the task list to track exactly what each pomodoro accomplished — it's motivating to see progress add up.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🔢</div>
+        <div><h4>Start with 2-3 Sessions</h4><p>If you're new to the technique, don't aim for 8 pomodoros on day one. Build the habit with 2-3 focused sessions and grow from there.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">⏱️</div>
+        <div><h4>Adjust Lengths to Your Task</h4><p>Use shorter sprints for tedious admin work and longer deep-work sessions for complex problem-solving or writing.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">🌙</div>
+        <div><h4>Protect Your Long Break</h4><p>The 15-20 minute long break after 4 rounds is for real recovery — step away from screens entirely if you can.</p></div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-badge">📊</div>
+        <div><h4>Review Your Weekly Chart</h4><p>Check the stats dashboard weekly to spot your most productive days and build consistency around them.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ KEYBOARD SHORTCUTS ══════════ -->
+<section id="keyboard" aria-labelledby="keyboard-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Shortcuts</span>
+      <h2 id="keyboard-heading">Keyboard Shortcuts</h2>
+      <p>Control the focus timer without touching your mouse.</p>
+    </div>
+    <div class="shortcuts-table">
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>Space</kbd></div><span class="shortcut-desc">Start or pause the timer</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>R</kbd></div><span class="shortcut-desc">Reset the current session</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>S</kbd></div><span class="shortcut-desc">Skip to the next session</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>1</kbd></div><span class="shortcut-desc">Switch to Focus session</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>2</kbd></div><span class="shortcut-desc">Switch to Short Break</span></div>
+      <div class="shortcut-row"><div class="shortcut-keys"><kbd>3</kbd></div><span class="shortcut-desc">Switch to Long Break</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROSE ══════════ -->
+<section class="prose-section" id="about" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="section-header" style="text-align:left;">
+      <span class="section-label">About</span>
+      <h2 id="about-heading">What Is the Pomodoro Technique?</h2>
+    </div>
+    <p>The <strong>Pomodoro Technique</strong> is a time management method developed by Francesco Cirillo in the late 1980s. Named after the tomato-shaped kitchen timer ("pomodoro" is Italian for tomato) Cirillo used as a student, the method breaks work into focused intervals — traditionally 25 minutes — separated by short breaks.</p>
+    <p>The core idea is simple: sustained attention is finite, and forcing yourself to work for hours without rest leads to diminishing returns and burnout. By working in short, intense bursts with regular breaks, your brain stays fresher, your focus stays sharper, and your output actually improves.</p>
+    <p>Our free <strong>focus timer online</strong> brings this method to your browser with everything you need to build a real practice:</p>
+    <ul>
+      <li>Customizable focus, short break, and long break durations</li>
+      <li>A built-in task list to track what each session accomplishes</li>
+      <li>Automatic session cycling with configurable auto-start</li>
+      <li>Live statistics — today, this week, and all-time session counts</li>
+      <li>A 7-day focus history chart to spot your most productive days</li>
+      <li>Audio alerts and a live countdown in your browser tab title</li>
+      <li>Quick presets for Classic Pomodoro, Deep Work, Quick Sprints, and Ultradian Rhythm</li>
+    </ul>
+    <p>Whether you're studying, coding, writing, or managing a busy freelance schedule, this focus timer helps you turn scattered hours into structured, productive sessions.</p>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">FAQ</span>
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is this focus timer free to use? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes, completely free. No account, no subscription, and no limits on how many sessions you can run.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is the Pomodoro Technique? <span class="arrow">▼</span></button>
+        <div class="faq-a">The Pomodoro Technique is a time management method that breaks work into focused 25-minute intervals called pomodoros, separated by short 5-minute breaks, with a longer break after every four pomodoros.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I customize the timer intervals? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes. You can set custom durations for focus sessions, short breaks, and long breaks, as well as how many sessions occur before a long break, in the Settings panel.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does the timer keep running if I switch tabs? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes. The timer continues running in the background even if you switch browser tabs, and the countdown is also shown live in the browser tab title so you can monitor it without switching back.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is my session data saved? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes. Your completed sessions, tasks, and statistics are saved automatically in your browser's localStorage so your progress persists between visits, with no account required.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I use a different interval system than 25/5? <span class="arrow">▼</span></button>
+        <div class="faq-a">Absolutely. Use one of the quick presets like Deep Work (50/10) or Ultradian Rhythm (90/20), or set fully custom durations in Settings to match your own working style.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does the timer work on mobile? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes, the focus timer is fully mobile-responsive and works on any phone or tablet browser. No app download is required.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What happens if I clear my browser data? <span class="arrow">▼</span></button>
+        <div class="faq-a">Clearing your browser's localStorage will reset your saved statistics, tasks and settings back to defaults. There's currently no export feature, so avoid clearing browser data if you want to preserve your history.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RELATED TOOLS ══════════ -->
+<section id="related-tools" aria-labelledby="related-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Related Tools</span>
+      <h2 id="related-heading">More Free Online Tools</h2>
+      <p>Explore our other free browser-based productivity tools.</p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-card" href="https://memonotepad.github.io/">
+        <div class="tool-emoji">📝</div>
+        <h3>Memo Notepad</h3>
+        <p>Write and save memos instantly in your browser. Free, private, no sign-up.</p>
+      </a>
+      <a class="tool-card" href="https://memonotepad.github.io/list-maker">
+        <div class="tool-emoji">📋</div>
+        <h3>List Maker</h3>
+        <p>Create checklists, to-do lists, shopping lists & more. Free online list creator.</p>
+      </a>
+      <a class="tool-card" href="https://memonotepad.github.io/password-generator">
+        <div class="tool-emoji">🔐</div>
+        <h3>Password Generator</h3>
+        <p>Generate strong, secure passwords instantly. 100% private, free forever.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section id="cta-section" aria-labelledby="cta-heading">
+  <div class="section-inner" style="text-align:center;position:relative;z-index:1;">
+    <span class="section-label" style="color:var(--ft-amber);background:rgba(255,255,255,.1);border-radius:50px;padding:4px 14px;display:inline-block;margin-bottom:16px;">Get Started</span>
+    <h2 id="cta-heading">Your Focus Timer Is Ready</h2>
+    <p>Open the free online Pomodoro timer now and start your first focused session today.</p>
+    <a href="#app" class="btn-cta-white">🍅 Start My First Session</a>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+<!-- ══════════ TOAST ══════════ -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script src="/js/header.js"></script>
+<script src="/js/footer.js"></script>
+
+<script>
+/* ════════════════════════════════════════════════════
+   FOCUS TIMER APP — Fully self-contained
+════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  const SK = 'focustimer_data_v1';
+  const ORIGINAL_TITLE = document.title;
+
+  /* ── Settings (defaults) ── */
+  let settings = {
+    focus: 25, short: 5, long: 15, rounds: 4,
+    autoBreak: true, autoFocus: false, sound: true, tickTitle: true, soundTheme: 'bell'
+  };
+
+  /* ── Runtime state ── */
+  let session = 'focus';          // focus | short | long
+  let remaining = settings.focus * 60;
+  let totalDuration = settings.focus * 60;
+  let isRunning = false;
+  let timerInterval = null;
+  let roundIndex = 1;             // 1-based current round within cycle
+  let activeTaskId = null;
+
+  let tasks = [];
+  let stats = { sessions: [] };   // array of {date:'YYYY-MM-DD', ts: epoch}
+
+  /* ── DOM refs ── */
+  const timerDisplay   = document.getElementById('timerDisplay');
+  const timerModeLabel = document.getElementById('timerModeLabel');
+  const timerTaskLabel = document.getElementById('timerTaskLabel');
+  const progressCircle = document.getElementById('progressCircle');
+  const startPauseBtn  = document.getElementById('startPauseBtn');
+  const timerPanel      = document.getElementById('timerPanel');
+  const roundDots       = document.getElementById('roundDots');
+  const timerStatLine   = document.getElementById('timerStatLine');
+  const toast            = document.getElementById('toast');
+  const taskList         = document.getElementById('taskList');
+
+  const CIRC = 2 * Math.PI * 90; // 565.48
+
+  /* ── Persistence ── */
+  function save() {
+    try { localStorage.setItem(SK, JSON.stringify({ settings, tasks, stats })); } catch(e){}
+  }
+  function load() {
+    try {
+      const raw = localStorage.getItem(SK);
+      if (raw) {
+        const d = JSON.parse(raw);
+        settings = { ...settings, ...(d.settings||{}) };
+        tasks = d.tasks || [];
+        stats = d.stats || { sessions: [] };
+      }
+    } catch(e){}
+  }
+
+  /* ── Toast ── */
+  let tTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(tTimer);
+    tTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  }
+
+  function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+  function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function todayStr() { return new Date().toISOString().slice(0,10); }
+
+  /* ── Web Audio beep (no external files needed) ── */
+  let audioCtx;
+  function playSound() {
+    if (!settings.sound) return;
+    try {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const theme = settings.soundTheme;
+      const now = audioCtx.currentTime;
+      const notes = theme === 'chime' ? [523.25, 659.25, 783.99] :
+                    theme === 'digital' ? [880, 880, 880] :
+                    [659.25, 523.25]; // bell
+      notes.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = theme === 'digital' ? 'square' : 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.001, now + i*0.18);
+        gain.gain.exponentialRampToValueAtTime(0.18, now + i*0.18 + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i*0.18 + 0.4);
+        osc.connect(gain).connect(audioCtx.destination);
+        osc.start(now + i*0.18);
+        osc.stop(now + i*0.18 + 0.45);
+      });
+    } catch(e){}
+  }
+
+  /* ── Session config ── */
+  function sessionMinutes(s) {
+    return s === 'focus' ? settings.focus : s === 'short' ? settings.short : settings.long;
+  }
+  function sessionLabel(s) {
+    return s === 'focus' ? 'Focus Session' : s === 'short' ? 'Short Break' : 'Long Break';
+  }
+
+  /* ── Render timer display ── */
+  function renderDisplay() {
+    const mm = Math.floor(remaining / 60).toString().padStart(2,'0');
+    const ss = Math.floor(remaining % 60).toString().padStart(2,'0');
+    timerDisplay.textContent = `${mm}:${ss}`;
+    timerModeLabel.textContent = sessionLabel(session);
+
+    const pct = totalDuration ? (remaining / totalDuration) : 0;
+    const offset = CIRC * (1 - pct);
+    progressCircle.style.strokeDasharray = CIRC;
+    progressCircle.style.strokeDashoffset = offset;
+
+    if (settings.tickTitle) {
+      document.title = isRunning ? `${mm}:${ss} — ${sessionLabel(session)}` : ORIGINAL_TITLE;
+    } else {
+      document.title = ORIGINAL_TITLE;
+    }
+
+    const task = tasks.find(t => t.id === activeTaskId);
+    timerTaskLabel.textContent = (session === 'focus' && task) ? task.text : '';
+
+    timerPanel.className = 'timer-panel mode-' + session;
+  }
+
+  function renderRoundDots() {
+    roundDots.innerHTML = '';
+    for (let i = 1; i <= settings.rounds; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'round-dot' + (i < roundIndex ? ' done' : i === roundIndex ? ' current' : '');
+      roundDots.appendChild(dot);
+    }
+  }
+
+  function renderStatLine() {
+    const todaysCount = stats.sessions.filter(s => s.date === todayStr() && s.type === 'focus').length;
+    timerStatLine.textContent = `Session ${roundIndex} of ${settings.rounds} — Today: ${todaysCount} pomodoro${todaysCount!==1?'s':''}`;
+  }
+
+  /* ── Timer engine ── */
+  function startTimer() {
+    if (isRunning) return;
+    isRunning = true;
+    startPauseBtn.textContent = '⏸';
+    startPauseBtn.classList.add('paused');
+    timerInterval = setInterval(tick, 1000);
+  }
+  function pauseTimer() {
+    isRunning = false;
+    startPauseBtn.textContent = '▶';
+    startPauseBtn.classList.remove('paused');
+    clearInterval(timerInterval);
+    document.title = ORIGINAL_TITLE;
+  }
+  function tick() {
+    remaining--;
+    if (remaining <= 0) {
+      completeSession();
+      return;
+    }
+    renderDisplay();
+  }
+
+  function completeSession() {
+    pauseTimer();
+    playSound();
+
+    if (session === 'focus') {
+      stats.sessions.push({ date: todayStr(), ts: Date.now(), type: 'focus', minutes: settings.focus });
+      if (activeTaskId) {
+        const t = tasks.find(x => x.id === activeTaskId);
+        if (t) t.pomodoros = (t.pomodoros||0) + 1;
+      }
+      showToast('🍅 Focus session complete! Time for a break.');
+      save();
+      renderTasks();
+      updateAllStats();
+
+      const isLongBreakNow = roundIndex >= settings.rounds;
+      session = isLongBreakNow ? 'long' : 'short';
+      if (isLongBreakNow) roundIndex = 1; else roundIndex++;
+      setSessionTabs(session);
+      loadSessionDuration();
+      if (settings.autoBreak) startTimer(); else renderDisplay();
+    } else {
+      showToast(session === 'long' ? '✅ Long break over — back to focus!' : '✅ Break over — ready to focus?');
+      session = 'focus';
+      setSessionTabs('focus');
+      loadSessionDuration();
+      if (settings.autoFocus) startTimer(); else renderDisplay();
+    }
+    renderRoundDots();
+    renderStatLine();
+    save();
+  }
+
+  function loadSessionDuration() {
+    totalDuration = sessionMinutes(session) * 60;
+    remaining = totalDuration;
+    renderDisplay();
+  }
+
+  /* ── Controls ── */
+  startPauseBtn.addEventListener('click', () => {
+    if (isRunning) pauseTimer(); else startTimer();
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    pauseTimer();
+    loadSessionDuration();
+    showToast('↺ Timer reset');
+  });
+  document.getElementById('skipBtn').addEventListener('click', () => {
+    pauseTimer();
+    remaining = 0;
+    completeSession();
+  });
+
+  /* ── Session tabs ── */
+  function setSessionTabs(s) {
+    document.querySelectorAll('.session-tab').forEach(t => t.classList.toggle('active', t.dataset.session === s));
+  }
+  document.getElementById('sessionTabs').addEventListener('click', e => {
+    const tab = e.target.closest('.session-tab');
+    if (!tab) return;
+    pauseTimer();
+    session = tab.dataset.session;
+    setSessionTabs(session);
+    loadSessionDuration();
+    renderRoundDots();
+    renderStatLine();
+  });
+
+  /* ── Side panel tabs ── */
+  document.querySelectorAll('.side-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.side-tab').forEach(t => t.classList.toggle('active', t===tab));
+      document.getElementById('tasksPanelTab').classList.toggle('active', tab.dataset.panel==='tasks');
+      document.getElementById('settingsPanelTab').classList.toggle('active', tab.dataset.panel==='settings');
+    });
+  });
+
+  /* ── Tasks ── */
+  function renderTasks() {
+    if (!tasks.length) {
+      taskList.innerHTML = '<div class="task-empty">No tasks yet. Add one to start tracking focus sessions.</div>';
+    } else {
+      taskList.innerHTML = tasks.map(t => `
+        <div class="task-item ${t.done?'done':''} ${t.id===activeTaskId?'active-task':''}" data-id="${t.id}">
+          <input type="checkbox" class="task-check" ${t.done?'checked':''} aria-label="Mark task done" />
+          <span class="task-text">${esc(t.text)}</span>
+          ${t.pomodoros ? `<span class="task-pomo-count">🍅 ${t.pomodoros}</span>` : ''}
+          <button class="task-del" aria-label="Delete task">✕</button>
+        </div>`).join('');
+    }
+    taskList.querySelectorAll('.task-item').forEach(div => {
+      const id = div.dataset.id;
+      div.addEventListener('click', e => {
+        if (e.target.classList.contains('task-check') || e.target.classList.contains('task-del')) return;
+        activeTaskId = (activeTaskId === id) ? null : id;
+        renderTasks();
+        renderDisplay();
+        save();
+      });
+      div.querySelector('.task-check').addEventListener('change', (e) => {
+        const t = tasks.find(x=>x.id===id);
+        if (t) t.done = e.target.checked;
+        save(); renderTasks();
+      });
+      div.querySelector('.task-del').addEventListener('click', () => {
+        tasks = tasks.filter(x=>x.id!==id);
+        if (activeTaskId===id) activeTaskId = null;
+        save(); renderTasks(); renderDisplay();
+      });
+    });
+  }
+  document.getElementById('addTaskBtn').addEventListener('click', addTask);
+  document.getElementById('taskInput').addEventListener('keydown', e => { if (e.key==='Enter') addTask(); });
+  function addTask() {
+    const input = document.getElementById('taskInput');
+    const v = input.value.trim();
+    if (!v) return;
+    tasks.unshift({ id: uid(), text: v, done: false, pomodoros: 0 });
+    input.value = '';
+    save(); renderTasks();
+  }
+
+  /* ── Settings ── */
+  function loadSettingsUI() {
+    document.getElementById('setFocus').value = settings.focus;
+    document.getElementById('setShort').value = settings.short;
+    document.getElementById('setLong').value = settings.long;
+    document.getElementById('setRounds').value = settings.rounds;
+    document.getElementById('setAutoBreak').checked = settings.autoBreak;
+    document.getElementById('setAutoFocus').checked = settings.autoFocus;
+    document.getElementById('setSound').checked = settings.sound;
+    document.getElementById('setTickTitle').checked = settings.tickTitle;
+    document.querySelectorAll('.sound-pill').forEach(p => p.classList.toggle('active', p.dataset.sound === settings.soundTheme));
+  }
+  document.getElementById('soundPills').addEventListener('click', e => {
+    const pill = e.target.closest('.sound-pill');
+    if (!pill) return;
+    settings.soundTheme = pill.dataset.sound;
+    document.querySelectorAll('.sound-pill').forEach(p => p.classList.toggle('active', p===pill));
+  });
+  document.getElementById('saveSettingsBtn').addEventListener('click', () => {
+    settings.focus = Math.max(1, parseInt(document.getElementById('setFocus').value)||25);
+    settings.short = Math.max(1, parseInt(document.getElementById('setShort').value)||5);
+    settings.long  = Math.max(1, parseInt(document.getElementById('setLong').value)||15);
+    settings.rounds = Math.max(2, parseInt(document.getElementById('setRounds').value)||4);
+    settings.autoBreak = document.getElementById('setAutoBreak').checked;
+    settings.autoFocus = document.getElementById('setAutoFocus').checked;
+    settings.sound = document.getElementById('setSound').checked;
+    settings.tickTitle = document.getElementById('setTickTitle').checked;
+    save();
+    pauseTimer();
+    roundIndex = 1;
+    loadSessionDuration();
+    renderRoundDots();
+    renderStatLine();
+    showToast('💾 Settings saved!');
+  });
+
+  /* ── Apply preset (called from preset cards) ── */
+  window.applyPreset = function(focus, short, long, rounds) {
+    settings.focus = focus; settings.short = short; settings.long = long; settings.rounds = rounds;
+    loadSettingsUI();
+    save();
+    pauseTimer();
+    session = 'focus';
+    setSessionTabs('focus');
+    roundIndex = 1;
+    loadSessionDuration();
+    renderRoundDots();
+    renderStatLine();
+    document.getElementById('app').scrollIntoView({behavior:'smooth'});
+    showToast(`✅ Preset applied: ${focus}/${short}/${long} min`);
+  };
+
+  /* ── Keyboard shortcuts ── */
+  document.addEventListener('keydown', e => {
+    if (['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) return;
+    if (e.code === 'Space') { e.preventDefault(); isRunning ? pauseTimer() : startTimer(); }
+    else if (e.key === 'r' || e.key === 'R') { pauseTimer(); loadSessionDuration(); }
+    else if (e.key === 's' || e.key === 'S') { pauseTimer(); remaining = 0; completeSession(); }
+    else if (e.key === '1') { pauseTimer(); session='focus'; setSessionTabs('focus'); loadSessionDuration(); renderStatLine(); }
+    else if (e.key === '2') { pauseTimer(); session='short'; setSessionTabs('short'); loadSessionDuration(); renderStatLine(); }
+    else if (e.key === '3') { pauseTimer(); session='long'; setSessionTabs('long'); loadSessionDuration(); renderStatLine(); }
+  });
+
+  /* ── Stats dashboard ── */
+  function updateAllStats() {
+    const focusSessions = stats.sessions.filter(s => s.type==='focus');
+    const today = todayStr();
+    const todayCount = focusSessions.filter(s => s.date===today).length;
+
+    // week range (last 7 days incl today)
+    const weekDates = [];
+    for (let i=6; i>=0; i--) {
+      const d = new Date(); d.setDate(d.getDate()-i);
+      weekDates.push(d.toISOString().slice(0,10));
+    }
+    const weekCount = focusSessions.filter(s => weekDates.includes(s.date)).length;
+    const totalCount = focusSessions.length;
+    const totalMinutes = focusSessions.reduce((sum,s)=>sum+(s.minutes||settings.focus),0);
+
+    document.getElementById('statToday').textContent = todayCount;
+    document.getElementById('statWeek').textContent = weekCount;
+    document.getElementById('statTotal').textContent = totalCount;
+    document.getElementById('statHours').textContent = (totalMinutes/60).toFixed(1) + 'h';
+    document.getElementById('miniToday').textContent = todayCount;
+    document.getElementById('miniTotal').textContent = totalCount;
+
+    // week chart
+    const dayLabels = weekDates.map(d => new Date(d+'T00:00:00').toLocaleDateString('en-US',{weekday:'short'}));
+    const counts = weekDates.map(d => focusSessions.filter(s=>s.date===d).length);
+    const max = Math.max(...counts, 1);
+    const weekBars = document.getElementById('weekBars');
+    weekBars.innerHTML = counts.map((c,i) => `
+      <div class="week-bar-col">
+        <span class="week-bar-count">${c||''}</span>
+        <div class="week-bar" style="height:${c ? Math.max((c/max)*100,6) : 2}%;"></div>
+        <span class="week-bar-label">${dayLabels[i]}</span>
+      </div>`).join('');
+  }
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
+
+  /* ── Header scroll ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 20);
+  }, {passive:true});
+
+  /* ── Warn before leaving while running ── */
+  window.addEventListener('beforeunload', (e) => {
+    if (isRunning) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  /* ── Init ── */
+  load();
+  loadSettingsUI();
+  totalDuration = settings.focus * 60;
+  remaining = totalDuration;
+  renderDisplay();
+  renderRoundDots();
+  renderStatLine();
+  renderTasks();
+  updateAllStats();
+
+})();
+</script>
+
+</body>
+</html>
