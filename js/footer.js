@@ -42,6 +42,7 @@
         <li><a href="/word-shuffler">Word Shuffle</a></li>
         <li><a href="/dream-journal">Dream Journal</a></li>
         <li><a href="/list-maker">Make A List</a></li>
+        <li><a href="/notepad">Notepad Editor</a></li>
         </ul>
       </div>
 
