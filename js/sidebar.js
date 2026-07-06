@@ -246,7 +246,7 @@
   // Render the floating toggle switch, backdrop container, and sidebar dashboard
   rootContainer.innerHTML = `
     <div class="tools-sidebar-overlay" id="toolsSidebarOverlay"></div>
-    <div class="tools-floating-trigger" id="toolsSidebarTrigger" title="Explore Toolkit" aria-label="Toggle Memo Notepad toolkit">🧰</div>
+    <div class="tools-floating-trigger" id="toolsSidebarTrigger" title="Explore Toolkit" aria-label="Toggle Memo Notepad toolkit">📝</div>
     <aside class="tools-fixed-sidebar" id="toolsFixedSidebar" aria-label="Memo Notepad Toolkit Sidebar">
       <div class="tools-sb-header">
         <h2>Memo <em>Notepad</em></h2>
@@ -284,14 +284,14 @@
     const isOpen = sidebar.classList.toggle("open");
     trigger.classList.toggle("active", isOpen);
     overlay.classList.toggle("visible", isOpen);
-    trigger.innerHTML = isOpen ? "✕" : "🧰";
+    trigger.innerHTML = isOpen ? "✕" : "📝";
   }
 
   function closeSidebar() {
     sidebar.classList.remove("open");
     trigger.classList.remove("active");
     overlay.classList.remove("visible");
-    trigger.innerHTML = "🧰";
+    trigger.innerHTML = "📝";
   }
 
   // Bind Listeners
