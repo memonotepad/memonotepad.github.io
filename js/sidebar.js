@@ -47,7 +47,7 @@
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s ease, color 0.2s ease;
     }
     body.dark .tools-floating-trigger {
-      background: #e67e22;
+      background: #2A8F7F;
       color: #ffffff;
     }
     .tools-floating-trigger:hover {
