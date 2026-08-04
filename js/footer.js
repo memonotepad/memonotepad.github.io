@@ -49,10 +49,12 @@
       <div class="footer-links-group">
         <h3>Pages</h3>
         <ul>
-          <li><a href="/privacy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms of Use</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Use</a></li>   
+        <li><a href="/cookies">Cookies Policy</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
         </ul>
       </div>
     </div>
