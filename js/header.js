@@ -15,10 +15,18 @@
       <ul class="nav-links" id="navMenu" role="list">
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/diary" class="nav-link">Diary</a></li>
-        <li><a href="/case-converter" class="nav-link">Case Converter</a></li>
-        <li><a href="/decision-maker" class="nav-link">Choice Maker</a></li>
-        <li><a href="/random-text" class="nav-link">Random Text</a></li>
-        <li><a href="/blog" class="nav-link">Blog</a></li>
+        <!-- All Tools Dropdown -->
+        <li class="dropdown">
+          <button class="nav-link dropdown-toggle" id="dropdownToggle" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu">
+            All Tools <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="dropdown-menu" id="dropdownMenu" role="menu" aria-label="Tools">
+            <li><a href="/case-converter" class="dropdown-link" role="menuitem">Case Converter</a></li>
+            <li><a href="/decision-maker" class="dropdown-link" role="menuitem">Choice Maker</a></li>
+            <li><a href="/random-text" class="dropdown-link" role="menuitem">Random Text</a></li>
+            <li><a href="/blog" class="dropdown-link" role="menuitem">Blog</a></li>
+          </ul>
+        </li>
         <li><a href="/about" class="nav-cta">About</a></li>
       </ul>
     </nav>
@@ -37,16 +45,66 @@
     toggle.setAttribute('aria-expanded', open);
   });
 
-  // Close menu on link click
-  menu.querySelectorAll('a').forEach(link => {
+  // Dropdown toggle (desktop & mobile)
+  const dropdownToggle = document.getElementById('dropdownToggle');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  let dropdownOpen = false;
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    dropdownOpen = !dropdownOpen;
+    dropdownMenu.classList.toggle('open', dropdownOpen);
+    dropdownToggle.setAttribute('aria-expanded', dropdownOpen);
+  };
+
+  dropdownToggle.addEventListener('click', toggleDropdown);
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!dropdownToggle.parentElement.contains(e.target)) {
+      dropdownMenu.classList.remove('open');
+      dropdownOpen = false;
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close dropdown on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dropdownOpen) {
+      dropdownMenu.classList.remove('open');
+      dropdownOpen = false;
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+      dropdownToggle.focus();
+    }
+  });
+
+  // Close dropdown on link click (mobile)
+  dropdownMenu.querySelectorAll('.dropdown-link').forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+      dropdownMenu.classList.remove('open');
+      dropdownOpen = false;
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+      
+      // Close mobile menu if open
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Close menu on link click
+  menu.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 
   // Active section highlight
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
   const sections = document.querySelectorAll('section[id]');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
