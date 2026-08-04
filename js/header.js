@@ -27,7 +27,7 @@
             <li><a href="/word-shuffler" class="dropdown-link" role="menuitem">Word Shuffle</a></li>
             <li><a href="/dream-journal" class="dropdown-link" role="menuitem">Dream Journal</a></li>
             <li><a href="/list-maker" class="dropdown-link" role="menuitem">Make A List</a></li>
-            <li><a href="/notepadr" class="dropdown-link" role="menuitem">Notepad Editor</a></li>
+            <li><a href="/notepad" class="dropdown-link" role="menuitem">Notepad Editor</a></li>
           </ul>
         </li>
         <li><a href="/blog" class="nav-link">Blog</a></li>
