@@ -24,9 +24,13 @@
             <li><a href="/case-converter" class="dropdown-link" role="menuitem">Case Converter</a></li>
             <li><a href="/decision-maker" class="dropdown-link" role="menuitem">Choice Maker</a></li>
             <li><a href="/random-text" class="dropdown-link" role="menuitem">Random Text</a></li>
-            <li><a href="/blog" class="dropdown-link" role="menuitem">Blog</a></li>
+            <li><a href="/word-shuffler" class="dropdown-link" role="menuitem">Word Shuffle</a></li>
+            <li><a href="/dream-journal" class="dropdown-link" role="menuitem">Dream Journal</a></li>
+            <li><a href="/list-maker" class="dropdown-link" role="menuitem">Make A List</a></li>
+            <li><a href="/notepadr" class="dropdown-link" role="menuitem">Notepad Editor</a></li>
           </ul>
         </li>
+        <li><a href="/blog" class="nav-link">Blog</a></li>
         <li><a href="/about" class="nav-cta">About</a></li>
       </ul>
     </nav>
