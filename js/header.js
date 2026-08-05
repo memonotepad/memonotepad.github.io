@@ -30,7 +30,6 @@
             <li><a href="/notepad" class="dropdown-link" role="menuitem">Notepad Editor</a></li>
           </ul>
         </li>
-        <li><a href="/blog" class="nav-link">Blog</a></li>
         <li><a href="/about" class="nav-cta">About</a></li>
       </ul>
     </nav>
@@ -44,28 +43,45 @@
   // Mobile toggle
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
+  
   toggle.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
+    
+    // Close dropdown when closing mobile menu
+    if (!open) {
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      const dropdownToggle = document.getElementById('dropdownToggle');
+      dropdownMenu.classList.remove('open');
+      dropdownToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 
-  // Dropdown toggle (desktop & mobile)
+  // Dropdown toggle - works on both desktop and mobile
   const dropdownToggle = document.getElementById('dropdownToggle');
   const dropdownMenu = document.getElementById('dropdownMenu');
   let dropdownOpen = false;
 
   const toggleDropdown = (e) => {
+    e.preventDefault();
     e.stopPropagation();
     dropdownOpen = !dropdownOpen;
     dropdownMenu.classList.toggle('open', dropdownOpen);
     dropdownToggle.setAttribute('aria-expanded', dropdownOpen);
   };
 
+  // Click handler for dropdown toggle
   dropdownToggle.addEventListener('click', toggleDropdown);
+
+  // Touch support for mobile
+  dropdownToggle.addEventListener('touchstart', (e) => {
+    // Allow touch to work the same as click
+  }, { passive: true });
 
   // Close dropdown when clicking outside
   document.addEventListener('click', (e) => {
-    if (!dropdownToggle.parentElement.contains(e.target)) {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown && !dropdown.contains(e.target)) {
       dropdownMenu.classList.remove('open');
       dropdownOpen = false;
       dropdownToggle.setAttribute('aria-expanded', 'false');
@@ -82,7 +98,7 @@
     }
   });
 
-  // Close dropdown on link click (mobile)
+  // Close dropdown on link click (especially important for mobile)
   dropdownMenu.querySelectorAll('.dropdown-link').forEach(link => {
     link.addEventListener('click', () => {
       dropdownMenu.classList.remove('open');
@@ -90,21 +106,34 @@
       dropdownToggle.setAttribute('aria-expanded', 'false');
       
       // Close mobile menu if open
-      if (menu.classList.contains('open')) {
+      if (window.innerWidth <= 768 && menu.classList.contains('open')) {
         menu.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
   });
 
-  // Close menu on link click
+  // Close mobile menu on nav link click
   menu.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
     link.addEventListener('click', () => {
-      if (menu.classList.contains('open')) {
+      if (window.innerWidth <= 768 && menu.classList.contains('open')) {
         menu.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
+  });
+
+  // Handle window resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // Close mobile menu on desktop
+      if (window.innerWidth > 768 && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    }, 250);
   });
 
   // Active section highlight
