@@ -343,23 +343,27 @@ body > * { position: relative; z-index: 1; }
 }
 
 /* --- Mobile Optimized --- */
+/* --- Mobile Optimized --- */
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 16px;
+    position: relative;
   }
 
   .nav-toggle {
     display: flex;
+    margin-left: auto;
   }
 
   .nav-links {
     display: none;
     position: absolute;
     top: calc(100% + 0px);
-    left: 0;
-    right: 0;
+    right: 0; /* Changed from left: 0 to right: 0 */
+    left: auto; /* Added this */
     flex-direction: column;
-    width: 100%;
+    width: 280px; /* Fixed width instead of 100% */
+    max-width: 90vw; /* Prevents overflow on very small screens */
     background: white;
     padding: 1rem;
     gap: 4px;
@@ -498,6 +502,7 @@ body > * { position: relative; z-index: 1; }
   }
 
   .nav-links {
+    width: 260px; /* Slightly smaller on very small screens */
     padding: 0.8rem;
   }
 
