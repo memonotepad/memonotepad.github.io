@@ -13,6 +13,7 @@
   let overlay = null;
   let closeBtn = null;
   let sidebarBody = null;
+  let adLoaded = false;
 
   // 1. Array of tools available on Memo Notepad (based on actual site structure)
   const toolsList = [
@@ -152,11 +153,75 @@
         background: #e0d5c5;
       }
 
+      /* ── Sidebar Ad Slot (top, fixed, non-scrolling) ── */
+      .tools-sb-ad {
+        flex-shrink: 0;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--paper-edge, #e0d5c5);
+        background: var(--paper-warm, #f5efe6);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .tools-sb-ad-label {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #a09484;
+        font-weight: 600;
+      }
+      .tools-sb-ad-slot {
+        width: 300px;
+        max-width: 100%;
+        height: 250px;
+        background: var(--paper, #f8f4e9);
+        border: 1.5px dashed var(--paper-edge, #e0d5c5);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .tools-sb-ad-slot > div,
+      .tools-sb-ad-slot iframe,
+      .tools-sb-ad-slot ins {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 300px;
+        max-height: 250px;
+        border: 0;
+        display: block;
+        margin: 0 auto;
+      }
+      .tools-sb-ad-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        height: 100%;
+        color: #a09484;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+      }
+      .tools-sb-ad-placeholder span {
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .tools-sb-ad-placeholder strong {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+      }
+
       /* Scrollable items menu wrapper */
       .tools-sb-body {
         flex: 1;
         overflow-y: auto;
-        padding: 16px;
+        padding: 12px 16px 16px;
         display: flex;
         flex-direction: column;
         gap: 6px;
@@ -249,10 +314,38 @@
     document.head.appendChild(styleEl);
   }
 
-  // 3. Initialize the sidebar DOM
+  // 3. Lazy ad injection — only runs the first time the sidebar opens.
+  function injectSidebarAd() {
+    if (adLoaded) return;
+    const container = document.getElementById("toolsSidebarAdContainer");
+    if (!container) return;
+    adLoaded = true;
+
+    // atOptions must exist BEFORE invoke.js runs
+    window.atOptions = {
+      key: 'd269d78e4bed1c12a52e4012703540e4',
+      format: 'iframe',
+      height: 250,
+      width: 300,
+      params: {}
+    };
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://www.highrevenueformat.com/d269d78e4bed1c12a52e4012703540e4/invoke.js';
+    script.onerror = () => {
+      console.warn('[Sidebar Ad] Failed to load ad script.');
+      container.innerHTML =
+        '<div class="tools-sb-ad-placeholder"><span>Advertisement</span><strong>300 × 250</strong></div>';
+    };
+    container.appendChild(script);
+  }
+
+  // 4. Initialize the sidebar DOM
   function initializeSidebar() {
     if (isInitialized) return;
-    
+
     // Inject styles first
     injectStyles();
 
@@ -272,6 +365,10 @@
         <div class="tools-sb-header">
           <h2>Memo <em>Notepad</em></h2>
           <button class="tools-sb-close" id="toolsSidebarClose" aria-label="Close toolkit">✕</button>
+        </div>
+        <div class="tools-sb-ad">
+          <span class="tools-sb-ad-label">Advertisement</span>
+          <div class="tools-sb-ad-slot" id="toolsSidebarAdContainer"></div>
         </div>
         <div class="tools-sb-body" id="toolsSidebarBody"></div>
       </aside>
@@ -314,7 +411,7 @@
     isInitialized = true;
   }
 
-  // 4. Toggle and Close functions
+  // 5. Toggle and Close functions
   function toggleSidebar() {
     if (!isInitialized) {
       initializeSidebar();
@@ -324,26 +421,31 @@
         trigger.classList.toggle("active", isOpen);
         overlay.classList.toggle("visible", isOpen);
         trigger.innerHTML = isOpen ? "✕" : "📝";
+        // Load the ad the first time the sidebar opens
+        if (isOpen) injectSidebarAd();
       }, 10);
       return;
     }
-    
+
     const isOpen = sidebar.classList.toggle("open");
     trigger.classList.toggle("active", isOpen);
     overlay.classList.toggle("visible", isOpen);
     trigger.innerHTML = isOpen ? "✕" : "📝";
+
+    // Load the ad the first time the sidebar opens
+    if (isOpen) injectSidebarAd();
   }
 
   function closeSidebar() {
     if (!isInitialized) return;
-    
+
     sidebar.classList.remove("open");
     trigger.classList.remove("active");
     overlay.classList.remove("visible");
     trigger.innerHTML = "📝";
   }
 
-  // 5. Create just the trigger button initially
+  // 6. Create just the trigger button initially
   function createTriggerOnly() {
     // Create minimal trigger button
     const rootContainer = document.getElementById("tools-sidebar-root");
@@ -352,16 +454,16 @@
       container.id = "tools-sidebar-root";
       document.body.appendChild(container);
     }
-    
+
     const triggerButton = document.createElement("div");
     triggerButton.className = "tools-floating-trigger";
     triggerButton.id = "toolsSidebarTrigger";
     triggerButton.title = "Explore Toolkit";
     triggerButton.setAttribute("aria-label", "Toggle Memo Notepad toolkit");
     triggerButton.textContent = "📝";
-    
+
     document.getElementById("tools-sidebar-root").appendChild(triggerButton);
-    
+
     // Add click listener that initializes and toggles
     triggerButton.addEventListener("click", function() {
       if (!isInitialized) {
@@ -371,16 +473,18 @@
         const newSidebar = document.getElementById("toolsFixedSidebar");
         const newOverlay = document.getElementById("toolsSidebarOverlay");
         const newCloseBtn = document.getElementById("toolsSidebarClose");
-        
+
         // Remove old listeners and add new ones
         newTrigger.removeEventListener("click", initializeAndToggle);
         newTrigger.addEventListener("click", toggleSidebar);
         newOverlay.addEventListener("click", closeSidebar);
         newCloseBtn.addEventListener("click", closeSidebar);
-        
+
         // Open the sidebar after initialization
         setTimeout(() => {
           toggleSidebar();
+          // First open → load the ad
+          injectSidebarAd();
         }, 10);
       } else {
         toggleSidebar();
@@ -395,7 +499,7 @@
     newTrigger.click();
   }
 
-  // 6. Initialize with just the trigger
+  // 7. Initialize with just the trigger
   // Check if we should initialize immediately or wait for click
   const shouldLoadOnDemand = true; // Set to false if you want to load immediately
 
