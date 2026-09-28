@@ -1193,3 +1193,113 @@ kbd {
   .hero-actions { flex-direction: column; align-items: center; }
   .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
 }
+/* ═══════════════════════════════
+   PDF EXPORT MODAL
+═══════════════════════════════ */
+#pdfModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 36, 22, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#pdfModal.open { display: flex; }
+
+.pdf-modal-box {
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  animation: pdfModalPop 0.3s ease;
+}
+@keyframes pdfModalPop {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.pdf-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.pdf-ad-slot {
+  width: 300px;
+  height: 250px;
+  max-width: 100%;
+  margin: 0 auto 18px;
+  background: var(--cream);
+  border: 1.5px dashed var(--border-dark);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pdf-ad-slot > div,
+.pdf-ad-slot iframe,
+.pdf-ad-slot ins {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 300px;
+  max-height: 250px;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+.pdf-ad-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  font-family: var(--font-ui);
+  width: 100%;
+  height: 100%;
+}
+.pdf-ad-placeholder span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.pdf-ad-placeholder strong {
+  font-size: 1rem;
+  color: var(--ink-light);
+}
+
+.pdf-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--ink-light);
+}
+.pdf-spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid var(--border);
+  border-top-color: var(--teal);
+  animation: pdfSpin 0.8s linear infinite;
+}
+@keyframes pdfSpin { to { transform: rotate(360deg); } }
+
+.pdf-status strong { color: var(--teal); }
+
+@media (max-width: 420px) {
+  .pdf-ad-slot { width: 100%; height: 200px; }
+}
