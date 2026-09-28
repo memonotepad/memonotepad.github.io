@@ -315,7 +315,10 @@
     countdownEl:  null,
     libPromise:   null,
     COUNTDOWN:    5,
-    CDN: 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
+    // Pinned version on unpkg — do NOT use @latest in production.
+    CDN: 'https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js',
+    // Fallback used only if the primary fails.
+    FALLBACK_CDN: 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
   };
 
   let pdfAdLoaded = false;
@@ -324,18 +327,30 @@
     if (PDF_CONFIG.libPromise) return PDF_CONFIG.libPromise;
 
     PDF_CONFIG.libPromise = new Promise((resolve, reject) => {
+      // Already loaded from a previous click?
       if (window.jspdf && window.jspdf.jsPDF) {
         return resolve(window.jspdf.jsPDF);
       }
-      const script = document.createElement('script');
-      script.src = PDF_CONFIG.CDN;
-      script.async = true;
-      script.onload = () => {
-        if (window.jspdf && window.jspdf.jsPDF) resolve(window.jspdf.jsPDF);
-        else reject(new Error('jsPDF loaded but not available'));
+
+      const tryLoad = (src, onFail) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = () => {
+          if (window.jspdf && window.jspdf.jsPDF) resolve(window.jspdf.jsPDF);
+          else onFail();
+        };
+        script.onerror = onFail;
+        document.head.appendChild(script);
       };
-      script.onerror = () => reject(new Error('Failed to load jsPDF'));
-      document.head.appendChild(script);
+
+      // 1st try: pinned unpkg.  2nd try: cdnjs fallback.
+      tryLoad(PDF_CONFIG.CDN, () => {
+        console.warn('[PDF] Primary CDN failed, trying fallback…');
+        tryLoad(PDF_CONFIG.FALLBACK_CDN, () =>
+          reject(new Error('jsPDF unavailable (primary + fallback)'))
+        );
+      });
     });
 
     return PDF_CONFIG.libPromise;
