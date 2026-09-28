@@ -234,6 +234,7 @@
               <div id="colorPicker" role="group" aria-label="Memo colour"></div>
               <button class="toolbar-btn" id="copyBtn" title="Copy memo text">📋 Copy</button>
               <button class="toolbar-btn" id="exportBtn" title="Export as .txt">💾 Save .txt</button>
+               <button class="toolbar-btn" id="pdfBtn" title="Save as PDF">📄 Save PDF</button>
               <button class="toolbar-btn" id="printBtn" title="Print memo">🖨 Print</button>
               <button class="toolbar-btn" id="wrapToggle" title="Toggle word wrap">↵ Wrap</button>
               <button class="toolbar-btn" id="fontDecrease" title="Smaller font" aria-label="Decrease font size">A−</button>
@@ -1272,6 +1273,25 @@
   </div>
 </div>
 
+<!-- ══════════ PDF EXPORT MODAL ══════════ -->
+<div id="pdfModal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+  <div class="pdf-modal-box">
+    <h3 id="pdfModalTitle" class="pdf-modal-title">📄 Creating Your PDF…</h3>
+
+    <!-- 300x250 Ad slot -->
+<div class="pdf-ad-slot" aria-label="Advertisement">
+  <div id="pdfAdContainer"></div>
+</div>
+
+    <!-- Countdown -->
+    <div class="pdf-progress">
+      <div class="pdf-spinner" aria-hidden="true"></div>
+      <p class="pdf-status">Preparing your PDF — <strong id="pdfCountdown">5</strong>s</p>
+    </div>
+  </div>
+</div>
+
+     
 <!-- ══════════ SCRIPTS ══════════ -->
 <script src="/js/header.js"></script>
 <script src="/js/footer.js"></script>
