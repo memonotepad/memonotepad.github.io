@@ -309,6 +309,280 @@
     reader.readAsText(file);
   }
 
+  /* ─────────────── SAVE AS PDF (LAZY LOADED) ─────────────── */
+  const PDF_CONFIG = {
+    modal:        null,
+    countdownEl:  null,
+    libPromise:   null,
+    COUNTDOWN:    5,
+    CDN: 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
+  };
+
+  let pdfAdLoaded = false;
+
+  function loadJsPdf() {
+    if (PDF_CONFIG.libPromise) return PDF_CONFIG.libPromise;
+
+    PDF_CONFIG.libPromise = new Promise((resolve, reject) => {
+      if (window.jspdf && window.jspdf.jsPDF) {
+        return resolve(window.jspdf.jsPDF);
+      }
+      const script = document.createElement('script');
+      script.src = PDF_CONFIG.CDN;
+      script.async = true;
+      script.onload = () => {
+        if (window.jspdf && window.jspdf.jsPDF) resolve(window.jspdf.jsPDF);
+        else reject(new Error('jsPDF loaded but not available'));
+      };
+      script.onerror = () => reject(new Error('Failed to load jsPDF'));
+      document.head.appendChild(script);
+    });
+
+    return PDF_CONFIG.libPromise;
+  }
+
+  function injectPdfAd() {
+    if (pdfAdLoaded) return;
+    const container = document.getElementById('pdfAdContainer');
+    if (!container) return;
+    pdfAdLoaded = true;
+
+    // atOptions must exist BEFORE invoke.js runs
+    window.atOptions = {
+      key: 'd269d78e4bed1c12a52e4012703540e4',
+      format: 'iframe',
+      height: 250,
+      width: 300,
+      params: {}
+    };
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://www.highrevenueformat.com/d269d78e4bed1c12a52e4012703540e4/invoke.js';
+    script.onerror = () => {
+      console.warn('[PDF Ad] Failed to load ad script.');
+      container.innerHTML =
+        '<div class="pdf-ad-placeholder"><span>Advertisement</span><strong>300 × 250</strong></div>';
+    };
+    container.appendChild(script);
+  }
+
+  function openPdfModal() {
+    PDF_CONFIG.modal = document.getElementById('pdfModal');
+    PDF_CONFIG.countdownEl = document.getElementById('pdfCountdown');
+    if (!PDF_CONFIG.modal) return;
+    injectPdfAd();
+    PDF_CONFIG.modal.classList.add('open');
+  }
+
+  function closePdfModal() {
+    if (PDF_CONFIG.modal) PDF_CONFIG.modal.classList.remove('open');
+  }
+
+  function runPdfCountdownAndLoad() {
+    const total = PDF_CONFIG.COUNTDOWN;
+    const countdownDone = new Promise(resolve => {
+      let remaining = total;
+      if (PDF_CONFIG.countdownEl) PDF_CONFIG.countdownEl.textContent = remaining;
+      const timer = setInterval(() => {
+        remaining -= 1;
+        if (PDF_CONFIG.countdownEl) PDF_CONFIG.countdownEl.textContent = Math.max(remaining, 0);
+        if (remaining <= 0) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 1000);
+    });
+
+    const libReady = loadJsPdf().catch(err => {
+      console.error('[PDF] library error:', err);
+      return null;
+    });
+
+    return Promise.all([countdownDone, libReady]).then(([, JsPDF]) => JsPDF);
+  }
+
+  function hexToRgb(hex) {
+    const h = hex.replace('#', '');
+    const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+    const num = parseInt(full, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
+  }
+
+  function colorNameOf(hex) {
+    const idx = COLORS.indexOf(hex);
+    return idx >= 0 ? COLOR_NAMES[idx] : 'Memo';
+  }
+
+  function buildMemoPdf(JsPDF, memo) {
+    const doc = new JsPDF({ unit: 'pt', format: 'a4' });
+
+    const pageW  = doc.internal.pageSize.getWidth();
+    const pageH  = doc.internal.pageSize.getHeight();
+
+    const margin     = 48;
+    const colorStrip = 8;
+    const contentX   = margin;
+    const contentW   = pageW - margin * 2 - colorStrip;
+
+    const [r, g, b] = hexToRgb(memo.color || '#fff9db');
+    const inkRgb     = [44, 36, 22];
+    const mutedRgb   = [158, 144, 128];
+
+    const blend = (c, w = 0.72) => Math.round(c * (1 - w) + 255 * w);
+
+    // Paper background
+    doc.setFillColor(blend(r), blend(g), blend(b));
+    doc.rect(0, 0, pageW, pageH, 'F');
+
+    // Colour strip on left edge
+    doc.setFillColor(r, g, b);
+    doc.rect(0, 0, colorStrip, pageH, 'F');
+
+    // Header bar
+    const headerH = 64;
+    doc.setFillColor(blend(r, 0.55), blend(g, 0.55), blend(b, 0.55));
+    doc.rect(colorStrip, 0, pageW - colorStrip, headerH, 'F');
+
+    doc.setDrawColor(232, 223, 200);
+    doc.setLineWidth(1);
+    doc.line(colorStrip, headerH, pageW, headerH);
+
+    // Brand line
+    doc.setFont('times', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...mutedRgb);
+    doc.text('MEMO NOTEPAD  •  memonotepad.github.io', contentX, 24);
+
+    // Colour chip
+    doc.setFillColor(r, g, b);
+    doc.setDrawColor(208, 196, 168);
+    doc.roundedRect(pageW - margin - 74, 16, 74, 20, 10, 10, 'FD');
+    doc.setFontSize(8);
+    doc.setTextColor(...inkRgb);
+    doc.text(colorNameOf(memo.color), pageW - margin - 37, 30, { align: 'center' });
+
+    // Title
+    doc.setFont('times', 'bold');
+    doc.setFontSize(22);
+    doc.setTextColor(...inkRgb);
+    const titleLines = doc.splitTextToSize(memo.title || 'Untitled Memo', contentW);
+    let y = headerH + 46;
+    titleLines.slice(0, 3).forEach(line => {
+      doc.text(line, contentX, y);
+      y += 26;
+    });
+
+    // Meta line
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(...mutedRgb);
+    const created = new Date(memo.created || memo.updated || Date.now());
+    const updated = new Date(memo.updated || Date.now());
+    const fmt = d => d.toLocaleString(undefined, {
+      year: 'numeric', month: 'short', day: 'numeric',
+      hour: '2-digit', minute: '2-digit',
+    });
+    doc.text(`Created: ${fmt(created)}    Updated: ${fmt(updated)}`, contentX, y);
+    y += 14;
+
+    // Divider
+    doc.setDrawColor(208, 196, 168);
+    doc.line(contentX, y, pageW - margin, y);
+    y += 26;
+
+    // Body
+    doc.setFont('courier', 'normal');
+    doc.setFontSize(11);
+    doc.setTextColor(...inkRgb);
+
+    const lineHeight = 18;
+    const bottomLimit = pageH - 60;
+
+    const rawLines = (memo.content || '').replace(/\r\n/g, '\n').split('\n');
+    for (const raw of rawLines) {
+      const wrapped = doc.splitTextToSize(raw === '' ? ' ' : raw, contentW);
+      for (const w of wrapped) {
+        if (y > bottomLimit) {
+          addPdfFooter(doc, pageW, pageH, margin, mutedRgb, memo);
+          doc.addPage();
+          doc.setFillColor(blend(r), blend(g), blend(b));
+          doc.rect(0, 0, pageW, pageH, 'F');
+          doc.setFillColor(r, g, b);
+          doc.rect(0, 0, colorStrip, pageH, 'F');
+          doc.setFont('courier', 'normal');
+          doc.setFontSize(11);
+          doc.setTextColor(...inkRgb);
+          y = margin + 20;
+        }
+        doc.text(w, contentX, y);
+        y += lineHeight;
+      }
+    }
+
+    addPdfFooter(doc, pageW, pageH, margin, mutedRgb, memo);
+
+    return doc;
+  }
+
+  function addPdfFooter(doc, pageW, pageH, margin, mutedRgb, memo) {
+    doc.setDrawColor(208, 196, 168);
+    doc.setLineWidth(0.8);
+    doc.line(margin, pageH - 42, pageW - margin, pageH - 42);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...mutedRgb);
+    doc.text(
+      `Memo Notepad Online  •  ${memo.title || 'Untitled Memo'}`,
+      margin,
+      pageH - 26
+    );
+    const pageNum = doc.internal.getNumberOfPages();
+    doc.text(`Page ${pageNum}`, pageW - margin, pageH - 26, { align: 'right' });
+  }
+
+  function safeFilename(name) {
+    return (name || 'memo').replace(/[^a-z0-9\-_ ]/gi, '').trim().replace(/\s+/g, '_') || 'memo';
+  }
+
+  async function saveActiveMemoAsPdf() {
+    const memo = memos.find(m => m.id === activeMemoId);
+    if (!memo) {
+      showToast('❌ No memo open to export.');
+      return;
+    }
+
+    openPdfModal();
+    try {
+      const JsPDF = await runPdfCountdownAndLoad();
+
+      if (!JsPDF) {
+        closePdfModal();
+        showToast('❌ Could not load PDF library. Check your connection.');
+        return;
+      }
+
+      const live = memos.find(m => m.id === activeMemoId);
+      if (live) {
+        live.title = titleInput.value.trim() || 'Untitled Memo';
+        live.content = editor.value;
+        live.updated = new Date().toISOString();
+      }
+
+      const doc = buildMemoPdf(JsPDF, live || memo);
+      doc.save(safeFilename(live.title || memo.title) + '.pdf');
+
+      closePdfModal();
+      showToast('📄 PDF saved successfully!');
+    } catch (err) {
+      console.error('[PDF] failed:', err);
+      closePdfModal();
+      showToast('❌ PDF export failed.');
+    }
+  }
+
   /* ─────────────── FIND IN MEMO ─────────────── */
   let findMatches = 0;
   function findInMemo(q) {
@@ -327,6 +601,9 @@
       if (e.key === 's') { e.preventDefault(); saveActiveMemo(); showToast('Memo saved!'); }
       if (e.key === 'n') { e.preventDefault(); createMemo(); }
       if (e.key === 'd' && e.shiftKey) { e.preventDefault(); if (activeMemoId) deleteMemo(activeMemoId); }
+    }
+    if (e.key === 'Escape' && PDF_CONFIG.modal?.classList.contains('open')) {
+      closePdfModal();
     }
   });
 
@@ -394,6 +671,15 @@
     w.document.write(`<html><head><title>${escHtml(memo.title)}</title><style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;line-height:1.7;color:#222;}h1{border-bottom:2px solid #ccc;padding-bottom:10px;}pre{white-space:pre-wrap;font-family:inherit;}</style></head><body><h1>${escHtml(memo.title)}</h1><pre>${escHtml(memo.content)}</pre></body></html>`);
     w.document.close();
     w.print();
+  });
+
+  // Save as PDF button
+  const pdfBtnEl = document.getElementById('pdfBtn');
+  if (pdfBtnEl) pdfBtnEl.addEventListener('click', saveActiveMemoAsPdf);
+
+  // Close PDF modal on backdrop click
+  document.getElementById('pdfModal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'pdfModal') closePdfModal();
   });
 
   if (sortSelect) sortSelect.addEventListener('change', () => {
