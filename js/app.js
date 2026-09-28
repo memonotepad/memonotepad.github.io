@@ -268,16 +268,6 @@
   }
 
   /* ─────────────── EXPORT / IMPORT ─────────────── */
-  function exportMemo() {
-    const memo = memos.find(m => m.id === activeMemoId);
-    if (!memo) return;
-    const blob = new Blob([`${memo.title}\n${'─'.repeat(40)}\n\n${memo.content}`], { type: 'text/plain' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = (memo.title.replace(/[^a-z0-9]/gi, '_') || 'memo') + '.txt';
-    a.click();
-  }
-
   function exportAllMemos() {
     const data = JSON.stringify(memos, null, 2);
     const blob = new Blob([data], { type: 'application/json' });
@@ -309,7 +299,7 @@
     reader.readAsText(file);
   }
 
-  /* ─────────────── SAVE AS PDF (LAZY LOADED) ─────────────── */
+  /* ─────────────── SHARED EXPORT MODAL (COUNTDOWN + AD) ─────────────── */
   const PDF_CONFIG = {
     modal:        null,
     countdownEl:  null,
@@ -395,9 +385,13 @@
     if (PDF_CONFIG.modal) PDF_CONFIG.modal.classList.remove('open');
   }
 
-  function runPdfCountdownAndLoad() {
+  /**
+   * Run the countdown to completion. Returns a Promise that resolves
+   * when the visible timer hits 0, so callers can chain work after it.
+   */
+  function runExportCountdown() {
     const total = PDF_CONFIG.COUNTDOWN;
-    const countdownDone = new Promise(resolve => {
+    return new Promise(resolve => {
       let remaining = total;
       if (PDF_CONFIG.countdownEl) PDF_CONFIG.countdownEl.textContent = remaining;
       const timer = setInterval(() => {
@@ -409,6 +403,10 @@
         }
       }, 1000);
     });
+  }
+
+  function runPdfCountdownAndLoad() {
+    const countdownDone = runExportCountdown();
 
     const libReady = loadJsPdf().catch(err => {
       console.error('[PDF] library error:', err);
@@ -562,6 +560,7 @@
     return (name || 'memo').replace(/[^a-z0-9\-_ ]/gi, '').trim().replace(/\s+/g, '_') || 'memo';
   }
 
+  /* ─────────────── SAVE AS PDF (modal + countdown + ad) ─────────────── */
   async function saveActiveMemoAsPdf() {
     const memo = memos.find(m => m.id === activeMemoId);
     if (!memo) {
@@ -595,6 +594,46 @@
       console.error('[PDF] failed:', err);
       closePdfModal();
       showToast('❌ PDF export failed.');
+    }
+  }
+
+  /* ─────────────── SAVE AS .TXT (same modal + countdown + ad) ─────────────── */
+  async function saveActiveMemoAsTxt() {
+    const memo = memos.find(m => m.id === activeMemoId);
+    if (!memo) {
+      showToast('❌ No memo open to export.');
+      return;
+    }
+
+    openPdfModal();
+    try {
+      // .txt needs no library — just wait for the countdown to finish.
+      await runExportCountdown();
+
+      const live = memos.find(m => m.id === activeMemoId);
+      if (live) {
+        live.title = titleInput.value.trim() || 'Untitled Memo';
+        live.content = editor.value;
+        live.updated = new Date().toISOString();
+      }
+      const target = live || memo;
+
+      const blob = new Blob(
+        [`${target.title}\n${'─'.repeat(40)}\n\n${target.content}`],
+        { type: 'text/plain' }
+      );
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = safeFilename(target.title) + '.txt';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+
+      closePdfModal();
+      showToast('💾 Text file saved successfully!');
+    } catch (err) {
+      console.error('[TXT] failed:', err);
+      closePdfModal();
+      showToast('❌ Text export failed.');
     }
   }
 
@@ -673,7 +712,8 @@
     autoSaveTimer = setTimeout(saveActiveMemo, 800);
   });
 
-  if (exportBtn) exportBtn.addEventListener('click', exportMemo);
+  // Save .txt — now routes through the shared modal (countdown + ad)
+  if (exportBtn) exportBtn.addEventListener('click', saveActiveMemoAsTxt);
 
   if (copyBtn) copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(editor.value).then(() => showToast('📋 Copied to clipboard!'));
