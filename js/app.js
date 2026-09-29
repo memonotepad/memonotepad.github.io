@@ -5,7 +5,7 @@
   let memos = JSON.parse(localStorage.getItem('memoNotepadMemos') || '[]');
   let activeMemoId = localStorage.getItem('activeMemoId') || null;
   let searchQuery = '';
-  let sortMode = 'updated'; // 'updated' | 'created' | 'alpha'
+  let sortMode = 'updated';
   let filterColor = null;
   let wordWrap = JSON.parse(localStorage.getItem('wordWrap') ?? 'true');
   let fontSize = parseInt(localStorage.getItem('fontSize') || '15');
@@ -29,7 +29,6 @@
   const printBtn     = document.getElementById('printBtn');
   const sortSelect   = document.getElementById('sortSelect');
   const colorPicker  = document.getElementById('colorPicker');
-  const filterColorBtns = document.querySelectorAll('.filter-color');
   const wrapToggle   = document.getElementById('wrapToggle');
   const fontSizeEl   = document.getElementById('fontSize');
   const saveStatus   = document.getElementById('saveStatus');
@@ -40,7 +39,6 @@
   const importBtn    = document.getElementById('importBtn');
   const importFile   = document.getElementById('importFile');
   const clearAllBtn  = document.getElementById('clearAllBtn');
-  const undoBtn      = document.getElementById('undoBtn');
   const findInput    = document.getElementById('findInput');
   const findCount    = document.getElementById('findCount');
 
@@ -57,6 +55,9 @@
     applyEditorPrefs();
     renderColorPicker();
     updateMemoCount();
+
+    // Load the sidebar ad
+    injectSidebarAd();
   }
 
   /* ─────────────── MEMO CRUD ─────────────── */
@@ -107,7 +108,7 @@
     if (colorPicker) setActiveColor(memo.color);
     updateCounts();
     showEditor();
-    renderList(); // re-highlight active
+    renderList();
     isDirty = false;
     setSaveStatus('saved');
   }
@@ -139,7 +140,6 @@
     }
     if (filterColor) list = list.filter(m => m.color === filterColor);
 
-    // Pinned first
     list.sort((a, b) => {
       if (a.pinned !== b.pinned) return b.pinned - a.pinned;
       if (sortMode === 'alpha') return a.title.localeCompare(b.title);
@@ -305,9 +305,7 @@
     countdownEl:  null,
     libPromise:   null,
     COUNTDOWN:    5,
-    // Pinned version on unpkg — do NOT use @latest in production.
     CDN: 'https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js',
-    // Fallback used only if the primary fails.
     FALLBACK_CDN: 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
   };
 
@@ -317,7 +315,6 @@
     if (PDF_CONFIG.libPromise) return PDF_CONFIG.libPromise;
 
     PDF_CONFIG.libPromise = new Promise((resolve, reject) => {
-      // Already loaded from a previous click?
       if (window.jspdf && window.jspdf.jsPDF) {
         return resolve(window.jspdf.jsPDF);
       }
@@ -334,7 +331,6 @@
         document.head.appendChild(script);
       };
 
-      // 1st try: pinned unpkg.  2nd try: cdnjs fallback.
       tryLoad(PDF_CONFIG.CDN, () => {
         console.warn('[PDF] Primary CDN failed, trying fallback…');
         tryLoad(PDF_CONFIG.FALLBACK_CDN, () =>
@@ -352,7 +348,6 @@
     if (!container) return;
     pdfAdLoaded = true;
 
-    // atOptions must exist BEFORE invoke.js runs
     window.atOptions = {
       key: 'd269d78e4bed1c12a52e4012703540e4',
       format: 'iframe',
@@ -373,6 +368,36 @@
     container.appendChild(script);
   }
 
+  /* ─────────────── SIDEBAR AD (300×250) ─────────────── */
+  let sidebarAdLoaded = false;
+
+  function injectSidebarAd() {
+    if (sidebarAdLoaded) return;
+    const container = document.getElementById('sidebarAdContainer');
+    if (!container) return;
+    sidebarAdLoaded = true;
+
+    // atOptions must exist BEFORE invoke.js runs
+    window.atOptions = {
+      key: 'd269d78e4bed1c12a52e4012703540e4',
+      format: 'iframe',
+      height: 250,
+      width: 300,
+      params: {}
+    };
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'https://www.highrevenueformat.com/d269d78e4bed1c12a52e4012703540e4/invoke.js';
+    script.onerror = () => {
+      console.warn('[Sidebar Ad] Failed to load ad script.');
+      container.innerHTML =
+        '<div class="sidebar-ad-placeholder"><span>Advertisement</span><strong>300 × 250</strong></div>';
+    };
+    container.appendChild(script);
+  }
+
   function openPdfModal() {
     PDF_CONFIG.modal = document.getElementById('pdfModal');
     PDF_CONFIG.countdownEl = document.getElementById('pdfCountdown');
@@ -385,10 +410,6 @@
     if (PDF_CONFIG.modal) PDF_CONFIG.modal.classList.remove('open');
   }
 
-  /**
-   * Run the countdown to completion. Returns a Promise that resolves
-   * when the visible timer hits 0, so callers can chain work after it.
-   */
   function runExportCountdown() {
     const total = PDF_CONFIG.COUNTDOWN;
     return new Promise(resolve => {
@@ -445,15 +466,12 @@
 
     const blend = (c, w = 0.72) => Math.round(c * (1 - w) + 255 * w);
 
-    // Paper background
     doc.setFillColor(blend(r), blend(g), blend(b));
     doc.rect(0, 0, pageW, pageH, 'F');
 
-    // Colour strip on left edge
     doc.setFillColor(r, g, b);
     doc.rect(0, 0, colorStrip, pageH, 'F');
 
-    // Header bar
     const headerH = 64;
     doc.setFillColor(blend(r, 0.55), blend(g, 0.55), blend(b, 0.55));
     doc.rect(colorStrip, 0, pageW - colorStrip, headerH, 'F');
@@ -462,13 +480,11 @@
     doc.setLineWidth(1);
     doc.line(colorStrip, headerH, pageW, headerH);
 
-    // Brand line
     doc.setFont('times', 'normal');
     doc.setFontSize(9);
     doc.setTextColor(...mutedRgb);
     doc.text('MEMO NOTEPAD  •  memonotepad.github.io', contentX, 24);
 
-    // Colour chip
     doc.setFillColor(r, g, b);
     doc.setDrawColor(208, 196, 168);
     doc.roundedRect(pageW - margin - 74, 16, 74, 20, 10, 10, 'FD');
@@ -476,7 +492,6 @@
     doc.setTextColor(...inkRgb);
     doc.text(colorNameOf(memo.color), pageW - margin - 37, 30, { align: 'center' });
 
-    // Title
     doc.setFont('times', 'bold');
     doc.setFontSize(22);
     doc.setTextColor(...inkRgb);
@@ -487,7 +502,6 @@
       y += 26;
     });
 
-    // Meta line
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
     doc.setTextColor(...mutedRgb);
@@ -500,12 +514,10 @@
     doc.text(`Created: ${fmt(created)}    Updated: ${fmt(updated)}`, contentX, y);
     y += 14;
 
-    // Divider
     doc.setDrawColor(208, 196, 168);
     doc.line(contentX, y, pageW - margin, y);
     y += 26;
 
-    // Body
     doc.setFont('courier', 'normal');
     doc.setFontSize(11);
     doc.setTextColor(...inkRgb);
@@ -560,7 +572,7 @@
     return (name || 'memo').replace(/[^a-z0-9\-_ ]/gi, '').trim().replace(/\s+/g, '_') || 'memo';
   }
 
-  /* ─────────────── SAVE AS PDF (modal + countdown + ad) ─────────────── */
+  /* ─────────────── SAVE AS PDF ─────────────── */
   async function saveActiveMemoAsPdf() {
     const memo = memos.find(m => m.id === activeMemoId);
     if (!memo) {
@@ -597,7 +609,7 @@
     }
   }
 
-  /* ─────────────── SAVE AS .TXT (same modal + countdown + ad) ─────────────── */
+  /* ─────────────── SAVE AS .TXT ─────────────── */
   async function saveActiveMemoAsTxt() {
     const memo = memos.find(m => m.id === activeMemoId);
     if (!memo) {
@@ -607,7 +619,6 @@
 
     openPdfModal();
     try {
-      // .txt needs no library — just wait for the countdown to finish.
       await runExportCountdown();
 
       const live = memos.find(m => m.id === activeMemoId);
@@ -638,7 +649,6 @@
   }
 
   /* ─────────────── FIND IN MEMO ─────────────── */
-  let findMatches = 0;
   function findInMemo(q) {
     if (!q) { findCount.textContent = ''; return; }
     const text = editor.value.toLowerCase();
@@ -712,7 +722,6 @@
     autoSaveTimer = setTimeout(saveActiveMemo, 800);
   });
 
-  // Save .txt — now routes through the shared modal (countdown + ad)
   if (exportBtn) exportBtn.addEventListener('click', saveActiveMemoAsTxt);
 
   if (copyBtn) copyBtn.addEventListener('click', () => {
@@ -728,11 +737,9 @@
     w.print();
   });
 
-  // Save as PDF button
   const pdfBtnEl = document.getElementById('pdfBtn');
   if (pdfBtnEl) pdfBtnEl.addEventListener('click', saveActiveMemoAsPdf);
 
-  // Close PDF modal on backdrop click
   document.getElementById('pdfModal')?.addEventListener('click', (e) => {
     if (e.target.id === 'pdfModal') closePdfModal();
   });
@@ -753,7 +760,6 @@
     applyEditorPrefs();
   });
 
-  // Font size controls
   document.getElementById('fontIncrease')?.addEventListener('click', () => {
     fontSize = Math.min(fontSize + 1, 24);
     localStorage.setItem('fontSize', fontSize);
@@ -820,7 +826,6 @@
   /* ─────────────── START ─────────────── */
   init();
 
-  // Keyboard shortcuts modal
   document.getElementById('shortcutsBtn')?.addEventListener('click', () => {
     document.getElementById('shortcutsModal')?.classList.toggle('open');
   });
