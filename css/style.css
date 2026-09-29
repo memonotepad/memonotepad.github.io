@@ -33,7 +33,7 @@
   --font-ui: 'DM Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
   --header-h: 64px;
-  --sidebar-w: 280px;
+  --sidebar-w: 320px;
   --transition: 200ms ease;
 }
 
@@ -343,7 +343,6 @@ body > * { position: relative; z-index: 1; }
 }
 
 /* --- Mobile Optimized --- */
-/* --- Mobile Optimized --- */
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 16px;
@@ -359,11 +358,11 @@ body > * { position: relative; z-index: 1; }
     display: none;
     position: absolute;
     top: calc(100% + 0px);
-    right: 0; /* Changed from left: 0 to right: 0 */
-    left: auto; /* Added this */
+    right: 0;
+    left: auto;
     flex-direction: column;
-    width: 280px; /* Fixed width instead of 100% */
-    max-width: 90vw; /* Prevents overflow on very small screens */
+    width: 280px;
+    max-width: 90vw;
     background: white;
     padding: 1rem;
     gap: 4px;
@@ -502,7 +501,7 @@ body > * { position: relative; z-index: 1; }
   }
 
   .nav-links {
-    width: 260px; /* Slightly smaller on very small screens */
+    width: 260px;
     padding: 0.8rem;
   }
 
@@ -751,6 +750,65 @@ section { padding: 80px 24px; }
 .pin-btn:hover { background: var(--amber-pale); }
 .del-btn:hover { background: #ffe0e0; }
 .memo-item.pinned .pin-btn { opacity: 1; }
+
+/* ═══════════════════════════════
+   SIDEBAR ADVERTISEMENT (300×250)
+═══════════════════════════════ */
+.sidebar-ad {
+  padding: 8px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 266px;
+  background: var(--cream);
+  flex-shrink: 0;
+}
+
+#sidebarAdContainer {
+  width: 300px;
+  height: 250px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#sidebarAdContainer iframe,
+#sidebarAdContainer ins,
+#sidebarAdContainer > div {
+  width: 300px !important;
+  height: 250px !important;
+  max-width: 100%;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar-ad-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--ink-muted);
+  font-family: var(--font-ui);
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-ad-placeholder span {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.sidebar-ad-placeholder strong {
+  font-size: 0.9rem;
+  color: var(--ink-light);
+}
 
 .sidebar-footer { border-top: 1px solid var(--border); padding: 8px 10px; display: flex; gap: 6px; }
 .sidebar-footer button {
@@ -1123,7 +1181,7 @@ kbd {
 .about-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9; /* Maintains landscape aspect ratio */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
   border-radius: 24px;
@@ -1158,6 +1216,7 @@ kbd {
     aspect-ratio: 16 / 11;
   }
 }
+
 /* ═══════════════════════════════
    MOBILE RESPONSIVE
 ═══════════════════════════════ */
@@ -1185,6 +1244,20 @@ kbd {
   .hero-stats { gap: 24px; }
   section { padding: 56px 16px; }
   .notepad-preview { margin: 0 -8px; }
+
+  /* Sidebar ad: shrink on mobile */
+  .sidebar-ad {
+    min-height: 216px;
+    padding: 6px;
+  }
+  #sidebarAdContainer {
+    height: 200px;
+  }
+  #sidebarAdContainer iframe,
+  #sidebarAdContainer ins,
+  #sidebarAdContainer > div {
+    height: 200px !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1193,6 +1266,7 @@ kbd {
   .hero-actions { flex-direction: column; align-items: center; }
   .btn-primary, .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
 }
+
 /* ═══════════════════════════════
    PDF EXPORT MODAL
 ═══════════════════════════════ */
@@ -1311,8 +1385,8 @@ kbd {
 
 /* ── Save .txt — Light Green, Solid ── */
 .toolbar-btn.btn-save-txt {
-  background: #d3f9d8;                 /* light green */
-  color: #1e8449;                      /* dark green text */
+  background: #d3f9d8;
+  color: #1e8449;
   border: 1px solid #a9dfbf;
   font-weight: 600;
   transition: background 0.2s ease, border-color 0.2s ease,
@@ -1320,7 +1394,7 @@ kbd {
 }
 
 .toolbar-btn.btn-save-txt:hover {
-  background: #b7f0c2;                 /* slightly deeper on hover */
+  background: #b7f0c2;
   border-color: #7dcea0;
   color: #145a32;
   transform: translateY(-1px);
@@ -1337,9 +1411,9 @@ kbd {
 
 /* ── Save PDF — Maroon, Slow Blink ── */
 .toolbar-btn.btn-save-pdf {
-  background: #800020;                 /* maroon */
-  color: #fff8f0;                      /* warm off-white text */
-  border: 1px solid #5c0017;           /* darker maroon border */
+  background: #800020;
+  color: #fff8f0;
+  border: 1px solid #5c0017;
   font-weight: 600;
   position: relative;
   transition: background 0.2s ease, border-color 0.2s ease,
@@ -1348,12 +1422,12 @@ kbd {
 }
 
 .toolbar-btn.btn-save-pdf:hover {
-  background: #a30029;                 /* brighter maroon on hover */
+  background: #a30029;
   border-color: #800020;
   color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(128, 0, 32, 0.35);
-  animation-play-state: paused;        /* stop blinking while hovering */
+  animation-play-state: paused;
 }
 
 .toolbar-btn.btn-save-pdf:active {
@@ -1365,9 +1439,6 @@ kbd {
   outline-offset: 2px;
 }
 
-/* Slow, gentle attention-grabbing blink.
-   Pulses opacity + a soft maroon glow. Uses a long duration
-   so it's noticeable without being annoying. */
 @keyframes pdfBlink {
   0%, 100% {
     opacity: 1;
@@ -1379,11 +1450,9 @@ kbd {
   }
 }
 
-/* Respect users who prefer reduced motion — disable the blink. */
 @media (prefers-reduced-motion: reduce) {
   .toolbar-btn.btn-save-pdf {
     animation: none;
-    /* Keep a subtle static emphasis so it still stands out */
     box-shadow: 0 0 0 2px rgba(128, 0, 32, 0.25);
   }
 }
