@@ -720,6 +720,22 @@ section { padding: 80px 24px; }
 .section-header p { max-width: 560px; margin: 12px auto 0; }
 
 /* ═══════════════════════════════
+   APP SECTION (TEXT EDITOR) — COMPACT PADDING
+═══════════════════════════════ */
+#app {
+  background: var(--paper);
+  padding: 40px 24px;
+}
+
+#app .section-header {
+  margin-bottom: 28px;
+}
+
+#app .section-header p {
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════
    APP SECTION
 ═══════════════════════════════ */
 #app { background: var(--paper); }
