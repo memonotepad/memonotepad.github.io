@@ -174,6 +174,171 @@
   </div>
 </section>
 
+<!-- ══════════ NATIVE BANNER AD (4:1) — CLOSABLE ══════════ -->
+<div id="nativeBannerAd" class="native-banner-ad" role="complementary" aria-label="Advertisement">
+  <button class="native-banner-close" id="closeNativeBanner" aria-label="Close advertisement" title="Close ad">✕</button>
+  <div class="native-banner-inner">
+    <span class="native-banner-label">Sponsored</span>
+    <div class="native-banner-content">
+      <!-- Adsterra Native Banner 4:1 -->
+      <script async="async" data-cfasync="false" src="https://pl31636948.profitableratecpmnetwork.com/a3b20a2cba148db2140f7d2c194dd46b/invoke.js"></script>
+      <div id="container-a3b20a2cba148db2140f7d2c194dd46b"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ─── Native Banner Ad 4:1 — Closable ─── */
+.native-banner-ad {
+  position: relative;
+  width: 100%;
+  max-width: 728px;
+  margin: 0 auto;
+  padding: 8px 12px 12px;
+  background: var(--paper, #fffef9);
+  border: 1.5px solid var(--border, #e8dfc8);
+  border-radius: var(--radius, 12px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(44,36,22,.07));
+  overflow: hidden;
+  transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.45s ease, margin 0.35s ease, padding 0.35s ease, border 0.35s ease;
+  max-height: 200px;
+}
+
+/* ── Close button ── */
+.native-banner-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 10;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(44, 36, 22, 0.08);
+  color: var(--ink-muted, #9e9080);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-family: var(--font-ui, sans-serif);
+}
+
+.native-banner-close:hover {
+  background: rgba(224, 92, 58, 0.15);
+  color: var(--coral, #e05c3a);
+  transform: scale(1.1);
+}
+
+.native-banner-close:active {
+  transform: scale(0.95);
+}
+
+/* ── Inner wrapper ── */
+.native-banner-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── "Sponsored" label ── */
+.native-banner-label {
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted, #9e9080);
+  align-self: flex-start;
+  padding-left: 2px;
+}
+
+/* ── Ad content area ── */
+.native-banner-content {
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.native-banner-content iframe,
+.native-banner-content ins,
+.native-banner-content > div,
+.native-banner-content > script + div {
+  width: 100% !important;
+  max-width: 728px;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ensure adsterra container fills the space */
+#container-a3b20a2cba148db2140f7d2c194dd46b {
+  width: 100% !important;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Vanished state (after close) ── */
+.native-banner-ad.vanished {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.97);
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .native-banner-ad {
+    max-width: 100%;
+    padding: 6px 8px 8px;
+    border-radius: var(--radius-sm, 8px);
+  }
+  .native-banner-close {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    top: 4px;
+    right: 4px;
+  }
+  .native-banner-content {
+    min-height: 70px;
+  }
+  #container-a3b20a2cba148db2140f7d2c194dd46b {
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .native-banner-ad {
+    padding: 4px 6px 6px;
+    border-radius: 6px;
+  }
+  .native-banner-label {
+    font-size: 0.6rem;
+  }
+  .native-banner-content {
+    min-height: 60px;
+  }
+  #container-a3b20a2cba148db2140f7d2c194dd46b {
+    min-height: 60px;
+  }
+}
+</style>     
+
 <!-- ══════════ APP ══════════ -->
 <section id="app" aria-labelledby="app-heading">
   <div class="section-inner">
@@ -1298,5 +1463,26 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 </script>
+
+<script>
+/* ─── Native Banner Ad — Close logic ─── */
+(function() {
+  var banner = document.getElementById('nativeBannerAd');
+  var closeBtn = document.getElementById('closeNativeBanner');
+  if (!banner || !closeBtn) return;
+
+  closeBtn.addEventListener('click', function() {
+    banner.classList.add('vanished');
+    // Optional: after transition, remove from DOM entirely
+    setTimeout(function() {
+      if (banner && banner.parentNode) {
+        banner.style.display = 'none';
+        // Or fully remove: banner.parentNode.removeChild(banner);
+      }
+    }, 500);
+  });
+})();
+</script>
+     
 </body>
 </html>
