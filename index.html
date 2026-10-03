@@ -1486,11 +1486,10 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
   closeBtn.addEventListener('click', function() {
     banner.classList.add('vanished');
-    // Optional: after transition, remove from DOM entirely
+    // After transition, remove from DOM entirely
     setTimeout(function() {
       if (banner && banner.parentNode) {
-        banner.style.display = 'none';
-        // Or fully remove: banner.parentNode.removeChild(banner);
+        banner.parentNode.removeChild(banner);
       }
     }, 500);
   });
