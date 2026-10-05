@@ -256,14 +256,7 @@
     padding: 6px 8px 8px;
     border-radius: var(--radius-sm, 8px);
     margin-bottom: 24px;
-  }
-  .native-banner-close {
-    width: 22px;
-    height: 22px;
-    font-size: 12px;
-    top: 4px;
-    right: 4px;
-  }
+  } 
   .native-banner-content {
     min-height: 70px;
   }
@@ -1425,25 +1418,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     btn.setAttribute('aria-expanded', open);
   });
 });
-</script>
-
-<script>
-/* ─── Native Banner Ad — Close logic ─── */
-(function() {
-  var banner = document.getElementById('nativeBannerAd');
-  var closeBtn = document.getElementById('closeNativeBanner');
-  if (!banner || !closeBtn) return;
-
-  closeBtn.addEventListener('click', function() {
-    banner.classList.add('vanished');
-    // After transition, remove from DOM entirely
-    setTimeout(function() {
-      if (banner && banner.parentNode) {
-        banner.parentNode.removeChild(banner);
-      }
-    }, 500);
-  });
-})();
 </script>
      
 </body>
