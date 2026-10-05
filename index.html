@@ -186,39 +186,6 @@
   max-height: 200px;
 }
 
-/* ── Close button ── */
-.native-banner-close {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  z-index: 10;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(44, 36, 22, 0.08);
-  color: var(--ink-muted, #9e9080);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  font-family: var(--font-ui, sans-serif);
-}
-
-.native-banner-close:hover {
-  background: rgba(224, 92, 58, 0.15);
-  color: var(--coral, #e05c3a);
-  transform: scale(1.1);
-}
-
-.native-banner-close:active {
-  transform: scale(0.95);
-}
-
 /* ── Inner wrapper ── */
 .native-banner-inner {
   position: relative;
@@ -331,10 +298,9 @@
       <h2 id="app-heading">The Online Memo Notepad</h2>
       <p>Your personal memo pads, right here in the browser. Memos auto-save as you type.</p>
     </div>
-
-       <!-- ══════════ NATIVE BANNER AD (4:1) — CLOSABLE ══════════ -->
+       
+<!-- ══════════ NATIVE BANNER AD (4:1) ══════════ -->
 <div id="nativeBannerAd" class="native-banner-ad" role="complementary" aria-label="Advertisement">
-  <button class="native-banner-close" id="closeNativeBanner" aria-label="Close advertisement" title="Close ad">✕</button>
   <div class="native-banner-inner">
     <span class="native-banner-label">Sponsored</span>
     <div class="native-banner-content">
